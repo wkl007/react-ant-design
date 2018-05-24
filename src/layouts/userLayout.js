@@ -49,35 +49,33 @@ class UserLayout extends Component {
     let routes = getRoutes(match.path, routerData)
     return (
       <DocumentTitle title={this.getPageTitle()}>
-        <div id="user-layout">
-          <div className={styles.container}>
-            <div className={styles.content}>
-              <div className={styles.top}>
-                <div className={styles.header}>
-                  <Link to="/">
-                    <img className={styles.logo} src={logo} alt="logo"/>
-                    <span className={styles.title}>Ant Design</span>
-                  </Link>
-                </div>
-                <div className={styles.desc}>Ant Design 是西湖区最具影响力的 Web 设计规范
-                </div>
+        <div className={styles.container}>
+          <div className={styles.content}>
+            <div className={styles.top}>
+              <div className={styles.header}>
+                <Link to="/">
+                  <img className={styles.logo} src={logo} alt="logo"/>
+                  <span className={styles.title}>Ant Design</span>
+                </Link>
               </div>
-              <Switch>
-                {
-                  routes.map(item => {
-                    return <Route
-                      key={item.key}
-                      path={item.path}
-                      component={item.component}
-                      exact={item.exact}
-                    />
-                  })
-                }
-                <Redirect exact from="/user" to="/user/login"/>
-              </Switch>
+              <div className={styles.desc}>Ant Design 是西湖区最具影响力的 Web 设计规范
+              </div>
             </div>
-            <GlobalFooter links={links} copyright={copyright}/>
+            <Switch>
+              {
+                routes.map(item => {
+                  return <Route
+                    key={item.key}
+                    path={item.path}
+                    component={item.component}
+                    exact={item.exact}
+                  />
+                })
+              }
+              <Redirect exact from="/user" to="/user/login"/>
+            </Switch>
           </div>
+          <GlobalFooter links={links} copyright={copyright}/>
         </div>
       </DocumentTitle>
     )
