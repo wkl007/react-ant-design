@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { Link, Route, Switch, Redirect } from 'react-router-dom'
 import DocumentTitle from 'react-document-title'
-
+import logo from '../assets/images/logo.svg'
 import { getRoutes } from '../utils/utils'
+import { Button } from 'antd'
+import styles from './userLayout.less'
 
 class UserLayout extends Component {
   //获取页面标题
@@ -22,6 +24,10 @@ class UserLayout extends Component {
     return (
       <DocumentTitle title={this.getPageTitle()}>
         <div id="user-layout">
+          <div className={styles.logo}>
+            222222
+          </div>
+          <Button type="primary">22222</Button>
           <Switch>
             {
               routes.map(item => {
