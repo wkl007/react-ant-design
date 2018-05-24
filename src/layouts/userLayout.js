@@ -1,10 +1,36 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Link, Route, Switch, Redirect } from 'react-router-dom'
 import DocumentTitle from 'react-document-title'
-import logo from '../assets/images/logo.svg'
 import { getRoutes } from '../utils/utils'
-import { Button } from 'antd'
+import { Icon } from 'antd'
+import GlobalFooter from '../components/globalFooter'
+
+import logo from '../assets/images/logo.svg'
 import styles from './userLayout.less'
+
+const links = [
+  {
+    key: 'help',
+    title: '帮助',
+    href: '',
+  },
+  {
+    key: 'privacy',
+    title: '隐私',
+    href: '',
+  },
+  {
+    key: 'terms',
+    title: '条款',
+    href: '',
+  },
+]
+
+const copyright = (
+  <Fragment>
+    Copyright <Icon type="copyright"/> 2018 蚂蚁金服体验技术部出品
+  </Fragment>
+)
 
 class UserLayout extends Component {
   //获取页面标题
@@ -24,23 +50,34 @@ class UserLayout extends Component {
     return (
       <DocumentTitle title={this.getPageTitle()}>
         <div id="user-layout">
-          <div className={styles.logo}>
-            222222
+          <div className={styles.container}>
+            <div className={styles.content}>
+              <div className={styles.top}>
+                <div className={styles.header}>
+                  <Link to="/">
+                    <img className={styles.logo} src={logo} alt="logo"/>
+                    <span className={styles.title}>Ant Design</span>
+                  </Link>
+                </div>
+                <div className={styles.desc}>Ant Design 是西湖区最具影响力的 Web 设计规范
+                </div>
+              </div>
+              <Switch>
+                {
+                  routes.map(item => {
+                    return <Route
+                      key={item.key}
+                      path={item.path}
+                      component={item.component}
+                      exact={item.exact}
+                    />
+                  })
+                }
+                <Redirect exact from="/user" to="/user/login"/>
+              </Switch>
+            </div>
+            <GlobalFooter links={links} copyright={copyright}/>
           </div>
-          <Button type="primary">22222</Button>
-          <Switch>
-            {
-              routes.map(item => {
-                return <Route
-                  key={item.key}
-                  path={item.path}
-                  component={item.component}
-                  exact={item.exact}
-                />
-              })
-            }
-            <Redirect exact from="/user" to="/user/login"/>
-          </Switch>
         </div>
       </DocumentTitle>
     )
