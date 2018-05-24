@@ -1,45 +1,40 @@
 import React, { Component } from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom'
-
-import Login from './pages/user/login'
-import Register from './pages/user/register'
-import Index from './pages/dashBoard/index'
-import Table from './pages/dashBoard/table'
-
-const userInfo = '222'
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { getRouterData } from './router/router'
 
 class App extends Component {
   render () {
+    let {userInfo} = this.props
+    let routerData = getRouterData()
+    let UserLayout = routerData['/user'].component
+    let BasicLayout = routerData['/'].component
     return (
       <div className="App">
         <Switch>
-          <Redirect path="/" to={{pathname: '/login'}} exact/>
-          <Route path="/login" component={Login}/>
-          <Route path="/register" component={Register}/>
-          <Route path="/dashBoard"
-                 render={() =>
-                   userInfo === 'wkl' ?
-                     <div>
-                       <div style={{float: 'left'}}>
-                         左边
-                       </div>
-                       <div style={{float: 'right'}}>
-                         <Switch>
-                           <Route path="/dashBoard/index" component={Index}/>
-                           <Route path="/dashBoard/table" component={Table}/>
-                           <Redirect path="/dashBoard"
-                                     to={{pathname: '/dashBoard/index'}} exact/>
-                         </Switch>
-                       </div>
-                     </div>
-                     :
-                     <Redirect to={{pathname: '/login'}}/>
-                 }
-          />
+          <Route path="/user" render={(props) => {
+            return !userInfo
+              ? <UserLayout {...props} routerData={routerData}/>
+              : <Redirect to="/"/>
+          }}/>
+          <Route path="/" render={(props) => {
+            return userInfo
+              ? <BasicLayout {...props} routerData={routerData}/>
+              : <Redirect to="/user/login"/>
+          }}/>
         </Switch>
       </div>
     )
   }
 }
 
-export default App
+//redux react 绑定
+function mapStateToProps (state) {
+  return {
+    userInfo: state.userInfo,
+  }
+}
+
+export default withRouter(connect(
+  mapStateToProps,
+)(App))

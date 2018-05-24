@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-class Table extends Component {
+class Workplace extends Component {
   render () {
     return (
       <div>
-        图表页面
+        工作台
       </div>
     )
   }
 }
 
-export default Table
+export default Workplace

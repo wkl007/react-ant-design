@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-class Index extends Component {
+class RegisterResult extends Component {
   render () {
     return (
       <div>
-        登录成功后的页面
+        注册结果界面
       </div>
     )
   }
 }
 
-export default Index
+export default RegisterResult
