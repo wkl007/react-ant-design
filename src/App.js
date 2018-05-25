@@ -5,7 +5,7 @@ import { getRouterData } from './router/router'
 
 class App extends Component {
   render () {
-    let {userInfo} = this.props
+    let {userinfo} = this.props
     let routerData = getRouterData()
     let UserLayout = routerData['/user'].component
     let BasicLayout = routerData['/'].component
@@ -13,12 +13,12 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route path="/user" render={(props) => {
-            return !userInfo
+            return !userinfo
               ? <UserLayout {...props} routerData={routerData}/>
               : <Redirect to="/"/>
           }}/>
           <Route path="/" render={(props) => {
-            return userInfo
+            return userinfo
               ? <BasicLayout {...props} routerData={routerData}/>
               : <Redirect to="/user/login"/>
           }}/>
@@ -31,7 +31,7 @@ class App extends Component {
 //redux react 绑定
 function mapStateToProps (state) {
   return {
-    userInfo: state.userInfo,
+    userinfo: state.userinfo,
   }
 }
 

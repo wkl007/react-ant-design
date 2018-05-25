@@ -1,10 +1,13 @@
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import logger from 'redux-logger'
 import rootReducer from '../reducers'
 
+const createStoreWithMiddleware = applyMiddleware(
+  logger,
+)(createStore)
+
 export default function configureStore (initialState) {
-  const store = createStore(rootReducer, initialState,
-    //触发redux-devtools
-    window.devToolsExtension ? window.devToolsExtension() : undefined,
-  )
+  const store = createStoreWithMiddleware(rootReducer, initialState,
+    window.devToolsExtension ? window.devToolsExtension() : undefined)
   return store
 }
