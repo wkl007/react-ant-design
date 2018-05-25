@@ -50,14 +50,6 @@ class LoginPage extends Component {
     console.log(2222)
   }
 
-  //验证手机号
-  validateMobile = (rule, value, callback) => {
-    if (!(/0?(13|14|15|18)[0-9]{9}/).test(value)) {
-      callback('手机号码格式不正确!')
-    }
-    callback()
-  }
-
   //登录
   handleSubmit = (err, values) => {
     //this.props.userInfoActions.add(saveUserinfo('wkl'))
@@ -65,7 +57,7 @@ class LoginPage extends Component {
       if (!err &&
         (values.username !== 'admin' || values.password !== '888888')) {
         this.setState({
-          notice: '账户或密码错误（admin/888888）',
+          notice: '账户或密码错误（admin/888888）！',
         })
       } else if (!err) {
         this.setState({
@@ -90,20 +82,21 @@ class LoginPage extends Component {
     let rulesOption = {
       username: [
         {
-          required: true, message: '请输入账号!',
+          required: true, message: '请输入账号！',
         },
       ],
       password: [
         {
-          required: true, message: '请输入密码!',
+          required: true, message: '请输入密码！',
         },
       ],
       mobile: [
         {
-          required: true, message: '请输入手机号!',
+          required: true, message: '请输入手机号！',
         },
         {
-          validator: this.validateMobile,
+          pattern: /^1\d{10}$/,
+          message: '手机号格式错误！',
         },
       ],
     }
@@ -122,7 +115,7 @@ class LoginPage extends Component {
                       rules={rulesOption.password}/>
           </Tab>
           <Tab key="mobile" tab="手机号登录">
-            <Mobile name="mobile" placeholder="手机号" maxLength={13}
+            <Mobile name="mobile" placeholder="手机号" maxLength={11}
                     rules={rulesOption.mobile}/>
             <Captcha name="captcha" placeholder="验证码" maxLength={6}
                      onGetCaptcha={this.onGetCaptcha}/>
