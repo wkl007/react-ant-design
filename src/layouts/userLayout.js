@@ -3,7 +3,7 @@ import { Link, Route, Switch, Redirect } from 'react-router-dom'
 import DocumentTitle from 'react-document-title'
 import { getRoutes } from '../utils/utils'
 import { Icon } from 'antd'
-import GlobalFooter from '../components/globalFooter'
+import GlobalFooter from 'ant-design-pro/lib/GlobalFooter'
 
 import logo from '../assets/images/logo.svg'
 import styles from './userLayout.less'
