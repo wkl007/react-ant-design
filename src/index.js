@@ -6,6 +6,7 @@ import configureStore from './redux/store/configureStore'
 import registerServiceWorker from './registerServiceWorker'
 
 import './index.css'
+import 'nprogress/nprogress.css'
 import 'ant-design-pro/dist/ant-design-pro.css'
 
 import App from './App'

@@ -1,9 +1,18 @@
 import React, { Component } from 'react'
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
+import NProgress from 'nprogress'
 import { getRouterData } from './router/router'
 
 class App extends Component {
+  componentWillUpdate () {
+    NProgress.start()
+  }
+
+  componentDidUpdate () {
+    NProgress.done()
+  }
+
   render () {
     let {userinfo} = this.props
     let routerData = getRouterData()
