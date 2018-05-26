@@ -1,9 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Link, Route, Switch, Redirect } from 'react-router-dom'
 import DocumentTitle from 'react-document-title'
 import pathToRegexp from 'path-to-regexp'
+import { ContainerQuery } from 'react-container-query'
+import { Layout, Icon, message } from 'antd'
 import { getMenuData } from '../router/menu'
 import { getRoutes } from '../utils/utils'
+
+import PropTypes from 'prop-types'
 
 //根据菜单获取重定向地址
 const redirectData = []
