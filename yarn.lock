@@ -4784,6 +4784,12 @@ lodash-decorators@^4.4.1:
   dependencies:
     tslib "^1.7.1"
 
+lodash-decorators@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/lodash-decorators/-/lodash-decorators-5.0.0.tgz#daf8e6888a7831e6d4088db0ed39ecdc11ec85e5"
+  dependencies:
+    tslib "^1.7.1"
+
 lodash-es@^4.17.5:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.10.tgz#62cd7104cdf5dd87f235a837f0ede0e8e5117e05"

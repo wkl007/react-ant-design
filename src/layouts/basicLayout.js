@@ -2,12 +2,42 @@ import React, { Component, Fragment } from 'react'
 import { Link, Route, Switch, Redirect } from 'react-router-dom'
 import DocumentTitle from 'react-document-title'
 import pathToRegexp from 'path-to-regexp'
+import { enquireScreen, unenquireScreen } from 'enquire-js'
 import { ContainerQuery } from 'react-container-query'
+import classNames from 'classnames'
 import { Layout, Icon, message } from 'antd'
+import GlobalHeader from '../components/GlobalHeader'
+import GlobalFooter from 'ant-design-pro/lib/GlobalFooter'
+import PropTypes from 'prop-types'
 import { getMenuData } from '../router/menu'
 import { getRoutes } from '../utils/utils'
 
-import PropTypes from 'prop-types'
+const {Content, Header, Footer} = Layout
+const query = {
+  'screen-xs': {
+    maxWidth: 575,
+  },
+  'screen-sm': {
+    minWidth: 576,
+    maxWidth: 767,
+  },
+  'screen-md': {
+    minWidth: 768,
+    maxWidth: 991,
+  },
+  'screen-lg': {
+    minWidth: 992,
+    maxWidth: 1199,
+  },
+  'screen-xl': {
+    minWidth: 1200,
+  },
+}
+
+let isMobile
+enquireScreen(b => {
+  isMobile = b
+})
 
 //根据菜单获取重定向地址
 const redirectData = []
@@ -48,32 +78,46 @@ class basicLayout extends Component {
     let {match, routerData} = this.props
     let routes = getRoutes(match.path, routerData)
     let bashRedirect = routes[0].path
+    let layout = (
+      <Layout>
+        <Layout>
+          <Header style={{padding: 0}}></Header>
+        </Layout>
+      </Layout>
+    )
+
     return (
       <DocumentTitle title={this.getPageTitle()}>
-        <div id="basic-layout">
-          <Switch>
-            {
-              redirectData.map(item => {
-                return <Redirect
-                  exact
-                  key={item.from}
-                  from={item.from}
-                  to={item.to}/>
-              })
-            }
-            {
-              routes.map(item => {
-                return <Route
-                  key={item.key}
-                  path={item.path}
-                  component={item.component}
-                  exact={item.exact}
-                />
-              })
-            }
-            <Redirect exact from="/" to={bashRedirect}/>
-          </Switch>
-        </div>
+        <ContainerQuery query={query}>
+          {params => <div className={classNames(params)}>{layout}</div>}
+
+
+          {/*<div id="basic-layout">
+
+            <Switch>
+              {
+                redirectData.map(item => {
+                  return <Redirect
+                    exact
+                    key={item.from}
+                    from={item.from}
+                    to={item.to}/>
+                })
+              }
+              {
+                routes.map(item => {
+                  return <Route
+                    key={item.key}
+                    path={item.path}
+                    component={item.component}
+                    exact={item.exact}
+                  />
+                })
+              }
+              <Redirect exact from="/" to={bashRedirect}/>
+            </Switch>
+          </div>*/}
+        </ContainerQuery>
       </DocumentTitle>
     )
   }
