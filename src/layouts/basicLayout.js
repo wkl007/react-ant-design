@@ -71,7 +71,7 @@ class basicLayout extends Component {
       isMobile: isMobile,
       fetchingNotices: false,
 
-      collapsed: false,//菜单展开收缩，需要放在redux中
+      collapsed: false,//菜单展开收缩
       notices: [
         {
           id: '000000001',
@@ -203,14 +203,15 @@ class basicLayout extends Component {
     message.success(`清空了${tabTitle}`)
   }
 
-  //控制menu收缩展开
+  //控制左侧menu收缩展开
   handleMenuCollapse = (collapsed) => {
+    console.log('监听窗口事件',collapsed)
     this.setState({
       collapsed: collapsed,
     })
   }
 
-  //
+  //Dropdown menu菜单点击事件
   handleMenuClick = ({key}) => {
     if (key === 'triggerError') {
       console.log('触发报错')
@@ -219,18 +220,17 @@ class basicLayout extends Component {
     }
   }
 
-  //
+  //notice框点击事件
   handleNoticeVisibleChange = (visible) => {
     if (visible) {
       this.setState({
-        fetchingNotices:true
+        fetchingNotices: true,
       })
-      setTimeout(()=>{
+      setTimeout(() => {
         this.setState({
-          fetchingNotices:false
+          fetchingNotices: false,
         })
-      },200)
-      console.log(visible)
+      }, 200)
     }
   }
 
@@ -256,17 +256,7 @@ class basicLayout extends Component {
               onNoticeVisibleChange={this.handleNoticeVisibleChange}
             />
           </Header>
-
-        </Layout>
-      </Layout>
-    )
-
-    return (
-      <DocumentTitle title={this.getPageTitle()}>
-        <ContainerQuery query={query}>
-          {params => <div className={classNames(params)}>{layout}</div>}
-          {/*<div id="basic-layout">
-
+          <Content style={{margin: '24px 24px 0', height: '100%'}}>
             <Switch>
               {
                 redirectData.map(item => {
@@ -289,7 +279,43 @@ class basicLayout extends Component {
               }
               <Redirect exact from="/" to={bashRedirect}/>
             </Switch>
-          </div>*/}
+          </Content>
+          <Footer style={{padding: 0}}>
+            <GlobalFooter
+              links={[
+                {
+                  key: 'Pro 首页',
+                  title: 'Pro 首页',
+                  href: 'http://pro.ant.design',
+                  blankTarget: true,
+                },
+                {
+                  key: 'github',
+                  title: <Icon type="github"/>,
+                  href: 'https://github.com/ant-design/ant-design-pro',
+                  blankTarget: true,
+                },
+                {
+                  key: 'Ant Design',
+                  title: 'Ant Design',
+                  href: 'http://ant.design',
+                  blankTarget: true,
+                },
+              ]}
+              copyright={
+                <Fragment>
+                  Copyright <Icon type="copyright"/> 2018 蚂蚁金服体验技术部出品
+                </Fragment>
+              }>
+            </GlobalFooter>
+          </Footer>
+        </Layout>
+      </Layout>
+    )
+    return (
+      <DocumentTitle title={this.getPageTitle()}>
+        <ContainerQuery query={query}>
+          {params => <div className={classNames(params)}>{layout}</div>}
         </ContainerQuery>
       </DocumentTitle>
     )

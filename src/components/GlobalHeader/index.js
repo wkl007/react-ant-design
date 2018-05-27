@@ -63,13 +63,13 @@ class GlobalHeader extends PureComponent {
     const event = document.createEvent('HTMLEvents')
     event.initEvent('resize', true, false)
     window.dispatchEvent(event)
-    console.log(222)
+    console.log('监听窗口事件')
   }
 
   render () {
     let {
       currentUser = {},
-      collpased,
+      collapsed,
       fetchingNotices,
       isMobile,
       notices,
@@ -107,7 +107,7 @@ class GlobalHeader extends PureComponent {
         }
         <Icon
           className={styles.trigger}
-          type={collpased ? 'menu-unfold' : 'menu-fold'}
+          type={collapsed ? 'menu-unfold' : 'menu-fold'}
           onClick={this.toggle}
         />
         <div className={styles.right}>
