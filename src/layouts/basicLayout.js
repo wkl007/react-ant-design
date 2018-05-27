@@ -81,7 +81,9 @@ class basicLayout extends Component {
     let layout = (
       <Layout>
         <Layout>
-          <Header style={{padding: 0}}></Header>
+          <Header style={{padding: 0}}>
+
+          </Header>
         </Layout>
       </Layout>
     )

@@ -117,7 +117,7 @@ class GlobalHeader extends PureComponent {
 
   }
 
-  // @Debounce(600)
+  @Debounce(600)
   triggerResizeEvent () {
     const event = document.createEvent('HTMLEvents')
     event.initEvent('resize', true, false)
