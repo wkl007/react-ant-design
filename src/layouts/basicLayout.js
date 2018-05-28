@@ -59,6 +59,25 @@ const getRedirect = item => {
 }
 getMenuData().forEach(getRedirect)
 
+/**
+ * 获取面包屑映射
+ * @param menuData 菜单配置
+ * @param routerData 路由配置
+ */
+const getBreadcrumbNameMap = (menuData, routerData) => {
+  let result = {}
+  let childResult = {}
+  for (let i of menuData) {
+    if (!routerData[i.path]) {
+      result[i.path] = i
+    }
+    if (i.children) {
+      Object.assign(childResult, getBreadcrumbNameMap(i.children, routerData))
+    }
+  }
+  return Object.assign({}, routerData, result, childResult)
+}
+
 class basicLayout extends Component {
   constructor (props) {
     super(props)
@@ -206,7 +225,6 @@ class basicLayout extends Component {
 
   //控制左侧menu收缩展开
   handleMenuCollapse = (collapsed) => {
-    console.log('监听窗口事件', collapsed)
     this.setState({
       collapsed: collapsed,
     })

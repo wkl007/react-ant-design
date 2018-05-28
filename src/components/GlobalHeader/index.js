@@ -11,10 +11,6 @@ import HeaderSearch from 'ant-design-pro/lib/HeaderSearch'
 import styles from './index.less'
 
 class GlobalHeader extends PureComponent {
-  constructor (props) {
-    super(props)
-  }
-
   componentWillUnmount () {
     this.triggerResizeEvent.cancel()
   }

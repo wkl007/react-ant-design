@@ -6,6 +6,9 @@ import RegisterResult from '../pages/user/registerResult'
 import Analysis from '../pages/dashboard/analysis'
 import Monitor from '../pages/dashboard/monitor'
 import Workplace from '../pages/dashboard/workplace'
+import BasicForm from '../pages/forms/basicForm'
+import AdvancedForm from '../pages/forms/advancedForm'
+import StepForm from '../pages/forms/stepForm'
 
 export const getRouterData = () => {
   const routerConfig = {
@@ -25,6 +28,19 @@ export const getRouterData = () => {
       name: '工作台',
       component: Workplace,
     },
+    '/form/basic-form': {
+      name: '基础表单',
+      component: BasicForm,
+    },
+    '/form/advanced-form': {
+      name: '高级表单',
+      component: AdvancedForm,
+    },
+    '/form/step-form': {
+      name: '分步表单',
+      component: StepForm,
+    },
+
     '/user': {
       name: '账户',
       component: UserLayout,

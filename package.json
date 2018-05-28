@@ -13,6 +13,7 @@
     "lodash-decorators": "^5.0.0",
     "moment": "^2.22.1",
     "nprogress": "^0.2.0",
+    "numeral": "^2.0.6",
     "path-to-regexp": "^2.2.1",
     "prop-types": "^15.6.1",
     "rc-drawer-menu": "^1.0.2",
