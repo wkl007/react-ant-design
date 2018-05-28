@@ -8,6 +8,7 @@ import classNames from 'classnames'
 import { Layout, Icon, message } from 'antd'
 import GlobalHeader from '../components/GlobalHeader'
 import GlobalFooter from 'ant-design-pro/lib/GlobalFooter'
+import SiderMenu from '../components/SiderMenu'
 import PropTypes from 'prop-types'
 import { getMenuData } from '../router/menu'
 import { getRoutes } from '../utils/utils'
@@ -205,7 +206,7 @@ class basicLayout extends Component {
 
   //控制左侧menu收缩展开
   handleMenuCollapse = (collapsed) => {
-    console.log('监听窗口事件',collapsed)
+    console.log('监听窗口事件', collapsed)
     this.setState({
       collapsed: collapsed,
     })
@@ -241,6 +242,13 @@ class basicLayout extends Component {
     let bashRedirect = routes[0].path
     let layout = (
       <Layout>
+        <SiderMenu
+          logo={logo}
+          menuData={getMenuData()}
+          collapsed={collapsed}
+          isMobile={isMobile}
+          onCollapse={this.handleMenuCollapse}
+        />
         <Layout>
           <Header style={{padding: 0}}>
             <GlobalHeader
