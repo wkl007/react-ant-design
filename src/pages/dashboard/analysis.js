@@ -441,6 +441,17 @@ class Analysis extends Component {
     }
   }
 
+  componentDidMount () {
+    this.setState({
+      loading: true,
+    })
+    setTimeout(() => {
+      this.setState({
+        loading: false,
+      })
+    }, 500)
+  }
+
   //tab选择日期
   selectDate = (type) => {
     this.setState({
@@ -466,6 +477,20 @@ class Analysis extends Component {
     console.log(rangePickerValue)
     this.setState({
       rangePickerValue,
+    })
+  }
+
+  //
+  handleChangeSalesType = (e) => {
+    this.setState({
+      salesType: e.target.value,
+    })
+  }
+
+  //
+  handleTabChange = (key) => {
+    this.setState({
+      currentTabKey: key,
     })
   }
 
@@ -520,8 +545,89 @@ class Analysis extends Component {
       </div>
     )
 
+    const menu = (
+      <Menu>
+        <Menu.Item>操作一</Menu.Item>
+        <Menu.Item>操作二</Menu.Item>
+      </Menu>
+    )
+
+    const iconGroup = (
+      <span className={styles.iconGroup}>
+        <Dropdown overlay={menu} placement="bottomRight">
+          <Icon type="ellipsis"/>
+        </Dropdown>
+      </span>
+    )
+
+    const columns = [
+      {
+        title: '排名',
+        dataIndex: 'index',
+        key: 'index',
+      },
+      {
+        title: '搜索关键词',
+        dataIndex: 'keyword',
+        key: 'keyword',
+        render: text => <a href="/">{text}</a>,
+      },
+      {
+        title: '用户数',
+        dataIndex: 'count',
+        key: 'count',
+        sorter: (a, b) => a.count - b.count,
+        className: styles.alignRight,
+      },
+      {
+        title: '周涨幅',
+        dataIndex: 'range',
+        key: 'range',
+        sorter: (a, b) => a.range - b.range,
+        render: (text, record) => (
+          <Trend flag={record.status === 1 ? 'down' : 'up'}>
+            <span style={{marginRight: 4}}>{text}%</span>
+          </Trend>
+        ),
+        align: 'right',
+      },
+    ]
+
+    const salesPieData =
+      salesType === 'all'
+        ? salesTypeData
+        : salesType === 'online' ? salesTypeDataOnline : salesTypeDataOffline
+
+    const activeKey = currentTabKey || (offlineData[0] && offlineData[0].name)
+
+    const CustomTab = ({data, currentTabKey: currentKey}) => (
+      <Row gutter={8} style={{width: 138, margin: '8px 0'}}>
+        <Col span={12}>
+          <NumberInfo
+            title={data.name}
+            subTitle="转化率"
+            gap={2}
+            total={`${data.cvr * 100}%`}
+            theme={currentKey !== data.name && 'light'}
+          />
+        </Col>
+        <Col span={12} style={{paddingTop: 36}}>
+          <Pie
+            animate={false}
+            color={currentKey !== data.name && '#BDE4FF'}
+            inner={0.55}
+            tooltip={false}
+            margin={[0, 0, 0, 0]}
+            percent={data.cvr * 100}
+            height={64}
+          />
+        </Col>
+      </Row>
+    )
+
     return (
       <Fragment>
+        {/*first*/}
         <Row gutter={24}>
           <Col {...topColResponsiveProps}>
             <ChartCard
@@ -605,6 +711,7 @@ class Analysis extends Component {
             </ChartCard>
           </Col>
         </Row>
+        {/*second*/}
         <Card loading={loading} bordered={false}
               bodyStyle={{padding: 0}}>
           <div className={styles.salesCard}>
@@ -637,10 +744,145 @@ class Analysis extends Component {
                 </Row>
               </TabPane>
               <TabPane tab="访问量" key="views">
-                1211
+                <Col xl={16} lg={12} md={12} sm={24} xs={24}>
+                  <div className={styles.salesBar}>
+                    <Bar height={295} title="访问量趋势" data={salesData}/>
+                  </div>
+                </Col>
+                <Col xl={8} lg={12} md={12} sm={24} xs={24}>
+                  <div className={styles.salesRank}>
+                    <h4 className={styles.rankingTitle}>门店访问量排名</h4>
+                    <ul className={styles.rankingList}>
+                      {
+                        rankingListData.map((item, i) => (
+                          <li key={item.title}>
+                              <span className={i < 3 ? styles.active : ''}>{i +
+                              1}</span>
+                            <span>{item.title}</span>
+                            <span>{numeral(item.total).format('0,0')}</span>
+                          </li>
+                        ))
+                      }
+                    </ul>
+                  </div>
+                </Col>
               </TabPane>
             </Tabs>
           </div>
+        </Card>
+        {/*third*/}
+        <Row gutter={24}>
+          <Col xl={12} lg={24} sm={24} xs={24}>
+            <Card
+              loading={loading}
+              bordered={false}
+              title="线上热门搜索"
+              extra={iconGroup}
+              style={{marginTop: 24}}
+            >
+              <Row gutter={68}>
+                <Col sm={12} xs={24} style={{marginBottom: 24}}>
+                  <NumberInfo
+                    subTitle={
+                      <span>
+                        搜索用户数
+                        <Tooltip title="指标文案">
+                          <Icon style={{marginLeft: 8}} type="info-circle-o"/>
+                        </Tooltip>
+                      </span>
+                    }
+                    gap={8}
+                    total={numeral(12321).format('0,0')}
+                    status="up"
+                    subTotal={17.1}
+                  />
+                  <MiniArea line height={45} data={visitData2}/>
+                </Col>
+                <Col sm={12} xs={24} style={{marginBottom: 24}}>
+                  <NumberInfo
+                    subTitle="人均搜索次数"
+                    gap={8}
+                    total={2.7}
+                    status="down"
+                    subTotal={26.2}
+                  />
+                  <MiniArea line height={45} data={visitData2}/>
+                </Col>
+              </Row>
+              <Table
+                rowKey={record => record.index}
+                size="small"
+                columns={columns}
+                dataSource={searchData}
+                pagination={{
+                  style: {marginBottom: 0},
+                  pageSize: 5,
+                }}
+              />
+            </Card>
+          </Col>
+          <Col xl={12} lg={24} sm={24} xs={24}>
+            <Card
+              loading={loading}
+              className={styles.salesCard}
+              bordered={false}
+              title="销售额类别占比"
+              extra={
+                <div className={styles.salesCardExtra}>
+                  {iconGroup}
+                  <div className={styles.salesTypeRadio}>
+                    <Radio.Group value={salesType}
+                                 onChange={this.handleChangeSalesType}>
+                      <Radio.Button value="all">全部渠道</Radio.Button>
+                      <Radio.Button value="online">线上</Radio.Button>
+                      <Radio.Button value="offline">门店</Radio.Button>
+                    </Radio.Group>
+                  </div>
+                </div>
+              }
+              style={{marginTop: 24, minHeight: 509}}
+            >
+              <h4 style={{marginTop: 8, marginBottom: 32}}>销售额</h4>
+              <Pie
+                hasLegend
+                subTitle="销售额"
+                total={
+                  () => <Yuan>{salesPieData.reduce((pre, now) => now.y + pre,
+                    0)}</Yuan>
+                }
+                data={salesPieData}
+                valueFormat={value => <Yuan>{value}</Yuan>}
+                height={248}
+                lineWidth={4}
+              />
+            </Card>
+          </Col>
+        </Row>
+        {/*fourth*/}
+        <Card
+          loading={loading}
+          className={styles.offlineCard}
+          bordered={false}
+          bodyStyle={{padding: '0 0 32px 0'}}
+          style={{marginTop: 32}}
+        >
+          <Tabs activeKey={activeKey} onChange={this.handleTabChange}>
+            {
+              offlineData.map(shop => (
+                <TabPane
+                  tab={<CustomTab data={shop} currentTabKey={activeKey}/>}
+                  key={shop.name}>
+                  <div style={{padding: '0 24px'}}>
+                    <TimelineChart
+                      height={400}
+                      data={offlineChartData}
+                      titleMap={{y1: '客流量', y2: '支付笔数'}}
+                    />
+                  </div>
+                </TabPane>
+              ))
+            }
+          </Tabs>
         </Card>
       </Fragment>
     )
