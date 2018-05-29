@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-class StepForm extends Component {
+class Step3 extends Component {
   render () {
     return (
       <div>
-        分步表单
+        Step3
       </div>
     )
   }
 }
 
-export default StepForm
+export default Step3

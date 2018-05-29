@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-class Step1 extends Component {
+class BasicList extends Component {
   render () {
     return (
       <div>
-        Step1
+        BasicList
       </div>
     )
   }
 }
 
-export default Step1
+export default BasicList

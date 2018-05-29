@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-class Step1 extends Component {
+class Success extends Component {
   render () {
     return (
       <div>
-        Step1
+        Success
       </div>
     )
   }
 }
 
-export default Step1
+export default Success
