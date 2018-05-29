@@ -177,6 +177,19 @@ class basicLayout extends Component {
     }
   }
 
+  static childContextTypes = {
+    location: PropTypes.object,
+    breadcrumbNameMap: PropTypes.object,
+  }
+
+  getChildContext () {
+    let {routerData, location} = this.props
+    return {
+      location,
+      breadcrumbNameMap: getBreadcrumbNameMap(getMenuData(), routerData),
+    }
+  }
+
   componentDidMount () {
     this.enquireHandler = enquireScreen(mobile => {
       this.setState({
