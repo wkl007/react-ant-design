@@ -12,7 +12,8 @@ const eslintFormatter = require('react-dev-utils/eslintFormatter')
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin')
 const paths = require('./paths')
 const getClientEnvironment = require('./env')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require(
+  'webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -334,6 +335,8 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,
+        drop_debugger: true,
+        drop_console: true,
         // Disabled because of an issue with Uglify breaking seemingly valid code:
         // https://github.com/facebookincubator/create-react-app/issues/2376
         // Pending further investigation:
