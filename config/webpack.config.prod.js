@@ -14,6 +14,7 @@ const paths = require('./paths')
 const getClientEnvironment = require('./env')
 const BundleAnalyzerPlugin = require(
   'webpack-bundle-analyzer').BundleAnalyzerPlugin
+const CompressionPlugin = require("compression-webpack-plugin");
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -401,6 +402,13 @@ module.exports = {
     // You can remove this if you don't use Moment.js:
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new BundleAnalyzerPlugin(),
+    new CompressionPlugin({
+      asset: "[path].gz[query]",
+      algorithm: "gzip",
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8
+    }),
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
