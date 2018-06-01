@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
-import 'moment/locale/zh-cn'
 import groupBy from 'lodash/groupBy'
 import Debounce from 'lodash-decorators/debounce'
 import { Menu, Icon, Spin, Tag, Dropdown, Avatar, Divider, Tooltip } from 'antd'

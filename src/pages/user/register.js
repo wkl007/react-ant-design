@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Form, Input, Button, Select, Row, Col, Popover, Progress } from 'antd'
 import styles from './register.less'
 
+const qs = require('qs')
 const FormItem = Form.Item
 const {Option} = Select
 const InputGroup = Input.Group
@@ -124,10 +125,10 @@ class Register extends Component {
         if (!err) {
           history.push({
             pathname: '/user/register-result',
-            state: {
+            search: qs.stringify({
               ...values,
               prefix: this.state.prefix,
-            },
+            }),
           })
         }
       })

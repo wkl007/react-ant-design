@@ -4,6 +4,7 @@ import { Button } from 'antd'
 import Result from 'ant-design-pro/lib/Result'
 import styles from './registerResult.less'
 
+const qs = require('qs')
 const actions = (
   <div className={styles.actions}>
     <a href="javascript:;">
@@ -20,13 +21,14 @@ const actions = (
 class RegisterResult extends Component {
   render () {
     let {location} = this.props
+    let data = qs.parse(location.search.substring(1))
     return (
       <Result
         className={styles.registerResult}
         type="success"
         title={
           <div className={styles.title}>
-            你的账户：{location.state ? location.state.mail : 'AntDesign@example.com'} 注册成功
+            你的账户：{location.search ? data.mail : 'AntDesign@example.com'} 注册成功
           </div>
         }
         description="激活邮件已发送到你的邮箱中，邮件有效期为24小时。请及时登录邮箱，点击邮件中的链接激活帐户。"

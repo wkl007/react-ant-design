@@ -1,11 +1,15 @@
 import React, { Component, Fragment } from 'react'
 import { Link, Route, Switch, Redirect } from 'react-router-dom'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import * as userInfoActionFromOtherFile from '../redux/actions/userinfo'
+import { deleteUserInfo } from '../utils/catche'
 import DocumentTitle from 'react-document-title'
 import pathToRegexp from 'path-to-regexp'
 import { enquireScreen, unenquireScreen } from 'enquire-js'
 import { ContainerQuery } from 'react-container-query'
 import classNames from 'classnames'
-import { Layout, Icon, message } from 'antd'
+import { Layout, Icon, message, Modal, Button } from 'antd'
 import GlobalHeader from '../components/GlobalHeader'
 import GlobalFooter from 'ant-design-pro/lib/GlobalFooter'
 import SiderMenu from '../components/SiderMenu'
@@ -15,6 +19,7 @@ import { getRoutes } from '../utils/utils'
 
 import logo from '../assets/images/logo.svg'
 
+const confirm = Modal.confirm
 const {Content, Header, Footer} = Layout
 const query = {
   'screen-xs': {
@@ -84,7 +89,7 @@ class basicLayout extends Component {
     this.state = {
       currentUser: {
         avatar: 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
-        name: '小王',
+        name: props.userinfo,
         notifyCount: 12,
         userid: '00000001',
       },
@@ -248,7 +253,17 @@ class basicLayout extends Component {
     if (key === 'triggerError') {
       console.log('触发报错')
     } else if (key === 'logout') {
-      console.log('退出登录')
+
+      confirm({
+        title: '确认要退出登录吗？',
+        okText: '确认',
+        cancelText: '取消',
+        onOk: () => {
+          console.log('退出登录', this)
+          this.props.userInfoActions.rm(deleteUserInfo)
+        },
+        onCancel: () => {},
+      })
     }
   }
 
@@ -361,4 +376,19 @@ class basicLayout extends Component {
   }
 }
 
-export default basicLayout
+function mapStateToProps (state) {
+  return {
+    userinfo: state.userinfo,
+  }
+}
+
+function mapDispatchToProps (dispatch) {
+  return {
+    userInfoActions: bindActionCreators(
+      userInfoActionFromOtherFile, dispatch,
+    ),
+  }
+}
+
+export default connect(mapStateToProps,
+  mapDispatchToProps)(basicLayout)

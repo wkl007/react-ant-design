@@ -4,6 +4,7 @@ import { HashRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import configureStore from './redux/store/configureStore'
 import registerServiceWorker from './registerServiceWorker'
+import 'moment/locale/zh-cn'
 
 import './index.css'
 import 'nprogress/nprogress.css'
