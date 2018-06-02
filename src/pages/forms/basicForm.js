@@ -73,7 +73,7 @@ class BasicForm extends Component {
                       message: '请输入标题',
                     },
                   ],
-                })(<Input placeholder="给目标起个名字"/>)
+                })(<Input autoComplete="off" placeholder="给目标起个名字"/>)
               }
             </FormItem>
             <FormItem {...formItemLayout} label="起止时间">
@@ -141,7 +141,7 @@ class BasicForm extends Component {
             >
               {
                 getFieldDecorator('client')(
-                  <Input placeholder="请描述你服务的客户，内部客户直接 @姓名／工号"/>,
+                  <Input autoComplete="off" placeholder="请描述你服务的客户，内部客户直接 @姓名／工号"/>,
                 )
               }
             </FormItem>
@@ -155,7 +155,7 @@ class BasicForm extends Component {
             >
               {
                 getFieldDecorator('invites')(
-                  <Input placeholder="请直接 @姓名／工号，最多可邀请 5 人"/>,
+                  <Input autoComplete="off" placeholder="请直接 @姓名／工号，最多可邀请 5 人"/>,
                 )
               }
             </FormItem>

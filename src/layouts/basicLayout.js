@@ -260,7 +260,7 @@ class basicLayout extends Component {
         cancelText: '取消',
         onOk: () => {
           console.log('退出登录', this)
-          this.props.userInfoActions.rm(deleteUserInfo)
+          this.props.userInfoActions.rm(deleteUserInfo())
         },
         onCancel: () => {},
       })

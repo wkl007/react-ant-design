@@ -172,7 +172,7 @@ class Register extends Component {
                   message: '邮箱地址格式错误！',
                 },
               ],
-            })(<Input size="large" placeholder="邮箱"/>)}
+            })(<Input size="large" autoComplete="off" placeholder="邮箱"/>)}
           </FormItem>
           <FormItem help={help}>
             <Popover
@@ -196,7 +196,7 @@ class Register extends Component {
                       validator: this.checkPassword,
                     },
                   ],
-                })(<Input size="large" type="password"
+                })(<Input size="large" autoComplete="off" type="password"
                           placeholder="至少6位密码，区分大小写"/>)
               }
             </Popover>
@@ -213,7 +213,7 @@ class Register extends Component {
                     validator: this.checkConfirm,
                   },
                 ],
-              })(<Input size="large" type="password" placeholder="确认密码"/>)
+              })(<Input size="large" type="password" autoComplete="off" placeholder="确认密码"/>)
             }
           </FormItem>
           <FormItem>
@@ -239,7 +239,7 @@ class Register extends Component {
                       message: '手机号格式错误！',
                     },
                   ],
-                })(<Input size="large" style={{width: '80%'}}
+                })(<Input size="large" autoComplete="off" style={{width: '80%'}}
                           placeholder="11位手机号"/>)
               }
             </InputGroup>
@@ -255,7 +255,7 @@ class Register extends Component {
                         message: '请输入验证码！',
                       },
                     ],
-                  })(<Input size="large" placeholder="验证码"/>)
+                  })(<Input size="large" autoComplete="off" placeholder="验证码"/>)
                 }
               </Col>
               <Col span={8}>

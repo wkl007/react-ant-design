@@ -152,7 +152,7 @@ class AdvancedForm extends Component {
                   {
                     getFieldDecorator('name', {
                       rules: [{required: true, message: '请输入仓库名称'}],
-                    })(<Input placeholder="请输入仓库名称"/>)
+                    })(<Input autoComplete="off" placeholder="请输入仓库名称"/>)
                   }
                 </Form.Item>
               </Col>
@@ -163,6 +163,7 @@ class AdvancedForm extends Component {
                     getFieldDecorator('url', {
                       rules: [{required: true, message: '请选择'}],
                     })(<Input
+                      autoComplete="off"
                       style={{width: '100%'}}
                       addonBefore="http://"
                       addonAfter=".com"
@@ -240,7 +241,7 @@ class AdvancedForm extends Component {
                   {
                     getFieldDecorator('name2', {
                       rules: [{required: true, message: '请输入'}],
-                    })(<Input placeholder="请输入"/>)
+                    })(<Input autoComplete="off" placeholder="请输入"/>)
                   }
                 </Form.Item>
               </Col>
@@ -251,6 +252,7 @@ class AdvancedForm extends Component {
                     getFieldDecorator('url2', {
                       rules: [{required: true, message: '请选择'}],
                     })(<Input
+                      autoComplete="off"
                       style={{width: '100%'}}
                       addonBefore="http://"
                       addonAfter=".com"

@@ -126,6 +126,7 @@ class TableForm extends PureComponent {
           if (record.editable) {
             return (
               <Input
+                autoComplete="off"
                 value={text}
                 autoFocus
                 onChange={e => this.handleFieldChange(e, 'name', record.key)}
@@ -146,6 +147,7 @@ class TableForm extends PureComponent {
           if (record.editable) {
             return (
               <Input
+                autoComplete="off"
                 value={text}
                 onChange={e => this.handleFieldChange(e, 'workId', record.key)}
                 onKeyPress={e => this.handleKeyPress(e, record.key)}
@@ -165,6 +167,7 @@ class TableForm extends PureComponent {
           if (record.editable) {
             return (
               <Input
+                autoComplete="off"
                 value={text}
                 onChange={e => this.handleFieldChange(e, 'department',
                   record.key)}

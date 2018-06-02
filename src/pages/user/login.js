@@ -109,15 +109,15 @@ class LoginPage extends Component {
               this.state.notice &&
               this.renderMessage(notice)
             }
-            <UserName name="username" placeholder="admin"
+            <UserName name="username" autoComplete="off" placeholder="admin"
                       rules={rulesOption.username}/>
-            <Password name="password" placeholder="888888"
+            <Password name="password" autoComplete="off" placeholder="888888"
                       rules={rulesOption.password}/>
           </Tab>
           <Tab key="mobile" tab="手机号登录">
-            <Mobile name="mobile" placeholder="手机号" maxLength={11}
+            <Mobile name="mobile" autoComplete="off" placeholder="手机号" maxLength={11}
                     rules={rulesOption.mobile}/>
-            <Captcha name="captcha" placeholder="验证码" maxLength={6}
+            <Captcha name="captcha" autoComplete="off" placeholder="验证码" maxLength={6}
                      onGetCaptcha={this.onGetCaptcha}/>
           </Tab>
           <div>
