@@ -56,6 +56,7 @@ const tableData = [
   },
 ]
 
+@Form.create()
 class AdvancedForm extends Component {
   constructor (props) {
     super(props)
@@ -339,7 +340,5 @@ class AdvancedForm extends Component {
     )
   }
 }
-
-AdvancedForm = Form.create()(AdvancedForm)
 
 export default AdvancedForm

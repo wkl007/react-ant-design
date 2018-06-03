@@ -14,6 +14,7 @@ const formItemLayout = {
   },
 }
 
+@Form.create()
 class Step1 extends Component {
   render () {
     let {form, history} = this.props
@@ -125,7 +126,5 @@ class Step1 extends Component {
     )
   }
 }
-
-Step1 = Form.create()(Step1)
 
 export default Step1

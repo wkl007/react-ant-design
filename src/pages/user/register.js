@@ -21,6 +21,7 @@ const passwordProgressMap = {
   poor: 'exception',
 }
 
+@Form.create()
 class Register extends Component {
   constructor (props) {
     super(props)
@@ -283,7 +284,5 @@ class Register extends Component {
     )
   }
 }
-
-Register = Form.create()(Register)
 
 export default Register

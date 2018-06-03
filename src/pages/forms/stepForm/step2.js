@@ -14,6 +14,7 @@ const formItemLayout = {
   },
 }
 
+@Form.create()
 class Step2 extends Component {
   constructor (props) {
     super(props)
@@ -109,7 +110,5 @@ class Step2 extends Component {
     )
   }
 }
-
-Step2 = Form.create()(Step2)
 
 export default Step2

@@ -20,6 +20,7 @@ const {Option} = Select
 const {RangePicker} = DatePicker
 const {TextArea} = Input
 
+@Form.create()
 class BasicForm extends Component {
   constructor (props) {
     super(props)
@@ -224,7 +225,5 @@ class BasicForm extends Component {
     )
   }
 }
-
-BasicForm = Form.create()(BasicForm)
 
 export default BasicForm
