@@ -720,6 +720,13 @@ class TableList extends Component {
     })
   }
 
+  //添加
+  handleAdd = fieldsValue => {
+    console.log(fieldsValue)
+    message.success('添加成功')
+    this.handleModalVisible()
+  }
+
   //选中
   handleSelectRows = rows => {
     this.setState({
@@ -859,6 +866,7 @@ class TableList extends Component {
             />
           </div>
         </Card>
+        <CreateForm {...parentMethods} modalVisible={modalVisible}/>
       </PageHeaderLayout>
     )
   }
