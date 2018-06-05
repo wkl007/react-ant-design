@@ -16,6 +16,7 @@ import SiderMenu from '../components/SiderMenu'
 import PropTypes from 'prop-types'
 import { getMenuData } from '../router/menu'
 import { getRoutes } from '../utils/utils'
+import NotFound from '../pages/exception/404'
 
 import logo from '../assets/images/logo.svg'
 
@@ -250,8 +251,10 @@ class basicLayout extends Component {
 
   //Dropdown menu菜单点击事件
   handleMenuClick = ({key}) => {
+    let {history} = this.props
     if (key === 'triggerError') {
       console.log('触发报错')
+      history.push('/exception/trigger')
     } else if (key === 'logout') {
 
       confirm({
@@ -332,6 +335,7 @@ class basicLayout extends Component {
                 })
               }
               <Redirect exact from="/" to={bashRedirect}/>
+              <Route render={NotFound}/>
             </Switch>
           </Content>
           <Footer style={{padding: 0}}>

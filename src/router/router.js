@@ -27,6 +27,7 @@ import Error from '../pages/result/error'
 import Three from '../pages/exception/403'
 import Four from '../pages/exception/404'
 import Five from '../pages/exception/500'
+import Trigger from '../pages/exception/trigger'
 
 export const getRouterData = () => {
   const routerConfig = {
@@ -126,7 +127,10 @@ export const getRouterData = () => {
       name: '500',
       component: Five,
     },
-
+    '/exception/trigger': {
+      name: 'trigger',
+      component: Trigger,
+    },
     '/user': {
       name: '账户',
       component: UserLayout,

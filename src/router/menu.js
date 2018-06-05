@@ -17,6 +17,8 @@ const menuData = [
       {
         name: '工作台',
         path: 'workplace',
+        //hideInBreadcrumb: true,
+        //hideInMenu: true, 菜单中隐藏
       },
     ],
   },
