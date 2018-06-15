@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as userInfoActionFromOtherFile from '../../redux/actions/userinfo'
-import { Checkbox, Alert, Icon, Button } from 'antd'
+import { Checkbox, Alert, Icon } from 'antd'
 import Login from 'ant-design-pro/lib/Login'
 import { saveUserinfo } from '../../utils/catche'
 

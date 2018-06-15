@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Redirect, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import { Input } from 'antd'
 import PageHeaderLayout from '../../layouts/pageHeaderLayout'
 import { getRouterData } from '../../router/router'

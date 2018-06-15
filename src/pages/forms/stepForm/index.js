@@ -11,11 +11,6 @@ import styles from '../style.less'
 const {Step} = Steps
 
 class StepForm extends Component {
-  constructor (props) {
-    super(props)
-
-  }
-
   getCurrentStep = () => {
     let {location} = this.props
     let {pathname} = location

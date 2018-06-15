@@ -19,8 +19,6 @@ import styles from './articles.less'
 const {Option} = Select
 const FormItem = Form.Item
 
-const pageSize = 5
-
 const listData = {
   list: [
     {

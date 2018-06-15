@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react'
-import { connect } from 'react-redux'
 import numeral from 'numeral'
 import { getTimeDistance } from '../../utils/utils'
 import {
