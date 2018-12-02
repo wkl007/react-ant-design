@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
+import classNames from 'classnames'
 import { Row, Col, Card, List, Avatar } from 'antd'
 import { Radar } from 'ant-design-pro/lib/Charts'
 import EditableLinkGroup from '../../components/EditableLinkGroup'
@@ -257,7 +258,7 @@ class Workplace extends Component {
             avatar={<Avatar src={item.user.avatar}/>}
             title={
               <span>
-                <a className={styles.username}>{item.user.name}</a>
+                <span className={classNames(styles.username,'link-button')}>{item.user.name}</span>
                 &nbsp;
                 <span className={styles.event}>{events}</span>
               </span>

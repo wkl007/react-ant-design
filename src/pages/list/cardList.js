@@ -299,21 +299,21 @@ class CardList extends Component {
           提供跨越设计与开发的体验解决方案。
         </p>
         <div className={styles.contentLink}>
-          <a>
+          <span className='link-button'>
             <img alt=""
                  src="https://gw.alipayobjects.com/zos/rmsportal/MjEImQtenlyueSmVEfUD.svg"/>{' '}
             快速开始
-          </a>
-          <a>
+          </span>
+          <span className='link-button'>
             <img alt=""
                  src="https://gw.alipayobjects.com/zos/rmsportal/NbuDUAuBlIApFuDvWiND.svg"/>{' '}
             产品简介
-          </a>
-          <a>
+          </span>
+          <span className='link-button'>
             <img alt=""
                  src="https://gw.alipayobjects.com/zos/rmsportal/ohOEPSYdDTNnyMbGuyLb.svg"/>{' '}
             产品文档
-          </a>
+          </span>
         </div>
       </div>
     )
@@ -338,12 +338,12 @@ class CardList extends Component {
               <List.Item key={item.id}>
                 <Card hoverable
                       className={styles.card}
-                      actions={[<a>操作一</a>, <a>操作二</a>]}
+                      actions={[<span className='link-button'>操作一</span>, <span className='link-button'>操作二</span>]}
                 >
                   <Card.Meta
                     avatar={<img src={item.avatar} className={styles.cardAvatar}
                                  alt=""/>}
-                    title={<a href="javascript:;">{item.title}</a>}
+                    title={<span className='link-button'>{item.title}</span>}
                     description={
                       <Ellipsis tooltip className={styles.item} lines={3}>
                         {item.description}

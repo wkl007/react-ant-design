@@ -162,7 +162,7 @@ class BasicProfile extends Component {
         key: 'id',
         render: (text, row, index) => {
           if (index < basicGoods.length) {
-            return <a href="javascript:;">{text}</a>
+            return <span className='link-button'>{text}</span>
           }
           return {
             children: <span style={{fontWeight: 600}}>总计</span>,

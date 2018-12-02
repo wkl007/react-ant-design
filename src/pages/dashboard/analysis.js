@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import numeral from 'numeral'
+import classNames from 'classnames'
 import { getTimeDistance } from '../../utils/utils'
 import {
   Row,
@@ -519,22 +520,22 @@ class Analysis extends Component {
     const salesExtra = (
       <div className={styles.salesExtraWrap}>
         <div className={styles.salesExtra}>
-          <a className={this.isActive('today')}
+          <span className={classNames(this.isActive('today'),'link-button')}
              onClick={() => this.selectDate('today')}>
             今日
-          </a>
-          <a className={this.isActive('week')}
+          </span>
+          <span className={classNames(this.isActive('week'),'link-button')}
              onClick={() => this.selectDate('week')}>
             本周
-          </a>
-          <a className={this.isActive('month')}
+          </span>
+          <span className={classNames(this.isActive('month'),'link-button')}
              onClick={() => this.selectDate('month')}>
             本月
-          </a>
-          <a className={this.isActive('year')}
+          </span>
+          <span className={classNames(this.isActive('year'),'link-button')}
              onClick={() => this.selectDate('year')}>
             全年
-          </a>
+          </span>
         </div>
         <RangePicker
           value={rangePickerValue}

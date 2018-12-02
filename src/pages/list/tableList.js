@@ -589,9 +589,9 @@ class TableList extends Component {
                 <Button style={{marginLeft: 8}} onClick={this.handleFormReset}>
                   重置
                 </Button>
-                <a style={{marginLeft: 8}} onClick={this.toggleForm}>
+                <span className='link-button' style={{marginLeft: 8}} onClick={this.toggleForm}>
                   展开 <Icon type="down"/>
-                </a>
+                </span>
             </span>
           </Col>
         </Row>
@@ -665,9 +665,9 @@ class TableList extends Component {
             <Button style={{marginLeft: 8}} onClick={this.handleFormReset}>
               重置
             </Button>
-            <a style={{marginLeft: 8}} onClick={this.toggleForm}>
+            <span className='link-button' style={{marginLeft: 8}} onClick={this.toggleForm}>
               收起 <Icon type="up"/>
-            </a>
+            </span>
           </span>
         </div>
       </Form>
@@ -815,9 +815,9 @@ class TableList extends Component {
         title: '操作',
         render: () => (
           <Fragment>
-            <a href="javascript:;">配置</a>
+            <span className='link-button'>配置</span>
             <Divider type="vertical"/>
-            <a href="javascript:;">订阅预报</a>
+            <span className='link-button'>订阅预报</span>
           </Fragment>
         ),
       },

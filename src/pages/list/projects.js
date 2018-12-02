@@ -320,7 +320,7 @@ class Projects extends Component {
               cover={<img src={item.cover} alt={item.title} height={154}/>}
             >
               <Card.Meta
-                title={<a href="javascript:;">{item.title}</a>}
+                title={<span className='link-button'>{item.title}</span>}
                 description={<Ellipsis lines={2}
                                        tooltip>{item.subDescription}</Ellipsis>}
               >

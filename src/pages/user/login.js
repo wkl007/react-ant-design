@@ -123,7 +123,7 @@ class LoginPage extends Component {
           <div>
             <Checkbox checked={autoLogin}
                       onChange={this.changeAutoLogin}>自动登录</Checkbox>
-            <a href="javascript:;" style={{float: 'right'}}>忘记密码</a>
+            <span className='link-button' style={{float: 'right'}}>忘记密码</span>
           </div>
           <Submit loading={submitting}>登录</Submit>
           <div className={styles.other}>

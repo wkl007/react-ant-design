@@ -232,7 +232,7 @@ class BasicList extends Component {
       },
       onShowSizeChange: (current, size) => {
         console.log(current, size)
-        paginationProps.pageSize
+        // paginationProps.pageSize
         this.setState({
           pageSize: size,
         })
@@ -262,16 +262,16 @@ class BasicList extends Component {
     let menu = (
       <Menu>
         <Menu.Item>
-          <a>详情</a>
+          <span className='link-button'>详情</span>
         </Menu.Item>
         <Menu.Item>
-          <a>删除</a>
+          <span className='link-button'>删除</span>
         </Menu.Item>
       </Menu>
     )
     let MoreBtn = () => (
       <Dropdown overlay={menu}>
-        <a>更多 <Icon type="down"/></a>
+        <span className='link-button'>更多 <Icon type="down"/></span>
       </Dropdown>
     )
     return (
@@ -309,7 +309,7 @@ class BasicList extends Component {
               pagination={paginationProps}
               dataSource={list}
               renderItem={item => (
-                <List.Item actions={[<a>编辑</a>, <MoreBtn/>]}>
+                <List.Item actions={[<span className='link-button'>编辑</span>, <MoreBtn/>]}>
                   <List.Item.Meta
                     avatar={<Avatar src={item.logo} shape="square"
                                     size="large"/>}

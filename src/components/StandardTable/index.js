@@ -78,8 +78,9 @@ class StandardTable extends PureComponent {
           <Alert
             message={
               <Fragment>
-                已选择 <a
-                style={{fontWeight: 600}}>{selectedRowKeys.length}</a>项&nbsp;&nbsp;
+                已选择 <span
+                className='link-button'
+                style={{fontWeight: 600}}>{selectedRowKeys.length}</span> 项&nbsp;&nbsp;
                 {
                   needTotalList.map(item => (
                     <span style={{marginLeft: 8}} key={item.dataIndex}>
@@ -90,10 +91,12 @@ class StandardTable extends PureComponent {
                     </span>
                   ))
                 }
-                <a onClick={this.cleanSelectedKeys}
-                   style={{marginLeft: 24}}>
+                <span
+                  className='link-button'
+                  onClick={this.cleanSelectedKeys}
+                  style={{marginLeft: 24}}>
                   清空
-                </a>
+                </span>
               </Fragment>
             }
             type="info"

@@ -7,11 +7,11 @@ import styles from './registerResult.less'
 const qs = require('qs')
 const actions = (
   <div className={styles.actions}>
-    <a href="javascript:;">
+    <span className='link-button'>
       <Button size="large" type="primary">
         产看邮箱
       </Button>
-    </a>
+    </span>
     <Link to="/">
       <Button size="large">返回首页</Button>
     </Link>

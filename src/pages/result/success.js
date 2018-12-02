@@ -27,7 +27,7 @@ const desc2 = (
       周毛毛<Icon type="dingding-o" style={{color: '#00A0E9', marginLeft: 8}}/>
     </div>
     <div>
-      <a href="">催一下</a>
+      <span className='link-button'>催一下</span>
     </div>
   </div>
 )

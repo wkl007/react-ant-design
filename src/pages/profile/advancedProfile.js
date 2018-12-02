@@ -70,7 +70,7 @@ const description = (
     <Description term="订购产品">XX 服务</Description>
     <Description term="创建时间">2017-07-07</Description>
     <Description term="关联单据">
-      <a href="">12421</a>
+      <span className='link-button'>12421</span>
     </Description>
     <Description term="生效日期">2017-07-07 ~ 2017-08-08</Description>
     <Description term="备注">请于两个工作日内确认</Description>
@@ -105,7 +105,7 @@ const desc2 = (
       <Icon type="dingding-o" style={{color: '#00A0E9', marginLeft: 8}}/>
     </Fragment>
     <div>
-      <a href="javascript:;">催一下</a>
+      <span className='link-button'>催一下</span>
     </div>
   </div>
 )

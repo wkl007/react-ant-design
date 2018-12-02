@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import moment from 'moment'
+import classNames from 'classnames'
 import {
   Form,
   Card,
@@ -790,9 +791,9 @@ class Articles extends Component {
                         </Select>,
                       )
                     }
-                    <a className={styles.selfTrigger} onClick={this.setOwner}>
+                    <span className={classNames(styles.selfTrigger,'link-button')} onClick={this.setOwner}>
                       只看自己的
-                    </a>
+                    </span>
                   </FormItem>
                 </Col>
               </Row>
