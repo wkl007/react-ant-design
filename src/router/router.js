@@ -29,6 +29,9 @@ import Four from '../pages/exception/404'
 import Five from '../pages/exception/500'
 import Trigger from '../pages/exception/trigger'
 
+import Center from '../pages/account/center/center'
+import Info from '../pages/account/settings/info'
+
 export const getRouterData = () => {
   const routerConfig = {
     '/': {
@@ -131,6 +134,14 @@ export const getRouterData = () => {
       name: 'trigger',
       component: Trigger,
     },
+    '/account/center': {
+      name: '个人中心',
+      component: Center,
+    },
+    '/account/settings': {
+      name: '个人设置',
+      component: Info,
+    },
     '/user': {
       name: '账户',
       component: UserLayout,
@@ -146,7 +157,7 @@ export const getRouterData = () => {
     '/user/register-result': {
       name: '注册结果',
       component: RegisterResult,
-    },
+    }
   }
   return routerConfig
 }

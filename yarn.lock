@@ -6303,7 +6303,7 @@ nwsapi@^2.0.7, nwsapi@^2.0.9:
 
 nzh@^1.0.3:
   version "1.0.3"
-  resolved "https://registry.yarnpkg.com/nzh/-/nzh-1.0.3.tgz#fb0d1b5a78c6f6a2912fc4c4af233119060392ec"
+  resolved "http://registry.npm.taobao.org/nzh/download/nzh-1.0.3.tgz#fb0d1b5a78c6f6a2912fc4c4af233119060392ec"
 
 oauth-sign@~0.9.0:
   version "0.9.0"

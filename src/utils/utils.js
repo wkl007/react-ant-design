@@ -1,4 +1,7 @@
+import React from 'react';
 import moment from 'moment'
+import nzh from 'nzh/cn'
+import { parse, stringify } from 'qs'
 
 export function fixedZero (val) {
   return val * 1 < 10 ? `0${val}` : val
@@ -41,7 +44,8 @@ export function getTimeDistance (type) {
 
     return [
       moment(`${year}-${fixedZero(month + 1)}-01 00:00:00`),
-      moment(moment(`${nextYear}-${fixedZero(nextMonth + 1)}-01 00:00:00`).valueOf() - 1000),
+      moment(moment(`${nextYear}-${fixedZero(nextMonth + 1)}-01 00:00:00`)
+        .valueOf() - 1000),
     ]
   }
 
@@ -71,27 +75,7 @@ export function getPlainNode (nodeList, parentPath = '') {
 }
 
 export function digitUppercase (n) {
-  const fraction = ['角', '分']
-  const digit = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖']
-  const unit = [['元', '万', '亿'], ['', '拾', '佰', '仟']]
-  let num = Math.abs(n)
-  let s = ''
-  fraction.forEach((item, index) => {
-    s += (digit[Math.floor(num * 10 * 10 ** index) % 10] + item).replace(/零./,
-      '')
-  })
-  s = s || '整'
-  num = Math.floor(num)
-  for (let i = 0; i < unit[0].length && num > 0; i += 1) {
-    let p = ''
-    for (let j = 0; j < unit[1].length && num > 0; j += 1) {
-      p = digit[num % 10] + unit[1][j] + p
-      num = Math.floor(num / 10)
-    }
-    s = p.replace(/(零.)*零$/, '').replace(/^$/, '零') + unit[0][i] + s
-  }
-
-  return s.replace(/(零.)*零元/, '元').replace(/(零.)+/g, '零').replace(/^整$/, '零元整')
+  return nzh.toMoney(n)
 }
 
 function getRelation (str1, str2) {
@@ -112,11 +96,10 @@ function getRenderArr (routes) {
   let renderArr = []
   renderArr.push(routes[0])
   for (let i = 1; i < routes.length; i += 1) {
-    let isAdd = false
-    // 是否包含
-    isAdd = renderArr.every(item => getRelation(item, routes[i]) === 3)
     // 去重
     renderArr = renderArr.filter(item => getRelation(item, routes[i]) !== 1)
+    // 是否包含
+    const isAdd = renderArr.every(item => getRelation(item, routes[i]) === 3)
     if (isAdd) {
       renderArr.push(routes[i])
     }
@@ -152,8 +135,20 @@ export function getRoutes (path, routerData) {
   return renderRoutes
 }
 
+export function getPageQuery () {
+  return parse(window.location.href.split('?')[1])
+}
+
+export function getQueryPath (path = '', query = {}) {
+  const search = stringify(query)
+  if (search.length) {
+    return `${path}?${search}`
+  }
+  return path
+}
+
 /* eslint no-useless-escape:0 */
-const reg = /(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)$/g
+const reg = /(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(?::\d+)?|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)$/
 
 export function isUrl (path) {
   return reg.test(path)
@@ -165,4 +160,32 @@ export function urlToList (url) {
   return urllist.map((urlItem, index) => {
     return `/${urllist.slice(0, index + 1).join('/')}`
   })
+}
+
+export function formatWan(val) {
+  const v = val * 1;
+  if (!v || Number.isNaN(v)) return '';
+
+  let result = val;
+  if (val > 10000) {
+    result = Math.floor(val / 10000);
+    result = (
+      <span>
+        {result}
+        <span
+          style={{
+            position: 'relative',
+            top: -2,
+            fontSize: 14,
+            fontStyle: 'normal',
+            lineHeight: 20,
+            marginLeft: 2,
+          }}
+        >
+          万
+        </span>
+      </span>
+    );
+  }
+  return result;
 }

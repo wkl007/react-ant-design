@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as userInfoActionFromOtherFile from '../../redux/actions/userinfo'
 import { Checkbox, Alert, Icon } from 'antd'
-import Login from 'ant-design-pro/lib/Login'
+import { Login } from 'ant-design-pro'
 import { saveUserinfo } from '../../utils/catche'
 
 import styles from './login.less'
@@ -46,9 +46,16 @@ class LoginPage extends Component {
   }
 
   //验证码回调
-  onGetCaptcha = () => {
-    console.log(2222)
-  }
+  onGetCaptcha = () =>
+    new Promise((resolve, reject) => {
+      this.loginForm.validateFields(['mobile'], {}, (err, values) => {
+        if (err) {
+          reject(err)
+        } else {
+          console.log(values)
+        }
+      })
+    })
 
   //登录
   handleSubmit = (err, values) => {
@@ -63,8 +70,10 @@ class LoginPage extends Component {
         this.setState({
           submitting: true,
         })
-        this.props.userInfoActions.add(saveUserinfo(values.username))
-        console.log(values.username, values.password)
+        setTimeout(() => {
+          this.props.userInfoActions.add(saveUserinfo(values.username))
+          console.log(values.username, values.password)
+        }, 1000)
       }
     } else {
       if (!err) {
@@ -102,8 +111,14 @@ class LoginPage extends Component {
     }
     return (
       <div className={styles.main}>
-        <Login defaultActiveKey={type} onTabChange={this.onTabChange}
-               onSubmit={this.handleSubmit}>
+        <Login
+          defaultActiveKey={type}
+          onTabChange={this.onTabChange}
+          onSubmit={this.handleSubmit}
+          ref={form => {
+            this.loginForm = form
+          }}
+        >
           <Tab key="account" tab="账户密码登录">
             {
               this.state.notice &&
@@ -112,12 +127,19 @@ class LoginPage extends Component {
             <UserName name="username" autoComplete="off" placeholder="admin"
                       rules={rulesOption.username}/>
             <Password name="password" autoComplete="off" placeholder="888888"
-                      rules={rulesOption.password}/>
+                      rules={rulesOption.password}
+                      onPressEnter={
+                        () => this.loginForm.validateFields(
+                          this.handleSubmit)
+                      }
+            />
           </Tab>
           <Tab key="mobile" tab="手机号登录">
-            <Mobile name="mobile" autoComplete="off" placeholder="手机号" maxLength={11}
+            <Mobile name="mobile" autoComplete="off" placeholder="手机号"
+                    maxLength={11}
                     rules={rulesOption.mobile}/>
-            <Captcha name="captcha" autoComplete="off" placeholder="验证码" maxLength={6}
+            <Captcha name="captcha" autoComplete="off" placeholder="验证码"
+                     maxLength={6}
                      onGetCaptcha={this.onGetCaptcha}/>
           </Tab>
           <div>

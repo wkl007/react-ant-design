@@ -13,7 +13,7 @@ import {
   Dropdown,
   Menu,
 } from 'antd'
-import TagSelect from 'ant-design-pro/lib/TagSelect'
+import { TagSelect } from 'ant-design-pro'
 import StandardFormRow from '../../components/StandardFormRow'
 
 import styles from './applications.less'
@@ -297,21 +297,21 @@ const listData = {
 }
 
 const formatWan = val => {
-  const v = val * 1;
-  if (!v || isNaN(v)) return '';
+  const v = val * 1
+  if (!v || isNaN(v)) return ''
 
-  let result = val;
+  let result = val
   if (val > 10000) {
-    result = Math.floor(val / 10000);
+    result = Math.floor(val / 10000)
     result = (
       <span>
         {result}
         <em className={styles.wan}>万</em>
       </span>
-    );
+    )
   }
-  return result;
-};
+  return result
+}
 
 @Form.create()
 class Applications extends Component {
@@ -339,7 +339,7 @@ class Applications extends Component {
       },
     }
 
-    let CardInfo = ({ activeUser, newUser }) => (
+    let CardInfo = ({activeUser, newUser}) => (
       <div className={styles.cardInfo}>
         <div>
           <p>活跃用户</p>
@@ -350,27 +350,30 @@ class Applications extends Component {
           <p>{newUser}</p>
         </div>
       </div>
-    );
+    )
 
     let itemMenu = (
       <Menu>
         <Menu.Item>
-          <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
+          <a target="_blank" rel="noopener noreferrer"
+             href="http://www.alipay.com/">
             1st menu item
           </a>
         </Menu.Item>
         <Menu.Item>
-          <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
+          <a target="_blank" rel="noopener noreferrer"
+             href="http://www.taobao.com/">
             2nd menu item
           </a>
         </Menu.Item>
         <Menu.Item>
-          <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
+          <a target="_blank" rel="noopener noreferrer"
+             href="http://www.tmall.com/">
             3d menu item
           </a>
         </Menu.Item>
       </Menu>
-    );
+    )
 
     return (
       <div className={styles.filterCardList}>

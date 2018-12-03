@@ -12,6 +12,6 @@ const createStoreWithMiddleware = applyMiddleware(...middleware)(createStore)
 
 export default function configureStore (initialState) {
   const store = createStoreWithMiddleware(rootReducer, initialState,
-    window.devToolsExtension ? window.devToolsExtension() : undefined)
+    window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : undefined)
   return store
 }

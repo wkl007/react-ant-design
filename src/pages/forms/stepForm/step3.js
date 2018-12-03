@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Button, Row, Col } from 'antd'
-import Result from 'ant-design-pro/lib/Result'
+import { Result } from 'ant-design-pro'
 import styles from './styles.less'
 
 const qs = require('qs')

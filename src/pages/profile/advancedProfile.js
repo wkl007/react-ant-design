@@ -17,7 +17,7 @@ import {
   Tooltip,
   Divider,
 } from 'antd'
-import DescriptionList from 'ant-design-pro/lib/DescriptionList'
+import { DescriptionList } from 'ant-design-pro'
 import PageHeaderLayout from '../../layouts/pageHeaderLayout'
 
 import styles from './advancedProfile.less'

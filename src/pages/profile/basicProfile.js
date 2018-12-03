@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Card, Badge, Table, Divider } from 'antd'
-import DescriptionList from 'ant-design-pro/lib/DescriptionList'
+import { DescriptionList } from 'ant-design-pro'
 import PageHeaderLayout from '../../layouts/pageHeaderLayout'
 
 import styles from './basicProfile.less'

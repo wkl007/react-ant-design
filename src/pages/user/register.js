@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Input, Button, Select, Row, Col, Popover, Progress } from 'antd'
+import { stringify } from 'qs'
 import styles from './register.less'
 
-const qs = require('qs')
 const FormItem = Form.Item
 const {Option} = Select
 const InputGroup = Input.Group
@@ -126,7 +126,7 @@ class Register extends Component {
         if (!err) {
           history.push({
             pathname: '/user/register-result',
-            search: qs.stringify({
+            search: stringify({
               ...values,
               prefix: this.state.prefix,
             }),
@@ -214,7 +214,8 @@ class Register extends Component {
                     validator: this.checkConfirm,
                   },
                 ],
-              })(<Input size="large" type="password" autoComplete="off" placeholder="确认密码"/>)
+              })(<Input size="large" type="password" autoComplete="off"
+                        placeholder="确认密码"/>)
             }
           </FormItem>
           <FormItem>

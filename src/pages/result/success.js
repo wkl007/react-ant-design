@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Button, Row, Col, Icon, Steps, Card } from 'antd'
-import Result from 'ant-design-pro/lib/Result'
+import { Result } from 'ant-design-pro'
 import PageHeaderLayout from '../../layouts/pageHeaderLayout'
 
 const {Step} = Steps
@@ -58,9 +58,12 @@ const extra = (
         2016-12-12 ~ 2017-12-12
       </Col>
     </Row>
-    <Steps style={{marginLeft: -42, width: 'calc(100% + 84px)'}} progressDot current={1}>
-      <Step title={<span style={{fontSize: 14}}>创建项目</span>} description={desc1}/>
-      <Step title={<span style={{fontSize: 14}}>部门初审</span>} description={desc2}/>
+    <Steps style={{marginLeft: -42, width: 'calc(100% + 84px)'}} progressDot
+           current={1}>
+      <Step title={<span style={{fontSize: 14}}>创建项目</span>}
+            description={desc1}/>
+      <Step title={<span style={{fontSize: 14}}>部门初审</span>}
+            description={desc2}/>
       <Step title={<span style={{fontSize: 14}}>财务复核</span>}/>
       <Step title={<span style={{fontSize: 14}}>完成</span>}/>
     </Steps>

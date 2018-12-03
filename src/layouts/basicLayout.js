@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -9,9 +9,9 @@ import pathToRegexp from 'path-to-regexp'
 import { enquireScreen, unenquireScreen } from 'enquire-js'
 import { ContainerQuery } from 'react-container-query'
 import classNames from 'classnames'
-import { Layout, Icon, message, Modal } from 'antd'
+import { Layout, message, Modal } from 'antd'
 import GlobalHeader from '../components/GlobalHeader'
-import GlobalFooter from 'ant-design-pro/lib/GlobalFooter'
+import Footer from './footer'
 import SiderMenu from '../components/SiderMenu'
 import PropTypes from 'prop-types'
 import { getMenuData } from '../router/menu'
@@ -21,7 +21,7 @@ import NotFound from '../pages/exception/404'
 import logo from '../assets/images/logo.svg'
 
 const confirm = Modal.confirm
-const {Content, Header, Footer} = Layout
+const {Content, Header} = Layout
 const query = {
   'screen-xs': {
     maxWidth: 575,
@@ -233,6 +233,7 @@ class basicLayout extends Component {
       if (notice.type !== tabTitle) {
         newNotice.push(notice)
       }
+      return null
     })
     let data = Object.assign({}, currentUser, {notifyCount: newNotice.length})
     this.setState({
@@ -338,35 +339,7 @@ class basicLayout extends Component {
               <Route render={NotFound}/>
             </Switch>
           </Content>
-          <Footer style={{padding: 0}}>
-            <GlobalFooter
-              links={[
-                {
-                  key: 'Pro 首页',
-                  title: 'Pro 首页',
-                  href: 'http://pro.ant.design',
-                  blankTarget: true,
-                },
-                {
-                  key: 'github',
-                  title: <Icon type="github"/>,
-                  href: 'https://github.com/ant-design/ant-design-pro',
-                  blankTarget: true,
-                },
-                {
-                  key: 'Ant Design',
-                  title: 'Ant Design',
-                  href: 'http://ant.design',
-                  blankTarget: true,
-                },
-              ]}
-              copyright={
-                <Fragment>
-                  Copyright <Icon type="copyright"/> 2018 蚂蚁金服体验技术部出品
-                </Fragment>
-              }>
-            </GlobalFooter>
-          </Footer>
+          <Footer/>
         </Layout>
       </Layout>
     )

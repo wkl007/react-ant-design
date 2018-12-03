@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from 'antd'
-import Result from 'ant-design-pro/lib/Result'
+import {Result} from 'ant-design-pro'
 import styles from './registerResult.less'
 
 const qs = require('qs')

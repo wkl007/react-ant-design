@@ -17,7 +17,6 @@ import App from './App';
 //创建Redux的store对象
 const store = configureStore()
 
-
 ReactDOM.render(
   <Provider store={store}>
     <LocaleProvider locale={zhCN}>

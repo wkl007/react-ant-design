@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom'
 import moment from 'moment'
 import classNames from 'classnames'
 import { Row, Col, Card, List, Avatar } from 'antd'
-import { Radar } from 'ant-design-pro/lib/Charts'
+import { Charts } from 'ant-design-pro'
 import EditableLinkGroup from '../../components/EditableLinkGroup'
 import PageHeaderLayout from '../../layouts/pageHeaderLayout'
 
 import styles from './workplace.less'
+
+const {Radar} = Charts
 
 const links = [
   {
@@ -258,7 +260,8 @@ class Workplace extends Component {
             avatar={<Avatar src={item.user.avatar}/>}
             title={
               <span>
-                <span className={classNames(styles.username,'link-button')}>{item.user.name}</span>
+                <span className={classNames(styles.username,
+                  'link-button')}>{item.user.name}</span>
                 &nbsp;
                 <span className={styles.event}>{events}</span>
               </span>

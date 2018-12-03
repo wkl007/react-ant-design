@@ -11,7 +11,7 @@ import {
   Select,
   Popover,
 } from 'antd'
-import FooterToolbar from 'ant-design-pro/lib/FooterToolbar'
+import { FooterToolbar } from 'ant-design-pro'
 import PageHeaderLayout from '../../layouts/pageHeaderLayout'
 import TableForm from './tableForm'
 import Debounce from 'lodash-decorators/debounce'

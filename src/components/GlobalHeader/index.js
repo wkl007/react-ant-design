@@ -4,8 +4,7 @@ import moment from 'moment'
 import groupBy from 'lodash/groupBy'
 import Debounce from 'lodash-decorators/debounce'
 import { Menu, Icon, Spin, Tag, Dropdown, Avatar, Divider, Tooltip } from 'antd'
-import NoticeIcon from 'ant-design-pro/lib/NoticeIcon'
-import HeaderSearch from 'ant-design-pro/lib/HeaderSearch'
+import { NoticeIcon, HeaderSearch } from 'ant-design-pro'
 
 import styles from './index.less'
 

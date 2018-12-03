@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Card, Button, Icon, List } from 'antd'
-import Ellipsis from 'ant-design-pro/lib/Ellipsis'
+import { Ellipsis } from 'ant-design-pro'
 import PageHeaderLayout from '../../layouts/pageHeaderLayout'
 
 import styles from './cardList.less'
@@ -331,14 +331,16 @@ class CardList extends Component {
         <List
           rowKey="id"
           loading={loading}
-          grid={{ gutter: 24, lg: 3, md: 2, sm: 1, xs: 1 }}
+          grid={{gutter: 24, lg: 3, md: 2, sm: 1, xs: 1}}
           dataSource={['', ...list]}
           renderItem={item =>
             item ? (
               <List.Item key={item.id}>
                 <Card hoverable
                       className={styles.card}
-                      actions={[<span className='link-button'>操作一</span>, <span className='link-button'>操作二</span>]}
+                      actions={[
+                        <span className='link-button'>操作一</span>,
+                        <span className='link-button'>操作二</span>]}
                 >
                   <Card.Meta
                     avatar={<img src={item.avatar} className={styles.cardAvatar}

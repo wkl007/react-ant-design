@@ -15,7 +15,11 @@ import {
   Menu,
   Dropdown,
 } from 'antd'
-import {
+import { Trend, NumberInfo, Charts } from 'ant-design-pro'
+
+import styles from './analysis.less'
+
+const {
   ChartCard,
   yuan,
   MiniArea,
@@ -25,12 +29,7 @@ import {
   Bar,
   Pie,
   TimelineChart,
-} from 'ant-design-pro/lib/Charts'
-import Trend from 'ant-design-pro/lib/Trend'
-import NumberInfo from 'ant-design-pro/lib/NumberInfo'
-
-import styles from './analysis.less'
-
+} = Charts
 const {TabPane} = Tabs
 const {RangePicker} = DatePicker
 
@@ -520,20 +519,20 @@ class Analysis extends Component {
     const salesExtra = (
       <div className={styles.salesExtraWrap}>
         <div className={styles.salesExtra}>
-          <span className={classNames(this.isActive('today'),'link-button')}
-             onClick={() => this.selectDate('today')}>
+          <span className={classNames(this.isActive('today'), 'link-button')}
+                onClick={() => this.selectDate('today')}>
             今日
           </span>
-          <span className={classNames(this.isActive('week'),'link-button')}
-             onClick={() => this.selectDate('week')}>
+          <span className={classNames(this.isActive('week'), 'link-button')}
+                onClick={() => this.selectDate('week')}>
             本周
           </span>
-          <span className={classNames(this.isActive('month'),'link-button')}
-             onClick={() => this.selectDate('month')}>
+          <span className={classNames(this.isActive('month'), 'link-button')}
+                onClick={() => this.selectDate('month')}>
             本月
           </span>
-          <span className={classNames(this.isActive('year'),'link-button')}
-             onClick={() => this.selectDate('year')}>
+          <span className={classNames(this.isActive('year'), 'link-button')}
+                onClick={() => this.selectDate('year')}>
             全年
           </span>
         </div>
@@ -639,8 +638,12 @@ class Analysis extends Component {
                 </Tooltip>
               }
               total={() => <Yuan>126560</Yuan>}
-              footer={<Field label="日均销售额" value={`￥${numeral(12423).
-                format('0,0')}`}></Field>}
+              footer={
+                <Field
+                  label="日均销售额"
+                  value={`￥${numeral(12423).format('0,0')}`}
+                />
+              }
               contentHeight={46}
             >
               <Trend flag="up" style={{marginRight: 16}}>
@@ -661,8 +664,12 @@ class Analysis extends Component {
                 </Tooltip>
               }
               total={numeral(8846).format('0,0')}
-              footer={<Field label="日访问量" value={`￥${numeral(12334).
-                format('0,0')}`}></Field>}
+              footer={
+                <Field
+                  label="日访问量"
+                  value={`￥${numeral(12334).format('0,0')}`}
+                />
+              }
               contentHeight={46}
             >
               <MiniArea color="#975fe4" data={visitData}/>

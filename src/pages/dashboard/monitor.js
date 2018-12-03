@@ -1,12 +1,13 @@
 import React, { Component, Fragment } from 'react'
 import numeral from 'numeral'
 import { Row, Col, Card, Tooltip, Spin } from 'antd'
-import { Pie, WaterWave, Gauge, TagCloud } from 'ant-design-pro/lib/Charts'
-import NumberInfo from 'ant-design-pro/lib/NumberInfo'
+import { NumberInfo, Charts } from 'ant-design-pro'
 import CountDown from 'ant-design-pro/lib/CountDown'
 import ActiveChart from '../../components/ActiveChart'
 
 import styles from './monitor.less'
+
+const {Pie, WaterWave, Gauge, TagCloud} = Charts
 
 const monitor = {
   'tags': [
@@ -135,7 +136,7 @@ class Monitor extends Component {
     let {tags} = monitor
     return (
       loading
-        ? <div style={{textAlign:'center',marginTop:50}}>
+        ? <div style={{textAlign: 'center', marginTop: 50}}>
           <Spin size="large"/>
         </div>
         : <Fragment>

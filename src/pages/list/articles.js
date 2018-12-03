@@ -13,7 +13,7 @@ import {
   Col,
   Button,
 } from 'antd'
-import TagSelect from 'ant-design-pro/lib/TagSelect'
+import { TagSelect } from 'ant-design-pro'
 import StandardFormRow from '../../components/StandardFormRow'
 import styles from './articles.less'
 
@@ -649,11 +649,11 @@ class Articles extends Component {
     this.setState({
       loading: true,
     })
-    setTimeout(()=>{
+    setTimeout(() => {
       this.setState({
         loading: false,
       })
-    },1000)
+    }, 1000)
   }
 
   handleFormSubmit = (values) => {
@@ -791,7 +791,9 @@ class Articles extends Component {
                         </Select>,
                       )
                     }
-                    <span className={classNames(styles.selfTrigger,'link-button')} onClick={this.setOwner}>
+                    <span
+                      className={classNames(styles.selfTrigger, 'link-button')}
+                      onClick={this.setOwner}>
                       只看自己的
                     </span>
                   </FormItem>

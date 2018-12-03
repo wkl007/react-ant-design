@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Button, Icon, Card } from 'antd'
-import Result from 'ant-design-pro/lib/Result'
+import { Result } from 'ant-design-pro'
 import PageHeaderLayout from '../../layouts/pageHeaderLayout'
 
 const extra = (
