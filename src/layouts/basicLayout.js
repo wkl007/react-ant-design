@@ -13,7 +13,7 @@ import { Layout, message, Modal } from 'antd'
 import GlobalHeader from '../components/GlobalHeader'
 import Footer from './footer'
 import SiderMenu from '../components/SiderMenu'
-import PropTypes from 'prop-types'
+import MenuContext from './menuContext'
 import { getMenuData } from '../router/menu'
 import { getRoutes } from '../utils/utils'
 import NotFound from '../pages/exception/404'
@@ -183,12 +183,7 @@ class basicLayout extends Component {
     }
   }
 
-  static childContextTypes = {
-    location: PropTypes.object,
-    breadcrumbNameMap: PropTypes.object,
-  }
-
-  getChildContext () {
+  getContext () {
     let {routerData, location} = this.props
     return {
       location,
@@ -346,7 +341,11 @@ class basicLayout extends Component {
     return (
       <DocumentTitle title={this.getPageTitle()}>
         <ContainerQuery query={query}>
-          {params => <div className={classNames(params)}>{layout}</div>}
+          {params => (
+            <MenuContext.Provider value={this.getContext()}>
+              <div className={classNames(params)}>{layout}</div>
+            </MenuContext.Provider>
+          )}
         </ContainerQuery>
       </DocumentTitle>
     )
