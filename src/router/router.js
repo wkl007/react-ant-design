@@ -30,12 +30,19 @@ import Five from '../pages/exception/500'
 import Trigger from '../pages/exception/trigger'
 
 import Center from '../pages/account/center/center'
+import CenterArticles from '../pages/account/center/articles'
+import CenterApplications from '../pages/account/center/applications'
+import CenterProjects from '../pages/account/center/projects'
 import Info from '../pages/account/settings/info'
+import InfoBase from '../pages/account/settings/baseView'
+import InfoSecurity from '../pages/account/settings/securityView'
+import InfoBinding from '../pages/account/settings/bindingView'
+import InfoNotification from '../pages/account/settings/notification'
 
 export const getRouterData = () => {
   const routerConfig = {
     '/': {
-      name: '',
+      name: '首页',
       component: BasicLayout,
     },
     '/dashboard/analysis': {
@@ -138,9 +145,37 @@ export const getRouterData = () => {
       name: '个人中心',
       component: Center,
     },
+    '/account/center/articles': {
+      name: '个人中心',
+      component: CenterArticles,
+    },
+    '/account/center/applications': {
+      name: '个人中心',
+      component: CenterApplications,
+    },
+    '/account/center/projects': {
+      name: '个人中心',
+      component: CenterProjects,
+    },
     '/account/settings': {
       name: '个人设置',
       component: Info,
+    },
+    '/account/settings/base': {
+      name: '个人设置',
+      component: InfoBase,
+    },
+    '/account/settings/security': {
+      name: '个人设置',
+      component: InfoSecurity,
+    },
+    '/account/settings/binding': {
+      name: '个人设置',
+      component: InfoBinding,
+    },
+    '/account/settings/notification': {
+      name: '个人设置',
+      component: InfoNotification,
     },
     '/user': {
       name: '账户',
@@ -157,7 +192,7 @@ export const getRouterData = () => {
     '/user/register-result': {
       name: '注册结果',
       component: RegisterResult,
-    }
+    },
   }
   return routerConfig
 }

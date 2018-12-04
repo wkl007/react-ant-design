@@ -637,6 +637,7 @@ class Analysis extends Component {
                   <Icon type="info-circle-o"/>
                 </Tooltip>
               }
+              loading={loading}
               total={() => <Yuan>126560</Yuan>}
               footer={
                 <Field
@@ -663,6 +664,7 @@ class Analysis extends Component {
                   <Icon type="info-circle-o"/>
                 </Tooltip>
               }
+              loading={loading}
               total={numeral(8846).format('0,0')}
               footer={
                 <Field
@@ -684,6 +686,7 @@ class Analysis extends Component {
                   <Icon type="info-circle-o"/>
                 </Tooltip>
               }
+              loading={loading}
               total={numeral(6560).format('0,0')}
               footer={<Field label="转化率" value="60%"></Field>}
               contentHeight={46}
@@ -700,6 +703,7 @@ class Analysis extends Component {
                   <Icon type="info-circle-o"/>
                 </Tooltip>
               }
+              loading={loading}
               total="78%"
               footer={
                 <div style={{whiteSpace: 'nowrap', overflow: 'hidden'}}>

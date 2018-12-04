@@ -83,7 +83,7 @@ const listData = {
       'id': 'fake-list-2',
       'owner': '林东东',
       'title': 'Ant Design',
-      'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/dURIMkkrRFpPgTuzkwnB.png',
+      'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/iXjVmWVHbCJAyqvDxdtx.png',
       'cover': 'https://gw.alipayobjects.com/zos/rmsportal/uVZonEtjWwmUZPBQfycs.png',
       'status': 'normal',
       'percent': 78,

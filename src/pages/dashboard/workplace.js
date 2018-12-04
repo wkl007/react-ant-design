@@ -224,6 +224,7 @@ class Workplace extends Component {
       projectLoading: false,
       activitiesLoading: false,
       radarDataLoading: false,
+      currentUserLoading: false,
     }
   }
 
@@ -232,12 +233,14 @@ class Workplace extends Component {
       projectLoading: true,
       activitiesLoading: true,
       radarDataLoading: true,
+      currentUserLoading: true,
     })
     setTimeout(() => {
       this.setState({
         projectLoading: false,
         activitiesLoading: false,
         radarDataLoading: false,
+        currentUserLoading: false,
       })
     }, 500)
   }
@@ -278,7 +281,7 @@ class Workplace extends Component {
   }
 
   render () {
-    let {projectLoading, activitiesLoading, radarDataLoading} = this.state
+    let {projectLoading, activitiesLoading, radarDataLoading,currentUserLoading} = this.state
     let pageHeaderContent = (
       <div className={styles.pageHeaderContent}>
         <div className={styles.avatar}>
@@ -312,7 +315,7 @@ class Workplace extends Component {
       </div>
     )
     return (
-      <PageHeaderLayout content={pageHeaderContent} extraContent={extraContent}>
+      <PageHeaderLayout loading={currentUserLoading} content={pageHeaderContent} extraContent={extraContent}>
         <Row gutter={24}>
           <Col xl={16} lg={24} md={24} sm={24} xs={24}>
             <Card
