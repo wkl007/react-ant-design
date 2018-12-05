@@ -111,6 +111,21 @@ const menuData = [
     ],
   },
   {
+    name: '个人页',
+    icon: 'user',
+    path: 'account',
+    children: [
+      {
+        name: '个人中心',
+        path: 'center',
+      },
+      {
+        name: '个人设置',
+        path: 'settings',
+      },
+    ],
+  },
+  {
     name: '异常页',
     icon: 'warning',
     path: 'exception',
@@ -131,21 +146,6 @@ const menuData = [
         name: '触发异常',
         path: 'trigger',
         hideInMenu: true,
-      },
-    ],
-  },
-  {
-    name: '个人页',
-    icon: 'user',
-    path: 'account',
-    children: [
-      {
-        name: '个人中心',
-        path: 'center',
-      },
-      {
-        name: '个人设置',
-        path: 'settings',
       },
     ],
   },

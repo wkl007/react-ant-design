@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
 import groupBy from 'lodash/groupBy'
@@ -8,7 +8,7 @@ import { NoticeIcon, HeaderSearch } from 'ant-design-pro'
 
 import styles from './index.less'
 
-class GlobalHeader extends PureComponent {
+class GlobalHeader extends Component {
   componentWillUnmount () {
     this.triggerResizeEvent.cancel()
   }
@@ -58,6 +58,10 @@ class GlobalHeader extends PureComponent {
     event.initEvent('resize', true, false)
     window.dispatchEvent(event)
     console.log('监听窗口事件')
+  }
+
+  onClear = (tabTitle) => {
+    console.log(tabTitle)
   }
 
   render () {
