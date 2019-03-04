@@ -1,4 +1,4 @@
-import fetch from 'whatwg-fetch';
+import  'whatwg-fetch';
 import { notification } from 'antd';
 
 const codeMessage = {
@@ -42,7 +42,7 @@ function checkStatus(response) {
  */
 export default function request(url, options) {
   const defaultOptions = {
-    credentials: 'include',
+    // credentials: 'include',
   };
   const newOptions = { ...defaultOptions, ...options };
   if (newOptions.method === 'POST' || newOptions.method === 'PUT') {
