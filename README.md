@@ -8,6 +8,9 @@
 # install dependencies
 yarn
 
+#package dependencies
+yarn dll
+
 # serve with hot reload at localhost:3000
 yarn start
 

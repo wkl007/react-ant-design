@@ -14,7 +14,7 @@ class App extends Component {
   }
 
   render () {
-    let {userinfo} = this.props
+    let { userinfo } = this.props
     let routerData = getRouterData()
     let UserLayout = routerData['/user'].component
     let BasicLayout = routerData['/'].component
