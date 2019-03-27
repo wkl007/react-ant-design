@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import DrawerMenu from 'rc-drawer-menu'
+import DrawerMenu from 'rc-drawer'
 import SiderMenu from './SiderMenu'
 
-import 'rc-drawer-menu/assets/index.css'
+import 'rc-drawer/assets/index.css'
 
 class SiderMenuWrapper extends Component {
   render () {

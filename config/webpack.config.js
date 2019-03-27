@@ -50,28 +50,41 @@ function pathResolve (dir) {
   return path.resolve(__dirname, '..', dir)
 }
 
-const makePlugins = () => {
-  const plugins = []
-  const files = fs.readdirSync(pathResolve('./dll'))
+//检测文件或者文件夹存在
+function fsExistsSync (path) {
+  try {
+    fs.accessSync(path, fs.F_OK)
+  } catch (e) {
+    return false
+  }
+  return true
+}
 
-  files.forEach(file => {
-    if (/.*\.dll.js/.test(file)) {
-      plugins.push(
-        new AddAssetHtmlWebpackPlugin({
-          filepath: pathResolve(`./dll/${file}`),
-          publicPath: `${paths.servedPath}static/js`,
-          outputPath: 'static/js'
-        }),
-      )
-    }
-    if (/.*\.manifest.json/.test(file)) {
-      plugins.push(
-        new webpack.DllReferencePlugin({
-          manifest: pathResolve(`./dll/${file}`)
-        })
-      )
-    }
-  })
+const makePlugins = (publicPath) => {
+  const plugins = []
+  const hasDll = fsExistsSync('./dll')
+  if (hasDll) {
+    const files = fs.readdirSync(pathResolve('./dll'))
+    files.forEach(file => {
+      if (/.*\.dll.js/.test(file)) {
+        plugins.push(
+          new AddAssetHtmlWebpackPlugin({
+            filepath: pathResolve(`./dll/${file}`),
+            publicPath: `${publicPath}static/js`,
+            outputPath: 'static/js'
+          }),
+        )
+      }
+      if (/.*\.manifest.json/.test(file)) {
+        plugins.push(
+          new webpack.DllReferencePlugin({
+            manifest: pathResolve(`./dll/${file}`)
+          })
+        )
+      }
+    })
+  }
+
   return plugins
 }
 
@@ -738,7 +751,7 @@ module.exports = function (webpackEnv) {
         minRatio: 0.8
       }),
 
-    ].filter(Boolean).concat(makePlugins()),
+    ].filter(Boolean).concat(makePlugins(publicPath)),
     // Some libraries import Node modules but don't use them in the browser.
     // Tell Webpack to provide empty mocks for them so importing them works.
     node: {

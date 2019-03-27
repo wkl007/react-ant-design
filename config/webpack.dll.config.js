@@ -10,6 +10,14 @@ module.exports = {
   mode: 'production',
   entry: {
     vendor: [
+      'classnames',
+      'enquire-js',
+      'es6-promise',
+      'good-storage',
+      'nprogress',
+      'numeral',
+      'path-to-regexp',
+      'rc-drawer',
       'react',
       'react-container-query',
       'react-document-title',
@@ -18,13 +26,6 @@ module.exports = {
       'react-router-dom',
       'redux',
       'whatwg-fetch',
-      'classnames',
-      'enquire-js',
-      'es6-promise',
-      'good-storage',
-      'nprogress',
-      'numeral',
-      'path-to-regexp',
     ],
   },
   output: {
