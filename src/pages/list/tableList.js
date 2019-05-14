@@ -18,7 +18,7 @@ import {
   Badge,
   Divider,
 } from 'antd'
-import PageHeaderLayout from '../../layouts/pageHeaderLayout'
+import PageHeaderWrapper from '../../components/PageHeaderWrapper'
 import StandardTable from '../../components/StandardTable'
 
 import styles from './tableList.less'
@@ -833,7 +833,7 @@ class TableList extends Component {
       handleModalVisible: this.handleModalVisible,
     }
     return (
-      <PageHeaderLayout title="查询表格">
+      <PageHeaderWrapper title="查询表格">
         <Card bordered={false}>
           <div className={styles.tableList}>
             <div className={styles.tableListForm}>{this.renderForm()}</div>
@@ -867,7 +867,7 @@ class TableList extends Component {
           </div>
         </Card>
         <CreateForm {...parentMethods} modalVisible={modalVisible}/>
-      </PageHeaderLayout>
+      </PageHeaderWrapper>
     )
   }
 }

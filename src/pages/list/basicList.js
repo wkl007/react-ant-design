@@ -14,7 +14,7 @@ import {
   Menu,
   Avatar,
 } from 'antd'
-import PageHeaderLayout from '../../layouts/pageHeaderLayout'
+import PageHeaderWrapper from '../../components/PageHeaderWrapper'
 
 import styles from './basicList.less'
 
@@ -275,7 +275,7 @@ class BasicList extends Component {
       </Dropdown>
     )
     return (
-      <PageHeaderLayout>
+      <PageHeaderWrapper>
         <div className={styles.standardList}>
           <Card bordered={false}>
             <Row>
@@ -322,7 +322,7 @@ class BasicList extends Component {
             />
           </Card>
         </div>
-      </PageHeaderLayout>
+      </PageHeaderWrapper>
     )
   }
 }

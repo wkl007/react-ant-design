@@ -12,7 +12,7 @@ import {
   Popover,
 } from 'antd'
 import { FooterToolbar } from 'ant-design-pro'
-import PageHeaderLayout from '../../layouts/pageHeaderLayout'
+import PageHeaderWrapper from '../../components/PageHeaderWrapper'
 import TableForm from './tableForm'
 import Debounce from 'lodash-decorators/debounce'
 
@@ -140,7 +140,7 @@ class AdvancedForm extends Component {
       )
     }
     return (
-      <PageHeaderLayout
+      <PageHeaderWrapper
         title="高级表单"
         content="高级表单常见于一次性输入和提交大批量数据的场景。"
         wrapperClassName={styles.advancedForm}>
@@ -335,7 +335,7 @@ class AdvancedForm extends Component {
             提交
           </Button>
         </FooterToolbar>
-      </PageHeaderLayout>
+      </PageHeaderWrapper>
     )
   }
 }

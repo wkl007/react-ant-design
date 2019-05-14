@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Route, Redirect, Switch } from 'react-router-dom'
 import { Card, Steps } from 'antd'
-import PageHeaderLayout from '../../../layouts/pageHeaderLayout'
+import PageHeaderWrapper from '../../../components/PageHeaderWrapper'
 import NotFound from '../../exception/404'
 import { getRouterData } from '../../../router/router'
 import { getRoutes } from '../../../utils/utils'
@@ -33,7 +33,7 @@ class StepForm extends Component {
     let routes = getRoutes(match.path, routerData)
 
     return (
-      <PageHeaderLayout
+      <PageHeaderWrapper
         title="分步表单"
         tabActiveKey={location.pathname}
         content="将一个冗长或用户不熟悉的表单任务分成多个步骤，指导用户完成。"
@@ -62,7 +62,7 @@ class StepForm extends Component {
             <Route render={NotFound}/>
           </Switch>
         </Card>
-      </PageHeaderLayout>
+      </PageHeaderWrapper>
     )
   }
 }

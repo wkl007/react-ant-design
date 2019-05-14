@@ -5,11 +5,11 @@ import classNames from 'classnames'
 import { Row, Col, Card, List, Avatar } from 'antd'
 import { Charts } from 'ant-design-pro'
 import EditableLinkGroup from '../../components/EditableLinkGroup'
-import PageHeaderLayout from '../../layouts/pageHeaderLayout'
+import PageHeaderWrapper from '../../components/PageHeaderWrapper'
 
 import styles from './workplace.less'
 
-const {Radar} = Charts
+const { Radar } = Charts
 
 const links = [
   {
@@ -79,8 +79,8 @@ const activities = [
       'name': '曲丽丽',
       'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
     },
-    'group': {'name': '高逼格设计天团', 'link': 'http://github.com/'},
-    'project': {'name': '六月迭代', 'link': 'http://github.com/'},
+    'group': { 'name': '高逼格设计天团', 'link': 'http://github.com/' },
+    'project': { 'name': '六月迭代', 'link': 'http://github.com/' },
     'template': '在 @{group} 新建项目 @{project}',
   },
   {
@@ -90,8 +90,8 @@ const activities = [
       'name': '付小小',
       'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/cnrhVkzwxjPwAaCfPbdc.png',
     },
-    'group': {'name': '高逼格设计天团', 'link': 'http://github.com/'},
-    'project': {'name': '六月迭代', 'link': 'http://github.com/'},
+    'group': { 'name': '高逼格设计天团', 'link': 'http://github.com/' },
+    'project': { 'name': '六月迭代', 'link': 'http://github.com/' },
     'template': '在 @{group} 新建项目 @{project}',
   },
   {
@@ -101,8 +101,8 @@ const activities = [
       'name': '林东东',
       'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/gaOngJwsRYRaVAuXXcmB.png',
     },
-    'group': {'name': '中二少女团', 'link': 'http://github.com/'},
-    'project': {'name': '六月迭代', 'link': 'http://github.com/'},
+    'group': { 'name': '中二少女团', 'link': 'http://github.com/' },
+    'project': { 'name': '六月迭代', 'link': 'http://github.com/' },
     'template': '在 @{group} 新建项目 @{project}',
   },
   {
@@ -112,7 +112,7 @@ const activities = [
       'name': '周星星',
       'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/WhxKECPNujWoWEFNdnJE.png',
     },
-    'project': {'name': '5 月日常迭代', 'link': 'http://github.com/'},
+    'project': { 'name': '5 月日常迭代', 'link': 'http://github.com/' },
     'template': '将 @{project} 更新至已发布状态',
   },
   {
@@ -122,8 +122,8 @@ const activities = [
       'name': '朱偏右',
       'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ubnKSIfAJTxIgXOKlciN.png',
     },
-    'project': {'name': '工程效能', 'link': 'http://github.com/'},
-    'comment': {'name': '留言', 'link': 'http://github.com/'},
+    'project': { 'name': '工程效能', 'link': 'http://github.com/' },
+    'comment': { 'name': '留言', 'link': 'http://github.com/' },
     'template': '在 @{project} 发布了 @{comment}',
   },
   {
@@ -133,8 +133,8 @@ const activities = [
       'name': '乐哥',
       'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/jZUIxmJycoymBprLOUbT.png',
     },
-    'group': {'name': '程序员日常', 'link': 'http://github.com/'},
-    'project': {'name': '品牌迭代', 'link': 'http://github.com/'},
+    'group': { 'name': '程序员日常', 'link': 'http://github.com/' },
+    'project': { 'name': '品牌迭代', 'link': 'http://github.com/' },
     'template': '在 @{group} 新建项目 @{project}',
   }]
 
@@ -201,21 +201,21 @@ const notice = [
   }]
 
 const radarData = [
-  {'name': '个人', 'label': '引用', 'value': 10},
-  {'name': '个人', 'label': '口碑', 'value': 8},
-  {'name': '个人', 'label': '产量', 'value': 4},
-  {'name': '个人', 'label': '贡献', 'value': 5},
-  {'name': '个人', 'label': '热度', 'value': 7},
-  {'name': '团队', 'label': '引用', 'value': 3},
-  {'name': '团队', 'label': '口碑', 'value': 9},
-  {'name': '团队', 'label': '产量', 'value': 6},
-  {'name': '团队', 'label': '贡献', 'value': 3},
-  {'name': '团队', 'label': '热度', 'value': 1},
-  {'name': '部门', 'label': '引用', 'value': 4},
-  {'name': '部门', 'label': '口碑', 'value': 1},
-  {'name': '部门', 'label': '产量', 'value': 6},
-  {'name': '部门', 'label': '贡献', 'value': 5},
-  {'name': '部门', 'label': '热度', 'value': 7}]
+  { 'name': '个人', 'label': '引用', 'value': 10 },
+  { 'name': '个人', 'label': '口碑', 'value': 8 },
+  { 'name': '个人', 'label': '产量', 'value': 4 },
+  { 'name': '个人', 'label': '贡献', 'value': 5 },
+  { 'name': '个人', 'label': '热度', 'value': 7 },
+  { 'name': '团队', 'label': '引用', 'value': 3 },
+  { 'name': '团队', 'label': '口碑', 'value': 9 },
+  { 'name': '团队', 'label': '产量', 'value': 6 },
+  { 'name': '团队', 'label': '贡献', 'value': 3 },
+  { 'name': '团队', 'label': '热度', 'value': 1 },
+  { 'name': '部门', 'label': '引用', 'value': 4 },
+  { 'name': '部门', 'label': '口碑', 'value': 1 },
+  { 'name': '部门', 'label': '产量', 'value': 6 },
+  { 'name': '部门', 'label': '贡献', 'value': 5 },
+  { 'name': '部门', 'label': '热度', 'value': 7 }]
 
 class Workplace extends Component {
   constructor (props) {
@@ -281,7 +281,7 @@ class Workplace extends Component {
   }
 
   render () {
-    let {projectLoading, activitiesLoading, radarDataLoading,currentUserLoading} = this.state
+    let { projectLoading, activitiesLoading, radarDataLoading, currentUserLoading } = this.state
     let pageHeaderContent = (
       <div className={styles.pageHeaderContent}>
         <div className={styles.avatar}>
@@ -315,22 +315,22 @@ class Workplace extends Component {
       </div>
     )
     return (
-      <PageHeaderLayout loading={currentUserLoading} content={pageHeaderContent} extraContent={extraContent}>
+      <PageHeaderWrapper loading={currentUserLoading} content={pageHeaderContent} extraContent={extraContent}>
         <Row gutter={24}>
           <Col xl={16} lg={24} md={24} sm={24} xs={24}>
             <Card
               className={styles.projectList}
-              style={{marginBottom: 24}}
+              style={{ marginBottom: 24 }}
               title="进行中的项目"
               bordered={false}
               extra={<Link to="/">全部项目</Link>}
               loading={projectLoading}
-              bodyStyle={{padding: 0}}
+              bodyStyle={{ padding: 0 }}
             >
               {
                 notice.map(item => (
                   <Card.Grid className={styles.projectGrid} key={item.id}>
-                    <Card bodyStyle={{padding: 0}} bordered={false}>
+                    <Card bodyStyle={{ padding: 0 }} bordered={false}>
                       <Card.Meta
                         title={
                           <div className={styles.cardTitle}>
@@ -357,7 +357,7 @@ class Workplace extends Component {
               }
             </Card>
             <Card
-              bodyStyle={{padding: 0}}
+              bodyStyle={{ padding: 0 }}
               bordered={false}
               className={styles.activeCard}
               title="动态"
@@ -372,16 +372,16 @@ class Workplace extends Component {
           </Col>
           <Col xl={8} lg={24} md={24} sm={24} xs={24}>
             <Card
-              style={{marginBottom: 24}}
+              style={{ marginBottom: 24 }}
               title="快速开始 / 便捷导航"
               bordered={false}
-              bodyStyle={{padding: 0}}
+              bodyStyle={{ padding: 0 }}
             >
               <EditableLinkGroup onAdd={() => {}} links={links}
                                  linkElement={Link}/>
             </Card>
             <Card
-              style={{marginBottom: 24}}
+              style={{ marginBottom: 24 }}
               title="XX 指数"
               bordered={false}
               loading={radarDataLoading}
@@ -391,10 +391,10 @@ class Workplace extends Component {
               </div>
             </Card>
             <Card
-              style={{marginBottom: 24}}
+              style={{ marginBottom: 24 }}
               title="团队"
               bordered={false}
-              bodyStyle={{paddingTop: 12, paddingBottom: 12}}
+              bodyStyle={{ paddingTop: 12, paddingBottom: 12 }}
             >
               <div className={styles.members}>
                 <Row gutter={48}>
@@ -413,7 +413,7 @@ class Workplace extends Component {
             </Card>
           </Col>
         </Row>
-      </PageHeaderLayout>
+      </PageHeaderWrapper>
     )
   }
 }

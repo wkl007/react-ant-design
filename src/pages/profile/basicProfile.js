@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Card, Badge, Table, Divider } from 'antd'
 import { DescriptionList } from 'ant-design-pro'
-import PageHeaderLayout from '../../layouts/pageHeaderLayout'
+import PageHeaderWrapper from '../../components/PageHeaderWrapper'
 
 import styles from './basicProfile.less'
 
@@ -217,7 +217,7 @@ class BasicProfile extends Component {
       },
     ]
     return (
-      <PageHeaderLayout title="基础详情页">
+      <PageHeaderWrapper title="基础详情页">
         <Card bordered={false}>
           <DescriptionList size="large" title="退款申请" style={{marginBottom: 32}}>
             <Description term="取货单号">1000000000</Description>
@@ -252,7 +252,7 @@ class BasicProfile extends Component {
             columns={progressColumns}
           />
         </Card>
-      </PageHeaderLayout>
+      </PageHeaderWrapper>
     )
   }
 }

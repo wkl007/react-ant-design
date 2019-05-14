@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Card, Button, Icon, List } from 'antd'
 import { Ellipsis } from 'ant-design-pro'
-import PageHeaderLayout from '../../layouts/pageHeaderLayout'
+import PageHeaderWrapper from '../../components/PageHeaderWrapper'
 
 import styles from './cardList.less'
 
@@ -324,7 +324,7 @@ class CardList extends Component {
       </div>
     )
     return (
-      <PageHeaderLayout
+      <PageHeaderWrapper
         title="卡片列表"
         content={content}
         extraContent={extraContent}>
@@ -363,7 +363,7 @@ class CardList extends Component {
             )
           }
         />
-      </PageHeaderLayout>
+      </PageHeaderWrapper>
     )
   }
 }

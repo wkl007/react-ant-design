@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Button, Row, Col, Icon, Steps, Card } from 'antd'
 import { Result } from 'ant-design-pro'
-import PageHeaderLayout from '../../layouts/pageHeaderLayout'
+import PageHeaderWrapper from '../../components/PageHeaderWrapper'
 
 const {Step} = Steps
 
@@ -80,7 +80,7 @@ const actions = (
 class Success extends Component {
   render () {
     return (
-      <PageHeaderLayout>
+      <PageHeaderWrapper>
         <Card bordered={false}>
           <Result
             type="success"
@@ -91,7 +91,7 @@ class Success extends Component {
             style={{marginTop: 48, marginBottom: 16}}
           />
         </Card>
-      </PageHeaderLayout>
+      </PageHeaderWrapper>
     )
   }
 }

@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Button, Icon, Card } from 'antd'
 import { Result } from 'ant-design-pro'
-import PageHeaderLayout from '../../layouts/pageHeaderLayout'
+import PageHeaderWrapper from '../../components/PageHeaderWrapper'
 
 const extra = (
   <Fragment>
@@ -35,7 +35,7 @@ const actions = <Button type="primary">返回修改</Button>
 class Error extends Component {
   render () {
     return (
-      <PageHeaderLayout>
+      <PageHeaderWrapper>
         <Card bordered={false}>
           <Result
             type="error"
@@ -46,7 +46,7 @@ class Error extends Component {
             style={{marginTop: 48, marginBottom: 16}}
           />
         </Card>
-      </PageHeaderLayout>
+      </PageHeaderWrapper>
     )
   }
 }

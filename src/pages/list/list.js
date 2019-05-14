@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { Input } from 'antd'
-import PageHeaderLayout from '../../layouts/pageHeaderLayout'
+import PageHeaderWrapper from '../../components/PageHeaderWrapper'
 import { getRouterData } from '../../router/router'
 import { getRoutes } from '../../utils/utils'
 
@@ -55,7 +55,7 @@ class List extends Component {
       </div>
     )
     return (
-      <PageHeaderLayout
+      <PageHeaderWrapper
         title="搜索列表"
         content={mainSearch}
         tabList={tabList}
@@ -74,7 +74,7 @@ class List extends Component {
             ))
           }
         </Switch>
-      </PageHeaderLayout>
+      </PageHeaderWrapper>
     )
   }
 }

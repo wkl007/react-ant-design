@@ -18,7 +18,7 @@ import {
   Divider,
 } from 'antd'
 import { DescriptionList } from 'ant-design-pro'
-import PageHeaderLayout from '../../layouts/pageHeaderLayout'
+import PageHeaderWrapper from '../../components/PageHeaderWrapper'
 
 import styles from './advancedProfile.less'
 
@@ -316,7 +316,7 @@ class AdvancedProfile extends Component {
     }
 
     return (
-      <PageHeaderLayout
+      <PageHeaderWrapper
         title="单号：234231029431"
         logo={
           <img alt=""
@@ -406,7 +406,7 @@ class AdvancedProfile extends Component {
         >
           {contentList[this.state.operationkey]}
         </Card>
-      </PageHeaderLayout>
+      </PageHeaderWrapper>
     )
   }
 }
