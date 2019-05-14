@@ -1,18 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 import { HashRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import configureStore from './redux/store/configureStore'
 import 'moment/locale/zh-cn'
 import zhCN from 'antd/lib/locale-provider/zh_CN'
 import { LocaleProvider } from 'antd'
-import * as serviceWorker from './serviceWorker';
+import configureStore from './redux/store/configureStore'
+import * as serviceWorker from './serviceWorker'
 
 import './index.less'
 import 'nprogress/nprogress.css'
 import 'ant-design-pro/dist/ant-design-pro.css'
 
-import App from './App';
+import App from './App'
 
 //创建Redux的store对象
 const store = configureStore()
