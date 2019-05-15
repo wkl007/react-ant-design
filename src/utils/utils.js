@@ -154,7 +154,7 @@ export function isUrl (path) {
   return reg.test(path)
 }
 
-// /userinfo/2144/id => ['/userinfo','/useinfo/2144,'/userindo/2144/id']
+// /userInfo/2144/id => ['/userInfo','/userInfo/2144,'/userIndo/2144/id']
 export function urlToList (url) {
   const urllist = url.split('/').filter(i => i)
   return urllist.map((urlItem, index) => {

@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import 'moment/locale/zh-cn'
 import zhCN from 'antd/lib/locale-provider/zh_CN'
 import { LocaleProvider } from 'antd'
-import configureStore from './redux/store/configureStore'
+import configureStore from './redux/store'
 import * as serviceWorker from './serviceWorker'
 
 import './index.less'

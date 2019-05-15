@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
-import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import NProgress from 'nprogress'
 import { getRouterData } from './router/router'
 
+@connect(
+  ({ userInfo }) => ({ userInfo })
+)
 class App extends Component {
   componentWillUpdate () {
     NProgress.start()
@@ -14,7 +17,7 @@ class App extends Component {
   }
 
   render () {
-    let { userinfo } = this.props
+    const { userInfo } = this.props
     let routerData = getRouterData()
     let UserLayout = routerData['/user'].component
     let BasicLayout = routerData['/'].component
@@ -22,12 +25,12 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route path="/user" render={(props) => {
-            return !userinfo
+            return !userInfo
               ? <UserLayout {...props} routerData={routerData}/>
               : <Redirect to="/"/>
           }}/>
           <Route path="/" render={(props) => {
-            return userinfo
+            return userInfo
               ? <BasicLayout {...props} routerData={routerData}/>
               : <Redirect to="/user/login"/>
           }}/>
@@ -37,13 +40,4 @@ class App extends Component {
   }
 }
 
-//redux react 绑定
-function mapStateToProps (state) {
-  return {
-    userinfo: state.userinfo,
-  }
-}
-
-export default withRouter(connect(
-  mapStateToProps,
-)(App))
+export default App

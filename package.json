@@ -25,6 +25,7 @@
   "dependencies": {
     "ant-design-pro": "^2.3.2",
     "antd": "^3.18.1",
+    "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "enquire-js": "^0.2.1",
     "es6-promise": "^4.2.6",
@@ -46,6 +47,7 @@
     "react-redux": "^7.0.3",
     "react-router-dom": "^5.0.0",
     "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {

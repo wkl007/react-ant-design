@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom'
-import { bindActionCreators } from 'redux'
+import { Redirect, Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
-import * as userInfoActionFromOtherFile from '../redux/actions/userinfo'
-import { deleteUserInfo } from '../utils/catche'
+import actions from '../redux/actions'
 import DocumentTitle from 'react-document-title'
 import pathToRegexp from 'path-to-regexp'
 import { enquireScreen, unenquireScreen } from 'enquire-js'
@@ -88,13 +86,19 @@ const getBreadcrumbNameMap = (menuData, routerData) => {
   return Object.assign({}, routerData, result, childResult)
 }
 
-class basicLayout extends Component {
+@connect(
+  ({ userInfo }) => ({ userInfo }),
+  dispatch => ({
+    setUserInfo: data => dispatch(actions.setUserInfo(data))
+  })
+)
+class BasicLayout extends Component {
   constructor (props) {
     super(props)
     this.state = {
       currentUser: {
         avatar: 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
-        name: props.userinfo,
+        name: props.userInfo,
         notifyCount: 12,
         userid: '00000001',
       },
@@ -251,7 +255,7 @@ class basicLayout extends Component {
 
   //Dropdown menu菜单点击事件
   handleMenuClick = ({ key }) => {
-    let { history } = this.props
+    let { history, setUserInfo } = this.props
     if (key === 'triggerError') {
       console.log('触发报错')
       history.push('/exception/trigger')
@@ -263,7 +267,7 @@ class basicLayout extends Component {
         cancelText: '取消',
         onOk: () => {
           console.log('退出登录', this)
-          this.props.userInfoActions.rm(deleteUserInfo())
+          setUserInfo('')
         },
         onCancel: () => {},
       })
@@ -356,19 +360,4 @@ class basicLayout extends Component {
   }
 }
 
-function mapStateToProps (state) {
-  return {
-    userinfo: state.userinfo,
-  }
-}
-
-function mapDispatchToProps (dispatch) {
-  return {
-    userInfoActions: bindActionCreators(
-      userInfoActionFromOtherFile, dispatch,
-    ),
-  }
-}
-
-export default connect(mapStateToProps,
-  mapDispatchToProps)(basicLayout)
+export default BasicLayout

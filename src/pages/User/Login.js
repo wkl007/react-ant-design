@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import * as userInfoActionFromOtherFile from '../../redux/actions/userinfo'
 import { Checkbox, Alert, Icon } from 'antd'
 import { Login } from 'ant-design-pro'
-import { saveUserinfo } from '../../utils/catche'
+import actions from '../../redux/actions'
 
 import styles from './Login.less'
 
-const {Tab, UserName, Password, Mobile, Captcha, Submit} = Login
+const { Tab, UserName, Password, Mobile, Captcha, Submit } = Login
 
+@connect(
+  ({ userInfo }) => ({ userInfo }),
+  dispatch => ({
+    setUserInfo: data => dispatch(actions.setUserInfo(data))
+  })
+)
 class LoginPage extends Component {
   constructor (props) {
     super(props)
@@ -32,7 +36,7 @@ class LoginPage extends Component {
   //错误弹框
   renderMessage = (content) => {
     return <Alert
-      style={{marginBottom: 24}}
+      style={{ marginBottom: 24 }}
       message={content}
       type="error"
       showIcon/>
@@ -59,7 +63,7 @@ class LoginPage extends Component {
 
   //登录
   handleSubmit = (err, values) => {
-    //this.props.userInfoActions.add(saveUserinfo('wkl'))
+    const { setUserInfo } = this.props
     if (this.state.type === 'account') {
       if (!err &&
         (values.username !== 'admin' || values.password !== '888888')) {
@@ -71,7 +75,7 @@ class LoginPage extends Component {
           submitting: true,
         })
         setTimeout(() => {
-          this.props.userInfoActions.add(saveUserinfo(values.username))
+          setUserInfo(values.username)
           console.log(values.username, values.password)
         }, 1000)
       }
@@ -80,14 +84,14 @@ class LoginPage extends Component {
         this.setState({
           submitting: true,
         })
-        this.props.userInfoActions.add(saveUserinfo(values.mobile))
+        setUserInfo(values.mobile)
         console.log(values.mobile, values.captcha)
       }
     }
   }
 
   render () {
-    const {type, autoLogin, notice, submitting} = this.state
+    const { type, autoLogin, notice, submitting } = this.state
     const rulesOption = {
       username: [
         {
@@ -145,7 +149,7 @@ class LoginPage extends Component {
           <div>
             <Checkbox checked={autoLogin}
                       onChange={this.changeAutoLogin}>自动登录</Checkbox>
-            <span className='link-button' style={{float: 'right'}}>忘记密码</span>
+            <span className='link-button' style={{ float: 'right' }}>忘记密码</span>
           </div>
           <Submit loading={submitting}>登录</Submit>
           <div className={styles.other}>
@@ -163,21 +167,4 @@ class LoginPage extends Component {
   }
 }
 
-function mapStateToProps (state) {
-  return {
-    userinfo: state.userinfo,
-  }
-}
-
-function mapDispatchToProps (dispatch) {
-  return {
-    userInfoActions: bindActionCreators(
-      userInfoActionFromOtherFile, dispatch,
-    ),
-  }
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(LoginPage)
+export default LoginPage

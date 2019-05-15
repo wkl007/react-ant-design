@@ -1,2 +1,0 @@
-export const USERINFO_ADD = 'USERINFO_ADD'
-export const USERINFO_RM = 'USERINFO_RM'
