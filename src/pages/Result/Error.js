@@ -35,7 +35,9 @@ const actions = <Button type="primary">返回修改</Button>
 class Error extends Component {
   render () {
     return (
-      <PageHeaderWrapper>
+      <PageHeaderWrapper
+        title='成功页面'
+      >
         <Card bordered={false}>
           <Result
             type="error"

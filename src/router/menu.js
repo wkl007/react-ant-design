@@ -45,7 +45,7 @@ const menuData = [
   {
     name: '列表页',
     icon: 'table',
-    path: 'List.js',
+    path: 'list',
     children: [
       {
         name: '查询表格',
@@ -111,6 +111,30 @@ const menuData = [
     ],
   },
   {
+    name: '异常页',
+    icon: 'warning',
+    path: 'exception',
+    children: [
+      {
+        name: '403',
+        path: '403',
+      },
+      {
+        name: '404',
+        path: '404',
+      },
+      {
+        name: '500',
+        path: '500',
+      },
+      {
+        name: '触发异常',
+        path: 'trigger',
+        hideInMenu: true,
+      },
+    ],
+  },
+  {
     name: '个人页',
     icon: 'user',
     path: 'account',
@@ -143,30 +167,6 @@ const menuData = [
         path: 'koni'
       },
     ]
-  },
-  {
-    name: '异常页',
-    icon: 'warning',
-    path: 'exception',
-    children: [
-      {
-        name: '403',
-        path: '403',
-      },
-      {
-        name: '404',
-        path: '404',
-      },
-      {
-        name: '500',
-        path: '500',
-      },
-      {
-        name: '触发异常',
-        path: 'trigger',
-        hideInMenu: true,
-      },
-    ],
   },
 ]
 

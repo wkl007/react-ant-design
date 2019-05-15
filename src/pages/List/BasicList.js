@@ -20,7 +20,7 @@ import styles from './BasicList.less'
 
 const RadioButton = Radio.Button
 const RadioGroup = Radio.Group
-const {Search} = Input
+const { Search } = Input
 
 const listData = {
   list: [
@@ -206,9 +206,9 @@ class BasicList extends Component {
   }
 
   render () {
-    const {list} = listData
-    const {loading, pageSize} = this.state
-    const Info = ({title, value, bordered}) => (
+    const { list } = listData
+    const { loading, pageSize } = this.state
+    const Info = ({ title, value, bordered }) => (
       <div className={styles.headerInfo}>
         <span>{title}</span>
         <p>{value}</p>
@@ -243,7 +243,7 @@ class BasicList extends Component {
       total: 50,
     }
 
-    const ListContent = ({data: {owner, createdAt, percent, status}}) => (
+    const ListContent = ({ data: { owner, createdAt, percent, status } }) => (
       <div className={styles.listContent}>
         <div className={styles.listContentItem}>
           <span>Owner</span>
@@ -255,7 +255,7 @@ class BasicList extends Component {
         </div>
         <div className={styles.listContentItem}>
           <Progress percent={percent} status={status} strokeWidth={6}
-                    style={{width: 100}}/>
+                    style={{ width: 100 }}/>
         </div>
       </div>
     )
@@ -275,7 +275,9 @@ class BasicList extends Component {
       </Dropdown>
     )
     return (
-      <PageHeaderWrapper>
+      <PageHeaderWrapper
+        title='标准列表'
+      >
         <div className={styles.standardList}>
           <Card bordered={false}>
             <Row>
@@ -294,12 +296,12 @@ class BasicList extends Component {
             className={styles.listCard}
             bordered={false}
             title="标准列表"
-            style={{marginTop: 24}}
-            bodyStyle={{padding: '0 32px 40px 32px'}}
+            style={{ marginTop: 24 }}
+            bodyStyle={{ padding: '0 32px 40px 32px' }}
             extra={extraContent}
           >
             <Button type="dashed"
-                    style={{width: '100%', marginBottom: 8}} icon="plus">
+                    style={{ width: '100%', marginBottom: 8 }} icon="plus">
               添加
             </Button>
             <List

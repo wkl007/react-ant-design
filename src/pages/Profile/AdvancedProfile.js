@@ -326,6 +326,7 @@ class AdvancedProfile extends Component {
         content={description}
         extraContent={extra}
         tabList={tabList}
+        tabActiveKey='detail'
       >
         <Card title="流程进度" style={{marginBottom: 24}} bordered={false}>
           <Steps direction={stepDirection} progressDot={customDot} current={1}>

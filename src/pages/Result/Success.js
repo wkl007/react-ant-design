@@ -80,7 +80,9 @@ const actions = (
 class Success extends Component {
   render () {
     return (
-      <PageHeaderWrapper>
+      <PageHeaderWrapper
+        title='失败页面'
+      >
         <Card bordered={false}>
           <Result
             type="success"
