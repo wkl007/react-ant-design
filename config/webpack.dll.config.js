@@ -13,6 +13,7 @@ module.exports = {
       'classnames',
       'enquire-js',
       'es6-promise',
+      'gg-editor',
       'good-storage',
       'nprogress',
       'numeral',

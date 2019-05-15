@@ -9,7 +9,7 @@ import { ContainerQuery } from 'react-container-query'
 import classNames from 'classnames'
 import { Layout, message, Modal } from 'antd'
 import GlobalHeader from '../components/GlobalHeader'
-import Footer from './Footer'
+import Footer from '../components/Footer'
 import SiderMenu from '../components/SiderMenu'
 import MenuContext from '../utils/context'
 import { getMenuData } from '../router/menu'
@@ -266,7 +266,7 @@ class BasicLayout extends Component {
         okText: '确认',
         cancelText: '取消',
         onOk: () => {
-          console.log('退出登录', this)
+          console.log('退出登录')
           setUserInfo('')
         },
         onCancel: () => {},
