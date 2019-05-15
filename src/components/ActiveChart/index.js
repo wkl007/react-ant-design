@@ -39,7 +39,7 @@ class ActiveChart extends Component {
   }
 
   render () {
-    let {activeData = []} = this.state
+    const {activeData = []} = this.state
     return (
       <div className={styles.activeChart}>
         <NumberInfo subTitle="目标评估" total="有望达到预期"/>

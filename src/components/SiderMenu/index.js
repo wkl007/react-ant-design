@@ -6,7 +6,7 @@ import 'rc-drawer/assets/index.css'
 
 class SiderMenuWrapper extends Component {
   render () {
-    let {isMobile, collapsed, onCollapse} = this.props
+    const {isMobile, collapsed, onCollapse} = this.props
     return (
       isMobile ? (
         <DrawerMenu

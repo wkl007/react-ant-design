@@ -16,7 +16,7 @@ class EditableLinkGroup extends PureComponent {
   }
 
   render () {
-    let {links, onAdd, linkElement} = this.props
+    const {links, onAdd, linkElement} = this.props
     return (
       <div className={styles.linkGroup}>
         {

@@ -45,7 +45,7 @@ const menuData = [
   {
     name: '列表页',
     icon: 'table',
-    path: 'list',
+    path: 'List.js',
     children: [
       {
         name: '查询表格',

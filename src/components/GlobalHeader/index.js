@@ -47,7 +47,7 @@ class GlobalHeader extends Component {
 
   //左侧菜单展开收缩
   toggle = () => {
-    let {collapsed, onCollapse} = this.props
+    const {collapsed, onCollapse} = this.props
     onCollapse(!collapsed)
     this.triggerResizeEvent()
   }
@@ -65,7 +65,7 @@ class GlobalHeader extends Component {
   }
 
   render () {
-    let {
+    const {
       currentUser = {},
       collapsed,
       fetchingNotices,
@@ -76,7 +76,7 @@ class GlobalHeader extends Component {
       onMenuClick,
       onNoticeClear,
     } = this.props
-    let menu = (
+    const menu = (
       <Menu className={styles.menu} selectedKeys={[]} onClick={onMenuClick}>
         <Menu.Item disabled>
           <Icon type="user"/>个人中心
@@ -92,7 +92,7 @@ class GlobalHeader extends Component {
         </Menu.Item>
       </Menu>
     )
-    let noticeData = this.getNoticeData(notices)
+    const noticeData = this.getNoticeData(notices)
     return (
       <div className={styles.header}>
         {
