@@ -126,6 +126,25 @@ const menuData = [
     ],
   },
   {
+    name: '图形编辑器',
+    icon: 'highlight',
+    path: 'editor',
+    children: [
+      {
+        name: '流程编辑器',
+        path: 'flow'
+      },
+      {
+        name: '脑图编辑器',
+        path: 'mind'
+      },
+      {
+        name: '拓扑编辑器',
+        path: 'koni'
+      },
+    ]
+  },
+  {
     name: '异常页',
     icon: 'warning',
     path: 'exception',
@@ -153,7 +172,7 @@ const menuData = [
 
 function formatter (data, parentPath = '/', parentAuthority) {
   return data.map(item => {
-    let {path} = item
+    let { path } = item
     if (!isUrl(path)) {
       path = parentPath + item.path
     }

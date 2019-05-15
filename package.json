@@ -28,6 +28,7 @@
     "classnames": "^2.2.6",
     "enquire-js": "^0.2.1",
     "es6-promise": "^4.2.6",
+    "gg-editor": "^2.0.4",
     "good-storage": "^1.1.0",
     "lodash": "^4.17.11",
     "lodash-decorators": "^6.0.1",

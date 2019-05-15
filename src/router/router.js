@@ -39,6 +39,10 @@ import InfoSecurity from '../pages/Account/Settings/SecurityView'
 import InfoBinding from '../pages/Account/Settings/BindingView'
 import InfoNotification from '../pages/Account/Settings/Notification'
 
+import Flow from '../pages/Editor/Flow'
+import Koni from '../pages/Editor/Koni'
+import Mind from '../pages/Editor/Mind'
+
 export const getRouterData = () => {
   const routerConfig = {
     '/': {
@@ -176,6 +180,18 @@ export const getRouterData = () => {
     '/account/settings/notification': {
       name: '个人设置',
       component: InfoNotification,
+    },
+    '/editor/flow': {
+      name: '流程编辑器',
+      component: Flow,
+    },
+    '/editor/koni': {
+      name: '拓扑编辑器',
+      component: Koni,
+    },
+    '/editor/mind': {
+      name: '脑图编辑器',
+      component: Mind,
     },
     '/user': {
       name: '账户',
