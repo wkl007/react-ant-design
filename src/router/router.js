@@ -1,50 +1,57 @@
-import UserLayout from '../layouts/UserLayout'
-import BasicLayout from '../layouts/BasicLayout'
-import Login from '../pages/User/Login'
-import Register from '../pages/User/Register'
-import RegisterResult from '../pages/User/RegisterResult'
-import Analysis from '../pages/Dashboard/Analysis'
-import Monitor from '../pages/Dashboard/Monitor'
-import Workplace from '../pages/Dashboard/Workplace'
-import BasicForm from '../pages/Forms/BasicForm'
-import AdvancedForm from '../pages/Forms/AdvancedForm'
-import StepForm from '../pages/Forms/StepForm'
+import { asyncComponent } from '../components/AsyncComponent'
+
+import Projects from '../pages/List/Projects'
+import Applications from '../pages/List/Applications'
+import Articles from '../pages/List/Articles'
+
 import Step1 from '../pages/Forms/StepForm/Step1'
 import Step2 from '../pages/Forms/StepForm/Step2'
 import Step3 from '../pages/Forms/StepForm/Step3'
 
-import TableList from '../pages/List/TableList'
-import BasicList from '../pages/List/BasicList'
-import CardList from '../pages/List/CardList'
-import List from '../pages/List/List'
-import Projects from '../pages/List/Projects'
-import Applications from '../pages/List/Applications'
-import Articles from '../pages/List/Articles'
-import BasicProfile from '../pages/Profile/BasicProfile'
-import AdvancedProfile from '../pages/Profile/AdvancedProfile'
-import Success from '../pages/Result/Success'
-import Error from '../pages/Result/Error'
-import Three from '../pages/Exception/403'
-import Four from '../pages/Exception/404'
-import Five from '../pages/Exception/500'
-import TriggerException from '../pages/Exception/TriggerException'
-
-import Center from '../pages/Account/Center/Center'
 import CenterArticles from '../pages/Account/Center/Articles'
 import CenterApplications from '../pages/Account/Center/Applications'
 import CenterProjects from '../pages/Account/Center/Projects'
-import Info from '../pages/Account/Settings/Info'
 import InfoBase from '../pages/Account/Settings/BaseView'
 import InfoSecurity from '../pages/Account/Settings/SecurityView'
 import InfoBinding from '../pages/Account/Settings/BindingView'
 import InfoNotification from '../pages/Account/Settings/Notification'
 
-import Flow from '../pages/Editor/Flow'
-import Koni from '../pages/Editor/Koni'
-import Mind from '../pages/Editor/Mind'
+const UserLayout = asyncComponent(() => import(/*webpackChunkName:'userLayout'*/'../layouts/UserLayout'))
+const BasicLayout = asyncComponent(() => import(/*webpackChunkName:'basicLayout'*/'../layouts/BasicLayout'))
+const Login = asyncComponent(() => import(/*webpackChunkName:'login'*/'../pages/User/Login'))
+const Register = asyncComponent(() => import(/*webpackChunkName:'register'*/'../pages/User/Register'))
+const RegisterResult = asyncComponent(() => import(/*webpackChunkName:'registerResult'*/'../pages/User/RegisterResult'))
+
+const Analysis = asyncComponent(() => import(/*webpackChunkName:'analysis'*/'../pages/Dashboard/Analysis'))
+const Monitor = asyncComponent(() => import(/*webpackChunkName:'monitor'*/'../pages/Dashboard/Monitor'))
+const Workplace = asyncComponent(() => import(/*webpackChunkName:'workplace'*/'../pages/Dashboard/Workplace'))
+const BasicForm = asyncComponent(() => import(/*webpackChunkName:'basicForm'*/'../pages/Forms/BasicForm'))
+const AdvancedForm = asyncComponent(() => import(/*webpackChunkName:'advancedForm'*/'../pages/Forms/AdvancedForm'))
+const StepForm = asyncComponent(() => import(/*webpackChunkName:'stepForm'*/'../pages/Forms/StepForm'))
+
+const TableList = asyncComponent(() => import(/*webpackChunkName:'tableList'*/'../pages/List/TableList'))
+const BasicList = asyncComponent(() => import(/*webpackChunkName:'basicList'*/'../pages/List/BasicList'))
+const CardList = asyncComponent(() => import(/*webpackChunkName:'cardList'*/'../pages/List/CardList'))
+const List = asyncComponent(() => import(/*webpackChunkName:'list'*/'../pages/List/List'))
+
+const BasicProfile = asyncComponent(() => import(/*webpackChunkName:'basicProfile'*/'../pages/Profile/BasicProfile'))
+const AdvancedProfile = asyncComponent(() => import(/*webpackChunkName:'advancedProfile'*/'../pages/Profile/AdvancedProfile'))
+const Success = asyncComponent(() => import(/*webpackChunkName:'success'*/'../pages/Result/Success'))
+const Error = asyncComponent(() => import(/*webpackChunkName:'error'*/'../pages/Result/Error'))
+const Three = asyncComponent(() => import(/*webpackChunkName:'three'*/'../pages/Exception/403'))
+const Four = asyncComponent(() => import(/*webpackChunkName:'four'*/'../pages/Exception/404'))
+const Five = asyncComponent(() => import(/*webpackChunkName:'five'*/'../pages/Exception/500'))
+const TriggerException = asyncComponent(() => import(/*webpackChunkName:'triggerException'*/'../pages/Exception/TriggerException'))
+
+const Center = asyncComponent(() => import(/*webpackChunkName:'center'*/'../pages/Account/Center/Center'))
+const Info = asyncComponent(() => import(/*webpackChunkName:'info'*/'../pages/Account/Settings/Info'))
+
+const Flow = asyncComponent(() => import(/*webpackChunkName:'flow'*/'../pages/Editor/Flow'))
+const Koni = asyncComponent(() => import(/*webpackChunkName:'koni'*/'../pages/Editor/Koni'))
+const Mind = asyncComponent(() => import(/*webpackChunkName:'mind'*/'../pages/Editor/Mind'))
 
 export const getRouterData = () => {
-  const routerConfig = {
+  return {
     '/': {
       name: '首页',
       component: BasicLayout,
@@ -210,5 +217,4 @@ export const getRouterData = () => {
       component: RegisterResult,
     },
   }
-  return routerConfig
 }

@@ -19,7 +19,7 @@ class GlobalHeader extends Component {
       return {}
     }
     const newNotices = notices.map(notice => {
-      const newNotice = {...notice}
+      const newNotice = { ...notice }
       if (newNotice.datetime) {
         newNotice.datetime = moment(notice.datetime).fromNow()
       }
@@ -35,7 +35,7 @@ class GlobalHeader extends Component {
           doing: 'gold',
         }[newNotice.status]
         newNotice.extra = (
-          <Tag color={color} style={{marginRight: 0}}>
+          <Tag color={color} style={{ marginRight: 0 }}>
             {newNotice.extra}
           </Tag>
         )
@@ -47,7 +47,7 @@ class GlobalHeader extends Component {
 
   //左侧菜单展开收缩
   toggle = () => {
-    const {collapsed, onCollapse} = this.props
+    const { collapsed, onCollapse } = this.props
     onCollapse(!collapsed)
     this.triggerResizeEvent()
   }
@@ -78,11 +78,11 @@ class GlobalHeader extends Component {
     } = this.props
     const menu = (
       <Menu className={styles.menu} selectedKeys={[]} onClick={onMenuClick}>
-        <Menu.Item disabled>
+        <Menu.Item key='userCenter'>
           <Icon type="user"/>个人中心
         </Menu.Item>
-        <Menu.Item disabled>
-          <Icon type="setting"/>设置
+        <Menu.Item key='userSettings'>
+          <Icon type="setting"/>个人设置
         </Menu.Item>
         <Menu.Item key="triggerError">
           <Icon type="close-circle"/>触发报错
@@ -139,7 +139,7 @@ class GlobalHeader extends Component {
             onClear={onNoticeClear}
             onPopupVisibleChange={onNoticeVisibleChange}
             loading={fetchingNotices}
-            popupAlign={{offset: [20, -16]}}
+            popupAlign={{ offset: [20, -16] }}
           >
             <NoticeIcon.Tab
               list={noticeData['通知']}
@@ -170,7 +170,7 @@ class GlobalHeader extends Component {
                 </span>
               </Dropdown>
             ) : (
-              <Spin size="small" style={{marginLeft: 8}}/>
+              <Spin size="small" style={{ marginLeft: 8 }}/>
             )
           }
         </div>

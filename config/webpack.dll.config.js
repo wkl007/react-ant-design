@@ -23,6 +23,7 @@ module.exports = {
       'react-container-query',
       'react-document-title',
       'react-dom',
+      'react-loadable',
       'react-redux',
       'react-router-dom',
       'redux',

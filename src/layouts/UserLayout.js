@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Link, Route, Switch, Redirect } from 'react-router-dom'
+import { Link, Redirect, Route, Switch } from 'react-router-dom'
 import DocumentTitle from 'react-document-title'
 import { getRoutes } from '../utils/utils'
 import { Icon } from 'antd'
@@ -35,8 +35,8 @@ const copyright = (
 class UserLayout extends Component {
   //获取页面标题
   getPageTitle = () => {
-    let {routerData, location} = this.props
-    let {pathname} = location
+    let { routerData, location } = this.props
+    let { pathname } = location
     let title = '小王管理系统'
     if (routerData[pathname] && routerData[pathname].name) {
       title = `${routerData[pathname].name} - ${title}`
@@ -45,7 +45,7 @@ class UserLayout extends Component {
   }
 
   render () {
-    let {match, routerData} = this.props
+    let { match, routerData } = this.props
     let routes = getRoutes(match.path, routerData)
     return (
       <DocumentTitle title={this.getPageTitle()}>

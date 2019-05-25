@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
-import actions from '../redux/actions'
 import DocumentTitle from 'react-document-title'
 import pathToRegexp from 'path-to-regexp'
 import { enquireScreen, unenquireScreen } from 'enquire-js'
@@ -11,6 +10,7 @@ import { Layout, message, Modal } from 'antd'
 import GlobalHeader from '../components/GlobalHeader'
 import Footer from '../components/Footer'
 import SiderMenu from '../components/SiderMenu'
+import actions from '../redux/actions'
 import MenuContext from '../utils/context'
 import { getMenuData } from '../router/menu'
 import { getRoutes } from '../utils/utils'
@@ -256,11 +256,14 @@ class BasicLayout extends Component {
   //Dropdown menu菜单点击事件
   handleMenuClick = ({ key }) => {
     let { history, setUserInfo } = this.props
-    if (key === 'triggerError') {
+    if (key === 'userCenter') {
+      history.push('/account/center')
+    } else if (key === 'userSettings') {
+      history.push('/account/settings')
+    } else if (key === 'triggerError') {
       console.log('触发报错')
       history.push('/exception/trigger')
     } else if (key === 'logout') {
-
       confirm({
         title: '确认要退出登录吗？',
         okText: '确认',

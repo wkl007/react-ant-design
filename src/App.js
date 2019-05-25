@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom'
+import { Redirect, Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 import NProgress from 'nprogress'
 import { getRouterData } from './router/router'
