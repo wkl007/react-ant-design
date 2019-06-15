@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import moment from 'moment'
 import groupBy from 'lodash/groupBy'
 import Debounce from 'lodash-decorators/debounce'
-import { Menu, Icon, Spin, Tag, Dropdown, Avatar, Divider, Tooltip } from 'antd'
-import { NoticeIcon, HeaderSearch } from 'ant-design-pro'
+import { Avatar, Divider, Dropdown, Icon, Menu, message, Spin, Tag, Tooltip } from 'antd'
+import { HeaderSearch, NoticeIcon } from 'ant-design-pro'
 
 import styles from './index.less'
 
@@ -140,24 +140,33 @@ class GlobalHeader extends Component {
             onPopupVisibleChange={onNoticeVisibleChange}
             loading={fetchingNotices}
             popupAlign={{ offset: [20, -16] }}
+            onViewMore={() => message.info('查看更多')}
+            locale={{
+              emptyText: '暂无数据',
+              clear: '清空',
+              viewMore: '查看 更多',
+            }}
           >
             <NoticeIcon.Tab
               list={noticeData['通知']}
               title="通知"
               emptyText="你已查看所有通知"
               emptyImage="https://gw.alipayobjects.com/zos/rmsportal/wAhyIChODzsoKIOBHcBk.svg"
+              showViewMore
             />
             <NoticeIcon.Tab
               list={noticeData['消息']}
               title="消息"
               emptyText="您已读完所有消息"
               emptyImage="https://gw.alipayobjects.com/zos/rmsportal/sAuJeJzSKbUmHfBQRzmZ.svg"
+              showViewMore
             />
             <NoticeIcon.Tab
               list={noticeData['待办']}
               title="待办"
               emptyText="你已完成所有待办"
               emptyImage="https://gw.alipayobjects.com/zos/rmsportal/HsIsxMZiWKrNUavQUXqx.svg"
+              showViewMore
             />
           </NoticeIcon>
           {

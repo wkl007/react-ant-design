@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { List, Icon } from 'antd'
+import { Icon, List } from 'antd'
 
 class BindingView extends Component {
   getData = () => [

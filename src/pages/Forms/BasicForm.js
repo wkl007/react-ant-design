@@ -1,24 +1,13 @@
 import React, { Component } from 'react'
-import {
-  Form,
-  Input,
-  DatePicker,
-  Select,
-  Button,
-  Card,
-  InputNumber,
-  Radio,
-  Icon,
-  Tooltip,
-} from 'antd'
+import { Button, Card, DatePicker, Form, Icon, Input, InputNumber, Radio, Select, Tooltip, } from 'antd'
 import PageHeaderWrapper from '../../components/PageHeaderWrapper'
 
 import styles from './style.less'
 
 const FormItem = Form.Item
-const {Option} = Select
-const {RangePicker} = DatePicker
-const {TextArea} = Input
+const { Option } = Select
+const { RangePicker } = DatePicker
+const { TextArea } = Input
 
 @Form.create()
 class BasicForm extends Component {
@@ -40,31 +29,31 @@ class BasicForm extends Component {
   }
 
   render () {
-    const {submitting} = this.state
-    const {getFieldDecorator, getFieldValue} = this.props.form
+    const { submitting } = this.state
+    const { getFieldDecorator, getFieldValue } = this.props.form
     const formItemLayout = {
       labelCol: {
-        xs: {span: 24},
-        sm: {span: 7},
+        xs: { span: 24 },
+        sm: { span: 7 },
       },
       wrapperCol: {
-        xs: {span: 24},
-        sm: {span: 12},
-        md: {span: 10},
+        xs: { span: 24 },
+        sm: { span: 12 },
+        md: { span: 10 },
       },
     }
     const submitFormLayout = {
       wrapperCol: {
-        xs: {span: 24, offset: 0},
-        sm: {span: 10, offset: 7},
+        xs: { span: 24, offset: 0 },
+        sm: { span: 10, offset: 7 },
       },
     }
     return (
       <PageHeaderWrapper title="基础表单"
-                        content="表单页用于向用户收集或验证信息，基础表单常见于数据项较少的表单场景。">
+                         content="表单页用于向用户收集或验证信息，基础表单常见于数据项较少的表单场景。">
         <Card bordered={false}>
           <Form onSubmit={this.handleSubmit} hideRequiredMark
-                style={{marginTop: 8}}>
+                style={{ marginTop: 8 }}>
             <FormItem {...formItemLayout} label="标题">
               {
                 getFieldDecorator('title', {
@@ -86,7 +75,7 @@ class BasicForm extends Component {
                       message: '请选择起止日期',
                     },
                   ],
-                })(<RangePicker style={{width: '100%'}}
+                })(<RangePicker style={{ width: '100%' }}
                                 placeholder={['开始日期', '结束日期']}/>)
               }
             </FormItem>
@@ -101,7 +90,7 @@ class BasicForm extends Component {
                   ],
                 })(
                   <TextArea
-                    style={{minHeight: 32}}
+                    style={{ minHeight: 32 }}
                     placeholder="请输入你的阶段性工作目标"
                     rows={4}
                   />,
@@ -119,7 +108,7 @@ class BasicForm extends Component {
                   ],
                 })(
                   <TextArea
-                    style={{minHeight: 32}}
+                    style={{ minHeight: 32 }}
                     placeholder="请输入衡量标准"
                     rows={4}
                   />,
@@ -134,7 +123,7 @@ class BasicForm extends Component {
                   <em className={styles.optional}>
                     （选填）
                     <Tooltip title="目标的服务对象">
-                      <Icon type="info-circle-o" style={{marginRight: 4}}/>
+                      <Icon type="info-circle-o" style={{ marginRight: 4 }}/>
                     </Tooltip>
                   </em>
                 </span>
@@ -191,7 +180,7 @@ class BasicForm extends Component {
                     </Radio.Group>,
                   )
                 }
-                <FormItem style={{marginBottom: 0}}>
+                <FormItem style={{ marginBottom: 0 }}>
                   {
                     getFieldDecorator('publicUsers')(
                       <Select
@@ -213,11 +202,11 @@ class BasicForm extends Component {
                 </FormItem>
               </div>
             </FormItem>
-            <FormItem {...submitFormLayout} style={{marginTop: 32}}>
+            <FormItem {...submitFormLayout} style={{ marginTop: 32 }}>
               <Button type="primary" htmlType="submit" loading={submitting}>
                 提交
               </Button>
-              <Button style={{marginLeft: 8}}>保存</Button>
+              <Button style={{ marginLeft: 8 }}>保存</Button>
             </FormItem>
           </Form>
         </Card>

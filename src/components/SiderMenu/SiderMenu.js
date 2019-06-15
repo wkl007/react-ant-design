@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import pathToRegexp from 'path-to-regexp'
 import { urlToList } from '../../utils/utils'
-import { Layout, Menu, Icon } from 'antd'
+import { Icon, Layout, Menu } from 'antd'
 
 import styles from './index.less'
 

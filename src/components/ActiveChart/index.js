@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NumberInfo, Charts } from 'ant-design-pro'
+import { Charts, NumberInfo } from 'ant-design-pro'
 
 import styles from './index.less'
 

@@ -1,3 +1,3 @@
-import FlowToolbar from './FlowToolbar';
+import FlowToolbar from './FlowToolbar'
 
-export default FlowToolbar;
+export default FlowToolbar

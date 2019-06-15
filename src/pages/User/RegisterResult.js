@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from 'antd'
-import {Result} from 'ant-design-pro'
+import { Result } from 'ant-design-pro'
 import styles from './RegisterResult.less'
 
 const qs = require('qs')
@@ -20,7 +20,7 @@ const actions = (
 
 class RegisterResult extends Component {
   render () {
-    const {location} = this.props
+    const { location } = this.props
     const data = qs.parse(location.search.substring(1))
     return (
       <Result

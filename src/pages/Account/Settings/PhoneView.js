@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Input } from 'antd'
 import styles from './PhoneView.less'
 

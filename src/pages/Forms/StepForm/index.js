@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Route, Redirect, Switch } from 'react-router-dom'
+import { Redirect, Route, Switch } from 'react-router-dom'
 import { Card, Steps } from 'antd'
 import PageHeaderWrapper from '../../../components/PageHeaderWrapper'
 import NotFound from '../../Exception/404'
@@ -8,12 +8,12 @@ import { getRoutes } from '../../../utils/utils'
 
 import styles from '../style.less'
 
-const {Step} = Steps
+const { Step } = Steps
 
 class StepForm extends Component {
   getCurrentStep = () => {
-    const {location} = this.props
-    const {pathname} = location
+    const { location } = this.props
+    const { pathname } = location
     const pathList = pathname.split('/')
     switch (pathList[pathList.length - 1]) {
       case 'info':
@@ -28,7 +28,7 @@ class StepForm extends Component {
   }
 
   render () {
-    const {match, location} = this.props
+    const { match, location } = this.props
     const routerData = getRouterData()
     const routes = getRoutes(match.path, routerData)
 

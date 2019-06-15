@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Button, Icon, List } from 'antd'
+import { Button, Card, Icon, List } from 'antd'
 import { Ellipsis } from 'ant-design-pro'
 import PageHeaderWrapper from '../../components/PageHeaderWrapper'
 
@@ -290,8 +290,8 @@ class CardList extends Component {
   }
 
   render () {
-    const {list} = listData
-    const {loading} = this.state
+    const { list } = listData
+    const { loading } = this.state
     const content = (
       <div className={styles.pageHeaderContent}>
         <p>
@@ -331,7 +331,7 @@ class CardList extends Component {
         <List
           rowKey="id"
           loading={loading}
-          grid={{gutter: 24, lg: 3, md: 2, sm: 1, xs: 1}}
+          grid={{ gutter: 24, lg: 3, md: 2, sm: 1, xs: 1 }}
           dataSource={['', ...list]}
           renderItem={item =>
             item ? (

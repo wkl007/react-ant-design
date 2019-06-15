@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col } from 'antd'
+import { Col, Row } from 'antd'
 import GGEditor, { Flow } from 'gg-editor'
 import PageHeaderWrapper from '../../../components/PageHeaderWrapper'
 import EditorMinimap from '../components/EditorMinimap'

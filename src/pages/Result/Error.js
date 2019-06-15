@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Button, Icon, Card } from 'antd'
+import { Button, Card, Icon } from 'antd'
 import { Result } from 'ant-design-pro'
 import PageHeaderWrapper from '../../components/PageHeaderWrapper'
 
@@ -15,15 +15,15 @@ const extra = (
     >
       您提交的内容有如下错误：
     </div>
-    <div style={{marginBottom: 16}}>
-      <Icon style={{color: '#f5222d', marginRight: 8}} type="close-circle-o"/>您的账户已被冻结
-      <span className='link-button' style={{marginLeft: 16}}>
+    <div style={{ marginBottom: 16 }}>
+      <Icon style={{ color: '#f5222d', marginRight: 8 }} type="close-circle-o"/>您的账户已被冻结
+      <span className='link-button' style={{ marginLeft: 16 }}>
         立即解冻 <Icon type="right"/>
       </span>
     </div>
     <div>
-      <Icon style={{color: '#f5222d', marginRight: 8}} type="close-circle-o"/>您的账户还不具备申请资格
-      <span className='link-button' style={{marginLeft: 16}}>
+      <Icon style={{ color: '#f5222d', marginRight: 8 }} type="close-circle-o"/>您的账户还不具备申请资格
+      <span className='link-button' style={{ marginLeft: 16 }}>
         立即升级 <Icon type="right"/>
       </span>
     </div>
@@ -45,7 +45,7 @@ class Error extends Component {
             description="请核对并修改以下信息后，再重新提交。"
             extra={extra}
             actions={actions}
-            style={{marginTop: 48, marginBottom: 16}}
+            style={{ marginTop: 48, marginBottom: 16 }}
           />
         </Card>
       </PageHeaderWrapper>

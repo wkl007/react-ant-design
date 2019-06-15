@@ -1,19 +1,6 @@
 import React, { Component } from 'react'
 import moment from 'moment'
-import {
-  List,
-  Card,
-  Row,
-  Col,
-  Radio,
-  Input,
-  Progress,
-  Button,
-  Icon,
-  Dropdown,
-  Menu,
-  Avatar,
-} from 'antd'
+import { Avatar, Button, Card, Col, Dropdown, Icon, Input, List, Menu, Progress, Radio, Row, } from 'antd'
 import PageHeaderWrapper from '../../components/PageHeaderWrapper'
 
 import styles from './BasicList.less'

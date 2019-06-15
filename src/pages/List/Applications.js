@@ -1,18 +1,6 @@
 import React, { Component } from 'react'
 import numeral from 'numeral'
-import {
-  Row,
-  Col,
-  Form,
-  Card,
-  Select,
-  Icon,
-  Avatar,
-  List,
-  Tooltip,
-  Dropdown,
-  Menu,
-} from 'antd'
+import { Avatar, Card, Col, Dropdown, Form, Icon, List, Menu, Row, Select, Tooltip, } from 'antd'
 import { TagSelect } from 'ant-design-pro'
 import StandardFormRow from '../../components/StandardFormRow'
 

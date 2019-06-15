@@ -8,7 +8,7 @@ import { getRoutes } from '../../utils/utils'
 class List extends Component {
   //tab切换
   handleTabChange = key => {
-    const {match, history} = this.props
+    const { match, history } = this.props
     switch (key) {
       case 'articles':
         history.push(`${match.url}/articles`)
@@ -25,7 +25,7 @@ class List extends Component {
   }
 
   render () {
-    const {location, match} = this.props
+    const { location, match } = this.props
     const routerData = getRouterData()
     const routes = getRoutes(match.path, routerData)
 
@@ -44,13 +44,13 @@ class List extends Component {
       },
     ]
     const mainSearch = (
-      <div style={{textAlign: 'center'}}>
+      <div style={{ textAlign: 'center' }}>
         <Input.Search
           placeholder="请搜索"
           enterButton="搜索"
           size="large"
           onSearch={value => {console.log(value)}}
-          style={{width: 522}}
+          style={{ width: 522 }}
         />
       </div>
     )

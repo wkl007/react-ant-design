@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col } from 'antd'
+import { Col, Row } from 'antd'
 import GGEditor, { Koni } from 'gg-editor'
 import EditorMinimap from '../components/EditorMinimap'
 import { KoniContextMenu } from '../components/EditorContextMenu'

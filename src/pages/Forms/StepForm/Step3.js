@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Button, Row, Col } from 'antd'
+import { Button, Col, Row } from 'antd'
 import { Result } from 'ant-design-pro'
 import styles from './styles.less'
 

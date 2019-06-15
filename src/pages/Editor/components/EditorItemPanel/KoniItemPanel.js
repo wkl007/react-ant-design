@@ -1,7 +1,7 @@
-import React from 'react';
-import { Card } from 'antd';
-import { ItemPanel, Item } from 'gg-editor';
-import styles from './index.less';
+import React from 'react'
+import { Card } from 'antd'
+import { Item, ItemPanel } from 'gg-editor'
+import styles from './index.less'
 
 const KoniItemPanel = () => {
   return (
@@ -48,7 +48,7 @@ const KoniItemPanel = () => {
         />
       </Card>
     </ItemPanel>
-  );
-};
+  )
+}
 
-export default KoniItemPanel;
+export default KoniItemPanel

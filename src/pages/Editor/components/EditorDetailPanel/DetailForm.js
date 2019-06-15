@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react';
-import { Card, Form, Input, Select } from 'antd';
-import { withPropsAPI } from 'gg-editor';
-import upperFirst from 'lodash/upperFirst';
+import React, { Fragment } from 'react'
+import { Card, Form, Input, Select } from 'antd'
+import { withPropsAPI } from 'gg-editor'
+import upperFirst from 'lodash/upperFirst'
 
-const { Item } = Form;
-const { Option } = Select;
+const { Item } = Form
+const { Option } = Select
 
 const inlineFormItemLayout = {
   labelCol: {
@@ -13,43 +13,43 @@ const inlineFormItemLayout = {
   wrapperCol: {
     sm: { span: 16 },
   },
-};
+}
 
 class DetailForm extends React.Component {
-  get item() {
-    const { propsAPI } = this.props;
+  get item () {
+    const { propsAPI } = this.props
 
-    return propsAPI.getSelected()[0];
+    return propsAPI.getSelected()[0]
   }
 
   handleSubmit = e => {
     if (e && e.preventDefault) {
-      e.preventDefault();
+      e.preventDefault()
     }
 
-    const { form, propsAPI } = this.props;
-    const { getSelected, executeCommand, update } = propsAPI;
+    const { form, propsAPI } = this.props
+    const { getSelected, executeCommand, update } = propsAPI
 
     setTimeout(() => {
       form.validateFieldsAndScroll((err, values) => {
         if (err) {
-          return;
+          return
         }
 
-        const item = getSelected()[0];
+        const item = getSelected()[0]
 
         if (!item) {
-          return;
+          return
         }
 
         executeCommand(() => {
           update(item, {
             ...values,
-          });
-        });
-      });
-    }, 0);
-  };
+          })
+        })
+      })
+    }, 0)
+  }
 
   renderEdgeShapeSelect = () => {
     return (
@@ -58,32 +58,32 @@ class DetailForm extends React.Component {
         <Option value="flow-polyline">Polyline</Option>
         <Option value="flow-polyline-round">Polyline Round</Option>
       </Select>
-    );
-  };
+    )
+  }
 
   renderNodeDetail = () => {
-    const { form } = this.props;
-    const { label } = this.item.getModel();
+    const { form } = this.props
+    const { label } = this.item.getModel()
 
     return (
       <Item label="Label" {...inlineFormItemLayout}>
         {form.getFieldDecorator('label', {
           initialValue: label,
-        })(<Input onBlur={this.handleSubmit} />)}
+        })(<Input onBlur={this.handleSubmit}/>)}
       </Item>
-    );
-  };
+    )
+  }
 
   renderEdgeDetail = () => {
-    const { form } = this.props;
-    const { label = '', shape = 'flow-smooth' } = this.item.getModel();
+    const { form } = this.props
+    const { label = '', shape = 'flow-smooth' } = this.item.getModel()
 
     return (
       <Fragment>
         <Item label="Label" {...inlineFormItemLayout}>
           {form.getFieldDecorator('label', {
             initialValue: label,
-          })(<Input onBlur={this.handleSubmit} />)}
+          })(<Input onBlur={this.handleSubmit}/>)}
         </Item>
         <Item label="Shape" {...inlineFormItemLayout}>
           {form.getFieldDecorator('shape', {
@@ -91,27 +91,27 @@ class DetailForm extends React.Component {
           })(this.renderEdgeShapeSelect())}
         </Item>
       </Fragment>
-    );
-  };
+    )
+  }
 
   renderGroupDetail = () => {
-    const { form } = this.props;
-    const { label = '新建分组' } = this.item.getModel();
+    const { form } = this.props
+    const { label = '新建分组' } = this.item.getModel()
 
     return (
       <Item label="Label" {...inlineFormItemLayout}>
         {form.getFieldDecorator('label', {
           initialValue: label,
-        })(<Input onBlur={this.handleSubmit} />)}
+        })(<Input onBlur={this.handleSubmit}/>)}
       </Item>
-    );
-  };
+    )
+  }
 
-  render() {
-    const { type } = this.props;
+  render () {
+    const { type } = this.props
 
     if (!this.item) {
-      return null;
+      return null
     }
 
     return (
@@ -122,8 +122,8 @@ class DetailForm extends React.Component {
           {type === 'group' && this.renderGroupDetail()}
         </Form>
       </Card>
-    );
+    )
   }
 }
 
-export default Form.create()(withPropsAPI(DetailForm));
+export default Form.create()(withPropsAPI(DetailForm))

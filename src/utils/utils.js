@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import moment from 'moment'
 import nzh from 'nzh/cn'
 import { parse, stringify } from 'qs'
@@ -162,13 +162,13 @@ export function urlToList (url) {
   })
 }
 
-export function formatWan(val) {
-  const v = val * 1;
-  if (!v || Number.isNaN(v)) return '';
+export function formatWan (val) {
+  const v = val * 1
+  if (!v || Number.isNaN(v)) return ''
 
-  let result = val;
+  let result = val
   if (val > 10000) {
-    result = Math.floor(val / 10000);
+    result = Math.floor(val / 10000)
     result = (
       <span>
         {result}
@@ -184,7 +184,7 @@ export function formatWan(val) {
           万
         </span>
       </span>
-    );
+    )
   }
-  return result;
+  return result
 }

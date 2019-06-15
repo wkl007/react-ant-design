@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { List, Card, Icon, Dropdown, Menu, Avatar, Tooltip } from 'antd'
+import { Avatar, Card, Dropdown, Icon, List, Menu, Tooltip } from 'antd'
 import numeral from 'numeral'
 import { formatWan } from '../../../utils/utils'
 import stylesApplicatons from '../../List/Applications.less'

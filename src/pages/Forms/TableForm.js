@@ -1,5 +1,5 @@
 import React, { Fragment, PureComponent } from 'react'
-import { Table, Button, Input, message, Popconfirm, Divider } from 'antd'
+import { Button, Divider, Input, message, Popconfirm, Table } from 'antd'
 import styles from './style.less'
 
 class TableForm extends PureComponent {
@@ -27,26 +27,26 @@ class TableForm extends PureComponent {
 
   toggleEditable = (e, key) => {
     e.preventDefault()
-    const newData = this.state.data.map(item => ({...item}))
+    const newData = this.state.data.map(item => ({ ...item }))
     const target = this.getRowByKey(key, newData)
     if (target) {
       //进入编辑状态保存原始数据
       if (!target.editable) {
-        this.cacheOriginData[key] = {...target}
+        this.cacheOriginData[key] = { ...target }
       }
       target.editable = !target.editable
-      this.setState({data: newData})
+      this.setState({ data: newData })
     }
   }
 
   remove (key) {
     const newData = this.state.data.filter(item => item.key !== key)
-    this.setState({data: newData})
+    this.setState({ data: newData })
     this.props.onChange(newData)
   }
 
   newMember = () => {
-    const newData = this.state.data.map(item => ({...item}))
+    const newData = this.state.data.map(item => ({ ...item }))
     newData.push({
       key: `NEW_THMP_ID${this.index}`,
       workId: '',
@@ -56,7 +56,7 @@ class TableForm extends PureComponent {
       isNew: true,
     })
     this.index += 1
-    this.setState({data: newData})
+    this.setState({ data: newData })
   }
 
   handleKeyPress = (e, key) => {
@@ -66,11 +66,11 @@ class TableForm extends PureComponent {
   }
 
   handleFieldChange = (e, fieldName, key) => {
-    const newData = this.state.data.map(item => ({...item}))
+    const newData = this.state.data.map(item => ({ ...item }))
     const target = this.getRowByKey(key, newData)
     if (target) {
       target[fieldName] = e.target.value
-      this.setState({data: newData})
+      this.setState({ data: newData })
     }
   }
   saveRow = (e, key) => {
@@ -104,14 +104,14 @@ class TableForm extends PureComponent {
   cancel (e, key) {
     this.clickedCancel = true
     e.preventDefault()
-    const newData = this.state.data.map(item => ({...item}))
+    const newData = this.state.data.map(item => ({ ...item }))
     const target = this.getRowByKey(key, newData)
     if (this.cacheOriginData[key]) {
       Object.assign(target, this.cacheOriginData[key])
       target.editable = false
       delete this.cacheOriginData[key]
     }
-    this.setState({data: newData})
+    this.setState({ data: newData })
     this.clickedCancel = false
   }
 
@@ -232,7 +232,7 @@ class TableForm extends PureComponent {
           }}
         />
         <Button
-          style={{width: '100%', marginTop: 16, marginBottom: 8}}
+          style={{ width: '100%', marginTop: 16, marginBottom: 8 }}
           type="dashed"
           onClick={this.newMember}
           icon="plus"

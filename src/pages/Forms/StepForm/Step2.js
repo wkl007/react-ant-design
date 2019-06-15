@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Input, Button, Alert, Divider } from 'antd'
+import { Alert, Button, Divider, Form, Input } from 'antd'
 import { digitUppercase } from '../../../utils/utils'
 
 import styles from './styles.less'
@@ -24,10 +24,10 @@ class Step2 extends Component {
   }
 
   render () {
-    const {form, history, location} = this.props
-    const {submitting} = this.state
+    const { form, history, location } = this.props
+    const { submitting } = this.state
     const data = qs.parse(location.search.substring(1))
-    const {getFieldDecorator, validateFields} = form
+    const { getFieldDecorator, validateFields } = form
     const onPrev = () => {
       history.push('/form/step-form')
     }
@@ -39,15 +39,15 @@ class Step2 extends Component {
           this.setState({
             submitting: true,
           })
-          setTimeout(()=>{
+          setTimeout(() => {
             this.setState({
               submitting: false,
             })
             history.push({
               pathname: '/form/step-form/result',
-              search: qs.stringify({...data, ...values}),
+              search: qs.stringify({ ...data, ...values }),
             })
-          },1000)
+          }, 1000)
         }
       })
     }
@@ -58,7 +58,7 @@ class Step2 extends Component {
           closable
           showIcon
           message="确认转账后，资金将直接打入对方账户，无法退回。"
-          style={{marginBottom: 24}}
+          style={{ marginBottom: 24 }}
         />
         <Form.Item {...formItemLayout} className={styles.stepForm}
                    label="付款账户">
@@ -78,21 +78,21 @@ class Step2 extends Component {
           <span className={styles.uppercase}>（{digitUppercase(
             data.amount)}）</span>
         </Form.Item>
-        <Divider style={{margin: '21px 0'}}/>
+        <Divider style={{ margin: '21px 0' }}/>
         <Form.Item {...formItemLayout} label="支付密码"
                    required={false}>
           {
             getFieldDecorator('password', {
               initialValue: '123456',
               rules: [
-                {required: true, message: '需要支付密码才能进行支付'},
+                { required: true, message: '需要支付密码才能进行支付' },
               ],
             })(<Input type="password" autoComplete="off"
-                      style={{width: '80%'}}/>)
+                      style={{ width: '80%' }}/>)
           }
         </Form.Item>
-        <Form.Item style={{marginBottom: 8}} wrapperCol={{
-          xs: {span: 24, offset: 0},
+        <Form.Item style={{ marginBottom: 8 }} wrapperCol={{
+          xs: { span: 24, offset: 0 },
           sm: {
             span: formItemLayout.wrapperCol.span,
             offset: formItemLayout.labelCol.span,
@@ -102,7 +102,7 @@ class Step2 extends Component {
           <Button type="primary"
                   htmlType="submit"
                   loading={submitting}>提交</Button>
-          <Button onClick={onPrev} style={{marginLeft: 8}}>
+          <Button onClick={onPrev} style={{ marginLeft: 8 }}>
             上一步
           </Button>
         </Form.Item>

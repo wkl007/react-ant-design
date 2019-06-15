@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { Button, Spin, Card } from 'antd'
+import { Button, Card, Spin } from 'antd'
 import styles from './style.less'
 
 class TriggerException extends PureComponent {

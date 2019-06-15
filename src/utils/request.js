@@ -1,5 +1,5 @@
-import  'whatwg-fetch';
-import { notification } from 'antd';
+import 'whatwg-fetch'
+import { notification } from 'antd'
 
 const codeMessage = {
   200: '服务器成功返回请求的数据。',
@@ -17,20 +17,21 @@ const codeMessage = {
   502: '网关错误。',
   503: '服务不可用，服务器暂时过载或维护。',
   504: '网关超时。',
-};
-function checkStatus(response) {
+}
+
+function checkStatus (response) {
   if (response.status >= 200 && response.status < 300) {
-    return response;
+    return response
   }
-  const errortext = codeMessage[response.status] || response.statusText;
+  const errortext = codeMessage[response.status] || response.statusText
   notification.error({
     message: `请求错误 ${response.status}: ${response.url}`,
     description: errortext,
-  });
-  const error = new Error(errortext);
-  error.name = response.status;
-  error.response = response;
-  throw error;
+  })
+  const error = new Error(errortext)
+  error.name = response.status
+  error.response = response
+  throw error
 }
 
 /**
@@ -40,25 +41,25 @@ function checkStatus(response) {
  * @param  {object} [options] The options we want to pass to "fetch"
  * @return {object}           An object containing either "data" or "err"
  */
-export default function request(url, options) {
+export default function request (url, options) {
   const defaultOptions = {
     // credentials: 'include',
-  };
-  const newOptions = { ...defaultOptions, ...options };
+  }
+  const newOptions = { ...defaultOptions, ...options }
   if (newOptions.method === 'POST' || newOptions.method === 'PUT') {
     if (!(newOptions.body instanceof FormData)) {
       newOptions.headers = {
         Accept: 'application/json',
         'Content-Type': 'application/json; charset=utf-8',
         ...newOptions.headers,
-      };
-      newOptions.body = JSON.stringify(newOptions.body);
+      }
+      newOptions.body = JSON.stringify(newOptions.body)
     } else {
       // newOptions.body is FormData
       newOptions.headers = {
         Accept: 'application/json',
         ...newOptions.headers,
-      };
+      }
     }
   }
 
@@ -66,28 +67,28 @@ export default function request(url, options) {
     .then(checkStatus)
     .then(response => {
       if (newOptions.method === 'DELETE' || response.status === 204) {
-        return response.text();
+        return response.text()
       }
-      return response.json();
+      return response.json()
     })
     .catch(e => {
-      const status = e.name;
+      const status = e.name
       if (status === 401) {
-       /* dispatch({
-          type: 'login/logout',
-        });*/
-        return;
+        /* dispatch({
+           type: 'login/logout',
+         });*/
+        return
       }
       if (status === 403) {
         // dispatch(routerRedux.push('/exception/403'));
-        return;
+        return
       }
       if (status <= 504 && status >= 500) {
         // dispatch(routerRedux.push('/exception/500'));
-        return;
+        return
       }
       if (status >= 404 && status < 422) {
         // dispatch(routerRedux.push('/exception/404'));
       }
-    });
+    })
 }

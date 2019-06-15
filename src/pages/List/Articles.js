@@ -1,18 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import moment from 'moment'
 import classNames from 'classnames'
-import {
-  Form,
-  Card,
-  Select,
-  List,
-  Tag,
-  Icon,
-  Avatar,
-  Row,
-  Col,
-  Button,
-} from 'antd'
+import { Avatar, Button, Card, Col, Form, Icon, List, Row, Select, Tag, } from 'antd'
 import { TagSelect } from 'ant-design-pro'
 import StandardFormRow from '../../components/StandardFormRow'
 import styles from './Articles.less'

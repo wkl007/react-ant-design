@@ -1,3 +1,3 @@
-import FlowContextMenu from './FlowContextMenu';
+import FlowContextMenu from './FlowContextMenu'
 
-export default FlowContextMenu;
+export default FlowContextMenu

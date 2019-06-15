@@ -1,16 +1,5 @@
 import React, { Component } from 'react'
-import {
-  Card,
-  Button,
-  Form,
-  Icon,
-  Col,
-  Row,
-  DatePicker,
-  Input,
-  Select,
-  Popover,
-} from 'antd'
+import { Button, Card, Col, DatePicker, Form, Icon, Input, Popover, Row, Select, } from 'antd'
 import { FooterToolbar } from 'ant-design-pro'
 import PageHeaderWrapper from '../../components/PageHeaderWrapper'
 import TableForm from './TableForm'
@@ -18,8 +7,8 @@ import Debounce from 'lodash-decorators/debounce'
 
 import styles from './style.less'
 
-const {Option} = Select
-const {RangePicker} = DatePicker
+const { Option } = Select
+const { RangePicker } = DatePicker
 const fieldLabels = {
   name: '仓库名',
   url: '仓库域名',
@@ -88,9 +77,9 @@ class AdvancedForm extends Component {
   }
 
   render () {
-    const {form} = this.props
-    const {submitting, width} = this.state
-    const {getFieldDecorator, validateFieldsAndScroll, getFieldsError} = form
+    const { form } = this.props
+    const { submitting, width } = this.state
+    const { getFieldDecorator, validateFieldsAndScroll, getFieldsError } = form
     const validate = () => {
       validateFieldsAndScroll((err, values) => {
         if (!err) {
@@ -151,32 +140,32 @@ class AdvancedForm extends Component {
                 <Form.Item label={fieldLabels.name}>
                   {
                     getFieldDecorator('name', {
-                      rules: [{required: true, message: '请输入仓库名称'}],
+                      rules: [{ required: true, message: '请输入仓库名称' }],
                     })(<Input autoComplete="off" placeholder="请输入仓库名称"/>)
                   }
                 </Form.Item>
               </Col>
-              <Col lg={{span: 8}} md={{span: 12}} sm={24}
-                   xl={{span: 6, offset: 2}}>
+              <Col lg={{ span: 8 }} md={{ span: 12 }} sm={24}
+                   xl={{ span: 6, offset: 2 }}>
                 <Form.Item label={fieldLabels.url}>
                   {
                     getFieldDecorator('url', {
-                      rules: [{required: true, message: '请选择'}],
+                      rules: [{ required: true, message: '请选择' }],
                     })(<Input
                       autoComplete="off"
-                      style={{width: '100%'}}
+                      style={{ width: '100%' }}
                       addonBefore="http://"
                       addonAfter=".com"
                       placeholder="请输入"/>)
                   }
                 </Form.Item>
               </Col>
-              <Col lg={{span: 10}} md={{span: 24}} sm={24}
-                   xl={{span: 8, offset: 2}}>
+              <Col lg={{ span: 10 }} md={{ span: 24 }} sm={24}
+                   xl={{ span: 8, offset: 2 }}>
                 <Form.Item label={fieldLabels.owner}>
                   {
                     getFieldDecorator('owner', {
-                      rules: [{required: true, message: '请选择管理员'}],
+                      rules: [{ required: true, message: '请选择管理员' }],
                     })(
                       <Select placeholder="请选择管理员">
                         <Option value="xiao">付晓晓</Option>
@@ -192,7 +181,7 @@ class AdvancedForm extends Component {
                 <Form.Item label={fieldLabels.approver}>
                   {
                     getFieldDecorator('approver', {
-                      rules: [{required: true, message: '请选择审批员'}],
+                      rules: [{ required: true, message: '请选择审批员' }],
                     })(
                       <Select placeholdler="请选择审批员">
                         <Option value="xiao">付晓晓</Option>
@@ -202,25 +191,25 @@ class AdvancedForm extends Component {
                   }
                 </Form.Item>
               </Col>
-              <Col lg={{span: 8}} md={{span: 12}} sm={24}
-                   xl={{span: 6, offset: 2}}>
+              <Col lg={{ span: 8 }} md={{ span: 12 }} sm={24}
+                   xl={{ span: 6, offset: 2 }}>
                 <Form.Item label={fieldLabels.dateRange}>
                   {
                     getFieldDecorator('dateRange', {
-                      rules: [{required: true, message: '请选择生效日期'}],
+                      rules: [{ required: true, message: '请选择生效日期' }],
                     })(
                       <RangePicker placeholder={['开始日期', '结束日期']}
-                                   style={{width: '100%'}}/>,
+                                   style={{ width: '100%' }}/>,
                     )
                   }
                 </Form.Item>
               </Col>
-              <Col lg={{span: 10}} md={{span: 24}} sm={24}
-                   xl={{span: 8, offset: 2}}>
+              <Col lg={{ span: 10 }} md={{ span: 24 }} sm={24}
+                   xl={{ span: 8, offset: 2 }}>
                 <Form.Item label={fieldLabels.type}>
                   {
                     getFieldDecorator('type', {
-                      rules: [{required: true, message: '请选择仓库类型'}],
+                      rules: [{ required: true, message: '请选择仓库类型' }],
                     })(
                       <Select placeholdler="请选择仓库类型">
                         <Option value="private">私密</Option>
@@ -240,32 +229,32 @@ class AdvancedForm extends Component {
                 <Form.Item label={fieldLabels.name2}>
                   {
                     getFieldDecorator('name2', {
-                      rules: [{required: true, message: '请输入'}],
+                      rules: [{ required: true, message: '请输入' }],
                     })(<Input autoComplete="off" placeholder="请输入"/>)
                   }
                 </Form.Item>
               </Col>
-              <Col lg={{span: 8}} md={{span: 12}} sm={24}
-                   xl={{span: 6, offset: 2}}>
+              <Col lg={{ span: 8 }} md={{ span: 12 }} sm={24}
+                   xl={{ span: 6, offset: 2 }}>
                 <Form.Item label={fieldLabels.url2}>
                   {
                     getFieldDecorator('url2', {
-                      rules: [{required: true, message: '请选择'}],
+                      rules: [{ required: true, message: '请选择' }],
                     })(<Input
                       autoComplete="off"
-                      style={{width: '100%'}}
+                      style={{ width: '100%' }}
                       addonBefore="http://"
                       addonAfter=".com"
                       placeholder="请输入"/>)
                   }
                 </Form.Item>
               </Col>
-              <Col lg={{span: 10}} md={{span: 24}} sm={24}
-                   xl={{span: 8, offset: 2}}>
+              <Col lg={{ span: 10 }} md={{ span: 24 }} sm={24}
+                   xl={{ span: 8, offset: 2 }}>
                 <Form.Item label={fieldLabels.owner2}>
                   {
                     getFieldDecorator('owner2', {
-                      rules: [{required: true, message: '请选择管理员'}],
+                      rules: [{ required: true, message: '请选择管理员' }],
                     })(
                       <Select placeholder="请选择管理员">
                         <Option value="xiao">付晓晓</Option>
@@ -281,7 +270,7 @@ class AdvancedForm extends Component {
                 <Form.Item label={fieldLabels.approver2}>
                   {
                     getFieldDecorator('approver2', {
-                      rules: [{required: true, message: '请选择审批员'}],
+                      rules: [{ required: true, message: '请选择审批员' }],
                     })(
                       <Select placeholdler="请选择审批员">
                         <Option value="xiao">付晓晓</Option>
@@ -291,25 +280,25 @@ class AdvancedForm extends Component {
                   }
                 </Form.Item>
               </Col>
-              <Col lg={{span: 8}} md={{span: 12}} sm={24}
-                   xl={{span: 6, offset: 2}}>
+              <Col lg={{ span: 8 }} md={{ span: 12 }} sm={24}
+                   xl={{ span: 6, offset: 2 }}>
                 <Form.Item label={fieldLabels.dateRange2}>
                   {
                     getFieldDecorator('dateRange2', {
-                      rules: [{required: true, message: '请选择生效日期'}],
+                      rules: [{ required: true, message: '请选择生效日期' }],
                     })(
                       <RangePicker placeholder={['开始日期', '结束日期']}
-                                   style={{width: '100%'}}/>,
+                                   style={{ width: '100%' }}/>,
                     )
                   }
                 </Form.Item>
               </Col>
-              <Col lg={{span: 10}} md={{span: 24}} sm={24}
-                   xl={{span: 8, offset: 2}}>
+              <Col lg={{ span: 10 }} md={{ span: 24 }} sm={24}
+                   xl={{ span: 8, offset: 2 }}>
                 <Form.Item label={fieldLabels.type2}>
                   {
                     getFieldDecorator('type2', {
-                      rules: [{required: true, message: '请选择仓库类型'}],
+                      rules: [{ required: true, message: '请选择仓库类型' }],
                     })(
                       <Select placeholdler="请选择仓库类型">
                         <Option value="private">私密</Option>
@@ -329,7 +318,7 @@ class AdvancedForm extends Component {
             })(<TableForm/>)
           }
         </Card>
-        <FooterToolbar style={{width: width}}>
+        <FooterToolbar style={{ width: width }}>
           {getErrorInfo()}
           <Button type="primary" onClick={validate} loading={submitting}>
             提交

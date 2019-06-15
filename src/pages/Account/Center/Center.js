@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Link, Redirect, Switch, Route } from 'react-router-dom'
-import { Card, Row, Col, Icon, Avatar, Tag, Divider, Spin, Input } from 'antd'
+import { Link, Redirect, Route, Switch } from 'react-router-dom'
+import { Avatar, Card, Col, Divider, Icon, Input, Row, Spin, Tag } from 'antd'
 import NotFound from '../../Exception/404'
 import { getRouterData } from '../../../router/router'
 import { getRoutes } from '../../../utils/utils'

@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react'
-import { Form, Input, Button, Select, Divider } from 'antd'
+import { Button, Divider, Form, Input, Select } from 'antd'
 import styles from './styles.less'
 
-const qs=require('qs')
-const {Option} = Select
+const qs = require('qs')
+const { Option } = Select
 
 const formItemLayout = {
   labelCol: {
@@ -17,21 +17,21 @@ const formItemLayout = {
 @Form.create()
 class Step1 extends Component {
   render () {
-    const {form, history} = this.props
+    const { form, history } = this.props
     const data = {
       amount: '500',
       payAccount: 'ant-design@alipay.com',
       receiverAccount: 'test@example.com',
       receiverName: 'Alex',
     }
-    const {getFieldDecorator, validateFields} = form
+    const { getFieldDecorator, validateFields } = form
     const onValidateForm = (e) => {
       e.preventDefault()
       validateFields((err, values) => {
         if (!err) {
           history.push({
             pathname: '/form/step-form/confirm',
-            search : qs.stringify(values),
+            search: qs.stringify(values),
           })
         }
       })
@@ -43,7 +43,7 @@ class Step1 extends Component {
             {
               getFieldDecorator('payAccount', {
                 initialValue: data.payAccount,
-                rules: [{required: true, message: '请选择付款账户'}],
+                rules: [{ required: true, message: '请选择付款账户' }],
               })(
                 <Select placeholder="test@example.com">
                   <Option
@@ -54,7 +54,7 @@ class Step1 extends Component {
           </Form.Item>
           <Form.Item {...formItemLayout} label="收款账户">
             <Input.Group compact>
-              <Select defaultValue="alipay" style={{width: 100}}>
+              <Select defaultValue="alipay" style={{ width: 100 }}>
                 <Option value="alipay">支付宝</Option>
                 <Option value="bank">银行账户</Option>
               </Select>
@@ -62,11 +62,11 @@ class Step1 extends Component {
                 getFieldDecorator('receiverAccount', {
                   initialValue: data.receiverAccount,
                   rules: [
-                    {required: true, message: '请输入收款人账户'},
-                    {type: 'email', message: '账户名应为邮箱格式'},
+                    { required: true, message: '请输入收款人账户' },
+                    { type: 'email', message: '账户名应为邮箱格式' },
                   ],
                 })(
-                  <Input autoComplete="off" style={{width: 'calc(100% - 100px)'}}
+                  <Input autoComplete="off" style={{ width: 'calc(100% - 100px)' }}
                          placeholder="test@example.com"/>,
                 )
               }
@@ -76,7 +76,7 @@ class Step1 extends Component {
             {
               getFieldDecorator('receiverName', {
                 initialValue: data.receiverName,
-                rules: [{required: true, message: '请输入收款人姓名'}],
+                rules: [{ required: true, message: '请输入收款人姓名' }],
               })(
                 <Input autoComplete="off" placeholder="请输入收款人姓名"/>,
               )
@@ -87,7 +87,7 @@ class Step1 extends Component {
               getFieldDecorator('amount', {
                 initialValue: data.amount,
                 rules: [
-                  {required: true, message: '请输入转账金额'},
+                  { required: true, message: '请输入转账金额' },
                   {
                     pattern: /^(\d+)((?:\.\d+)?)$/,
                     message: '请输入合法金额数字',
@@ -98,7 +98,7 @@ class Step1 extends Component {
             }
           </Form.Item>
           <Form.Item wrapperCol={{
-            xs: {span: 24, offset: 0},
+            xs: { span: 24, offset: 0 },
             sm: {
               span: formItemLayout.wrapperCol.span,
               offset: formItemLayout.labelCol.span,
@@ -110,7 +110,7 @@ class Step1 extends Component {
             </Button>
           </Form.Item>
         </Form>
-        <Divider style={{margin: '40px 0 24px'}}/>
+        <Divider style={{ margin: '40px 0 24px' }}/>
         <div className={styles.desc}>
           <h3>说明</h3>
           <h4>转账到支付宝账户</h4>

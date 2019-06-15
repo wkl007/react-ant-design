@@ -1,3 +1,3 @@
-import FlowDetailPanel from './FlowDetailPanel';
+import FlowDetailPanel from './FlowDetailPanel'
 
-export default FlowDetailPanel;
+export default FlowDetailPanel

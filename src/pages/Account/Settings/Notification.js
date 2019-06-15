@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { List, Switch, message } from 'antd'
+import { List, message, Switch } from 'antd'
 
 class Notification extends Component {
   onChange = (title, e) => {

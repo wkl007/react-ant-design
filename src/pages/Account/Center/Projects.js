@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { List, Card } from 'antd'
+import { Card, List } from 'antd'
 import { AvatarList } from 'ant-design-pro'
 import moment from 'moment'
 import stylesProjects from '../../List/Projects.less'

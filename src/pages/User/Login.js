@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { Checkbox, Alert, Icon } from 'antd'
+import { Alert, Checkbox, Icon } from 'antd'
 import { Login } from 'ant-design-pro'
 import actions from '../../redux/actions'
 

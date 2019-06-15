@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Form, Input, Upload, Select, Button, Cascader } from 'antd'
+import { Button, Cascader, Form, Input, Select, Upload } from 'antd'
 import PhoneView from './PhoneView'
 import styles from './BaseView.less'
 import generateJson from '../../../assets/data/generateData'
