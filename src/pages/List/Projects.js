@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import moment from 'moment'
 import { Row, Col, Form, Card, Select, List } from 'antd'
 
-import {TagSelect,AvatarList,Ellipsis} from 'ant-design-pro'
+import { TagSelect, AvatarList, Ellipsis } from 'ant-design-pro'
 import StandardFormRow from '../../components/StandardFormRow'
 
 import styles from './Projects.less'
 
-const {Option} = Select
+const { Option } = Select
 const FormItem = Form.Item
 const listData = {
   list: [
@@ -299,16 +299,16 @@ class Projects extends Component {
   }
 
   render () {
-    const {list} = listData
-    const {form} = this.props
-    const {getFieldDecorator} = form
-    const {loading} = this.state
+    const { list } = listData
+    const { form } = this.props
+    const { getFieldDecorator } = form
+    const { loading } = this.state
 
     const cardList = list ? (
       <List
         rowKey="id"
         loading={loading}
-        grid={{gutter: 24, xl: 4, lg: 3, md: 3, sm: 2, xs: 1}}
+        grid={{ gutter: 24, xl: 4, lg: 3, md: 3, sm: 2, xs: 1 }}
         dataSource={list}
         renderItem={item => (
           <List.Item>
@@ -349,8 +349,8 @@ class Projects extends Component {
 
     const formItemLayout = {
       wrapperCol: {
-        xs: {span: 24},
-        sm: {span: 16},
+        xs: { span: 24 },
+        sm: { span: 16 },
       },
     }
     return (
@@ -358,10 +358,17 @@ class Projects extends Component {
         <Card bordered={false}>
           <Form layout="inline">
             <StandardFormRow title="所属类目" block
-                             style={{paddingBottom: 11}}>
+                             style={{ paddingBottom: 11 }}>
               <FormItem>
                 {getFieldDecorator('category')(
-                  <TagSelect onChange={this.handleFormSubmit} expandable>
+                  <TagSelect
+                    onChange={this.handleFormSubmit}
+                    expandable
+                    actionsText={{
+                      expandText: '展开',
+                      collapseText: '收起'
+                    }}
+                  >
                     <TagSelect.Option value="cat1">类目一</TagSelect.Option>
                     <TagSelect.Option value="cat2">类目二</TagSelect.Option>
                     <TagSelect.Option value="cat3">类目三</TagSelect.Option>
@@ -386,7 +393,7 @@ class Projects extends Component {
                       <Select
                         onChange={this.handleFormSubmit}
                         placeholder="不限"
-                        style={{maxWidth: 200, width: '100%'}}
+                        style={{ maxWidth: 200, width: '100%' }}
                       >
                         <Option value="lisa">李三</Option>
                       </Select>,
@@ -399,7 +406,7 @@ class Projects extends Component {
                       <Select
                         onChange={this.handleFormSubmit}
                         placeholder="不限"
-                        style={{maxWidth: 200, width: '100%'}}
+                        style={{ maxWidth: 200, width: '100%' }}
                       >
                         <Option value="good">优秀</Option>
                       </Select>,

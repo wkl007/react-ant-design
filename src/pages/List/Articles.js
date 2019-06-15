@@ -17,7 +17,7 @@ import { TagSelect } from 'ant-design-pro'
 import StandardFormRow from '../../components/StandardFormRow'
 import styles from './Articles.less'
 
-const {Option} = Select
+const { Option } = Select
 const FormItem = Form.Item
 
 const listData = {
@@ -661,7 +661,7 @@ class Articles extends Component {
   }
 
   setOwner = () => {
-    const {form} = this.props
+    const { form } = this.props
     form.setFieldsValue({
       owner: ['wzj'],
     })
@@ -669,10 +669,10 @@ class Articles extends Component {
   }
 
   render () {
-    const {list} = listData
-    const {loading} = this.state
-    const {form} = this.props
-    const {getFieldDecorator} = form
+    const { list } = listData
+    const { loading } = this.state
+    const { form } = this.props
+    const { getFieldDecorator } = form
 
     const owners = [
       {
@@ -697,14 +697,14 @@ class Articles extends Component {
       },
     ]
 
-    const IconText = ({type, text}) => (
+    const IconText = ({ type, text }) => (
       <span>
-        <Icon type={type} style={{marginRight: 8}}/>
+        <Icon type={type} style={{ marginRight: 8 }}/>
         {text}
       </span>
     )
 
-    const ListContent = ({data: {content, updatedAt, avatar, owner, href}}) => (
+    const ListContent = ({ data: { content, updatedAt, avatar, owner, href } }) => (
       <div className={styles.listContent}>
         <div className={styles.description}>{content}</div>
         <div className={styles.extra}>
@@ -717,17 +717,17 @@ class Articles extends Component {
 
     const formItemLayout = {
       wrapperCol: {
-        xs: {span: 24},
-        sm: {span: 24},
-        md: {span: 12},
+        xs: { span: 24 },
+        sm: { span: 24 },
+        md: { span: 12 },
       },
     }
 
     const loadMore = (
       list.length > 0 ? (
-        <div style={{textAlign: 'center', marginTop: 16}}>
+        <div style={{ textAlign: 'center', marginTop: 16 }}>
           <Button onClick={this.handleMore}
-                  styles={{paddingLeft: 48, paddingRight: 48}}>
+                  styles={{ paddingLeft: 48, paddingRight: 48 }}>
             {
               loading ? (
                 <span>
@@ -747,10 +747,17 @@ class Articles extends Component {
         <Card bordered={false}>
           <Form layout="inline">
             <StandardFormRow title="所属类目" block
-                             style={{paddingBottom: 11}}>
+                             style={{ paddingBottom: 11 }}>
               <FormItem>
                 {getFieldDecorator('category')(
-                  <TagSelect onChange={this.handleFormSubmit} expandable>
+                  <TagSelect
+                    onChange={this.handleFormSubmit}
+                    expandable
+                    actionsText={{
+                      expandText: '展开',
+                      collapseText: '收起'
+                    }}
+                  >
                     <TagSelect.Option value="cat1">类目一</TagSelect.Option>
                     <TagSelect.Option value="cat2">类目二</TagSelect.Option>
                     <TagSelect.Option value="cat3">类目三</TagSelect.Option>
@@ -778,7 +785,7 @@ class Articles extends Component {
                         <Select
                           onChange={this.handleFormSubmit}
                           mode="multiple"
-                          style={{maxWidth: 286, width: '100%'}}
+                          style={{ maxWidth: 286, width: '100%' }}
                           placeholder="选择 owner"
                         >
                           {
@@ -808,7 +815,7 @@ class Articles extends Component {
                       <Select
                         onChange={this.handleFormSubmit}
                         placeholder="不限"
-                        style={{maxWidth: 200, width: '100%'}}
+                        style={{ maxWidth: 200, width: '100%' }}
                       >
                         <Option value="lisa">李三</Option>
                       </Select>,
@@ -821,7 +828,7 @@ class Articles extends Component {
                       <Select
                         onChange={this.handleFormSubmit}
                         placeholder="不限"
-                        style={{maxWidth: 200, width: '100%'}}
+                        style={{ maxWidth: 200, width: '100%' }}
                       >
                         <Option value="good">优秀</Option>
                       </Select>,
@@ -833,9 +840,9 @@ class Articles extends Component {
           </Form>
         </Card>
         <Card
-          style={{marginTop: 24}}
+          style={{ marginTop: 24 }}
           bordered={false}
-          bodyStyle={{padding: '8px 32px 32px 32px'}}
+          bodyStyle={{ padding: '8px 32px 32px 32px' }}
         >
           <List
             size="large"

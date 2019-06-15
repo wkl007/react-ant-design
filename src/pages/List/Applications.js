@@ -18,7 +18,7 @@ import StandardFormRow from '../../components/StandardFormRow'
 
 import styles from './Applications.less'
 
-const {Option} = Select
+const { Option } = Select
 const FormItem = Form.Item
 const listData = {
   list: [
@@ -327,19 +327,19 @@ class Applications extends Component {
   }
 
   render () {
-    const {list} = listData
-    const {form} = this.props
-    const {getFieldDecorator} = form
-    const {loading} = this.state
+    const { list } = listData
+    const { form } = this.props
+    const { getFieldDecorator } = form
+    const { loading } = this.state
 
     const formItemLayout = {
       wrapperCol: {
-        xs: {span: 24},
-        sm: {span: 16},
+        xs: { span: 24 },
+        sm: { span: 16 },
       },
     }
 
-    const CardInfo = ({activeUser, newUser}) => (
+    const CardInfo = ({ activeUser, newUser }) => (
       <div className={styles.cardInfo}>
         <div>
           <p>活跃用户</p>
@@ -380,10 +380,17 @@ class Applications extends Component {
         <Card bordered={false}>
           <Form layout="inline">
             <StandardFormRow title="所属类目" block
-                             style={{paddingBottom: 11}}>
+                             style={{ paddingBottom: 11 }}>
               <FormItem>
                 {getFieldDecorator('category')(
-                  <TagSelect onChange={this.handleFormSubmit} expandable>
+                  <TagSelect
+                    onChange={this.handleFormSubmit}
+                    expandable
+                    actionsText={{
+                      expandText: '展开',
+                      collapseText: '收起'
+                    }}
+                  >
                     <TagSelect.Option value="cat1">类目一</TagSelect.Option>
                     <TagSelect.Option value="cat2">类目二</TagSelect.Option>
                     <TagSelect.Option value="cat3">类目三</TagSelect.Option>
@@ -408,7 +415,7 @@ class Applications extends Component {
                       <Select
                         onChange={this.handleFormSubmit}
                         placeholder="不限"
-                        style={{maxWidth: 200, width: '100%'}}
+                        style={{ maxWidth: 200, width: '100%' }}
                       >
                         <Option value="lisa">李三</Option>
                       </Select>,
@@ -421,7 +428,7 @@ class Applications extends Component {
                       <Select
                         onChange={this.handleFormSubmit}
                         placeholder="不限"
-                        style={{maxWidth: 200, width: '100%'}}
+                        style={{ maxWidth: 200, width: '100%' }}
                       >
                         <Option value="good">优秀</Option>
                       </Select>,
@@ -434,15 +441,15 @@ class Applications extends Component {
         </Card>
         <List
           rowKey="id"
-          style={{marginTop: 24}}
-          grid={{gutter: 24, xl: 4, lg: 3, md: 3, sm: 2, xs: 1}}
+          style={{ marginTop: 24 }}
+          grid={{ gutter: 24, xl: 4, lg: 3, md: 3, sm: 2, xs: 1 }}
           loading={loading}
           dataSource={list}
           renderItem={item => (
             <List.Item key={item.id}>
               <Card
                 hoverable
-                bodyStyle={{paddingBottom: 20}}
+                bodyStyle={{ paddingBottom: 20 }}
                 actions={[
                   <Tooltip title="下载">
                     <Icon type="download"/>
