@@ -4,6 +4,7 @@
   "private": true,
   "homepage": ".",
   "scripts": {
+    "commit": "git-cz",
     "dll": "webpack --config ./config/webpack.dll.config.js",
     "start": "node scripts/start.js",
     "build": "cross-env REACT_ENV=development node scripts/build.js",
@@ -21,6 +22,11 @@
       "eslint --fix",
       "git add"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "dependencies": {
     "ant-design-pro": "^2.3.2",
@@ -71,9 +77,11 @@
     "camelcase": "^5.3.1",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
     "clean-webpack-plugin": "^2.0.2",
+    "commitizen": "^3.1.1",
     "compression-webpack-plugin": "^2.0.0",
     "cross-env": "^5.2.0",
     "css-loader": "2.1.1",
+    "cz-conventional-changelog": "^2.1.0",
     "dotenv": "6.2.0",
     "dotenv-expand": "4.2.0",
     "eslint": "^5.16.0",
