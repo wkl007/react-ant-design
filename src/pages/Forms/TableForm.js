@@ -7,7 +7,7 @@ class TableForm extends PureComponent {
     super(props)
     this.state = {
       data: props.value,
-      loading: false,
+      loading: false
     }
     this.index = 0
     this.cacheOriginData = {}
@@ -16,7 +16,7 @@ class TableForm extends PureComponent {
   componentWillReceiveProps (nextProps) {
     if ('value' in nextProps) {
       this.setState({
-        data: nextProps.value,
+        data: nextProps.value
       })
     }
   }
@@ -30,7 +30,7 @@ class TableForm extends PureComponent {
     const newData = this.state.data.map(item => ({ ...item }))
     const target = this.getRowByKey(key, newData)
     if (target) {
-      //进入编辑状态保存原始数据
+      // 进入编辑状态保存原始数据
       if (!target.editable) {
         this.cacheOriginData[key] = { ...target }
       }
@@ -53,7 +53,7 @@ class TableForm extends PureComponent {
       name: '',
       department: '',
       editable: true,
-      isNew: true,
+      isNew: true
     })
     this.index += 1
     this.setState({ data: newData })
@@ -76,7 +76,7 @@ class TableForm extends PureComponent {
   saveRow = (e, key) => {
     e.persist()
     this.setState({
-      loading: true,
+      loading: true
     })
     setTimeout(() => {
       if (this.clickedCancel) {
@@ -88,7 +88,7 @@ class TableForm extends PureComponent {
         message.error('请填写完整成员信息。')
         e.target.focus()
         this.setState({
-          loading: false,
+          loading: false
         })
         return
       }
@@ -96,7 +96,7 @@ class TableForm extends PureComponent {
       this.toggleEditable(e, key)
       this.props.onChange(this.state.data)
       this.setState({
-        loading: false,
+        loading: false
       })
     }, 500)
   }
@@ -126,17 +126,17 @@ class TableForm extends PureComponent {
           if (record.editable) {
             return (
               <Input
-                autoComplete="off"
+                autoComplete='off'
                 value={text}
                 autoFocus
                 onChange={e => this.handleFieldChange(e, 'name', record.key)}
                 onKeyPress={e => this.handleKeyPress(e, record.key)}
-                placeholder="成员姓名"
+                placeholder='成员姓名'
               />
             )
           }
           return text
-        },
+        }
       },
       {
         title: '工号',
@@ -147,16 +147,16 @@ class TableForm extends PureComponent {
           if (record.editable) {
             return (
               <Input
-                autoComplete="off"
+                autoComplete='off'
                 value={text}
                 onChange={e => this.handleFieldChange(e, 'workId', record.key)}
                 onKeyPress={e => this.handleKeyPress(e, record.key)}
-                placeholder="工号"
+                placeholder='工号'
               />
             )
           }
           return text
-        },
+        }
       },
       {
         title: '所属部门',
@@ -167,17 +167,17 @@ class TableForm extends PureComponent {
           if (record.editable) {
             return (
               <Input
-                autoComplete="off"
+                autoComplete='off'
                 value={text}
                 onChange={e => this.handleFieldChange(e, 'department',
                   record.key)}
                 onKeyPress={e => this.handleKeyPress(e, record.key)}
-                placeholder="所属部门"
+                placeholder='所属部门'
               />
             )
           }
           return text
-        },
+        }
       },
       {
         title: '操作',
@@ -191,9 +191,9 @@ class TableForm extends PureComponent {
               return (
                 <span>
                   <span className='link-button' onClick={e => this.saveRow(e, record.key)}>添加</span>
-                  <Divider type="vertical"/>
-                  <Popconfirm title="是否要删除此行？"
-                              onConfirm={() => this.remove(record.key)}>
+                  <Divider type='vertical'/>
+                  <Popconfirm title='是否要删除此行？'
+                    onConfirm={() => this.remove(record.key)}>
                     <span className='link-button'>删除</span>
                   </Popconfirm>
                 </span>
@@ -202,7 +202,7 @@ class TableForm extends PureComponent {
             return (
               <span>
                 <span className='link-button' onClick={e => this.saveRow(e, record.key)}>保存</span>
-                <Divider type="vertical"/>
+                <Divider type='vertical'/>
                 <span className='link-button' onClick={e => this.cancel(e, record.key)}>取消</span>
               </span>
             )
@@ -210,15 +210,15 @@ class TableForm extends PureComponent {
           return (
             <span>
               <span className='link-button' onClick={e => this.toggleEditable(e, record.key)}>编辑</span>
-              <Divider type="vertical"/>
-              <Popconfirm title="是否要删除此行？"
-                          onConfirm={() => this.remove(record.key)}>
+              <Divider type='vertical'/>
+              <Popconfirm title='是否要删除此行？'
+                onConfirm={() => this.remove(record.key)}>
                 <span className='link-button'>删除</span>
               </Popconfirm>
             </span>
           )
-        },
-      },
+        }
+      }
     ]
     return (
       <Fragment>
@@ -233,9 +233,9 @@ class TableForm extends PureComponent {
         />
         <Button
           style={{ width: '100%', marginTop: 16, marginBottom: 8 }}
-          type="dashed"
+          type='dashed'
           onClick={this.newMember}
-          icon="plus"
+          icon='plus'
         >新增成员
         </Button>
       </Fragment>
@@ -244,18 +244,3 @@ class TableForm extends PureComponent {
 }
 
 export default TableForm
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

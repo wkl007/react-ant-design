@@ -9,7 +9,7 @@ import styles from './index.less'
 const { Sider } = Layout
 const { SubMenu } = Menu
 
-/*获取导航icon
+/* 获取导航icon
 * Allow menu.js config icon as string or ReactNode
 *   icon: 'setting',
 *   icon: 'http://demo.com/icon.png',
@@ -17,8 +17,8 @@ const { SubMenu } = Menu
 * */
 const getIcon = (icon) => {
   if (typeof icon === 'string' && icon.indexOf('http') === 0) {
-    return <img src={icon} alt="icon"
-                className={`${styles.icon} sider-menu-item-img`}/>
+    return <img src={icon} alt='icon'
+      className={`${styles.icon} sider-menu-item-img`}/>
   }
   if (typeof icon === 'string') {
     return <Icon type={icon}/>
@@ -49,7 +49,7 @@ export const getFlatMenuKeys = menu =>
 export const getMenuMatchKeys = (flatMenuKeys, paths) =>
   paths.reduce((matchKeys, path) => (
     matchKeys.concat(
-      flatMenuKeys.filter(item => pathToRegexp(item).test(path)),
+      flatMenuKeys.filter(item => pathToRegexp(item).test(path))
     )
   ), [])
 
@@ -59,19 +59,19 @@ class SiderMenu extends PureComponent {
     this.menus = props.menuData
     this.flatMenuKeys = getFlatMenuKeys(props.menuData)
     this.state = {
-      openKeys: this.getDefaultCollapsedSubMenus(props),
+      openKeys: this.getDefaultCollapsedSubMenus(props)
     }
   }
 
   componentWillReceiveProps (nextProps) {
     if (nextProps.location.pathname !== this.props.location.pathname) {
       this.setState({
-        openKeys: this.getDefaultCollapsedSubMenus(nextProps),
+        openKeys: this.getDefaultCollapsedSubMenus(nextProps)
       })
     }
   }
 
-  //默认展开的subMenu
+  // 默认展开的subMenu
   getDefaultCollapsedSubMenus = (props) => {
     const { location: { pathname } } = props || this.props
     return getMenuMatchKeys(this.flatMenuKeys, urlToList(pathname))
@@ -113,7 +113,7 @@ class SiderMenu extends PureComponent {
     )
   }
 
-  //获取子菜单
+  // 获取子菜单
   getSubMenuOrItem = (item) => {
     if (item.children && item.children.some(child => child.name)) {
       let childrenItems = this.getNavMenuItems(item.children)
@@ -141,7 +141,7 @@ class SiderMenu extends PureComponent {
     }
   }
 
-  //获取菜单子节点
+  // 获取菜单子节点
   getNavMenuItems = (menusData) => {
     if (!menusData) {
       return []
@@ -153,13 +153,13 @@ class SiderMenu extends PureComponent {
     }).filter(item => item)
   }
 
-  //获取选择节点
+  // 获取选择节点
   getSelectedMenuKeys = () => {
     const { location: { pathname } } = this.props
     return getMenuMatchKeys(this.flatMenuKeys, urlToList(pathname))
   }
 
-  //权限检查
+  // 权限检查
   checkPermissionItem = (authority, ItemDom) => {
     if (this.props.Authorized && this.props.Authorized.check) {
       const { check } = this.props.Authorized
@@ -168,19 +168,19 @@ class SiderMenu extends PureComponent {
     return ItemDom
   }
 
-  //主菜单
+  // 主菜单
   isMainMenu = (key) => {
     return this.menus.some(
       item => key && (item.key === key || item.path === key))
   }
 
-  //SubMenu 展开/关闭
+  // SubMenu 展开/关闭
   handleOpenChange = (openKeys) => {
     let lastOpenKey = openKeys[openKeys.length - 1]
     let moreThanOne = openKeys.filter(
       openKey => this.isMainMenu(openKey)).length > 1
     this.setState({
-      openKeys: moreThanOne ? [lastOpenKey] : [...openKeys],
+      openKeys: moreThanOne ? [lastOpenKey] : [...openKeys]
     })
   }
 
@@ -196,11 +196,11 @@ class SiderMenu extends PureComponent {
   render () {
     const { logo, collapsed, onCollapse } = this.props
     const { openKeys } = this.state
-    //不要显示弹出式菜单
+    // 不要显示弹出式菜单
     const menuProps = collapsed
       ? {}
       : {
-        openKeys,
+        openKeys
       }
     let selectedKeys = this.getSelectedMenuKeys()
     if (!selectedKeys.length) {
@@ -212,21 +212,21 @@ class SiderMenu extends PureComponent {
         trigger={null}
         collapsible
         collapsed={collapsed}
-        breakpoint="lg"
+        breakpoint='lg'
         onCollapse={onCollapse}
         width={256}
         className={styles.sider}
       >
-        <div className={styles.logo} key="logo">
-          <Link to="/">
-            <img src={logo} alt="logo"/>
+        <div className={styles.logo} key='logo'>
+          <Link to='/'>
+            <img src={logo} alt='logo'/>
             <h1>Ant Design Pro</h1>
           </Link>
         </div>
         <Menu
-          key="Menu"
-          theme="dark"
-          mode="inline"
+          key='Menu'
+          theme='dark'
+          mode='inline'
           {...menuProps}
           onOpenChange={this.handleOpenChange}
           selectedKeys={selectedKeys}
@@ -236,7 +236,6 @@ class SiderMenu extends PureComponent {
         </Menu>
       </Sider>
     )
-
   }
 }
 

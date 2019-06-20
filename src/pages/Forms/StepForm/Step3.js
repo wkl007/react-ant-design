@@ -6,7 +6,6 @@ import styles from './styles.less'
 const qs = require('qs')
 
 class Step3 extends Component {
-
   render () {
     const { history, location } = this.props
     const data = qs.parse(location.search.substring(1))
@@ -51,15 +50,15 @@ class Step3 extends Component {
     )
     const actions = (
       <Fragment>
-        <Button type="primary" onClick={onFinish}>再转一笔</Button>
+        <Button type='primary' onClick={onFinish}>再转一笔</Button>
         <Button>查看账单</Button>
       </Fragment>
     )
     return (
       <Result
-        type="success"
-        title="操作成功"
-        descripotion="预计两小时内到账"
+        type='success'
+        title='操作成功'
+        descripotion='预计两小时内到账'
         extra={information}
         actions={actions}
         className={styles.result}

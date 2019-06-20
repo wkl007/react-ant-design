@@ -6,7 +6,7 @@ import { getRouterData } from '../../router/router'
 import { getRoutes } from '../../utils/utils'
 
 class List extends Component {
-  //tab切换
+  // tab切换
   handleTabChange = key => {
     const { match, history } = this.props
     switch (key) {
@@ -32,31 +32,31 @@ class List extends Component {
     const tabList = [
       {
         key: 'articles',
-        tab: '文章',
+        tab: '文章'
       },
       {
         key: 'projects',
-        tab: '项目',
+        tab: '项目'
       },
       {
         key: 'applications',
-        tab: '应用',
-      },
+        tab: '应用'
+      }
     ]
     const mainSearch = (
       <div style={{ textAlign: 'center' }}>
         <Input.Search
-          placeholder="请搜索"
-          enterButton="搜索"
-          size="large"
-          onSearch={value => {console.log(value)}}
+          placeholder='请搜索'
+          enterButton='搜索'
+          size='large'
+          onSearch={value => { console.log(value) }}
           style={{ width: 522 }}
         />
       </div>
     )
     return (
       <PageHeaderWrapper
-        title="搜索列表"
+        title='搜索列表'
         content={mainSearch}
         tabList={tabList}
         tabActiveKey={location.pathname.replace(`${match.path}/`, '')}

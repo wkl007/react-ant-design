@@ -9,9 +9,9 @@ class BindingView extends Component {
       actions: [
         <span className='link-button'>
           绑定
-        </span>,
+        </span>
       ],
-      avatar: <Icon type="taobao" className="taobao"/>,
+      avatar: <Icon type='taobao' className='taobao'/>
     },
     {
       title: '绑定支付宝',
@@ -19,9 +19,9 @@ class BindingView extends Component {
       actions: [
         <span className='link-button'>
           绑定
-        </span>,
+        </span>
       ],
-      avatar: <Icon type="alipay" className="alipay"/>,
+      avatar: <Icon type='alipay' className='alipay'/>
     },
     {
       title: '绑定钉钉',
@@ -29,10 +29,10 @@ class BindingView extends Component {
       actions: [
         <span className='link-button'>
           绑定
-        </span>,
+        </span>
       ],
-      avatar: <Icon type="dingding" className="dingding"/>,
-    },
+      avatar: <Icon type='dingding' className='dingding'/>
+    }
   ]
 
   render () {

@@ -15,21 +15,21 @@ const currentUser = {
   'title': '交互专家',
   'group': '蚂蚁金服－某某某事业群－某某平台部－某某技术部－UED',
   'tags': [
-    {'key': '0', 'label': '很有想法的'},
-    {'key': '1', 'label': '专注设计'},
-    {'key': '2', 'label': '辣~'},
-    {'key': '3', 'label': '大长腿'},
-    {'key': '4', 'label': '川妹子'},
-    {'key': '5', 'label': '海纳百川'}],
+    { 'key': '0', 'label': '很有想法的' },
+    { 'key': '1', 'label': '专注设计' },
+    { 'key': '2', 'label': '辣~' },
+    { 'key': '3', 'label': '大长腿' },
+    { 'key': '4', 'label': '川妹子' },
+    { 'key': '5', 'label': '海纳百川' }],
   'notifyCount': 12,
   'unreadCount': 11,
   'country': 'China',
   'geographic': {
-    'province': {'label': '浙江省', 'key': '330000'},
-    'city': {'label': '杭州市', 'key': '330100'},
+    'province': { 'label': '浙江省', 'key': '330000' },
+    'city': { 'label': '杭州市', 'key': '330100' }
   },
   'address': '西湖区工专路 77 号',
-  'phone': '0752-268888888',
+  'phone': '0752-268888888'
 }
 const project = {
   'notice': [
@@ -41,7 +41,7 @@ const project = {
       'updatedAt': '2018-12-04T02:31:18.865Z',
       'member': '科学搬砖组',
       'href': '',
-      'memberLink': '',
+      'memberLink': ''
     },
     {
       'id': 'xxx2',
@@ -51,7 +51,7 @@ const project = {
       'updatedAt': '2017-07-24T00:00:00.000Z',
       'member': '全组都是吴彦祖',
       'href': '',
-      'memberLink': '',
+      'memberLink': ''
     },
     {
       'id': 'xxx3',
@@ -61,7 +61,7 @@ const project = {
       'updatedAt': '2018-12-04T02:31:18.865Z',
       'member': '中二少女团',
       'href': '',
-      'memberLink': '',
+      'memberLink': ''
     },
     {
       'id': 'xxx4',
@@ -71,7 +71,7 @@ const project = {
       'updatedAt': '2017-07-23T00:00:00.000Z',
       'member': '程序员日常',
       'href': '',
-      'memberLink': '',
+      'memberLink': ''
     },
     {
       'id': 'xxx5',
@@ -81,7 +81,7 @@ const project = {
       'updatedAt': '2017-07-23T00:00:00.000Z',
       'member': '高逼格设计天团',
       'href': '',
-      'memberLink': '',
+      'memberLink': ''
     },
     {
       'id': 'xxx6',
@@ -91,8 +91,8 @@ const project = {
       'updatedAt': '2017-07-23T00:00:00.000Z',
       'member': '骗你来学计算机',
       'href': '',
-      'memberLink': '',
-    }],
+      'memberLink': ''
+    }]
 }
 
 class Center extends Component {
@@ -104,37 +104,37 @@ class Center extends Component {
       project: project,
       newTags: [],
       inputVisible: false,
-      inputValue: '',
+      inputValue: ''
     }
   }
 
   componentDidMount () {
     this.setState({
-      currentUserLoading: true,
+      currentUserLoading: true
     })
     setTimeout(() => {
       this.setState({
-        currentUserLoading: false,
+        currentUserLoading: false
       })
     }, 500)
   }
 
   onTabChange = key => {
-    const {history, match} = this.props
+    const { history, match } = this.props
     switch (key) {
       case 'articles':
         history.push({
-          pathname: `${match.url}/articles`,
+          pathname: `${match.url}/articles`
         })
         break
       case 'applications':
         history.push({
-          pathname: `${match.url}/applications`,
+          pathname: `${match.url}/applications`
         })
         break
       case 'projects':
         history.push({
-          pathname: `${match.url}/projects`,
+          pathname: `${match.url}/projects`
         })
         break
       default:
@@ -144,8 +144,8 @@ class Center extends Component {
 
   showInput = () => {
     this.setState(
-      {inputVisible: true},
-      () => this.input.focus(),
+      { inputVisible: true },
+      () => this.input.focus()
     )
   }
 
@@ -156,53 +156,53 @@ class Center extends Component {
   // 值更改
   handleInputChange = e => {
     this.setState({
-      inputValue: e.target.value,
+      inputValue: e.target.value
     })
   }
 
   // 添加新标签
   handleInputConfirm = () => {
-    const {inputValue} = this.state
-    let {newTags} = this.state
+    const { inputValue } = this.state
+    let { newTags } = this.state
     if (inputValue && newTags.filter(tag => tag.label === inputValue).length ===
       0) {
-      newTags = [...newTags, {key: `new-${newTags.length}`, label: inputValue}]
+      newTags = [...newTags, { key: `new-${newTags.length}`, label: inputValue }]
     }
     this.setState({
       newTags,
       inputValue: '',
-      inputVisible: false,
+      inputVisible: false
     })
   }
 
   render () {
-    const {currentUser, currentUserLoading, project: {notice}, newTags, inputValue, inputVisible} = this.state
-    const {match, location} = this.props
+    const { currentUser, currentUserLoading, project: { notice }, newTags, inputValue, inputVisible } = this.state
+    const { match, location } = this.props
     const operationTabList = [
       {
         key: 'articles',
         tab: (
           <span>
-            文章 <span style={{fontSize: 14}}>(8)</span>
+            文章 <span style={{ fontSize: 14 }}>(8)</span>
           </span>
-        ),
+        )
       },
       {
         key: 'applications',
         tab: (
           <span>
-            应用 <span style={{fontSize: 14}}>(8)</span>
+            应用 <span style={{ fontSize: 14 }}>(8)</span>
           </span>
-        ),
+        )
       },
       {
         key: 'projects',
         tab: (
           <span>
-            项目 <span style={{fontSize: 14}}>(8)</span>
+            项目 <span style={{ fontSize: 14 }}>(8)</span>
           </span>
-        ),
-      },
+        )
+      }
     ]
     const routerData = getRouterData()
     const routes = getRoutes(match.path, routerData)
@@ -210,13 +210,13 @@ class Center extends Component {
       <div className={styles.userCenter}>
         <Row gutter={24}>
           <Col lg={7} md={24}>
-            <Card bordered={false} style={{marginBottom: 24}}
-                  loading={currentUserLoading}>
+            <Card bordered={false} style={{ marginBottom: 24 }}
+              loading={currentUserLoading}>
               {currentUser && Object.keys(currentUser).length
                 ? (
                   <div>
                     <div className={styles.avatarHolder}>
-                      <img src={currentUser.avatar} alt=""/>
+                      <img src={currentUser.avatar} alt=''/>
                       <div className={styles.name}>{currentUser.name}</div>
                       <div>{currentUser.signature}</div>
                     </div>
@@ -244,9 +244,9 @@ class Center extends Component {
                       {inputVisible && (
                         <Input
                           ref={this.saveInputRef}
-                          type="text"
-                          size="small"
-                          style={{width: 78}}
+                          type='text'
+                          size='small'
+                          style={{ width: 78 }}
                           value={inputValue}
                           onChange={this.handleInputChange}
                           onBlur={this.handleInputConfirm}
@@ -256,13 +256,13 @@ class Center extends Component {
                       {!inputVisible && (
                         <Tag
                           onClick={this.showInput}
-                          style={{background: '#fff', borderStyle: 'dashed'}}
+                          style={{ background: '#fff', borderStyle: 'dashed' }}
                         >
-                          <Icon type="plus"/>
+                          <Icon type='plus'/>
                         </Tag>
                       )}
                     </div>
-                    <Divider style={{marginTop: 16}} dashed/>
+                    <Divider style={{ marginTop: 16 }} dashed/>
                     <div className={styles.team}>
                       <div className={styles.teamTitle}>团队</div>
                       <Spin spinning={currentUserLoading}>
@@ -271,7 +271,7 @@ class Center extends Component {
                             notice.map(item => (
                               <Col key={item.id} lg={24} xl={12}>
                                 <Link to={item.href}>
-                                  <Avatar size="small" src={item.logo}/>
+                                  <Avatar size='small' src={item.logo}/>
                                   {item.member}
                                 </Link>
                               </Col>
@@ -308,8 +308,8 @@ class Center extends Component {
                 }
                 <Redirect
                   exact
-                  from="/account/center"
-                  to="/account/center/articles"
+                  from='/account/center'
+                  to='/account/center/articles'
                 />
                 <Route render={NotFound}/>
               </Switch>

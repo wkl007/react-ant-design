@@ -6,7 +6,7 @@ function initTotalList (columns) {
   let totalList = []
   columns.forEach(column => {
     if (column.needTotal) {
-      totalList.push({...column, total: 0})
+      totalList.push({ ...column, total: 0 })
     }
   })
   return totalList
@@ -15,11 +15,11 @@ function initTotalList (columns) {
 class StandardTable extends PureComponent {
   constructor (props) {
     super(props)
-    const {columns} = props
+    const { columns } = props
     let needTotalList = initTotalList(columns)
     this.state = {
       selectedRowKeys: [],
-      needTotalList,
+      needTotalList
     }
   }
 
@@ -28,7 +28,7 @@ class StandardTable extends PureComponent {
       let needTotalList = initTotalList(nextProps.columns)
       this.setState({
         selectedRowKeys: [],
-        needTotalList,
+        needTotalList
       })
     }
   }
@@ -40,13 +40,13 @@ class StandardTable extends PureComponent {
         ...item,
         total: selectedRows.reduce((sum, val) => {
           return sum + parseFloat(val[item.dataIndex], 10)
-        }, 0),
+        }, 0)
       }
     })
     if (this.props.onSelectRow) {
       this.props.onSelectRow(selectedRows)
     }
-    this.setState({selectedRowKeys, needTotalList})
+    this.setState({ selectedRowKeys, needTotalList })
   }
 
   handleTableChange = (pagination, filters, sorter) => {
@@ -58,19 +58,19 @@ class StandardTable extends PureComponent {
   }
 
   render () {
-    const {selectedRowKeys, needTotalList} = this.state
-    const {data: {list}, pagination, loading, columns, rowKey} = this.props
+    const { selectedRowKeys, needTotalList } = this.state
+    const { data: { list }, pagination, loading, columns, rowKey } = this.props
     let paginationProps = {
       showSizeChanger: true,
       showQuickJumper: true,
-      ...pagination,
+      ...pagination
     }
     let rowSelection = {
       selectedRowKeys,
       onChange: this.handleRowSelectChange,
       getCheckboxProps: record => ({
-        disabled: record.disabled,
-      }),
+        disabled: record.disabled
+      })
     }
     return (
       <div className={styles.standardTable}>
@@ -79,13 +79,13 @@ class StandardTable extends PureComponent {
             message={
               <Fragment>
                 已选择 <span
-                className='link-button'
-                style={{fontWeight: 600}}>{selectedRowKeys.length}</span> 项&nbsp;&nbsp;
+                  className='link-button'
+                  style={{ fontWeight: 600 }}>{selectedRowKeys.length}</span> 项&nbsp;&nbsp;
                 {
                   needTotalList.map(item => (
-                    <span style={{marginLeft: 8}} key={item.dataIndex}>
+                    <span style={{ marginLeft: 8 }} key={item.dataIndex}>
                       {item.title}总计&nbsp;
-                      <span style={{fontWeight: 600}}>
+                      <span style={{ fontWeight: 600 }}>
                         {item.render ? item.render(item.total) : item.total}
                       </span>
                     </span>
@@ -94,12 +94,12 @@ class StandardTable extends PureComponent {
                 <span
                   className='link-button'
                   onClick={this.cleanSelectedKeys}
-                  style={{marginLeft: 24}}>
+                  style={{ marginLeft: 24 }}>
                   清空
                 </span>
               </Fragment>
             }
-            type="info"
+            type='info'
             showIcon
           />
         </div>
@@ -115,7 +115,6 @@ class StandardTable extends PureComponent {
       </div>
     )
   }
-
 }
 
 export default StandardTable

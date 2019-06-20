@@ -3,7 +3,7 @@ import { Charts, NumberInfo } from 'ant-design-pro'
 
 import styles from './index.less'
 
-const {MiniArea} = Charts
+const { MiniArea } = Charts
 
 function fixedZero (val) {
   return val * 1 < 10 ? `0${val}` : val
@@ -14,7 +14,7 @@ function getActiveData () {
   for (let i = 0; i < 24; i += 1) {
     activeData.push({
       x: `${fixedZero(i)}:00`,
-      y: Math.floor(Math.random() * 200) + i * 50,
+      y: Math.floor(Math.random() * 200) + i * 50
     })
   }
   return activeData
@@ -24,13 +24,13 @@ class ActiveChart extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      activeData: getActiveData(),
+      activeData: getActiveData()
     }
   }
 
   componentDidMount () {
     this.timer = setInterval(() => {
-      this.setState({activeData: getActiveData()})
+      this.setState({ activeData: getActiveData() })
     }, 1000)
   }
 
@@ -39,11 +39,11 @@ class ActiveChart extends Component {
   }
 
   render () {
-    const {activeData = []} = this.state
+    const { activeData = [] } = this.state
     return (
       <div className={styles.activeChart}>
-        <NumberInfo subTitle="目标评估" total="有望达到预期"/>
-        <div style={{marginTop: 32}}>
+        <NumberInfo subTitle='目标评估' total='有望达到预期'/>
+        <div style={{ marginTop: 32 }}>
           <MiniArea
             animate={false}
             line
@@ -51,14 +51,14 @@ class ActiveChart extends Component {
             height={84}
             scale={{
               y: {
-                tickCount: 3,
-              },
+                tickCount: 3
+              }
             }}
             yAxis={{
               tickLine: false,
               label: false,
               title: false,
-              line: false,
+              line: false
             }}
             data={activeData}
           />
@@ -67,6 +67,7 @@ class ActiveChart extends Component {
           activeData && (
             <div className={styles.activeChartGrid}>
               <p>{[...activeData].sort()[activeData.length - 1].y + 200} 亿元</p>
+              {/* eslint-disable-next-line standard/computed-property-even-spacing */}
               <p>{[...activeData].sort()[Math.floor(
                 activeData.length / 2)].y} 亿元</p>
             </div>

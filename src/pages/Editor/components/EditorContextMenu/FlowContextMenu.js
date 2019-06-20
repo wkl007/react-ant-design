@@ -7,27 +7,27 @@ const FlowContextMenu = () => {
   return (
     <ContextMenu className={styles.contextMenu}>
       <NodeMenu>
-        <MenuItem command="copy"/>
-        <MenuItem command="delete"/>
+        <MenuItem command='copy'/>
+        <MenuItem command='delete'/>
       </NodeMenu>
       <EdgeMenu>
-        <MenuItem command="delete"/>
+        <MenuItem command='delete'/>
       </EdgeMenu>
       <GroupMenu>
-        <MenuItem command="copy"/>
-        <MenuItem command="delete"/>
-        <MenuItem command="unGroup" icon="ungroup" text="Ungroup"/>
+        <MenuItem command='copy'/>
+        <MenuItem command='delete'/>
+        <MenuItem command='unGroup' icon='ungroup' text='Ungroup'/>
       </GroupMenu>
       <MultiMenu>
-        <MenuItem command="copy"/>
-        <MenuItem command="paste"/>
-        <MenuItem command="addGroup" icon="group" text="Add Group"/>
-        <MenuItem command="delete"/>
+        <MenuItem command='copy'/>
+        <MenuItem command='paste'/>
+        <MenuItem command='addGroup' icon='group' text='Add Group'/>
+        <MenuItem command='delete'/>
       </MultiMenu>
       <CanvasMenu>
-        <MenuItem command="undo"/>
-        <MenuItem command="redo"/>
-        <MenuItem command="pasteHere" icon="paste" text="Paste Here"/>
+        <MenuItem command='undo'/>
+        <MenuItem command='redo'/>
+        <MenuItem command='pasteHere' icon='paste' text='Paste Here'/>
       </CanvasMenu>
     </ContextMenu>
   )

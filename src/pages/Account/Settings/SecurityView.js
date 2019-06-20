@@ -8,7 +8,7 @@ const passwordStrength = {
     </font>
   ),
   medium: (
-    <font className="medium">
+    <font className='medium'>
       中
     </font>
   ),
@@ -16,11 +16,10 @@ const passwordStrength = {
     <font className='weak'>
       弱
     </font>
-  ),
+  )
 }
 
 class SecurityView extends Component {
-
   getData = () => [
     {
       title: '账户密码',
@@ -32,8 +31,8 @@ class SecurityView extends Component {
       actions: [
         <span className='link-button'>
           修改
-        </span>,
-      ],
+        </span>
+      ]
     },
     {
       title: '密保手机',
@@ -45,8 +44,8 @@ class SecurityView extends Component {
       actions: [
         <span className='link-button'>
           修改
-        </span>,
-      ],
+        </span>
+      ]
     },
     {
       title: '密保问题',
@@ -58,8 +57,8 @@ class SecurityView extends Component {
       actions: [
         <span className='link-button'>
           设置
-        </span>,
-      ],
+        </span>
+      ]
     },
     {
       title: '备用邮箱',
@@ -71,8 +70,8 @@ class SecurityView extends Component {
       actions: [
         <span className='link-button'>
           修改
-        </span>,
-      ],
+        </span>
+      ]
     },
     {
       title: 'MFA 设备',
@@ -84,9 +83,9 @@ class SecurityView extends Component {
       actions: [
         <span className='link-button'>
           绑定
-        </span>,
-      ],
-    },
+        </span>
+      ]
+    }
   ]
 
   render () {
@@ -98,7 +97,7 @@ class SecurityView extends Component {
           renderItem={item => (
             <List.Item actions={item.actions}>
               <List.Item.Meta title={item.title}
-                              description={item.description}/>
+                description={item.description}/>
             </List.Item>
           )}
         />

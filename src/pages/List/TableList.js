@@ -16,7 +16,7 @@ import {
   message,
   Modal,
   Row,
-  Select,
+  Select
 } from 'antd'
 import PageHeaderWrapper from '../../components/PageHeaderWrapper'
 import StandardTable from '../../components/StandardTable'
@@ -41,20 +41,20 @@ const CreateForm = Form.create()(props => {
   }
   return (
     <Modal
-      title="新建规则"
+      title='新建规则'
       visible={modalVisible}
       onOk={okHandle}
       onCancel={() => handleModalVisible()}
     >
-      <FormItem labelCol={{ span: 5 }} wrapperCol={{ span: 15 }} label="描述">
+      <FormItem labelCol={{ span: 5 }} wrapperCol={{ span: 15 }} label='描述'>
         {
           form.getFieldDecorator('desc', {
             rules: [
               {
                 required: true,
-                message: 'Please input some description...',
-              }],
-          })(<Input autoComplete="off" placeholder="请输入"/>)
+                message: 'Please input some description...'
+              }]
+          })(<Input autoComplete='off' placeholder='请输入'/>)
         }
       </FormItem>
     </Modal>
@@ -75,7 +75,7 @@ const data = {
       'status': 0,
       'updatedAt': '2018-06-03T02:14:39.899Z',
       'createdAt': '2018-06-03T02:14:39.899Z',
-      'progress': 20,
+      'progress': 20
     },
     {
       'key': 0,
@@ -90,7 +90,7 @@ const data = {
       'status': 1,
       'updatedAt': '2017-06-30T16:00:00.000Z',
       'createdAt': '2017-06-30T16:00:00.000Z',
-      'progress': 53,
+      'progress': 53
     },
     {
       'key': 6,
@@ -105,7 +105,7 @@ const data = {
       'status': 3,
       'updatedAt': '2017-07-03T16:00:00.000Z',
       'createdAt': '2017-07-03T16:00:00.000Z',
-      'progress': 31,
+      'progress': 31
     },
     {
       'key': 12,
@@ -120,7 +120,7 @@ const data = {
       'status': 1,
       'updatedAt': '2017-07-06T16:00:00.000Z',
       'createdAt': '2017-07-06T16:00:00.000Z',
-      'progress': 31,
+      'progress': 31
     },
     {
       'key': 18,
@@ -135,7 +135,7 @@ const data = {
       'status': 2,
       'updatedAt': '2017-07-10T00:00:00.000Z',
       'createdAt': '2017-07-10T00:00:00.000Z',
-      'progress': 59,
+      'progress': 59
     },
     {
       'key': 19,
@@ -150,7 +150,7 @@ const data = {
       'status': 1,
       'updatedAt': '2017-07-10T00:00:00.000Z',
       'createdAt': '2017-07-10T00:00:00.000Z',
-      'progress': 49,
+      'progress': 49
     },
     {
       'key': 20,
@@ -165,7 +165,7 @@ const data = {
       'status': 0,
       'updatedAt': '2017-07-11T00:00:00.000Z',
       'createdAt': '2017-07-11T00:00:00.000Z',
-      'progress': 47,
+      'progress': 47
     },
     {
       'key': 21,
@@ -180,7 +180,7 @@ const data = {
       'status': 3,
       'updatedAt': '2017-07-11T00:00:00.000Z',
       'createdAt': '2017-07-11T00:00:00.000Z',
-      'progress': 13,
+      'progress': 13
     },
     {
       'key': 22,
@@ -195,7 +195,7 @@ const data = {
       'status': 1,
       'updatedAt': '2017-07-12T00:00:00.000Z',
       'createdAt': '2017-07-12T00:00:00.000Z',
-      'progress': 92,
+      'progress': 92
     },
     {
       'key': 23,
@@ -210,7 +210,7 @@ const data = {
       'status': 0,
       'updatedAt': '2017-07-12T00:00:00.000Z',
       'createdAt': '2017-07-12T00:00:00.000Z',
-      'progress': 82,
+      'progress': 82
     },
     {
       'key': 24,
@@ -225,7 +225,7 @@ const data = {
       'status': 3,
       'updatedAt': '2017-07-13T00:00:00.000Z',
       'createdAt': '2017-07-13T00:00:00.000Z',
-      'progress': 22,
+      'progress': 22
     },
     {
       'key': 25,
@@ -240,7 +240,7 @@ const data = {
       'status': 3,
       'updatedAt': '2017-07-13T00:00:00.000Z',
       'createdAt': '2017-07-13T00:00:00.000Z',
-      'progress': 44,
+      'progress': 44
     },
     {
       'key': 26,
@@ -255,7 +255,7 @@ const data = {
       'status': 0,
       'updatedAt': '2017-07-14T00:00:00.000Z',
       'createdAt': '2017-07-14T00:00:00.000Z',
-      'progress': 27,
+      'progress': 27
     },
     {
       'key': 27,
@@ -270,7 +270,7 @@ const data = {
       'status': 0,
       'updatedAt': '2017-07-14T00:00:00.000Z',
       'createdAt': '2017-07-14T00:00:00.000Z',
-      'progress': 53,
+      'progress': 53
     },
     {
       'key': 28,
@@ -285,7 +285,7 @@ const data = {
       'status': 1,
       'updatedAt': '2017-07-15T00:00:00.000Z',
       'createdAt': '2017-07-15T00:00:00.000Z',
-      'progress': 53,
+      'progress': 53
     },
     {
       'key': 29,
@@ -300,7 +300,7 @@ const data = {
       'status': 1,
       'updatedAt': '2017-07-15T00:00:00.000Z',
       'createdAt': '2017-07-15T00:00:00.000Z',
-      'progress': 97,
+      'progress': 97
     },
     {
       'key': 30,
@@ -315,7 +315,7 @@ const data = {
       'status': 2,
       'updatedAt': '2017-07-16T00:00:00.000Z',
       'createdAt': '2017-07-16T00:00:00.000Z',
-      'progress': 17,
+      'progress': 17
     },
     {
       'key': 31,
@@ -330,7 +330,7 @@ const data = {
       'status': 2,
       'updatedAt': '2017-07-16T00:00:00.000Z',
       'createdAt': '2017-07-16T00:00:00.000Z',
-      'progress': 84,
+      'progress': 84
     },
     {
       'key': 32,
@@ -345,7 +345,7 @@ const data = {
       'status': 1,
       'updatedAt': '2017-07-17T00:00:00.000Z',
       'createdAt': '2017-07-17T00:00:00.000Z',
-      'progress': 35,
+      'progress': 35
     },
     {
       'key': 33,
@@ -360,7 +360,7 @@ const data = {
       'status': 1,
       'updatedAt': '2017-07-17T00:00:00.000Z',
       'createdAt': '2017-07-17T00:00:00.000Z',
-      'progress': 76,
+      'progress': 76
     },
     {
       'key': 34,
@@ -375,7 +375,7 @@ const data = {
       'status': 3,
       'updatedAt': '2017-07-18T00:00:00.000Z',
       'createdAt': '2017-07-18T00:00:00.000Z',
-      'progress': 8,
+      'progress': 8
     },
     {
       'key': 35,
@@ -390,7 +390,7 @@ const data = {
       'status': 2,
       'updatedAt': '2017-07-18T00:00:00.000Z',
       'createdAt': '2017-07-18T00:00:00.000Z',
-      'progress': 46,
+      'progress': 46
     },
     {
       'key': 36,
@@ -405,7 +405,7 @@ const data = {
       'status': 0,
       'updatedAt': '2017-07-19T00:00:00.000Z',
       'createdAt': '2017-07-19T00:00:00.000Z',
-      'progress': 2,
+      'progress': 2
     },
     {
       'key': 37,
@@ -420,7 +420,7 @@ const data = {
       'status': 3,
       'updatedAt': '2017-07-19T00:00:00.000Z',
       'createdAt': '2017-07-19T00:00:00.000Z',
-      'progress': 92,
+      'progress': 92
     },
     {
       'key': 38,
@@ -435,7 +435,7 @@ const data = {
       'status': 3,
       'updatedAt': '2017-07-20T00:00:00.000Z',
       'createdAt': '2017-07-20T00:00:00.000Z',
-      'progress': 54,
+      'progress': 54
     },
     {
       'key': 39,
@@ -450,7 +450,7 @@ const data = {
       'status': 1,
       'updatedAt': '2017-07-20T00:00:00.000Z',
       'createdAt': '2017-07-20T00:00:00.000Z',
-      'progress': 84,
+      'progress': 84
     },
     {
       'key': 40,
@@ -465,7 +465,7 @@ const data = {
       'status': 0,
       'updatedAt': '2017-07-21T00:00:00.000Z',
       'createdAt': '2017-07-21T00:00:00.000Z',
-      'progress': 40,
+      'progress': 40
     },
     {
       'key': 41,
@@ -480,7 +480,7 @@ const data = {
       'status': 2,
       'updatedAt': '2017-07-21T00:00:00.000Z',
       'createdAt': '2017-07-21T00:00:00.000Z',
-      'progress': 51,
+      'progress': 51
     },
     {
       'key': 42,
@@ -495,7 +495,7 @@ const data = {
       'status': 2,
       'updatedAt': '2017-07-22T00:00:00.000Z',
       'createdAt': '2017-07-22T00:00:00.000Z',
-      'progress': 98,
+      'progress': 98
     },
     {
       'key': 43,
@@ -510,7 +510,7 @@ const data = {
       'status': 0,
       'updatedAt': '2017-07-22T00:00:00.000Z',
       'createdAt': '2017-07-22T00:00:00.000Z',
-      'progress': 8,
+      'progress': 8
     },
     {
       'key': 44,
@@ -525,7 +525,7 @@ const data = {
       'status': 1,
       'updatedAt': '2017-07-23T00:00:00.000Z',
       'createdAt': '2017-07-23T00:00:00.000Z',
-      'progress': 76,
+      'progress': 76
     },
     {
       'key': 45,
@@ -540,8 +540,9 @@ const data = {
       'status': 1,
       'updatedAt': '2017-07-23T00:00:00.000Z',
       'createdAt': '2017-07-23T00:00:00.000Z',
-      'progress': 67,
-    }], 'pagination': { 'total': 32, 'pageSize': 10, 'current': 1 },
+      'progress': 67
+    }],
+'pagination': { 'total': 32, 'pageSize': 10, 'current': 1 }
 }
 
 @Form.create()
@@ -555,43 +556,43 @@ class TableList extends Component {
       selectedRows: [],
       formValues: {},
       data: data,
-      pagination: data.pagination,
+      pagination: data.pagination
     }
   }
 
-  //基本表单
+  // 基本表单
   renderSimpleForm = () => {
     const { getFieldDecorator } = this.props.form
     return (
-      <Form onSubmit={this.handleSearch} layout="inline">
+      <Form onSubmit={this.handleSearch} layout='inline'>
         <Row gutter={{ md: 8, lg: 24, xl: 48 }}>
           <Col md={8} sm={24}>
-            <FormItem label="规则编号">
-              {getFieldDecorator('no')(<Input autoComplete="off"
-                                              placeholder="请输入"/>)}
+            <FormItem label='规则编号'>
+              {getFieldDecorator('no')(<Input autoComplete='off'
+                placeholder='请输入'/>)}
             </FormItem>
           </Col>
           <Col md={8} sm={24}>
-            <FormItem label="使用状态">
+            <FormItem label='使用状态'>
               {getFieldDecorator('status')(
-                <Select placeholder="请选择" style={{ width: '100%' }}>
-                  <Option value="0">关闭</Option>
-                  <Option value="1">运行中</Option>
-                </Select>,
+                <Select placeholder='请选择' style={{ width: '100%' }}>
+                  <Option value='0'>关闭</Option>
+                  <Option value='1'>运行中</Option>
+                </Select>
               )}
             </FormItem>
           </Col>
           <Col md={8} sm={24}>
             <span className={styles.submitButtons}>
-                <Button type="primary" htmlType="submit">
+              <Button type='primary' htmlType='submit'>
                   查询
-                </Button>
-                <Button style={{ marginLeft: 8 }} onClick={this.handleFormReset}>
+              </Button>
+              <Button style={{ marginLeft: 8 }} onClick={this.handleFormReset}>
                   重置
-                </Button>
-                <span className='link-button' style={{ marginLeft: 8 }} onClick={this.toggleForm}>
-                  展开 <Icon type="down"/>
-                </span>
+              </Button>
+              <span className='link-button' style={{ marginLeft: 8 }} onClick={this.toggleForm}>
+                  展开 <Icon type='down'/>
+              </span>
             </span>
           </Col>
         </Row>
@@ -599,30 +600,30 @@ class TableList extends Component {
     )
   }
 
-  //高级表单
+  // 高级表单
   renderAdvancedForm = () => {
     const { getFieldDecorator } = this.props.form
     return (
-      <Form onSubmit={this.handleSearch} layout="inline">
+      <Form onSubmit={this.handleSearch} layout='inline'>
         <Row gutter={{ md: 8, lg: 24, xl: 48 }}>
           <Col md={8} sm={24}>
-            <FormItem label="规则编号">
-              {getFieldDecorator('no')(<Input autoComplete="off"
-                                              placeholder="请输入"/>)}
+            <FormItem label='规则编号'>
+              {getFieldDecorator('no')(<Input autoComplete='off'
+                placeholder='请输入'/>)}
             </FormItem>
           </Col>
           <Col md={8} sm={24}>
-            <FormItem label="使用状态">
+            <FormItem label='使用状态'>
               {getFieldDecorator('status')(
-                <Select placeholder="请选择" style={{ width: '100%' }}>
-                  <Option value="0">关闭</Option>
-                  <Option value="1">运行中</Option>
-                </Select>,
+                <Select placeholder='请选择' style={{ width: '100%' }}>
+                  <Option value='0'>关闭</Option>
+                  <Option value='1'>运行中</Option>
+                </Select>
               )}
             </FormItem>
           </Col>
           <Col md={8} sm={24}>
-            <FormItem label="调用次数">
+            <FormItem label='调用次数'>
               {getFieldDecorator('number')(<InputNumber
                 style={{ width: '100%' }}/>)}
             </FormItem>
@@ -630,43 +631,43 @@ class TableList extends Component {
         </Row>
         <Row gutter={{ md: 8, lg: 24, xl: 48 }}>
           <Col md={8} sm={24}>
-            <FormItem label="更新日期">
+            <FormItem label='更新日期'>
               {getFieldDecorator('date')(
-                <DatePicker style={{ width: '100%' }} placeholder="请输入更新日期"/>,
+                <DatePicker style={{ width: '100%' }} placeholder='请输入更新日期'/>
               )}
             </FormItem>
           </Col>
           <Col md={8} sm={24}>
-            <FormItem label="使用状态">
+            <FormItem label='使用状态'>
               {getFieldDecorator('status3')(
-                <Select placeholder="请选择" style={{ width: '100%' }}>
-                  <Option value="0">关闭</Option>
-                  <Option value="1">运行中</Option>
-                </Select>,
+                <Select placeholder='请选择' style={{ width: '100%' }}>
+                  <Option value='0'>关闭</Option>
+                  <Option value='1'>运行中</Option>
+                </Select>
               )}
             </FormItem>
           </Col>
           <Col md={8} sm={24}>
-            <FormItem label="使用状态">
+            <FormItem label='使用状态'>
               {getFieldDecorator('status4')(
-                <Select placeholder="请选择" style={{ width: '100%' }}>
-                  <Option value="0">关闭</Option>
-                  <Option value="1">运行中</Option>
-                </Select>,
+                <Select placeholder='请选择' style={{ width: '100%' }}>
+                  <Option value='0'>关闭</Option>
+                  <Option value='1'>运行中</Option>
+                </Select>
               )}
             </FormItem>
           </Col>
         </Row>
         <div style={{ overflow: 'hidden' }}>
           <span style={{ float: 'right', marginBottom: 24 }}>
-            <Button type="primary" htmlType="submit">
+            <Button type='primary' htmlType='submit'>
               查询
             </Button>
             <Button style={{ marginLeft: 8 }} onClick={this.handleFormReset}>
               重置
             </Button>
             <span className='link-button' style={{ marginLeft: 8 }} onClick={this.toggleForm}>
-              收起 <Icon type="up"/>
+              收起 <Icon type='up'/>
             </span>
           </span>
         </div>
@@ -680,7 +681,7 @@ class TableList extends Component {
       : this.renderSimpleForm()
   }
 
-  //搜索
+  // 搜索
   handleSearch = e => {
     e.preventDefault()
     const { form } = this.props
@@ -688,53 +689,53 @@ class TableList extends Component {
       if (err) return
       let values = {
         ...fieldsValue,
-        updatedAt: fieldsValue.updatedAt && fieldsValue.updatedAt.valueOf(),
+        updatedAt: fieldsValue.updatedAt && fieldsValue.updatedAt.valueOf()
       }
       this.setState({
-        formValues: values,
+        formValues: values
       })
       console.log(values)
     })
   }
 
-  //重置
+  // 重置
   handleFormReset = () => {
     const { form } = this.props
     form.resetFields()
     this.setState({
-      formValues: {},
+      formValues: {}
     })
   }
 
-  //切换表单
+  // 切换表单
   toggleForm = () => {
     this.setState({
-      expandForm: !this.state.expandForm,
+      expandForm: !this.state.expandForm
     })
   }
 
-  //操作弹窗
+  // 操作弹窗
   handleModalVisible = (flag) => {
     this.setState({
-      modalVisible: !!flag,
+      modalVisible: !!flag
     })
   }
 
-  //添加
+  // 添加
   handleAdd = fieldsValue => {
     console.log(fieldsValue)
     message.success('添加成功')
     this.handleModalVisible()
   }
 
-  //选中
+  // 选中
   handleSelectRows = rows => {
     this.setState({
-      selectedRows: rows,
+      selectedRows: rows
     })
   }
 
-  //分页相关
+  // 分页相关
   handleStandardTableChange = (pagination, filtersArg, sorter) => {
     const { formValues } = this.state
 
@@ -747,7 +748,7 @@ class TableList extends Component {
       currentPage: pagination.current,
       pageSize: pagination.pageSize,
       ...formValues,
-      ...filters,
+      ...filters
     }
     if (sorter.field) {
       params.sorter = `${sorter.field}_${sorter.order}`
@@ -756,7 +757,7 @@ class TableList extends Component {
     let data = Object.assign({}, this.state.pagination,
       { pageSize: pagination.pageSize, current: pagination.current })
     this.setState({
-      pagination: data,
+      pagination: data
     })
   }
 
@@ -765,11 +766,11 @@ class TableList extends Component {
     const columns = [
       {
         title: '规则编号',
-        dataIndex: 'no',
+        dataIndex: 'no'
       },
       {
         title: '描述',
-        dataIndex: 'description',
+        dataIndex: 'description'
       },
       {
         title: '服务调用次数',
@@ -777,7 +778,7 @@ class TableList extends Component {
         sorter: true,
         align: 'right',
         render: val => `${val} 万`,
-        needTotal: true,
+        needTotal: true
       },
       {
         title: '状态',
@@ -785,61 +786,61 @@ class TableList extends Component {
         filters: [
           {
             text: status[0],
-            value: 0,
+            value: 0
           },
           {
             text: status[1],
-            value: 1,
+            value: 1
           },
           {
             text: status[2],
-            value: 2,
+            value: 2
           },
           {
             text: status[3],
-            value: 3,
-          },
+            value: 3
+          }
         ],
         onFilter: (value, record) => record.status.toString() === value,
         render (val) {
           return <Badge status={statusMap[val]} text={status[val]}/>
-        },
+        }
       },
       {
         title: '更新时间',
         dataIndex: 'updateAt',
         sorter: true,
-        render: val => <span>{moment(val).format('YYYY-MM-DD HH:mm:ss')}</span>,
+        render: val => <span>{moment(val).format('YYYY-MM-DD HH:mm:ss')}</span>
       },
       {
         title: '操作',
         render: () => (
           <Fragment>
             <span className='link-button'>配置</span>
-            <Divider type="vertical"/>
+            <Divider type='vertical'/>
             <span className='link-button'>订阅预报</span>
           </Fragment>
-        ),
-      },
+        )
+      }
     ]
     const menu = (
       <Menu onClick={this.handleMenuClick} selectedKeys={[]}>
-        <Menu.Item key="remove">删除</Menu.Item>
-        <Menu.Item key="approval">批量审批</Menu.Item>
+        <Menu.Item key='remove'>删除</Menu.Item>
+        <Menu.Item key='approval'>批量审批</Menu.Item>
       </Menu>
     )
     const parentMethods = {
       handleAdd: this.handleAdd,
-      handleModalVisible: this.handleModalVisible,
+      handleModalVisible: this.handleModalVisible
     }
     return (
-      <PageHeaderWrapper title="查询表格">
+      <PageHeaderWrapper title='查询表格'>
         <Card bordered={false}>
           <div className={styles.tableList}>
             <div className={styles.tableListForm}>{this.renderForm}</div>
             <div className={styles.tableListOperator}>
-              <Button icon="plus" type="primary"
-                      onClick={() => this.handleModalVisible(true)}>
+              <Button icon='plus' type='primary'
+                onClick={() => this.handleModalVisible(true)}>
                 新建
               </Button>
               {
@@ -848,7 +849,7 @@ class TableList extends Component {
                     <Button>批量操作</Button>
                     <Dropdown overlay={menu}>
                       <Button>
-                        更多操作 <Icon type="down"/>
+                        更多操作 <Icon type='down'/>
                       </Button>
                     </Dropdown>
                   </span>

@@ -8,11 +8,11 @@ const { Option } = Select
 
 const inlineFormItemLayout = {
   labelCol: {
-    sm: { span: 8 },
+    sm: { span: 8 }
   },
   wrapperCol: {
-    sm: { span: 16 },
-  },
+    sm: { span: 16 }
+  }
 }
 
 class DetailForm extends React.Component {
@@ -44,7 +44,7 @@ class DetailForm extends React.Component {
 
         executeCommand(() => {
           update(item, {
-            ...values,
+            ...values
           })
         })
       })
@@ -54,9 +54,9 @@ class DetailForm extends React.Component {
   renderEdgeShapeSelect = () => {
     return (
       <Select onChange={this.handleSubmit}>
-        <Option value="flow-smooth">Smooth</Option>
-        <Option value="flow-polyline">Polyline</Option>
-        <Option value="flow-polyline-round">Polyline Round</Option>
+        <Option value='flow-smooth'>Smooth</Option>
+        <Option value='flow-polyline'>Polyline</Option>
+        <Option value='flow-polyline-round'>Polyline Round</Option>
       </Select>
     )
   }
@@ -66,9 +66,9 @@ class DetailForm extends React.Component {
     const { label } = this.item.getModel()
 
     return (
-      <Item label="Label" {...inlineFormItemLayout}>
+      <Item label='Label' {...inlineFormItemLayout}>
         {form.getFieldDecorator('label', {
-          initialValue: label,
+          initialValue: label
         })(<Input onBlur={this.handleSubmit}/>)}
       </Item>
     )
@@ -80,14 +80,14 @@ class DetailForm extends React.Component {
 
     return (
       <Fragment>
-        <Item label="Label" {...inlineFormItemLayout}>
+        <Item label='Label' {...inlineFormItemLayout}>
           {form.getFieldDecorator('label', {
-            initialValue: label,
+            initialValue: label
           })(<Input onBlur={this.handleSubmit}/>)}
         </Item>
-        <Item label="Shape" {...inlineFormItemLayout}>
+        <Item label='Shape' {...inlineFormItemLayout}>
           {form.getFieldDecorator('shape', {
-            initialValue: shape,
+            initialValue: shape
           })(this.renderEdgeShapeSelect())}
         </Item>
       </Fragment>
@@ -99,9 +99,9 @@ class DetailForm extends React.Component {
     const { label = '新建分组' } = this.item.getModel()
 
     return (
-      <Item label="Label" {...inlineFormItemLayout}>
+      <Item label='Label' {...inlineFormItemLayout}>
         {form.getFieldDecorator('label', {
-          initialValue: label,
+          initialValue: label
         })(<Input onBlur={this.handleSubmit}/>)}
       </Item>
     )
@@ -115,7 +115,7 @@ class DetailForm extends React.Component {
     }
 
     return (
-      <Card type="inner" size="small" title={upperFirst(type)} bordered={false}>
+      <Card type='inner' size='small' title={upperFirst(type)} bordered={false}>
         <Form onSubmit={this.handleSubmit}>
           {type === 'node' && this.renderNodeDetail()}
           {type === 'edge' && this.renderEdgeDetail()}

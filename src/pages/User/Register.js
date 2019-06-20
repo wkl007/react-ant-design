@@ -8,17 +8,17 @@ const FormItem = Form.Item
 const { Option } = Select
 const InputGroup = Input.Group
 
-//密码状态
+// 密码状态
 const passwordStatusMap = {
   ok: <div className={styles.success}>强度：强</div>,
   pass: <div className={styles.warning}>强度：中</div>,
-  poor: <div className={styles.error}>强度：太短</div>,
+  poor: <div className={styles.error}>强度：太短</div>
 }
 
 const passwordProgressMap = {
   ok: 'success',
   pass: 'normal',
-  poor: 'exception',
+  poor: 'exception'
 }
 
 @Form.create()
@@ -31,7 +31,7 @@ class Register extends Component {
       visible: false,
       help: '',
       prefix: '86',
-      submitting: false,
+      submitting: false
     }
   }
 
@@ -44,7 +44,7 @@ class Register extends Component {
     this.setState({ confirmDirty: this.state.confirmDirty || !!value })
   }
 
-  //倒计时
+  // 倒计时
   onGetCaptcha = () => {
     let count = 59
     this.setState({ count: count })
@@ -57,7 +57,7 @@ class Register extends Component {
     }, 1000)
   }
 
-  //密码状态
+  // 密码状态
   getPasswordStatus = () => {
     const { form } = this.props
     const value = form.getFieldValue('password')
@@ -70,22 +70,22 @@ class Register extends Component {
     return 'poor'
   }
 
-  //验证密码
+  // 验证密码
   checkPassword = (rule, value, callback) => {
-    //value默认是undefined，!value是true，!!value则是false
+    // value默认是undefined，!value是true，!!value则是false
     if (!value) {
       this.setState({
         help: '请输入密码！',
-        visible: !!value,
+        visible: !!value
       })
       callback('error')
     } else {
       this.setState({
-        help: '',
+        help: ''
       })
       if (!this.state.visible) {
         this.setState({
-          visible: !!value,
+          visible: !!value
         })
       }
       if (value.length < 6) {
@@ -100,7 +100,7 @@ class Register extends Component {
     }
   }
 
-  //两次密码匹配
+  // 两次密码匹配
   checkConfirm = (rule, value, callback) => {
     const { form } = this.props
     if (value && value !== form.getFieldValue('password')) {
@@ -110,14 +110,14 @@ class Register extends Component {
     }
   }
 
-  //区号改变
+  // 区号改变
   changePrefix = (value) => {
     this.setState({
-      prefix: value,
+      prefix: value
     })
   }
 
-  //提交
+  // 提交
   handleSubmit = (e) => {
     e.preventDefault()
     const { history } = this.props
@@ -128,14 +128,14 @@ class Register extends Component {
             pathname: '/user/register-result',
             search: stringify({
               ...values,
-              prefix: this.state.prefix,
-            }),
+              prefix: this.state.prefix
+            })
           })
         }
       })
   }
 
-  //渲染进度条
+  // 渲染进度条
   renderPasswordProgress = () => {
     const { form } = this.props
     const value = form.getFieldValue('password')
@@ -166,14 +166,14 @@ class Register extends Component {
               rules: [
                 {
                   required: true,
-                  message: '请输入邮箱地址！',
+                  message: '请输入邮箱地址！'
                 },
                 {
                   type: 'email',
-                  message: '邮箱地址格式错误！',
-                },
-              ],
-            })(<Input size="large" autoComplete="off" placeholder="邮箱"/>)}
+                  message: '邮箱地址格式错误！'
+                }
+              ]
+            })(<Input size='large' autoComplete='off' placeholder='邮箱'/>)}
           </FormItem>
           <FormItem help={help}>
             <Popover
@@ -187,18 +187,18 @@ class Register extends Component {
                 </div>
               }
               overlayStyle={{ width: 240 }}
-              placement="right"
+              placement='right'
               visible={visible}
             >
               {
                 getFieldDecorator('password', {
                   rules: [
                     {
-                      validator: this.checkPassword,
-                    },
-                  ],
-                })(<Input size="large" autoComplete="off" type="password"
-                          placeholder="至少6位密码，区分大小写"/>)
+                      validator: this.checkPassword
+                    }
+                  ]
+                })(<Input size='large' autoComplete='off' type='password'
+                  placeholder='至少6位密码，区分大小写'/>)
               }
             </Popover>
           </FormItem>
@@ -208,41 +208,41 @@ class Register extends Component {
                 rules: [
                   {
                     required: true,
-                    message: '请确认密码！',
+                    message: '请确认密码！'
                   },
                   {
-                    validator: this.checkConfirm,
-                  },
-                ],
-              })(<Input size="large" type="password" autoComplete="off"
-                        placeholder="确认密码"/>)
+                    validator: this.checkConfirm
+                  }
+                ]
+              })(<Input size='large' type='password' autoComplete='off'
+                placeholder='确认密码'/>)
             }
           </FormItem>
           <FormItem>
             <InputGroup compact>
               <Select
-                size="large"
+                size='large'
                 value={prefix}
                 onChange={this.changePrefix}
                 style={{ width: '20%' }}
               >
-                <Option value="86">+86</Option>
-                <Option value="87">+87</Option>
+                <Option value='86'>+86</Option>
+                <Option value='87'>+87</Option>
               </Select>
               {
                 getFieldDecorator('mobile', {
                   rules: [
                     {
                       required: true,
-                      message: '请输入手机号！',
+                      message: '请输入手机号！'
                     },
                     {
                       pattern: /^1\d{10}$/,
-                      message: '手机号格式错误！',
-                    },
-                  ],
-                })(<Input size="large" autoComplete="off" style={{ width: '80%' }}
-                          placeholder="11位手机号"/>)
+                      message: '手机号格式错误！'
+                    }
+                  ]
+                })(<Input size='large' autoComplete='off' style={{ width: '80%' }}
+                  placeholder='11位手机号'/>)
               }
             </InputGroup>
           </FormItem>
@@ -254,15 +254,15 @@ class Register extends Component {
                     rules: [
                       {
                         required: true,
-                        message: '请输入验证码！',
-                      },
-                    ],
-                  })(<Input size="large" autoComplete="off" placeholder="验证码"/>)
+                        message: '请输入验证码！'
+                      }
+                    ]
+                  })(<Input size='large' autoComplete='off' placeholder='验证码'/>)
                 }
               </Col>
               <Col span={8}>
                 <Button
-                  size="large"
+                  size='large'
                   disabled={count}
                   className={styles.getCaptcha}
                   onClick={this.onGetCaptcha}
@@ -272,13 +272,13 @@ class Register extends Component {
           </FormItem>
           <FormItem>
             <Button
-              size="large"
+              size='large'
               loading={submitting}
               className={styles.submit}
-              type="primary"
-              htmlType="submit"
+              type='primary'
+              htmlType='submit'
             >注册</Button>
-            <Link className={styles.login} to="/user/login">使用已有账户登录</Link>
+            <Link className={styles.login} to='/user/login'>使用已有账户登录</Link>
           </FormItem>
         </Form>
       </div>

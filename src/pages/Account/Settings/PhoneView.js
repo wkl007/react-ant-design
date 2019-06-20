@@ -4,7 +4,7 @@ import styles from './PhoneView.less'
 
 class PhoneView extends Component {
   render () {
-    const {value, onChange} = this.props
+    const { value, onChange } = this.props
     let values = ['', '']
     if (value) {
       values = value.split('-')

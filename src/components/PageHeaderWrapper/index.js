@@ -42,15 +42,15 @@ export default ({
                   hiddenBreadcrumb,
                   ...restProps
                 }) => (
-  <div style={{ margin: '-24px -24px 0' }} className={classNames(wrapperClassName, styles.main)}>
-    {top}
-    <MenuContext.Consumer>
-      {
+                  <div style={{ margin: '-24px -24px 0' }} className={classNames(wrapperClassName, styles.main)}>
+                    {top}
+                    <MenuContext.Consumer>
+                      {
         value => {
           return (
             <div className={styles.wrapper}>
               <div className={classNames({
-                [styles.wide]: !fluid && contentWidth === 'Fixed',
+                [styles.wide]: !fluid && contentWidth === 'Fixed'
               })}>
                 <PageHeader
                   title={<>
@@ -59,13 +59,13 @@ export default ({
                       level={4}
                       style={{
                         marginBottom: 0,
-                        display: 'inline-block',
+                        display: 'inline-block'
                       }}
                     >
                       {title}
                     </Title>
                   </>}
-                  key="pageheader"
+                  key='pageheader'
                   {...restProps}
                   breadcrumb={
                     !hiddenBreadcrumb &&
@@ -95,10 +95,9 @@ export default ({
           )
         }
       }
-    </MenuContext.Consumer>
-    {children ? <div className={styles['children-content']}>
-      <GridContent>{children}</GridContent>
-    </div> : null}
-  </div>
+                    </MenuContext.Consumer>
+                    {children ? <div className={styles['children-content']}>
+                      <GridContent>{children}</GridContent>
+                    </div> : null}
+                  </div>
 )
-

@@ -7,11 +7,11 @@ const { Option } = Select
 
 const formItemLayout = {
   labelCol: {
-    span: 5,
+    span: 5
   },
   wrapperCol: {
-    span: 19,
-  },
+    span: 19
+  }
 }
 
 @Form.create()
@@ -22,7 +22,7 @@ class Step1 extends Component {
       amount: '500',
       payAccount: 'ant-design@alipay.com',
       receiverAccount: 'test@example.com',
-      receiverName: 'Alex',
+      receiverName: 'Alex'
     }
     const { getFieldDecorator, validateFields } = form
     const onValidateForm = (e) => {
@@ -31,58 +31,58 @@ class Step1 extends Component {
         if (!err) {
           history.push({
             pathname: '/form/step-form/confirm',
-            search: qs.stringify(values),
+            search: qs.stringify(values)
           })
         }
       })
     }
     return (
       <Fragment>
-        <Form onSubmit={onValidateForm} layout="horizontal" className={styles.stepForm} hideRequiredMark>
-          <Form.Item {...formItemLayout} label="付款账户">
+        <Form onSubmit={onValidateForm} layout='horizontal' className={styles.stepForm} hideRequiredMark>
+          <Form.Item {...formItemLayout} label='付款账户'>
             {
               getFieldDecorator('payAccount', {
                 initialValue: data.payAccount,
-                rules: [{ required: true, message: '请选择付款账户' }],
+                rules: [{ required: true, message: '请选择付款账户' }]
               })(
-                <Select placeholder="test@example.com">
+                <Select placeholder='test@example.com'>
                   <Option
-                    value="ant-design@alipay.com">ant-design@alipay.com</Option>
-                </Select>,
+                    value='ant-design@alipay.com'>ant-design@alipay.com</Option>
+                </Select>
               )
             }
           </Form.Item>
-          <Form.Item {...formItemLayout} label="收款账户">
+          <Form.Item {...formItemLayout} label='收款账户'>
             <Input.Group compact>
-              <Select defaultValue="alipay" style={{ width: 100 }}>
-                <Option value="alipay">支付宝</Option>
-                <Option value="bank">银行账户</Option>
+              <Select defaultValue='alipay' style={{ width: 100 }}>
+                <Option value='alipay'>支付宝</Option>
+                <Option value='bank'>银行账户</Option>
               </Select>
               {
                 getFieldDecorator('receiverAccount', {
                   initialValue: data.receiverAccount,
                   rules: [
                     { required: true, message: '请输入收款人账户' },
-                    { type: 'email', message: '账户名应为邮箱格式' },
-                  ],
+                    { type: 'email', message: '账户名应为邮箱格式' }
+                  ]
                 })(
-                  <Input autoComplete="off" style={{ width: 'calc(100% - 100px)' }}
-                         placeholder="test@example.com"/>,
+                  <Input autoComplete='off' style={{ width: 'calc(100% - 100px)' }}
+                    placeholder='test@example.com'/>
                 )
               }
             </Input.Group>
           </Form.Item>
-          <Form.Item {...formItemLayout} label="收款人姓名">
+          <Form.Item {...formItemLayout} label='收款人姓名'>
             {
               getFieldDecorator('receiverName', {
                 initialValue: data.receiverName,
-                rules: [{ required: true, message: '请输入收款人姓名' }],
+                rules: [{ required: true, message: '请输入收款人姓名' }]
               })(
-                <Input autoComplete="off" placeholder="请输入收款人姓名"/>,
+                <Input autoComplete='off' placeholder='请输入收款人姓名'/>
               )
             }
           </Form.Item>
-          <Form.Item {...formItemLayout} label="转账金额">
+          <Form.Item {...formItemLayout} label='转账金额'>
             {
               getFieldDecorator('amount', {
                 initialValue: data.amount,
@@ -90,10 +90,10 @@ class Step1 extends Component {
                   { required: true, message: '请输入转账金额' },
                   {
                     pattern: /^(\d+)((?:\.\d+)?)$/,
-                    message: '请输入合法金额数字',
-                  }],
+                    message: '请输入合法金额数字'
+                  }]
               })(
-                <Input autoComplete="off" prefix="￥" placeholder="请输入金额"/>,
+                <Input autoComplete='off' prefix='￥' placeholder='请输入金额'/>
               )
             }
           </Form.Item>
@@ -101,11 +101,11 @@ class Step1 extends Component {
             xs: { span: 24, offset: 0 },
             sm: {
               span: formItemLayout.wrapperCol.span,
-              offset: formItemLayout.labelCol.span,
-            },
-          }} label=""
+              offset: formItemLayout.labelCol.span
+            }
+          }} label=''
           >
-            <Button htmlType="submit" type="primary">
+            <Button htmlType='submit' type='primary'>
               下一步
             </Button>
           </Form.Item>

@@ -28,16 +28,16 @@ class Notification extends Component {
     return [
       {
         title: '其他用户消息',
-        description: '其他用户的消息将以站内信的形式通知',
+        description: '其他用户的消息将以站内信的形式通知'
       },
       {
         title: '系统消息',
-        description: '系统消息将以站内信的形式通知',
+        description: '系统消息将以站内信的形式通知'
       },
       {
         title: '账户密码',
-        description: '账户密码',
-      },
+        description: '账户密码'
+      }
     ]
   }
 

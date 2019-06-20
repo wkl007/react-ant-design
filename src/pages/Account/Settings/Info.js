@@ -6,7 +6,7 @@ import { getRouterData } from '../../../router/router'
 import { getRoutes } from '../../../utils/utils'
 import styles from './Info.less'
 
-const {Item} = Menu
+const { Item } = Menu
 const currentUser = {
   'name': 'Serati Ma',
   'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
@@ -16,27 +16,27 @@ const currentUser = {
   'title': '交互专家',
   'group': '蚂蚁金服－某某某事业群－某某平台部－某某技术部－UED',
   'tags': [
-    {'key': '0', 'label': '很有想法的'},
-    {'key': '1', 'label': '专注设计'},
-    {'key': '2', 'label': '辣~'},
-    {'key': '3', 'label': '大长腿'},
-    {'key': '4', 'label': '川妹子'},
-    {'key': '5', 'label': '海纳百川'}],
+    { 'key': '0', 'label': '很有想法的' },
+    { 'key': '1', 'label': '专注设计' },
+    { 'key': '2', 'label': '辣~' },
+    { 'key': '3', 'label': '大长腿' },
+    { 'key': '4', 'label': '川妹子' },
+    { 'key': '5', 'label': '海纳百川' }],
   'notifyCount': 12,
   'unreadCount': 11,
   'country': 'China',
   'geographic': {
-    'province': {'label': '浙江省', 'key': '330000'},
-    'city': {'label': '杭州市', 'key': '330100'},
+    'province': { 'label': '浙江省', 'key': '330000' },
+    'city': { 'label': '杭州市', 'key': '330100' }
   },
   'address': '西湖区工专路 77 号',
-  'phone': '0752-268888888',
+  'phone': '0752-268888888'
 }
 
 class Info extends Component {
   constructor (props) {
     super(props)
-    const {match, location} = props
+    const { match, location } = props
     const menuMap = {
       base: <span>基本设置</span>,
       security: (
@@ -47,14 +47,14 @@ class Info extends Component {
       ),
       notification: (
         <span>新消息通知</span>
-      ),
+      )
     }
     const key = location.pathname.replace(`${match.path}/`, '')
     this.state = {
       currentUser: currentUser,
       mode: 'inline',
       menuMap,
-      selectKey: menuMap[key] ? key : 'base',
+      selectKey: menuMap[key] ? key : 'base'
     }
   }
 
@@ -72,23 +72,23 @@ class Info extends Component {
   }
 
   getMenu = () => {
-    const {menuMap} = this.state
+    const { menuMap } = this.state
     return Object.keys(menuMap)
       .map(item => <Item key={item}>{menuMap[item]}</Item>)
   }
 
   getRightTitle = () => {
-    const {selectKey, menuMap} = this.state
+    const { selectKey, menuMap } = this.state
     return menuMap[selectKey]
   }
 
-  selectKey = ({key}) => {
-    const {history} = this.props
+  selectKey = ({ key }) => {
+    const { history } = this.props
     history.push({
-      pathname: `/account/settings/${key}`,
+      pathname: `/account/settings/${key}`
     })
     this.setState({
-      selectKey: key,
+      selectKey: key
     })
   }
 
@@ -98,7 +98,7 @@ class Info extends Component {
     }
     requestAnimationFrame(() => {
       let mode = 'inline'
-      const {offsetWidth} = this.main
+      const { offsetWidth } = this.main
       if (this.main.offsetWidth < 641 && offsetWidth > 400) {
         mode = 'horizontal'
       }
@@ -106,25 +106,25 @@ class Info extends Component {
         mode = 'horizontal'
       }
       this.setState({
-        mode,
+        mode
       })
     })
   }
 
   render () {
-    const {mode, selectKey} = this.state
-    const {match} = this.props
+    const { mode, selectKey } = this.state
+    const { match } = this.props
 
     const routerData = getRouterData()
     const routes = getRoutes(match.path, routerData)
     return (
       <div
         className={styles.main}
-        ref={ref => {this.main = ref}}
+        ref={ref => { this.main = ref }}
       >
         <div className={styles.leftmenu}>
           <Menu mode={mode} selectedKeys={[selectKey]}
-                onClick={this.selectKey}>
+            onClick={this.selectKey}>
             {this.getMenu()}
           </Menu>
         </div>
@@ -143,8 +143,8 @@ class Info extends Component {
             }
             <Redirect
               exact
-              from="/account/settings"
-              to="/account/settings/base"
+              from='/account/settings'
+              to='/account/settings/base'
             />
             <Route render={NotFound}/>
           </Switch>

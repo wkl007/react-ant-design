@@ -4,7 +4,7 @@ import { Button, Spin } from 'antd'
 import { Exception } from 'ant-design-pro'
 
 const actions = (props) => (
-  <Button type="primary" onClick={props.retry}>重新加载</Button>
+  <Button type='primary' onClick={props.retry}>重新加载</Button>
 )
 
 const ErrorComponent = (props) => (

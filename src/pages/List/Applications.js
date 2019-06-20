@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import numeral from 'numeral'
-import { Avatar, Card, Col, Dropdown, Form, Icon, List, Menu, Row, Select, Tooltip, } from 'antd'
+import { Avatar, Card, Col, Dropdown, Form, Icon, List, Menu, Row, Select, Tooltip } from 'antd'
 import { TagSelect } from 'ant-design-pro'
 import StandardFormRow from '../../components/StandardFormRow'
 
@@ -33,16 +33,16 @@ const listData = {
       'members': [
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
-          'name': '曲丽丽',
+          'name': '曲丽丽'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
-          'name': '王昭君',
+          'name': '王昭君'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
-          'name': '董娜娜',
-        }],
+          'name': '董娜娜'
+        }]
     },
     {
       'id': 'fake-list-1',
@@ -67,16 +67,16 @@ const listData = {
       'members': [
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
-          'name': '曲丽丽',
+          'name': '曲丽丽'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
-          'name': '王昭君',
+          'name': '王昭君'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
-          'name': '董娜娜',
-        }],
+          'name': '董娜娜'
+        }]
     },
     {
       'id': 'fake-list-2',
@@ -101,16 +101,16 @@ const listData = {
       'members': [
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
-          'name': '曲丽丽',
+          'name': '曲丽丽'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
-          'name': '王昭君',
+          'name': '王昭君'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
-          'name': '董娜娜',
-        }],
+          'name': '董娜娜'
+        }]
     },
     {
       'id': 'fake-list-3',
@@ -135,16 +135,16 @@ const listData = {
       'members': [
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
-          'name': '曲丽丽',
+          'name': '曲丽丽'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
-          'name': '王昭君',
+          'name': '王昭君'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
-          'name': '董娜娜',
-        }],
+          'name': '董娜娜'
+        }]
     },
     {
       'id': 'fake-list-4',
@@ -169,16 +169,16 @@ const listData = {
       'members': [
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
-          'name': '曲丽丽',
+          'name': '曲丽丽'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
-          'name': '王昭君',
+          'name': '王昭君'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
-          'name': '董娜娜',
-        }],
+          'name': '董娜娜'
+        }]
     },
     {
       'id': 'fake-list-5',
@@ -203,16 +203,16 @@ const listData = {
       'members': [
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
-          'name': '曲丽丽',
+          'name': '曲丽丽'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
-          'name': '王昭君',
+          'name': '王昭君'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
-          'name': '董娜娜',
-        }],
+          'name': '董娜娜'
+        }]
     },
     {
       'id': 'fake-list-6',
@@ -237,16 +237,16 @@ const listData = {
       'members': [
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
-          'name': '曲丽丽',
+          'name': '曲丽丽'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
-          'name': '王昭君',
+          'name': '王昭君'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
-          'name': '董娜娜',
-        }],
+          'name': '董娜娜'
+        }]
     },
     {
       'id': 'fake-list-7',
@@ -271,17 +271,17 @@ const listData = {
       'members': [
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
-          'name': '曲丽丽',
+          'name': '曲丽丽'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
-          'name': '王昭君',
+          'name': '王昭君'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
-          'name': '董娜娜',
-        }],
-    }],
+          'name': '董娜娜'
+        }]
+    }]
 }
 
 const formatWan = val => {
@@ -306,7 +306,7 @@ class Applications extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      loading: false,
+      loading: false
     }
   }
 
@@ -323,8 +323,8 @@ class Applications extends Component {
     const formItemLayout = {
       wrapperCol: {
         xs: { span: 24 },
-        sm: { span: 16 },
-      },
+        sm: { span: 16 }
+      }
     }
 
     const CardInfo = ({ activeUser, newUser }) => (
@@ -343,20 +343,20 @@ class Applications extends Component {
     const itemMenu = (
       <Menu>
         <Menu.Item>
-          <a target="_blank" rel="noopener noreferrer"
-             href="http://www.alipay.com/">
+          <a target='_blank' rel='noopener noreferrer'
+            href='http://www.alipay.com/'>
             1st menu item
           </a>
         </Menu.Item>
         <Menu.Item>
-          <a target="_blank" rel="noopener noreferrer"
-             href="http://www.taobao.com/">
+          <a target='_blank' rel='noopener noreferrer'
+            href='http://www.taobao.com/'>
             2nd menu item
           </a>
         </Menu.Item>
         <Menu.Item>
-          <a target="_blank" rel="noopener noreferrer"
-             href="http://www.tmall.com/">
+          <a target='_blank' rel='noopener noreferrer'
+            href='http://www.tmall.com/'>
             3d menu item
           </a>
         </Menu.Item>
@@ -366,9 +366,9 @@ class Applications extends Component {
     return (
       <div className={styles.filterCardList}>
         <Card bordered={false}>
-          <Form layout="inline">
-            <StandardFormRow title="所属类目" block
-                             style={{ paddingBottom: 11 }}>
+          <Form layout='inline'>
+            <StandardFormRow title='所属类目' block
+              style={{ paddingBottom: 11 }}>
               <FormItem>
                 {getFieldDecorator('category')(
                   <TagSelect
@@ -379,47 +379,47 @@ class Applications extends Component {
                       collapseText: '收起'
                     }}
                   >
-                    <TagSelect.Option value="cat1">类目一</TagSelect.Option>
-                    <TagSelect.Option value="cat2">类目二</TagSelect.Option>
-                    <TagSelect.Option value="cat3">类目三</TagSelect.Option>
-                    <TagSelect.Option value="cat4">类目四</TagSelect.Option>
-                    <TagSelect.Option value="cat5">类目五</TagSelect.Option>
-                    <TagSelect.Option value="cat6">类目六</TagSelect.Option>
-                    <TagSelect.Option value="cat7">类目七</TagSelect.Option>
-                    <TagSelect.Option value="cat8">类目八</TagSelect.Option>
-                    <TagSelect.Option value="cat9">类目九</TagSelect.Option>
-                    <TagSelect.Option value="cat10">类目十</TagSelect.Option>
-                    <TagSelect.Option value="cat11">类目十一</TagSelect.Option>
-                    <TagSelect.Option value="cat12">类目十二</TagSelect.Option>
-                  </TagSelect>,
+                    <TagSelect.Option value='cat1'>类目一</TagSelect.Option>
+                    <TagSelect.Option value='cat2'>类目二</TagSelect.Option>
+                    <TagSelect.Option value='cat3'>类目三</TagSelect.Option>
+                    <TagSelect.Option value='cat4'>类目四</TagSelect.Option>
+                    <TagSelect.Option value='cat5'>类目五</TagSelect.Option>
+                    <TagSelect.Option value='cat6'>类目六</TagSelect.Option>
+                    <TagSelect.Option value='cat7'>类目七</TagSelect.Option>
+                    <TagSelect.Option value='cat8'>类目八</TagSelect.Option>
+                    <TagSelect.Option value='cat9'>类目九</TagSelect.Option>
+                    <TagSelect.Option value='cat10'>类目十</TagSelect.Option>
+                    <TagSelect.Option value='cat11'>类目十一</TagSelect.Option>
+                    <TagSelect.Option value='cat12'>类目十二</TagSelect.Option>
+                  </TagSelect>
                 )}
               </FormItem>
             </StandardFormRow>
-            <StandardFormRow title="其它选项" gird last>
+            <StandardFormRow title='其它选项' gird last>
               <Row gutter={16}>
                 <Col xl={8} lg={10} md={12} sm={24} xs={24}>
-                  <FormItem {...formItemLayout} label="活跃用户">
+                  <FormItem {...formItemLayout} label='活跃用户'>
                     {getFieldDecorator('user', {})(
                       <Select
                         onChange={this.handleFormSubmit}
-                        placeholder="不限"
+                        placeholder='不限'
                         style={{ maxWidth: 200, width: '100%' }}
                       >
-                        <Option value="lisa">李三</Option>
-                      </Select>,
+                        <Option value='lisa'>李三</Option>
+                      </Select>
                     )}
                   </FormItem>
                 </Col>
                 <Col xl={8} lg={10} md={12} sm={24} xs={24}>
-                  <FormItem {...formItemLayout} label="好评度">
+                  <FormItem {...formItemLayout} label='好评度'>
                     {getFieldDecorator('rate', {})(
                       <Select
                         onChange={this.handleFormSubmit}
-                        placeholder="不限"
+                        placeholder='不限'
                         style={{ maxWidth: 200, width: '100%' }}
                       >
-                        <Option value="good">优秀</Option>
-                      </Select>,
+                        <Option value='good'>优秀</Option>
+                      </Select>
                     )}
                   </FormItem>
                 </Col>
@@ -428,7 +428,7 @@ class Applications extends Component {
           </Form>
         </Card>
         <List
-          rowKey="id"
+          rowKey='id'
           style={{ marginTop: 24 }}
           grid={{ gutter: 24, xl: 4, lg: 3, md: 3, sm: 2, xs: 1 }}
           loading={loading}
@@ -439,22 +439,22 @@ class Applications extends Component {
                 hoverable
                 bodyStyle={{ paddingBottom: 20 }}
                 actions={[
-                  <Tooltip title="下载">
-                    <Icon type="download"/>
+                  <Tooltip title='下载'>
+                    <Icon type='download'/>
                   </Tooltip>,
-                  <Tooltip title="编辑">
-                    <Icon type="edit"/>
+                  <Tooltip title='编辑'>
+                    <Icon type='edit'/>
                   </Tooltip>,
-                  <Tooltip title="分享">
-                    <Icon type="share-alt"/>
+                  <Tooltip title='分享'>
+                    <Icon type='share-alt'/>
                   </Tooltip>,
                   <Dropdown overlay={itemMenu}>
-                    <Icon type="ellipsis"/>
-                  </Dropdown>,
+                    <Icon type='ellipsis'/>
+                  </Dropdown>
                 ]}
               >
-                <Card.Meta avatar={<Avatar size="small" src={item.avatar}/>}
-                           title={item.title}/>
+                <Card.Meta avatar={<Avatar size='small' src={item.avatar}/>}
+                  title={item.title}/>
                 <div className={styles.cardItemContent}>
                   <CardInfo
                     activeUser={formatWan(item.activeUser)}

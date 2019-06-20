@@ -2,11 +2,11 @@ import React from 'react'
 import classNames from 'classnames'
 import styles from './index.less'
 
-const StandardFormRow = ({title, children, last, block, gird, ...rest}) => {
+const StandardFormRow = ({ title, children, last, block, gird, ...rest }) => {
   const cls = classNames(styles.standardFormRow, {
     [styles.standardFormRowBlock]: block,
     [styles.standardFormRowLast]: last,
-    [styles.standardFormRowGrid]: gird,
+    [styles.standardFormRowGrid]: gird
   })
   return (
     <div className={cls} {...rest}>

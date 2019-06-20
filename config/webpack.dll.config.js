@@ -32,8 +32,8 @@ module.exports = {
       'react-router-dom',
       'redux',
       'redux-thunk',
-      'whatwg-fetch',
-    ],
+      'whatwg-fetch'
+    ]
   },
   output: {
     filename: '[name].[contenthash:8].dll.js',

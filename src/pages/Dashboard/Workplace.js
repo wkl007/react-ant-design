@@ -14,28 +14,28 @@ const { Radar } = Charts
 const links = [
   {
     title: '操作一',
-    href: '',
+    href: ''
   },
   {
     title: '操作二',
-    href: '',
+    href: ''
   },
   {
     title: '操作三',
-    href: '',
+    href: ''
   },
   {
     title: '操作四',
-    href: '',
+    href: ''
   },
   {
     title: '操作五',
-    href: '',
+    href: ''
   },
   {
     title: '操作六',
-    href: '',
-  },
+    href: ''
+  }
 ]
 
 const members = [
@@ -43,32 +43,32 @@ const members = [
     id: 'members-1',
     title: '科学搬砖组',
     logo: 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
-    link: '',
+    link: ''
   },
   {
     id: 'members-2',
     title: '程序员日常',
     logo: 'https://gw.alipayobjects.com/zos/rmsportal/cnrhVkzwxjPwAaCfPbdc.png',
-    link: '',
+    link: ''
   },
   {
     id: 'members-3',
     title: '设计天团',
     logo: 'https://gw.alipayobjects.com/zos/rmsportal/gaOngJwsRYRaVAuXXcmB.png',
-    link: '',
+    link: ''
   },
   {
     id: 'members-4',
     title: '中二少女团',
     logo: 'https://gw.alipayobjects.com/zos/rmsportal/ubnKSIfAJTxIgXOKlciN.png',
-    link: '',
+    link: ''
   },
   {
     id: 'members-5',
     title: '骗你学计算机',
     logo: 'https://gw.alipayobjects.com/zos/rmsportal/WhxKECPNujWoWEFNdnJE.png',
-    link: '',
-  },
+    link: ''
+  }
 ]
 
 const activities = [
@@ -77,65 +77,65 @@ const activities = [
     'updatedAt': '2018-05-29T04:11:09.475Z',
     'user': {
       'name': '曲丽丽',
-      'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
+      'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png'
     },
     'group': { 'name': '高逼格设计天团', 'link': 'http://github.com/' },
     'project': { 'name': '六月迭代', 'link': 'http://github.com/' },
-    'template': '在 @{group} 新建项目 @{project}',
+    'template': '在 @{group} 新建项目 @{project}'
   },
   {
     'id': 'trend-2',
     'updatedAt': '2018-05-29T04:11:09.475Z',
     'user': {
       'name': '付小小',
-      'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/cnrhVkzwxjPwAaCfPbdc.png',
+      'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/cnrhVkzwxjPwAaCfPbdc.png'
     },
     'group': { 'name': '高逼格设计天团', 'link': 'http://github.com/' },
     'project': { 'name': '六月迭代', 'link': 'http://github.com/' },
-    'template': '在 @{group} 新建项目 @{project}',
+    'template': '在 @{group} 新建项目 @{project}'
   },
   {
     'id': 'trend-3',
     'updatedAt': '2018-05-29T04:11:09.475Z',
     'user': {
       'name': '林东东',
-      'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/gaOngJwsRYRaVAuXXcmB.png',
+      'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/gaOngJwsRYRaVAuXXcmB.png'
     },
     'group': { 'name': '中二少女团', 'link': 'http://github.com/' },
     'project': { 'name': '六月迭代', 'link': 'http://github.com/' },
-    'template': '在 @{group} 新建项目 @{project}',
+    'template': '在 @{group} 新建项目 @{project}'
   },
   {
     'id': 'trend-4',
     'updatedAt': '2018-05-29T04:11:09.475Z',
     'user': {
       'name': '周星星',
-      'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/WhxKECPNujWoWEFNdnJE.png',
+      'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/WhxKECPNujWoWEFNdnJE.png'
     },
     'project': { 'name': '5 月日常迭代', 'link': 'http://github.com/' },
-    'template': '将 @{project} 更新至已发布状态',
+    'template': '将 @{project} 更新至已发布状态'
   },
   {
     'id': 'trend-5',
     'updatedAt': '2018-05-29T04:11:09.475Z',
     'user': {
       'name': '朱偏右',
-      'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ubnKSIfAJTxIgXOKlciN.png',
+      'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ubnKSIfAJTxIgXOKlciN.png'
     },
     'project': { 'name': '工程效能', 'link': 'http://github.com/' },
     'comment': { 'name': '留言', 'link': 'http://github.com/' },
-    'template': '在 @{project} 发布了 @{comment}',
+    'template': '在 @{project} 发布了 @{comment}'
   },
   {
     'id': 'trend-6',
     'updatedAt': '2018-05-29T04:11:09.475Z',
     'user': {
       'name': '乐哥',
-      'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/jZUIxmJycoymBprLOUbT.png',
+      'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/jZUIxmJycoymBprLOUbT.png'
     },
     'group': { 'name': '程序员日常', 'link': 'http://github.com/' },
     'project': { 'name': '品牌迭代', 'link': 'http://github.com/' },
-    'template': '在 @{group} 新建项目 @{project}',
+    'template': '在 @{group} 新建项目 @{project}'
   }]
 
 const notice = [
@@ -147,7 +147,7 @@ const notice = [
     'updatedAt': '2018-05-29T04:11:09.475Z',
     'member': '科学搬砖组',
     'href': '',
-    'memberLink': '',
+    'memberLink': ''
   },
   {
     'id': 'xxx2',
@@ -157,7 +157,7 @@ const notice = [
     'updatedAt': '2017-07-24T00:00:00.000Z',
     'member': '全组都是吴彦祖',
     'href': '',
-    'memberLink': '',
+    'memberLink': ''
   },
   {
     'id': 'xxx3',
@@ -167,7 +167,7 @@ const notice = [
     'updatedAt': '2018-05-29T04:11:09.475Z',
     'member': '中二少女团',
     'href': '',
-    'memberLink': '',
+    'memberLink': ''
   },
   {
     'id': 'xxx4',
@@ -177,7 +177,7 @@ const notice = [
     'updatedAt': '2017-07-23T00:00:00.000Z',
     'member': '程序员日常',
     'href': '',
-    'memberLink': '',
+    'memberLink': ''
   },
   {
     'id': 'xxx5',
@@ -187,7 +187,7 @@ const notice = [
     'updatedAt': '2017-07-23T00:00:00.000Z',
     'member': '高逼格设计天团',
     'href': '',
-    'memberLink': '',
+    'memberLink': ''
   },
   {
     'id': 'xxx6',
@@ -197,7 +197,7 @@ const notice = [
     'updatedAt': '2017-07-23T00:00:00.000Z',
     'member': '骗你来学计算机',
     'href': '',
-    'memberLink': '',
+    'memberLink': ''
   }]
 
 const radarData = [
@@ -224,7 +224,7 @@ class Workplace extends Component {
       projectLoading: false,
       activitiesLoading: false,
       radarDataLoading: false,
-      currentUserLoading: false,
+      currentUserLoading: false
     }
   }
 
@@ -233,14 +233,14 @@ class Workplace extends Component {
       projectLoading: true,
       activitiesLoading: true,
       radarDataLoading: true,
-      currentUserLoading: true,
+      currentUserLoading: true
     })
     setTimeout(() => {
       this.setState({
         projectLoading: false,
         activitiesLoading: false,
         radarDataLoading: false,
-        currentUserLoading: false,
+        currentUserLoading: false
       })
     }, 500)
   }
@@ -286,8 +286,8 @@ class Workplace extends Component {
       <div className={styles.pageHeaderContent}>
         <div className={styles.avatar}>
           <Avatar
-            size="large"
-            src="https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png"
+            size='large'
+            src='https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png'
           />
         </div>
         <div className={styles.content}>
@@ -321,9 +321,9 @@ class Workplace extends Component {
             <Card
               className={styles.projectList}
               style={{ marginBottom: 24 }}
-              title="进行中的项目"
+              title='进行中的项目'
               bordered={false}
-              extra={<Link to="/">全部项目</Link>}
+              extra={<Link to='/'>全部项目</Link>}
               loading={projectLoading}
               bodyStyle={{ padding: 0 }}
             >
@@ -334,7 +334,7 @@ class Workplace extends Component {
                       <Card.Meta
                         title={
                           <div className={styles.cardTitle}>
-                            <Avatar size="small" src={item.logo}/>
+                            <Avatar size='small' src={item.logo}/>
                             <Link to={item.href}>{item.title}</Link>
                           </div>
                         }
@@ -345,7 +345,7 @@ class Workplace extends Component {
                         {
                           item.updatedAt && (
                             <span className={styles.datetime}
-                                  title={item.updatedAt}>
+                              title={item.updatedAt}>
                                 {moment(item.updatedAt).fromNow()}
                               </span>
                           )
@@ -360,10 +360,10 @@ class Workplace extends Component {
               bodyStyle={{ padding: 0 }}
               bordered={false}
               className={styles.activeCard}
-              title="动态"
+              title='动态'
               loading={activitiesLoading}
             >
-              <List loading={activitiesLoading} size="large">
+              <List loading={activitiesLoading} size='large'>
                 <div className={styles.activitiesList}>
                   {this.renderActivities()}
                 </div>
@@ -373,16 +373,16 @@ class Workplace extends Component {
           <Col xl={8} lg={24} md={24} sm={24} xs={24}>
             <Card
               style={{ marginBottom: 24 }}
-              title="快速开始 / 便捷导航"
+              title='快速开始 / 便捷导航'
               bordered={false}
               bodyStyle={{ padding: 0 }}
             >
               <EditableLinkGroup onAdd={() => {}} links={links}
-                                 linkElement={Link}/>
+                linkElement={Link}/>
             </Card>
             <Card
               style={{ marginBottom: 24 }}
-              title="XX 指数"
+              title='XX 指数'
               bordered={false}
               loading={radarDataLoading}
             >
@@ -392,7 +392,7 @@ class Workplace extends Component {
             </Card>
             <Card
               style={{ marginBottom: 24 }}
-              title="团队"
+              title='团队'
               bordered={false}
               bodyStyle={{ paddingTop: 12, paddingBottom: 12 }}
             >
@@ -402,7 +402,7 @@ class Workplace extends Component {
                     members.map(item => (
                       <Col span={12} key={`members-item-${item.id}`}>
                         <Link to={item.link}>
-                          <Avatar src={item.logo} size="small"/>
+                          <Avatar src={item.logo} size='small'/>
                           <span className={styles.member}>{item.title}</span>
                         </Link>
                       </Col>

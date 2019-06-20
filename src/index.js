@@ -14,7 +14,7 @@ import 'ant-design-pro/dist/ant-design-pro.css'
 
 import App from './App'
 
-//创建Redux的store对象
+// 创建Redux的store对象
 const store = configureStore()
 
 ReactDOM.render(

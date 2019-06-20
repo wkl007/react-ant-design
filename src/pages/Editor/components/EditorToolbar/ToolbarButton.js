@@ -12,7 +12,7 @@ const ToolbarButton = props => {
     <Command name={command}>
       <Tooltip
         title={text || upperFirst(command)}
-        placement="bottom"
+        placement='bottom'
         overlayClassName={styles.tooltip}
       >
         <IconFont type={`icon-${icon || command}`}/>

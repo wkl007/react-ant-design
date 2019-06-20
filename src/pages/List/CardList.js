@@ -30,16 +30,16 @@ const listData = {
       'members': [
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
-          'name': '曲丽丽',
+          'name': '曲丽丽'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
-          'name': '王昭君',
+          'name': '王昭君'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
-          'name': '董娜娜',
-        }],
+          'name': '董娜娜'
+        }]
     },
     {
       'id': 'fake-list-1',
@@ -64,16 +64,16 @@ const listData = {
       'members': [
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
-          'name': '曲丽丽',
+          'name': '曲丽丽'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
-          'name': '王昭君',
+          'name': '王昭君'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
-          'name': '董娜娜',
-        }],
+          'name': '董娜娜'
+        }]
     },
     {
       'id': 'fake-list-2',
@@ -98,16 +98,16 @@ const listData = {
       'members': [
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
-          'name': '曲丽丽',
+          'name': '曲丽丽'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
-          'name': '王昭君',
+          'name': '王昭君'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
-          'name': '董娜娜',
-        }],
+          'name': '董娜娜'
+        }]
     },
     {
       'id': 'fake-list-3',
@@ -132,16 +132,16 @@ const listData = {
       'members': [
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
-          'name': '曲丽丽',
+          'name': '曲丽丽'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
-          'name': '王昭君',
+          'name': '王昭君'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
-          'name': '董娜娜',
-        }],
+          'name': '董娜娜'
+        }]
     },
     {
       'id': 'fake-list-4',
@@ -166,16 +166,16 @@ const listData = {
       'members': [
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
-          'name': '曲丽丽',
+          'name': '曲丽丽'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
-          'name': '王昭君',
+          'name': '王昭君'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
-          'name': '董娜娜',
-        }],
+          'name': '董娜娜'
+        }]
     },
     {
       'id': 'fake-list-5',
@@ -200,16 +200,16 @@ const listData = {
       'members': [
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
-          'name': '曲丽丽',
+          'name': '曲丽丽'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
-          'name': '王昭君',
+          'name': '王昭君'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
-          'name': '董娜娜',
-        }],
+          'name': '董娜娜'
+        }]
     },
     {
       'id': 'fake-list-6',
@@ -234,16 +234,16 @@ const listData = {
       'members': [
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
-          'name': '曲丽丽',
+          'name': '曲丽丽'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
-          'name': '王昭君',
+          'name': '王昭君'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
-          'name': '董娜娜',
-        }],
+          'name': '董娜娜'
+        }]
     },
     {
       'id': 'fake-list-7',
@@ -268,24 +268,24 @@ const listData = {
       'members': [
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
-          'name': '曲丽丽',
+          'name': '曲丽丽'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
-          'name': '王昭君',
+          'name': '王昭君'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
-          'name': '董娜娜',
-        }],
-    }],
+          'name': '董娜娜'
+        }]
+    }]
 }
 
 class CardList extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      loading: false,
+      loading: false
     }
   }
 
@@ -300,18 +300,18 @@ class CardList extends Component {
         </p>
         <div className={styles.contentLink}>
           <span className='link-button'>
-            <img alt=""
-                 src="https://gw.alipayobjects.com/zos/rmsportal/MjEImQtenlyueSmVEfUD.svg"/>{' '}
+            <img alt=''
+              src='https://gw.alipayobjects.com/zos/rmsportal/MjEImQtenlyueSmVEfUD.svg'/>{' '}
             快速开始
           </span>
           <span className='link-button'>
-            <img alt=""
-                 src="https://gw.alipayobjects.com/zos/rmsportal/NbuDUAuBlIApFuDvWiND.svg"/>{' '}
+            <img alt=''
+              src='https://gw.alipayobjects.com/zos/rmsportal/NbuDUAuBlIApFuDvWiND.svg'/>{' '}
             产品简介
           </span>
           <span className='link-button'>
-            <img alt=""
-                 src="https://gw.alipayobjects.com/zos/rmsportal/ohOEPSYdDTNnyMbGuyLb.svg"/>{' '}
+            <img alt=''
+              src='https://gw.alipayobjects.com/zos/rmsportal/ohOEPSYdDTNnyMbGuyLb.svg'/>{' '}
             产品文档
           </span>
         </div>
@@ -319,17 +319,17 @@ class CardList extends Component {
     )
     const extraContent = (
       <div className={styles.extraImg}>
-        <img alt="这是一个标题"
-             src="https://gw.alipayobjects.com/zos/rmsportal/RzwpdLnhmvDJToTdfDPe.png"/>
+        <img alt='这是一个标题'
+          src='https://gw.alipayobjects.com/zos/rmsportal/RzwpdLnhmvDJToTdfDPe.png'/>
       </div>
     )
     return (
       <PageHeaderWrapper
-        title="卡片列表"
+        title='卡片列表'
         content={content}
         extraContent={extraContent}>
         <List
-          rowKey="id"
+          rowKey='id'
           loading={loading}
           grid={{ gutter: 24, lg: 3, md: 2, sm: 1, xs: 1 }}
           dataSource={['', ...list]}
@@ -337,14 +337,14 @@ class CardList extends Component {
             item ? (
               <List.Item key={item.id}>
                 <Card hoverable
-                      className={styles.card}
-                      actions={[
-                        <span className='link-button'>操作一</span>,
-                        <span className='link-button'>操作二</span>]}
+                  className={styles.card}
+                  actions={[
+                    <span className='link-button'>操作一</span>,
+                    <span className='link-button'>操作二</span>]}
                 >
                   <Card.Meta
                     avatar={<img src={item.avatar} className={styles.cardAvatar}
-                                 alt=""/>}
+                      alt=''/>}
                     title={<span className='link-button'>{item.title}</span>}
                     description={
                       <Ellipsis tooltip className={styles.item} lines={3}>
@@ -356,8 +356,8 @@ class CardList extends Component {
               </List.Item>
             ) : (
               <List.Item>
-                <Button type="dashed" className={styles.newButton}>
-                  <Icon type="plus"/> 新增产品
+                <Button type='dashed' className={styles.newButton}>
+                  <Icon type='plus'/> 新增产品
                 </Button>
               </List.Item>
             )

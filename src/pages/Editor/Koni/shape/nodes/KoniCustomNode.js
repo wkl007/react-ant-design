@@ -18,15 +18,15 @@ class KoniCustomNode extends Component {
           attrs: {
             x: -7,
             y: -7,
-            img: model.icon,
-          },
+            img: model.icon
+          }
         })
 
         return keyShape
-      },
+      }
     }
 
-    return <RegisterNode name="koni-custom-node" config={config}/>
+    return <RegisterNode name='koni-custom-node' config={config}/>
   }
 }
 

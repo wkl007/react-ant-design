@@ -14,7 +14,7 @@ const profileData = {
       'barcode': '12421432143214321',
       'price': '2.00',
       'num': '1',
-      'amount': '2.00',
+      'amount': '2.00'
     },
     {
       'id': '1234562',
@@ -22,7 +22,7 @@ const profileData = {
       'barcode': '12421432143214322',
       'price': '3.00',
       'num': '2',
-      'amount': '6.00',
+      'amount': '6.00'
     },
     {
       'id': '1234563',
@@ -30,7 +30,7 @@ const profileData = {
       'barcode': '12421432143214323',
       'price': '7.00',
       'num': '4',
-      'amount': '28.00',
+      'amount': '28.00'
     },
     {
       'id': '1234564',
@@ -38,7 +38,7 @@ const profileData = {
       'barcode': '12421432143214324',
       'price': '8.50',
       'num': '3',
-      'amount': '25.50',
+      'amount': '25.50'
     }],
   'advancedOperation1': [],
   'advancedOperation2': [],
@@ -50,7 +50,7 @@ const profileData = {
       'rate': '联系客户',
       'status': 'processing',
       'operator': '取货员 ID1234',
-      'cost': '5mins',
+      'cost': '5mins'
     },
     {
       'key': '2',
@@ -58,7 +58,7 @@ const profileData = {
       'rate': '取货员出发',
       'status': 'success',
       'operator': '取货员 ID1234',
-      'cost': '1h',
+      'cost': '1h'
     },
     {
       'key': '3',
@@ -66,7 +66,7 @@ const profileData = {
       'rate': '取货员接单',
       'status': 'success',
       'operator': '取货员 ID1234',
-      'cost': '5mins',
+      'cost': '5mins'
     },
     {
       'key': '4',
@@ -74,7 +74,7 @@ const profileData = {
       'rate': '申请审批通过',
       'status': 'success',
       'operator': '系统',
-      'cost': '1h',
+      'cost': '1h'
     },
     {
       'key': '5',
@@ -82,20 +82,20 @@ const profileData = {
       'rate': '发起退货申请',
       'status': 'success',
       'operator': '用户',
-      'cost': '5mins',
-    }],
+      'cost': '5mins'
+    }]
 }
 
 const progressColumns = [
   {
     title: '时间',
     dataIndex: 'time',
-    key: 'time',
+    key: 'time'
   },
   {
     title: '当前进度',
     dataIndex: 'rate',
-    key: 'rate',
+    key: 'rate'
   },
   {
     title: '状态',
@@ -103,28 +103,28 @@ const progressColumns = [
     key: 'status',
     render: text =>
       text === 'success' ? (
-          <Badge status="success" text="成功"/>)
+        <Badge status='success' text='成功'/>)
         : (
-          <Badge status="processing" text="进行中"/>
-        ),
+          <Badge status='processing' text='进行中'/>
+        )
   },
   {
     title: '操作员ID',
     dataIndex: 'operator',
-    key: 'operator',
+    key: 'operator'
   },
   {
     title: '耗时',
     dataIndex: 'cost',
-    key: 'cost',
-  },
+    key: 'cost'
+  }
 ]
 
 class BasicProfile extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      loading: false,
+      loading: false
     }
   }
 
@@ -142,13 +142,13 @@ class BasicProfile extends Component {
       goodsData = basicGoods.concat({
         id: '总计',
         num,
-        amount,
+        amount
       })
     }
     const renderContent = (value, row, index) => {
       let obj = {
         children: value,
-        props: {},
+        props: {}
       }
       if (index === basicGoods.length) {
         obj.props.colSpan = 0
@@ -167,29 +167,29 @@ class BasicProfile extends Component {
           return {
             children: <span style={{ fontWeight: 600 }}>总计</span>,
             props: {
-              colSpan: 4,
-            },
+              colSpan: 4
+            }
           }
-        },
+        }
       },
       {
         title: '商品名称',
         dataIndex: 'name',
         key: 'name',
-        render: renderContent,
+        render: renderContent
       },
       {
         title: '商品条码',
         dataIndex: 'barcode',
         key: 'barcode',
-        render: renderContent,
+        render: renderContent
       },
       {
         title: '单价',
         dataIndex: 'price',
         key: 'price',
         align: 'right',
-        render: renderContent,
+        render: renderContent
       },
       {
         title: '数量（件）',
@@ -201,7 +201,7 @@ class BasicProfile extends Component {
             return text
           }
           return <span style={{ fontWeight: 600 }}>{text}</span>
-        },
+        }
       },
       {
         title: '金额',
@@ -213,25 +213,25 @@ class BasicProfile extends Component {
             return text
           }
           return <span style={{ fontWeight: 600 }}>{text}</span>
-        },
-      },
+        }
+      }
     ]
     return (
-      <PageHeaderWrapper title="基础详情页">
+      <PageHeaderWrapper title='基础详情页'>
         <Card bordered={false}>
-          <DescriptionList size="large" title="退款申请" style={{ marginBottom: 32 }}>
-            <Description term="取货单号">1000000000</Description>
-            <Description term="状态">已取货</Description>
-            <Description term="销售单号">1234123421</Description>
-            <Description term="子订单">3214321432</Description>
+          <DescriptionList size='large' title='退款申请' style={{ marginBottom: 32 }}>
+            <Description term='取货单号'>1000000000</Description>
+            <Description term='状态'>已取货</Description>
+            <Description term='销售单号'>1234123421</Description>
+            <Description term='子订单'>3214321432</Description>
           </DescriptionList>
           <Divider style={{ marginBottom: 32 }}/>
-          <DescriptionList size="large" title="用户信息" style={{ marginBottom: 32 }}>
-            <Description term="用户姓名">付小小</Description>
-            <Description term="联系电话">18100000000</Description>
-            <Description term="常用快递">菜鸟仓储</Description>
-            <Description term="取货地址">浙江省杭州市西湖区万塘路18号</Description>
-            <Description term="备注">无</Description>
+          <DescriptionList size='large' title='用户信息' style={{ marginBottom: 32 }}>
+            <Description term='用户姓名'>付小小</Description>
+            <Description term='联系电话'>18100000000</Description>
+            <Description term='常用快递'>菜鸟仓储</Description>
+            <Description term='取货地址'>浙江省杭州市西湖区万塘路18号</Description>
+            <Description term='备注'>无</Description>
           </DescriptionList>
           <Divider style={{ marginBottom: 32 }}/>
           <div className={styles.title}>退货商品</div>
@@ -241,7 +241,7 @@ class BasicProfile extends Component {
             loading={loading}
             dataSource={goodsData}
             columns={goodsColumns}
-            rowKey="id"
+            rowKey='id'
           />
           <div className={styles.title}>退货进度</div>
           <Table

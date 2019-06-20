@@ -12,28 +12,28 @@ const links = [
   {
     key: 'help',
     title: '帮助',
-    href: '',
+    href: ''
   },
   {
     key: 'privacy',
     title: '隐私',
-    href: '',
+    href: ''
   },
   {
     key: 'terms',
     title: '条款',
-    href: '',
-  },
+    href: ''
+  }
 ]
 
 const copyright = (
   <Fragment>
-    Copyright <Icon type="copyright"/> 2018 蚂蚁金服体验技术部出品
+    Copyright <Icon type='copyright'/> 2018 蚂蚁金服体验技术部出品
   </Fragment>
 )
 
 class UserLayout extends Component {
-  //获取页面标题
+  // 获取页面标题
   getPageTitle = () => {
     let { routerData, location } = this.props
     let { pathname } = location
@@ -53,8 +53,8 @@ class UserLayout extends Component {
           <div className={styles.content}>
             <div className={styles.top}>
               <div className={styles.header}>
-                <Link to="/">
-                  <img className={styles.logo} src={logo} alt="logo"/>
+                <Link to='/'>
+                  <img className={styles.logo} src={logo} alt='logo'/>
                   <span className={styles.title}>Ant Design</span>
                 </Link>
               </div>
@@ -72,7 +72,7 @@ class UserLayout extends Component {
                   />
                 })
               }
-              <Redirect exact from="/user" to="/user/login"/>
+              <Redirect exact from='/user' to='/user/login'/>
             </Switch>
           </div>
           <GlobalFooter links={links} copyright={copyright}/>

@@ -12,27 +12,26 @@ const FooterView = () => (
           key: 'Pro 首页',
           title: 'Pro 首页',
           href: 'http://pro.ant.design',
-          blankTarget: true,
+          blankTarget: true
         },
         {
           key: 'github',
-          title: <Icon type="github"/>,
+          title: <Icon type='github'/>,
           href: 'https://github.com/ant-design/ant-design-pro',
-          blankTarget: true,
+          blankTarget: true
         },
         {
           key: 'Ant Design',
           title: 'Ant Design',
           href: 'http://ant.design',
-          blankTarget: true,
-        },
+          blankTarget: true
+        }
       ]}
       copyright={
         <Fragment>
-          Copyright <Icon type="copyright"/> 2018 蚂蚁金服体验技术部出品
+          Copyright <Icon type='copyright'/> 2018 蚂蚁金服体验技术部出品
         </Fragment>
-      }>
-    </GlobalFooter>
+      } />
   </Footer>
 )
 

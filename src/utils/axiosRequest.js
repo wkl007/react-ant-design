@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const service = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL, // api的base_url
-  timeout: 5000, // request timeout
+  timeout: 5000 // request timeout
 })
 
 // http 请求拦截器

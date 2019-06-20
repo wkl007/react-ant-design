@@ -148,12 +148,12 @@ const MindPage = () => {
       content='脑图是表达发散性思维的有效图形思维工具 ，它简单却又很有效，是一种实用性的思维工具。'
     >
       <GGEditor className={styles.editor}>
-        <Row type="flex" className={styles.editorHd}>
+        <Row type='flex' className={styles.editorHd}>
           <Col span={24}>
             <MindToolbar/>
           </Col>
         </Row>
-        <Row type="flex" className={styles.editorBd}>
+        <Row type='flex' className={styles.editorBd}>
           <Col span={20} className={styles.editorContent}>
             <Mind data={data} className={styles.mind}/>
           </Col>

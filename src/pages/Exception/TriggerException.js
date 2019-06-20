@@ -6,7 +6,7 @@ class TriggerException extends PureComponent {
   constructor (props) {
     super(props)
     this.state = {
-      isLoading: false,
+      isLoading: false
     }
   }
 
@@ -19,13 +19,13 @@ class TriggerException extends PureComponent {
     return (
       <Card>
         <Spin spinning={this.state.isLoading} wrapperClassName={styles.trigger}>
-          <Button type="danger" onClick={() => this.triggerError(403)}>
+          <Button type='danger' onClick={() => this.triggerError(403)}>
             403
           </Button>
-          <Button type="danger" onClick={() => this.triggerError(404)}>
+          <Button type='danger' onClick={() => this.triggerError(404)}>
             404
           </Button>
-          <Button type="danger" onClick={() => this.triggerError(500)}>
+          <Button type='danger' onClick={() => this.triggerError(500)}>
             500
           </Button>
         </Spin>

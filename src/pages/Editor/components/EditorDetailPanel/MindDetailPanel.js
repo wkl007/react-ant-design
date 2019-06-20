@@ -8,10 +8,10 @@ const MindDetailPanel = () => {
   return (
     <DetailPanel className={styles.detailPanel}>
       <NodePanel>
-        <DetailForm type="node"/>
+        <DetailForm type='node'/>
       </NodePanel>
       <CanvasPanel>
-        <Card type="inner" size="small" title="Canvas" bordered={false}/>
+        <Card type='inner' size='small' title='Canvas' bordered={false}/>
       </CanvasPanel>
     </DetailPanel>
   )

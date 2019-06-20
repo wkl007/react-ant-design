@@ -20,12 +20,12 @@ const KoniPage = () => {
       content='拓扑结构图是指由网络节点设备和通信介质构成的网络结构图'
     >
       <GGEditor className={styles.editor}>
-        <Row type="flex" className={styles.editorHd}>
+        <Row type='flex' className={styles.editorHd}>
           <Col span={24}>
             <KoniToolbar/>
           </Col>
         </Row>
-        <Row type="flex" className={styles.editorBd}>
+        <Row type='flex' className={styles.editorBd}>
           <Col span={4} className={styles.editorSidebar}>
             <KoniItemPanel/>
           </Col>

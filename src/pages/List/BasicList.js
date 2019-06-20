@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import moment from 'moment'
-import { Avatar, Button, Card, Col, Dropdown, Icon, Input, List, Menu, Progress, Radio, Row, } from 'antd'
+import { Avatar, Button, Card, Col, Dropdown, Icon, Input, List, Menu, Progress, Radio, Row } from 'antd'
 import PageHeaderWrapper from '../../components/PageHeaderWrapper'
 
 import styles from './BasicList.less'
@@ -34,16 +34,16 @@ const listData = {
       'members': [
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
-          'name': '曲丽丽',
+          'name': '曲丽丽'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
-          'name': '王昭君',
+          'name': '王昭君'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
-          'name': '董娜娜',
-        }],
+          'name': '董娜娜'
+        }]
     },
     {
       'id': 'fake-list-1',
@@ -68,16 +68,16 @@ const listData = {
       'members': [
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
-          'name': '曲丽丽',
+          'name': '曲丽丽'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
-          'name': '王昭君',
+          'name': '王昭君'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
-          'name': '董娜娜',
-        }],
+          'name': '董娜娜'
+        }]
     },
     {
       'id': 'fake-list-2',
@@ -102,16 +102,16 @@ const listData = {
       'members': [
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
-          'name': '曲丽丽',
+          'name': '曲丽丽'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
-          'name': '王昭君',
+          'name': '王昭君'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
-          'name': '董娜娜',
-        }],
+          'name': '董娜娜'
+        }]
     },
     {
       'id': 'fake-list-3',
@@ -136,16 +136,16 @@ const listData = {
       'members': [
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
-          'name': '曲丽丽',
+          'name': '曲丽丽'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
-          'name': '王昭君',
+          'name': '王昭君'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
-          'name': '董娜娜',
-        }],
+          'name': '董娜娜'
+        }]
     },
     {
       'id': 'fake-list-4',
@@ -170,17 +170,17 @@ const listData = {
       'members': [
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
-          'name': '曲丽丽',
+          'name': '曲丽丽'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
-          'name': '王昭君',
+          'name': '王昭君'
         },
         {
           'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
-          'name': '董娜娜',
-        }],
-    }],
+          'name': '董娜娜'
+        }]
+    }]
 }
 
 class BasicList extends Component {
@@ -188,7 +188,7 @@ class BasicList extends Component {
     super(props)
     this.state = {
       loading: false,
-      pageSize: 10,
+      pageSize: 10
     }
   }
 
@@ -204,13 +204,13 @@ class BasicList extends Component {
     )
     const extraContent = (
       <div className={styles.extraContent}>
-        <RadioGroup defaultValue="all">
-          <RadioButton value="all">全部</RadioButton>
-          <RadioButton value="progress">进行中</RadioButton>
-          <RadioButton value="waiting">等待中</RadioButton>
+        <RadioGroup defaultValue='all'>
+          <RadioButton value='all'>全部</RadioButton>
+          <RadioButton value='progress'>进行中</RadioButton>
+          <RadioButton value='waiting'>等待中</RadioButton>
         </RadioGroup>
-        <Search className={styles.extraContentSearch} placeholder="请输入"
-                onSearch={(value) => {console.log(value)}}/>
+        <Search className={styles.extraContentSearch} placeholder='请输入'
+          onSearch={(value) => { console.log(value) }}/>
       </div>
     )
     const paginationProps = {
@@ -221,13 +221,13 @@ class BasicList extends Component {
         console.log(current, size)
         // paginationProps.pageSize
         this.setState({
-          pageSize: size,
+          pageSize: size
         })
       },
       showSizeChanger: true,
       showQuickJumper: true,
       pageSize: pageSize,
-      total: 50,
+      total: 50
     }
 
     const ListContent = ({ data: { owner, createdAt, percent, status } }) => (
@@ -242,7 +242,7 @@ class BasicList extends Component {
         </div>
         <div className={styles.listContentItem}>
           <Progress percent={percent} status={status} strokeWidth={6}
-                    style={{ width: 100 }}/>
+            style={{ width: 100 }}/>
         </div>
       </div>
     )
@@ -258,7 +258,7 @@ class BasicList extends Component {
     )
     const MoreBtn = () => (
       <Dropdown overlay={menu}>
-        <span className='link-button'>更多 <Icon type="down"/></span>
+        <span className='link-button'>更多 <Icon type='down'/></span>
       </Dropdown>
     )
     return (
@@ -269,39 +269,39 @@ class BasicList extends Component {
           <Card bordered={false}>
             <Row>
               <Col sm={8} xs={24}>
-                <Info title="我的待办" value="8个任务" bordered/>
+                <Info title='我的待办' value='8个任务' bordered/>
               </Col>
               <Col sm={8} xs={24}>
-                <Info title="本周任务平均处理时间" value="32分钟" bordered/>
+                <Info title='本周任务平均处理时间' value='32分钟' bordered/>
               </Col>
               <Col sm={8} xs={24}>
-                <Info title="本周完成任务数" value="24个任务"/>
+                <Info title='本周完成任务数' value='24个任务'/>
               </Col>
             </Row>
           </Card>
           <Card
             className={styles.listCard}
             bordered={false}
-            title="标准列表"
+            title='标准列表'
             style={{ marginTop: 24 }}
             bodyStyle={{ padding: '0 32px 40px 32px' }}
             extra={extraContent}
           >
-            <Button type="dashed"
-                    style={{ width: '100%', marginBottom: 8 }} icon="plus">
+            <Button type='dashed'
+              style={{ width: '100%', marginBottom: 8 }} icon='plus'>
               添加
             </Button>
             <List
-              size="large"
-              rowKey="id"
+              size='large'
+              rowKey='id'
               loading={loading}
               pagination={paginationProps}
               dataSource={list}
               renderItem={item => (
                 <List.Item actions={[<span className='link-button'>编辑</span>, <MoreBtn/>]}>
                   <List.Item.Meta
-                    avatar={<Avatar src={item.logo} shape="square"
-                                    size="large"/>}
+                    avatar={<Avatar src={item.logo} shape='square'
+                      size='large'/>}
                     title={<a href={item.href}>{item.title}</a>}
                     description={item.subDescription}
                   />

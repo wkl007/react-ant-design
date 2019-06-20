@@ -29,18 +29,18 @@ const list = [
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
         'name': '曲丽丽',
-        'id': 'member1',
+        'id': 'member1'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
         'name': '王昭君',
-        'id': 'member2',
+        'id': 'member2'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
         'name': '董娜娜',
-        'id': 'member3',
-      }],
+        'id': 'member3'
+      }]
   },
   {
     'id': 'fake-list-1',
@@ -66,18 +66,18 @@ const list = [
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
         'name': '曲丽丽',
-        'id': 'member1',
+        'id': 'member1'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
         'name': '王昭君',
-        'id': 'member2',
+        'id': 'member2'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
         'name': '董娜娜',
-        'id': 'member3',
-      }],
+        'id': 'member3'
+      }]
   },
   {
     'id': 'fake-list-2',
@@ -103,18 +103,18 @@ const list = [
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
         'name': '曲丽丽',
-        'id': 'member1',
+        'id': 'member1'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
         'name': '王昭君',
-        'id': 'member2',
+        'id': 'member2'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
         'name': '董娜娜',
-        'id': 'member3',
-      }],
+        'id': 'member3'
+      }]
   },
   {
     'id': 'fake-list-3',
@@ -140,18 +140,18 @@ const list = [
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
         'name': '曲丽丽',
-        'id': 'member1',
+        'id': 'member1'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
         'name': '王昭君',
-        'id': 'member2',
+        'id': 'member2'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
         'name': '董娜娜',
-        'id': 'member3',
-      }],
+        'id': 'member3'
+      }]
   },
   {
     'id': 'fake-list-4',
@@ -177,18 +177,18 @@ const list = [
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
         'name': '曲丽丽',
-        'id': 'member1',
+        'id': 'member1'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
         'name': '王昭君',
-        'id': 'member2',
+        'id': 'member2'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
         'name': '董娜娜',
-        'id': 'member3',
-      }],
+        'id': 'member3'
+      }]
   },
   {
     'id': 'fake-list-5',
@@ -214,18 +214,18 @@ const list = [
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
         'name': '曲丽丽',
-        'id': 'member1',
+        'id': 'member1'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
         'name': '王昭君',
-        'id': 'member2',
+        'id': 'member2'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
         'name': '董娜娜',
-        'id': 'member3',
-      }],
+        'id': 'member3'
+      }]
   },
   {
     'id': 'fake-list-6',
@@ -251,18 +251,18 @@ const list = [
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
         'name': '曲丽丽',
-        'id': 'member1',
+        'id': 'member1'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
         'name': '王昭君',
-        'id': 'member2',
+        'id': 'member2'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
         'name': '董娜娜',
-        'id': 'member3',
-      }],
+        'id': 'member3'
+      }]
   },
   {
     'id': 'fake-list-7',
@@ -288,25 +288,25 @@ const list = [
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
         'name': '曲丽丽',
-        'id': 'member1',
+        'id': 'member1'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
         'name': '王昭君',
-        'id': 'member2',
+        'id': 'member2'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
         'name': '董娜娜',
-        'id': 'member3',
-      }],
+        'id': 'member3'
+      }]
   }]
 
 class Projects extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      list: list,
+      list: list
     }
   }
 
@@ -315,7 +315,7 @@ class Projects extends Component {
     return (
       <List
         className={stylesProjects.coverCardList}
-        rowKey="id"
+        rowKey='id'
         grid={{ gutter: 24, xxl: 3, xl: 2, lg: 2, md: 2, sm: 2, xs: 1 }}
         dataSource={list}
         renderItem={item => (
@@ -326,12 +326,12 @@ class Projects extends Component {
               cover={<img src={item.cover} alt={item.title}/>}
             >
               <Card.Meta
-                title={<span className="link-button">{item.title}</span>}
+                title={<span className='link-button'>{item.title}</span>}
                 description={item.subDescription}/>
               <div className={stylesProjects.cardItemContent}>
                 <span>{moment(item.updatedAt).fromNow()}</span>
                 <div className={stylesProjects.avatarList}>
-                  <AvatarList size="mini">
+                  <AvatarList size='mini'>
                     {item.members.map(member => (
                       <AvatarList.Item
                         key={`${item.id}-avatar-${member.id}`}

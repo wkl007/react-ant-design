@@ -22,34 +22,34 @@ class LoginPage extends Component {
       type: 'account',
       autoLogin: true,
       notice: '',
-      submitting: false,
+      submitting: false
     }
   }
 
-  //自动登录
+  // 自动登录
   changeAutoLogin = (e) => {
     this.setState({
-      autoLogin: e.target.checked,
+      autoLogin: e.target.checked
     })
   }
 
-  //错误弹框
+  // 错误弹框
   renderMessage = (content) => {
     return <Alert
       style={{ marginBottom: 24 }}
       message={content}
-      type="error"
+      type='error'
       showIcon/>
   }
 
-  //tab切换
+  // tab切换
   onTabChange = (type) => {
     this.setState({
-      type: type,
+      type: type
     })
   }
 
-  //验证码回调
+  // 验证码回调
   onGetCaptcha = () =>
     new Promise((resolve, reject) => {
       this.loginForm.validateFields(['mobile'], {}, (err, values) => {
@@ -61,18 +61,18 @@ class LoginPage extends Component {
       })
     })
 
-  //登录
+  // 登录
   handleSubmit = (err, values) => {
     const { setUserInfo } = this.props
     if (this.state.type === 'account') {
       if (!err &&
         (values.username !== 'admin' || values.password !== '888888')) {
         this.setState({
-          notice: '账户或密码错误（admin/888888）！',
+          notice: '账户或密码错误（admin/888888）！'
         })
       } else if (!err) {
         this.setState({
-          submitting: true,
+          submitting: true
         })
         setTimeout(() => {
           setUserInfo(values.username)
@@ -82,7 +82,7 @@ class LoginPage extends Component {
     } else {
       if (!err) {
         this.setState({
-          submitting: true,
+          submitting: true
         })
         setUserInfo(values.mobile)
         console.log(values.mobile, values.captcha)
@@ -95,23 +95,23 @@ class LoginPage extends Component {
     const rulesOption = {
       username: [
         {
-          required: true, message: '请输入账号！',
-        },
+          required: true, message: '请输入账号！'
+        }
       ],
       password: [
         {
-          required: true, message: '请输入密码！',
-        },
+          required: true, message: '请输入密码！'
+        }
       ],
       mobile: [
         {
-          required: true, message: '请输入手机号！',
+          required: true, message: '请输入手机号！'
         },
         {
           pattern: /^1\d{10}$/,
-          message: '手机号格式错误！',
-        },
-      ],
+          message: '手机号格式错误！'
+        }
+      ]
     }
     return (
       <div className={styles.main}>
@@ -123,41 +123,41 @@ class LoginPage extends Component {
             this.loginForm = ref
           }}
         >
-          <Tab key="account" tab="账户密码登录">
+          <Tab key='account' tab='账户密码登录'>
             {
               this.state.notice &&
               this.renderMessage(notice)
             }
-            <UserName name="username" autoComplete="off" placeholder="admin"
-                      rules={rulesOption.username}/>
-            <Password name="password" autoComplete="off" placeholder="888888"
-                      rules={rulesOption.password}
-                      onPressEnter={
+            <UserName name='username' autoComplete='off' placeholder='admin'
+              rules={rulesOption.username}/>
+            <Password name='password' autoComplete='off' placeholder='888888'
+              rules={rulesOption.password}
+              onPressEnter={
                         () => this.loginForm.validateFields(
                           this.handleSubmit)
                       }
             />
           </Tab>
-          <Tab key="mobile" tab="手机号登录">
-            <Mobile name="mobile" autoComplete="off" placeholder="手机号"
-                    maxLength={11}
-                    rules={rulesOption.mobile}/>
-            <Captcha name="captcha" autoComplete="off" placeholder="验证码"
-                     maxLength={6}
-                     onGetCaptcha={this.onGetCaptcha}/>
+          <Tab key='mobile' tab='手机号登录'>
+            <Mobile name='mobile' autoComplete='off' placeholder='手机号'
+              maxLength={11}
+              rules={rulesOption.mobile}/>
+            <Captcha name='captcha' autoComplete='off' placeholder='验证码'
+              maxLength={6}
+              onGetCaptcha={this.onGetCaptcha}/>
           </Tab>
           <div>
             <Checkbox checked={autoLogin}
-                      onChange={this.changeAutoLogin}>自动登录</Checkbox>
+              onChange={this.changeAutoLogin}>自动登录</Checkbox>
             <span className='link-button' style={{ float: 'right' }}>忘记密码</span>
           </div>
           <Submit loading={submitting}>登录</Submit>
           <div className={styles.other}>
             其他登录方式
-            <Icon className={styles.icon} type="alipay-circle"/>
-            <Icon className={styles.icon} type="taobao-circle"/>
-            <Icon className={styles.icon} type="weibo-circle"/>
-            <Link className={styles.register} to="/user/register">
+            <Icon className={styles.icon} type='alipay-circle'/>
+            <Icon className={styles.icon} type='taobao-circle'/>
+            <Icon className={styles.icon} type='weibo-circle'/>
+            <Link className={styles.register} to='/user/register'>
               注册账户
             </Link>
           </div>

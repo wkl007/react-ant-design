@@ -22,17 +22,17 @@ class App extends Component {
     let UserLayout = routerData['/user'].component
     let BasicLayout = routerData['/'].component
     return (
-      <div className="App">
+      <div className='App'>
         <Switch>
-          <Route path="/user" render={(props) => {
+          <Route path='/user' render={(props) => {
             return !userInfo
               ? <UserLayout {...props} routerData={routerData}/>
-              : <Redirect to="/"/>
+              : <Redirect to='/'/>
           }}/>
-          <Route path="/" render={(props) => {
+          <Route path='/' render={(props) => {
             return userInfo
               ? <BasicLayout {...props} routerData={routerData}/>
-              : <Redirect to="/user/login"/>
+              : <Redirect to='/user/login'/>
           }}/>
         </Switch>
       </div>

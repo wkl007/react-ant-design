@@ -2,7 +2,7 @@ import storage from 'good-storage'
 
 const USER_KEY = '__userInfo__'
 
-/*用户信息相关*/
+/* 用户信息相关 */
 export function loadUserInfo () {
   return storage.session.get(USER_KEY, '')
 }

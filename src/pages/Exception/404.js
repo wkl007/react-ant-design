@@ -5,7 +5,7 @@ import { Exception } from 'ant-design-pro'
 export default () => (
   <Exception
     backText='返回首页'
-    type="404"
+    type='404'
     linkElement={Link}
     style={{ minHeight: 500, height: '80%' }}
   />

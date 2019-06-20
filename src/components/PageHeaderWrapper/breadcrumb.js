@@ -40,7 +40,7 @@ export const getBreadcrumbProps = props => {
     routes,
     params,
     routerLocation: location,
-    breadcrumbNameMap,
+    breadcrumbNameMap
   }
 }
 
@@ -50,7 +50,7 @@ const conversionFromProps = props => {
     const { title, href } = item
     return {
       path: href,
-      breadcrumbName: title,
+      breadcrumbName: title
     }
   })
 }
@@ -71,7 +71,7 @@ const conversionFromLocation = (routerLocation, breadcrumbNameMap, props) => {
       return name && !hideInBreadcrumb
         ? {
           path: url,
-          breadcrumbName: name,
+          breadcrumbName: name
         }
         : null
     })
@@ -80,7 +80,7 @@ const conversionFromLocation = (routerLocation, breadcrumbNameMap, props) => {
   if (home) {
     extraBreadcrumbItems.unshift({
       path: '/',
-      breadcrumbName: home,
+      breadcrumbName: home
     })
   }
   return extraBreadcrumbItems
@@ -97,7 +97,7 @@ export const conversionBreadcrumbList = props => {
     return {
       routes: conversionFromProps(props),
       params,
-      itemRender,
+      itemRender
     }
   }
   // 如果传入 routes 和 params 属性
@@ -106,7 +106,7 @@ export const conversionBreadcrumbList = props => {
     return {
       routes: routes.filter(route => route.breadcrumbName),
       params,
-      itemRender,
+      itemRender
     }
   }
   // 根据 location 生成 面包屑
@@ -114,7 +114,7 @@ export const conversionBreadcrumbList = props => {
   if (routerLocation && routerLocation.pathname) {
     return {
       routes: conversionFromLocation(routerLocation, breadcrumbNameMap, props),
-      itemRender,
+      itemRender
     }
   }
   return {}

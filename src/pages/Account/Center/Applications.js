@@ -29,18 +29,18 @@ const list = [
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
         'name': '曲丽丽',
-        'id': 'member1',
+        'id': 'member1'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
         'name': '王昭君',
-        'id': 'member2',
+        'id': 'member2'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
         'name': '董娜娜',
-        'id': 'member3',
-      }],
+        'id': 'member3'
+      }]
   }, {
     'id': 'fake-list-1',
     'owner': '曲丽丽',
@@ -65,18 +65,18 @@ const list = [
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
         'name': '曲丽丽',
-        'id': 'member1',
+        'id': 'member1'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
         'name': '王昭君',
-        'id': 'member2',
+        'id': 'member2'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
         'name': '董娜娜',
-        'id': 'member3',
-      }],
+        'id': 'member3'
+      }]
   }, {
     'id': 'fake-list-2',
     'owner': '林东东',
@@ -101,18 +101,18 @@ const list = [
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
         'name': '曲丽丽',
-        'id': 'member1',
+        'id': 'member1'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
         'name': '王昭君',
-        'id': 'member2',
+        'id': 'member2'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
         'name': '董娜娜',
-        'id': 'member3',
-      }],
+        'id': 'member3'
+      }]
   }, {
     'id': 'fake-list-3',
     'owner': '周星星',
@@ -137,18 +137,18 @@ const list = [
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
         'name': '曲丽丽',
-        'id': 'member1',
+        'id': 'member1'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
         'name': '王昭君',
-        'id': 'member2',
+        'id': 'member2'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
         'name': '董娜娜',
-        'id': 'member3',
-      }],
+        'id': 'member3'
+      }]
   }, {
     'id': 'fake-list-4',
     'owner': '吴加好',
@@ -173,18 +173,18 @@ const list = [
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
         'name': '曲丽丽',
-        'id': 'member1',
+        'id': 'member1'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
         'name': '王昭君',
-        'id': 'member2',
+        'id': 'member2'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
         'name': '董娜娜',
-        'id': 'member3',
-      }],
+        'id': 'member3'
+      }]
   }, {
     'id': 'fake-list-5',
     'owner': '朱偏右',
@@ -209,18 +209,18 @@ const list = [
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
         'name': '曲丽丽',
-        'id': 'member1',
+        'id': 'member1'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
         'name': '王昭君',
-        'id': 'member2',
+        'id': 'member2'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
         'name': '董娜娜',
-        'id': 'member3',
-      }],
+        'id': 'member3'
+      }]
   }, {
     'id': 'fake-list-6',
     'owner': '鱼酱',
@@ -245,18 +245,18 @@ const list = [
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
         'name': '曲丽丽',
-        'id': 'member1',
+        'id': 'member1'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
         'name': '王昭君',
-        'id': 'member2',
+        'id': 'member2'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
         'name': '董娜娜',
-        'id': 'member3',
-      }],
+        'id': 'member3'
+      }]
   }, {
     'id': 'fake-list-7',
     'owner': '乐哥',
@@ -281,50 +281,50 @@ const list = [
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ZiESqWwCXBRQoaPONSJe.png',
         'name': '曲丽丽',
-        'id': 'member1',
+        'id': 'member1'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/tBOxZPlITHqwlGjsJWaF.png',
         'name': '王昭君',
-        'id': 'member2',
+        'id': 'member2'
       },
       {
         'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sBxjgqiuHMGRkIjqlQCd.png',
         'name': '董娜娜',
-        'id': 'member3',
-      }],
+        'id': 'member3'
+      }]
   }]
 
 class Applications extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      list: list,
+      list: list
     }
   }
 
   render () {
-    const {list} = this.state
+    const { list } = this.state
     const itemMenu = (
       <Menu>
         <Menu.Item>
-          <a target='_blank' rel="noopener noreferrer"
-             href="http://www.alipay.com/">1st menu item
+          <a target='_blank' rel='noopener noreferrer'
+            href='http://www.alipay.com/'>1st menu item
           </a>
         </Menu.Item>
         <Menu.Item>
-          <a target='_blank' rel="noopener noreferrer"
-             href="http://www.taobao.com/">2st menu item
+          <a target='_blank' rel='noopener noreferrer'
+            href='http://www.taobao.com/'>2st menu item
           </a>
         </Menu.Item>
         <Menu.Item>
-          <a target='_blank' rel="noopener noreferrer"
-             href="http://www.tmall.com/">3st menu item
+          <a target='_blank' rel='noopener noreferrer'
+            href='http://www.tmall.com/'>3st menu item
           </a>
         </Menu.Item>
       </Menu>
     )
-    const CardInfo = ({activeUser, newUser}) => (
+    const CardInfo = ({ activeUser, newUser }) => (
       <div className={stylesApplicatons.cardInfo}>
         <div>
           <p>活跃用户</p>
@@ -338,34 +338,34 @@ class Applications extends Component {
     )
     return (
       <List
-        rowKey="id"
+        rowKey='id'
         className={stylesApplicatons.filterCardList}
-        grid={{gutter: 24, xxl: 3, xl: 2, lg: 2, md: 2, sm: 2, xs: 1}}
+        grid={{ gutter: 24, xxl: 3, xl: 2, lg: 2, md: 2, sm: 2, xs: 1 }}
         dataSource={list}
         renderItem={item => (
           <List.Item key={item.id}>
             <Card
               hoverable
-              bodyStyle={{paddingBottom: 20}}
+              bodyStyle={{ paddingBottom: 20 }}
               actions={[
-                <Tooltip title="下载">
-                  <Icon type="download"/>
+                <Tooltip title='下载'>
+                  <Icon type='download'/>
                 </Tooltip>,
-                <Tooltip title="编辑">
-                  <Icon type="edit"/>
+                <Tooltip title='编辑'>
+                  <Icon type='edit'/>
                 </Tooltip>,
-                <Tooltip title="分享">
-                  <Icon type="share-alt"/>
+                <Tooltip title='分享'>
+                  <Icon type='share-alt'/>
                 </Tooltip>,
                 <Dropdown overlay={itemMenu}>
-                  <Icon type="ellipsis"/>
-                </Dropdown>,
+                  <Icon type='ellipsis'/>
+                </Dropdown>
               ]}
             >
-              <Card.Meta avatar={<Avatar size="small" src={item.avatar} />} title={item.title} />
+              <Card.Meta avatar={<Avatar size='small' src={item.avatar} />} title={item.title} />
               <div className={stylesApplicatons.cardItemContent}>
                 <CardInfo activeUser={formatWan(item.activeUser)}
-                          newUser={numeral(item.newUser).format('0,0')}
+                  newUser={numeral(item.newUser).format('0,0')}
                 />
               </div>
             </Card>

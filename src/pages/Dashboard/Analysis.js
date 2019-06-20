@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import numeral from 'numeral'
 import classNames from 'classnames'
 import { getTimeDistance } from '../../utils/utils'
-import { Card, Col, DatePicker, Dropdown, Icon, Menu, Radio, Row, Table, Tabs, Tooltip, } from 'antd'
+import { Card, Col, DatePicker, Dropdown, Icon, Menu, Radio, Row, Table, Tabs, Tooltip } from 'antd'
 import { Charts, NumberInfo, Trend } from 'ant-design-pro'
 
 import styles from './Analysis.less'
@@ -16,7 +16,7 @@ const {
   Field,
   Bar,
   Pie,
-  TimelineChart,
+  TimelineChart
 } = Charts
 const { TabPane } = Tabs
 const { RangePicker } = DatePicker
@@ -25,7 +25,7 @@ const rankingListData = []
 for (let i = 0; i < 7; i += 1) {
   rankingListData.push({
     title: `工专路 ${i} 号店`,
-    total: 323234,
+    total: 323234
   })
 }
 
@@ -75,7 +75,7 @@ const chartData = {
       'keyword': '搜索关键词-0',
       'count': 807,
       'range': 19,
-      'status': 0,
+      'status': 0
     },
     { 'index': 2, 'keyword': '搜索关键词-1', 'count': 297, 'range': 70, 'status': 0 },
     { 'index': 3, 'keyword': '搜索关键词-2', 'count': 633, 'range': 95, 'status': 1 },
@@ -91,42 +91,42 @@ const chartData = {
       'keyword': '搜索关键词-10',
       'count': 340,
       'range': 16,
-      'status': 0,
+      'status': 0
     },
     {
       'index': 12,
       'keyword': '搜索关键词-11',
       'count': 669,
       'range': 29,
-      'status': 0,
+      'status': 0
     },
     {
       'index': 13,
       'keyword': '搜索关键词-12',
       'count': 851,
       'range': 56,
-      'status': 1,
+      'status': 1
     },
     {
       'index': 14,
       'keyword': '搜索关键词-13',
       'count': 823,
       'range': 93,
-      'status': 0,
+      'status': 0
     },
     {
       'index': 15,
       'keyword': '搜索关键词-14',
       'count': 717,
       'range': 72,
-      'status': 1,
+      'status': 1
     },
     {
       'index': 16,
       'keyword': '搜索关键词-15',
       'count': 114,
       'range': 51,
-      'status': 1,
+      'status': 1
     },
     { 'index': 17, 'keyword': '搜索关键词-16', 'count': 251, 'range': 3, 'status': 0 },
     {
@@ -134,56 +134,56 @@ const chartData = {
       'keyword': '搜索关键词-17',
       'count': 677,
       'range': 20,
-      'status': 1,
+      'status': 1
     },
     {
       'index': 19,
       'keyword': '搜索关键词-18',
       'count': 302,
       'range': 39,
-      'status': 1,
+      'status': 1
     },
     {
       'index': 20,
       'keyword': '搜索关键词-19',
       'count': 151,
       'range': 12,
-      'status': 1,
+      'status': 1
     },
     {
       'index': 21,
       'keyword': '搜索关键词-20',
       'count': 363,
       'range': 46,
-      'status': 0,
+      'status': 0
     },
     {
       'index': 22,
       'keyword': '搜索关键词-21',
       'count': 803,
       'range': 14,
-      'status': 1,
+      'status': 1
     },
     {
       'index': 23,
       'keyword': '搜索关键词-22',
       'count': 934,
       'range': 44,
-      'status': 0,
+      'status': 0
     },
     {
       'index': 24,
       'keyword': '搜索关键词-23',
       'count': 688,
       'range': 90,
-      'status': 0,
+      'status': 0
     },
     {
       'index': 25,
       'keyword': '搜索关键词-24',
       'count': 915,
       'range': 42,
-      'status': 1,
+      'status': 1
     },
     { 'index': 26, 'keyword': '搜索关键词-25', 'count': 23, 'range': 59, 'status': 0 },
     {
@@ -191,91 +191,91 @@ const chartData = {
       'keyword': '搜索关键词-26',
       'count': 115,
       'range': 51,
-      'status': 1,
+      'status': 1
     },
     {
       'index': 28,
       'keyword': '搜索关键词-27',
       'count': 532,
       'range': 14,
-      'status': 1,
+      'status': 1
     },
     {
       'index': 29,
       'keyword': '搜索关键词-28',
       'count': 668,
       'range': 47,
-      'status': 0,
+      'status': 0
     },
     {
       'index': 30,
       'keyword': '搜索关键词-29',
       'count': 366,
       'range': 65,
-      'status': 0,
+      'status': 0
     },
     {
       'index': 31,
       'keyword': '搜索关键词-30',
       'count': 123,
       'range': 44,
-      'status': 0,
+      'status': 0
     },
     {
       'index': 32,
       'keyword': '搜索关键词-31',
       'count': 175,
       'range': 83,
-      'status': 1,
+      'status': 1
     },
     {
       'index': 33,
       'keyword': '搜索关键词-32',
       'count': 892,
       'range': 60,
-      'status': 1,
+      'status': 1
     },
     {
       'index': 34,
       'keyword': '搜索关键词-33',
       'count': 874,
       'range': 74,
-      'status': 0,
+      'status': 0
     },
     {
       'index': 35,
       'keyword': '搜索关键词-34',
       'count': 531,
       'range': 91,
-      'status': 1,
+      'status': 1
     },
     {
       'index': 36,
       'keyword': '搜索关键词-35',
       'count': 304,
       'range': 20,
-      'status': 0,
+      'status': 0
     },
     {
       'index': 37,
       'keyword': '搜索关键词-36',
       'count': 929,
       'range': 12,
-      'status': 1,
+      'status': 1
     },
     {
       'index': 38,
       'keyword': '搜索关键词-37',
       'count': 359,
       'range': 46,
-      'status': 1,
+      'status': 1
     },
     {
       'index': 39,
       'keyword': '搜索关键词-38',
       'count': 585,
       'range': 16,
-      'status': 1,
+      'status': 1
     },
     { 'index': 40, 'keyword': '搜索关键词-39', 'count': 60, 'range': 60, 'status': 0 },
     {
@@ -283,49 +283,49 @@ const chartData = {
       'keyword': '搜索关键词-40',
       'count': 814,
       'range': 72,
-      'status': 1,
+      'status': 1
     },
     {
       'index': 42,
       'keyword': '搜索关键词-41',
       'count': 951,
       'range': 89,
-      'status': 1,
+      'status': 1
     },
     {
       'index': 43,
       'keyword': '搜索关键词-42',
       'count': 397,
       'range': 50,
-      'status': 0,
+      'status': 0
     },
     {
       'index': 44,
       'keyword': '搜索关键词-43',
       'count': 286,
       'range': 21,
-      'status': 1,
+      'status': 1
     },
     {
       'index': 45,
       'keyword': '搜索关键词-44',
       'count': 179,
       'range': 94,
-      'status': 1,
+      'status': 1
     },
     {
       'index': 46,
       'keyword': '搜索关键词-45',
       'count': 175,
       'range': 94,
-      'status': 1,
+      'status': 1
     },
     {
       'index': 47,
       'keyword': '搜索关键词-46',
       'count': 883,
       'range': 27,
-      'status': 1,
+      'status': 1
     },
     { 'index': 48, 'keyword': '搜索关键词-47', 'count': 681, 'range': 7, 'status': 0 },
     {
@@ -333,14 +333,14 @@ const chartData = {
       'keyword': '搜索关键词-48',
       'count': 949,
       'range': 73,
-      'status': 0,
+      'status': 0
     },
     {
       'index': 50,
       'keyword': '搜索关键词-49',
       'count': 106,
       'range': 44,
-      'status': 1,
+      'status': 1
     }],
   'offlineData': [
     { 'name': '门店0', 'cvr': 0.1 },
@@ -409,7 +409,7 @@ const chartData = {
     { 'name': '部门', 'label': '口碑', 'value': 1 },
     { 'name': '部门', 'label': '产量', 'value': 6 },
     { 'name': '部门', 'label': '贡献', 'value': 5 },
-    { 'name': '部门', 'label': '热度', 'value': 7 }],
+    { 'name': '部门', 'label': '热度', 'value': 7 }]
 }
 
 const Yuan = ({ children }) => (
@@ -424,29 +424,29 @@ class Analysis extends Component {
       currentTabKey: '',
       rangePickerValue: getTimeDistance('year'),
       chart: chartData,
-      loading: false,
+      loading: false
     }
   }
 
   componentDidMount () {
     this.setState({
-      loading: true,
+      loading: true
     })
     setTimeout(() => {
       this.setState({
-        loading: false,
+        loading: false
       })
     }, 500)
   }
 
-  //tab选择日期
+  // tab选择日期
   selectDate = (type) => {
     this.setState({
-      rangePickerValue: getTimeDistance(type),
+      rangePickerValue: getTimeDistance(type)
     })
   }
 
-  //tab右侧日期激活
+  // tab右侧日期激活
   isActive = (type) => {
     const { rangePickerValue } = this.state
     const value = getTimeDistance(type)
@@ -459,25 +459,25 @@ class Analysis extends Component {
     }
   }
 
-  //tab右侧日期选择
+  // tab右侧日期选择
   handleRangePickerChange = (rangePickerValue) => {
     console.log(rangePickerValue)
     this.setState({
-      rangePickerValue,
+      rangePickerValue
     })
   }
 
   //
   handleChangeSalesType = (e) => {
     this.setState({
-      salesType: e.target.value,
+      salesType: e.target.value
     })
   }
 
   //
   handleTabChange = (key) => {
     this.setState({
-      currentTabKey: key,
+      currentTabKey: key
     })
   }
 
@@ -492,7 +492,7 @@ class Analysis extends Component {
       offlineChartData,
       salesTypeData,
       salesTypeDataOnline,
-      salesTypeDataOffline,
+      salesTypeDataOffline
     } = chart
 
     const topColResponsiveProps = {
@@ -501,26 +501,26 @@ class Analysis extends Component {
       md: 12,
       lg: 12,
       xl: 6,
-      style: { marginBottom: 24 },
+      style: { marginBottom: 24 }
     }
 
     const salesExtra = (
       <div className={styles.salesExtraWrap}>
         <div className={styles.salesExtra}>
           <span className={classNames(this.isActive('today'), 'link-button')}
-                onClick={() => this.selectDate('today')}>
+            onClick={() => this.selectDate('today')}>
             今日
           </span>
           <span className={classNames(this.isActive('week'), 'link-button')}
-                onClick={() => this.selectDate('week')}>
+            onClick={() => this.selectDate('week')}>
             本周
           </span>
           <span className={classNames(this.isActive('month'), 'link-button')}
-                onClick={() => this.selectDate('month')}>
+            onClick={() => this.selectDate('month')}>
             本月
           </span>
           <span className={classNames(this.isActive('year'), 'link-button')}
-                onClick={() => this.selectDate('year')}>
+            onClick={() => this.selectDate('year')}>
             全年
           </span>
         </div>
@@ -541,8 +541,8 @@ class Analysis extends Component {
 
     const iconGroup = (
       <span className={styles.iconGroup}>
-        <Dropdown overlay={menu} placement="bottomRight">
-          <Icon type="ellipsis"/>
+        <Dropdown overlay={menu} placement='bottomRight'>
+          <Icon type='ellipsis'/>
         </Dropdown>
       </span>
     )
@@ -551,20 +551,20 @@ class Analysis extends Component {
       {
         title: '排名',
         dataIndex: 'index',
-        key: 'index',
+        key: 'index'
       },
       {
         title: '搜索关键词',
         dataIndex: 'keyword',
         key: 'keyword',
-        render: text => <a href="/">{text}</a>,
+        render: text => <a href='/'>{text}</a>
       },
       {
         title: '用户数',
         dataIndex: 'count',
         key: 'count',
         sorter: (a, b) => a.count - b.count,
-        className: styles.alignRight,
+        className: styles.alignRight
       },
       {
         title: '周涨幅',
@@ -576,8 +576,8 @@ class Analysis extends Component {
             <span style={{ marginRight: 4 }}>{text}%</span>
           </Trend>
         ),
-        align: 'right',
-      },
+        align: 'right'
+      }
     ]
 
     const salesPieData =
@@ -592,7 +592,7 @@ class Analysis extends Component {
         <Col span={12}>
           <NumberInfo
             title={data.name}
-            subTitle="转化率"
+            subTitle='转化率'
             gap={2}
             total={`${data.cvr * 100}%`}
             theme={currentKey !== data.name && 'light'}
@@ -614,31 +614,31 @@ class Analysis extends Component {
 
     return (
       <Fragment>
-        {/*first*/}
+        {/* first */}
         <Row gutter={24}>
           <Col {...topColResponsiveProps}>
             <ChartCard
               bordered={false}
-              title="总销售额"
+              title='总销售额'
               action={
-                <Tooltip title="指标说明">
-                  <Icon type="info-circle-o"/>
+                <Tooltip title='指标说明'>
+                  <Icon type='info-circle-o'/>
                 </Tooltip>
               }
               loading={loading}
               total={() => <Yuan>126560</Yuan>}
               footer={
                 <Field
-                  label="日均销售额"
+                  label='日均销售额'
                   value={`￥${numeral(12423).format('0,0')}`}
                 />
               }
               contentHeight={46}
             >
-              <Trend flag="up" style={{ marginRight: 16 }}>
+              <Trend flag='up' style={{ marginRight: 16 }}>
                 周同比<span className={styles.trendText}>12%</span>
               </Trend>
-              <Trend flag="down">
+              <Trend flag='down'>
                 日环比<span className={styles.trendText}>11%</span>
               </Trend>
             </ChartCard>
@@ -646,37 +646,37 @@ class Analysis extends Component {
           <Col {...topColResponsiveProps}>
             <ChartCard
               bordered={false}
-              title="访问量"
+              title='访问量'
               action={
-                <Tooltip title="指标说明">
-                  <Icon type="info-circle-o"/>
+                <Tooltip title='指标说明'>
+                  <Icon type='info-circle-o'/>
                 </Tooltip>
               }
               loading={loading}
               total={numeral(8846).format('0,0')}
               footer={
                 <Field
-                  label="日访问量"
+                  label='日访问量'
                   value={`￥${numeral(12334).format('0,0')}`}
                 />
               }
               contentHeight={46}
             >
-              <MiniArea color="#975fe4" data={visitData}/>
+              <MiniArea color='#975fe4' data={visitData}/>
             </ChartCard>
           </Col>
           <Col {...topColResponsiveProps}>
             <ChartCard
               bordered={false}
-              title="支付笔数"
+              title='支付笔数'
               action={
-                <Tooltip title="指标说明">
-                  <Icon type="info-circle-o"/>
+                <Tooltip title='指标说明'>
+                  <Icon type='info-circle-o'/>
                 </Tooltip>
               }
               loading={loading}
               total={numeral(6560).format('0,0')}
-              footer={<Field label="转化率" value="60%"></Field>}
+              footer={<Field label='转化率' value='60%' />}
               contentHeight={46}
             >
               <MiniBar data={visitData}/>
@@ -685,20 +685,20 @@ class Analysis extends Component {
           <Col {...topColResponsiveProps}>
             <ChartCard
               bordered={false}
-              title="运营活动效果"
+              title='运营活动效果'
               action={
-                <Tooltip title="指标说明">
-                  <Icon type="info-circle-o"/>
+                <Tooltip title='指标说明'>
+                  <Icon type='info-circle-o'/>
                 </Tooltip>
               }
               loading={loading}
-              total="78%"
+              total='78%'
               footer={
                 <div style={{ whiteSpace: 'nowrap', overflow: 'hidden' }}>
-                  <Trend flag="up" style={{ marginRight: 16 }}>
+                  <Trend flag='up' style={{ marginRight: 16 }}>
                     周同比<span className={styles.trendText}>12%</span>
                   </Trend>
-                  <Trend flag="down">
+                  <Trend flag='down'>
                     日环比<span className={styles.trendText}>11%</span>
                   </Trend>
                 </div>
@@ -706,21 +706,21 @@ class Analysis extends Component {
               contentHeight={46}
             >
               <MiniProgress percent={78} strokeWidth={8} target={80}
-                            color="#13C2C2"/>
+                color='#13C2C2'/>
             </ChartCard>
           </Col>
         </Row>
-        {/*second*/}
+        {/* second */}
         <Card loading={loading} bordered={false}
-              bodyStyle={{ padding: 0 }}>
+          bodyStyle={{ padding: 0 }}>
           <div className={styles.salesCard}>
-            <Tabs tabBarExtraContent={salesExtra} size="large"
-                  tabBarStyle={{ marginBottom: 24 }}>
-              <TabPane tab="销售额" key="sales">
+            <Tabs tabBarExtraContent={salesExtra} size='large'
+              tabBarStyle={{ marginBottom: 24 }}>
+              <TabPane tab='销售额' key='sales'>
                 <Row>
                   <Col xl={16} lg={12} md={12} sm={24} xs={24}>
                     <div className={styles.salesBar}>
-                      <Bar height={295} title="销售额趋势" data={salesData}/>
+                      <Bar height={295} title='销售额趋势' data={salesData}/>
                     </div>
                   </Col>
                   <Col xl={8} lg={12} md={12} sm={24} xs={24}>
@@ -742,10 +742,10 @@ class Analysis extends Component {
                   </Col>
                 </Row>
               </TabPane>
-              <TabPane tab="访问量" key="views">
+              <TabPane tab='访问量' key='views'>
                 <Col xl={16} lg={12} md={12} sm={24} xs={24}>
                   <div className={styles.salesBar}>
-                    <Bar height={295} title="访问量趋势" data={salesData}/>
+                    <Bar height={295} title='访问量趋势' data={salesData}/>
                   </div>
                 </Col>
                 <Col xl={8} lg={12} md={12} sm={24} xs={24}>
@@ -755,7 +755,7 @@ class Analysis extends Component {
                       {
                         rankingListData.map((item, i) => (
                           <li key={item.title}>
-                              <span className={i < 3 ? styles.active : ''}>{i +
+                            <span className={i < 3 ? styles.active : ''}>{i +
                               1}</span>
                             <span>{item.title}</span>
                             <span>{numeral(item.total).format('0,0')}</span>
@@ -769,13 +769,13 @@ class Analysis extends Component {
             </Tabs>
           </div>
         </Card>
-        {/*third*/}
+        {/* third */}
         <Row gutter={24}>
           <Col xl={12} lg={24} sm={24} xs={24}>
             <Card
               loading={loading}
               bordered={false}
-              title="线上热门搜索"
+              title='线上热门搜索'
               extra={iconGroup}
               style={{ marginTop: 24 }}
             >
@@ -785,24 +785,24 @@ class Analysis extends Component {
                     subTitle={
                       <span>
                         搜索用户数
-                        <Tooltip title="指标文案">
-                          <Icon style={{ marginLeft: 8 }} type="info-circle-o"/>
+                        <Tooltip title='指标文案'>
+                          <Icon style={{ marginLeft: 8 }} type='info-circle-o'/>
                         </Tooltip>
                       </span>
                     }
                     gap={8}
                     total={numeral(12321).format('0,0')}
-                    status="up"
+                    status='up'
                     subTotal={17.1}
                   />
                   <MiniArea line height={45} data={visitData2}/>
                 </Col>
                 <Col sm={12} xs={24} style={{ marginBottom: 24 }}>
                   <NumberInfo
-                    subTitle="人均搜索次数"
+                    subTitle='人均搜索次数'
                     gap={8}
                     total={2.7}
-                    status="down"
+                    status='down'
                     subTotal={26.2}
                   />
                   <MiniArea line height={45} data={visitData2}/>
@@ -810,12 +810,12 @@ class Analysis extends Component {
               </Row>
               <Table
                 rowKey={record => record.index}
-                size="small"
+                size='small'
                 columns={columns}
                 dataSource={searchData}
                 pagination={{
                   style: { marginBottom: 0 },
-                  pageSize: 5,
+                  pageSize: 5
                 }}
               />
             </Card>
@@ -825,16 +825,16 @@ class Analysis extends Component {
               loading={loading}
               className={styles.salesCard}
               bordered={false}
-              title="销售额类别占比"
+              title='销售额类别占比'
               extra={
                 <div className={styles.salesCardExtra}>
                   {iconGroup}
                   <div className={styles.salesTypeRadio}>
                     <Radio.Group value={salesType}
-                                 onChange={this.handleChangeSalesType}>
-                      <Radio.Button value="all">全部渠道</Radio.Button>
-                      <Radio.Button value="online">线上</Radio.Button>
-                      <Radio.Button value="offline">门店</Radio.Button>
+                      onChange={this.handleChangeSalesType}>
+                      <Radio.Button value='all'>全部渠道</Radio.Button>
+                      <Radio.Button value='online'>线上</Radio.Button>
+                      <Radio.Button value='offline'>门店</Radio.Button>
                     </Radio.Group>
                   </div>
                 </div>
@@ -844,7 +844,7 @@ class Analysis extends Component {
               <h4 style={{ marginTop: 8, marginBottom: 32 }}>销售额</h4>
               <Pie
                 hasLegend
-                subTitle="销售额"
+                subTitle='销售额'
                 total={
                   () => <Yuan>{salesPieData.reduce((pre, now) => now.y + pre,
                     0)}</Yuan>
@@ -857,7 +857,7 @@ class Analysis extends Component {
             </Card>
           </Col>
         </Row>
-        {/*fourth*/}
+        {/* fourth */}
         <Card
           loading={loading}
           className={styles.offlineCard}
