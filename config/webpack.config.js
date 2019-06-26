@@ -188,7 +188,6 @@ module.exports = function (webpackEnv) {
       // the line below with these two lines if you prefer the stock client:
       // require.resolve('webpack-dev-server/client') + '?/',
       // require.resolve('webpack/hot/dev-server'),
-      'react-hot-loader/patch',
       isEnvDevelopment &&
       require.resolve('react-dev-utils/webpackHotDevClient'),
       // Finally, this is your app's code:
@@ -411,8 +410,7 @@ module.exports = function (webpackEnv) {
                           ReactComponent: '@svgr/webpack?-svgo,+ref![path]'
                         }
                       }
-                    },
-                    'react-hot-loader/babel'
+                    }
                   ]
                 ],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
