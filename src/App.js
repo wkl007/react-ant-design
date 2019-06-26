@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { hot } from 'react-hot-loader'
 import NProgress from 'nprogress'
 import { getRouterData } from './router/router'
 
@@ -40,4 +41,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default hot(module)(App)

@@ -28,6 +28,8 @@ const typescriptFormatter = require('react-dev-utils/typescriptFormatter')
 const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const CompressionPlugin = require('compression-webpack-plugin')
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+const chalk = require('chalk')
 
 const postcssNormalize = require('postcss-normalize')
 
@@ -186,6 +188,7 @@ module.exports = function (webpackEnv) {
       // the line below with these two lines if you prefer the stock client:
       // require.resolve('webpack-dev-server/client') + '?/',
       // require.resolve('webpack/hot/dev-server'),
+      'react-hot-loader/patch',
       isEnvDevelopment &&
       require.resolve('react-dev-utils/webpackHotDevClient'),
       // Finally, this is your app's code:
@@ -408,7 +411,8 @@ module.exports = function (webpackEnv) {
                           ReactComponent: '@svgr/webpack?-svgo,+ref![path]'
                         }
                       }
-                    }
+                    },
+                    'react-hot-loader/babel'
                   ]
                 ],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
@@ -778,6 +782,10 @@ module.exports = function (webpackEnv) {
         test: /\.js$|\.css$|\.html$/,
         threshold: 10240,
         minRatio: 0.8
+      }),
+      new ProgressBarPlugin({
+        format: '  build [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds)',
+        clear: false
       })
     ].filter(Boolean).concat(makePlugins(publicPath)),
     // Some libraries import Node modules but don't use them in the browser.
