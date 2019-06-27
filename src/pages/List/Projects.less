@@ -8,16 +8,18 @@
     :global {
       .ant-card-meta-title {
         margin-bottom: 4px;
+
         & > a {
-          color: @heading-color;
           display: inline-block;
           max-width: 100%;
+          color: @heading-color;
         }
       }
+
       .ant-card-meta-description {
         height: 44px;
-        line-height: 22px;
         overflow: hidden;
+        line-height: 22px;
       }
     }
 
@@ -32,19 +34,22 @@
 
   .cardItemContent {
     display: flex;
+    height: 20px;
     margin-top: 16px;
     margin-bottom: -4px;
     line-height: 20px;
-    height: 20px;
+
     & > span {
-      color: @text-color-secondary;
       flex: 1;
+      color: @text-color-secondary;
       font-size: 12px;
     }
+
     .avatarList {
       flex: 0 1 auto;
     }
   }
+
   .cardList {
     margin-top: 24px;
   }

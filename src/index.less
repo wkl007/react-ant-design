@@ -3,20 +3,29 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-  "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
-  SimSun, sans-serif;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Helvetica,
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    SimSun,
+    sans-serif;
 }
 
 :global {
   .link-button {
     color: @primary-color;
-    background-color: transparent;
     text-decoration: none;
+    background-color: transparent;
     outline: none;
     cursor: pointer;
-    -webkit-transition: color .3s;
-    transition: color .3s;
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
     -webkit-text-decoration-skip: objects;
 
     &:focus {
@@ -34,8 +43,8 @@ body {
 
     &:active,
     &:hover {
-      outline: 0;
       text-decoration: @link-hover-decoration;
+      outline: 0;
     }
 
     &[disabled] {

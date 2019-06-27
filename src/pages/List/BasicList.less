@@ -6,60 +6,72 @@
     .ant-card-head {
       border-bottom: none;
     }
+
     .ant-card-head-title {
-      line-height: 32px;
       padding: 24px 0;
+      line-height: 32px;
     }
+
     .ant-card-extra {
       padding: 24px 0;
     }
+
     .ant-list-pagination {
-      text-align: left;
       float: right;
       margin-top: 24px;
+      text-align: left;
     }
+
     .ant-avatar-lg {
       width: 48px;
       height: 48px;
       line-height: 48px;
     }
   }
+
   .headerInfo {
     position: relative;
     text-align: center;
+
     & > span {
-      color: @text-color-secondary;
       display: inline-block;
+      margin-bottom: 4px;
+      color: @text-color-secondary;
       font-size: @font-size-base;
       line-height: 22px;
-      margin-bottom: 4px;
     }
+
     & > p {
+      margin: 0;
       color: @heading-color;
       font-size: 24px;
       line-height: 32px;
-      margin: 0;
     }
+
     & > em {
-      background-color: @border-color-split;
       position: absolute;
-      height: 56px;
-      width: 1px;
       top: 0;
       right: 0;
+      width: 1px;
+      height: 56px;
+      background-color: @border-color-split;
     }
   }
+
   .listContent {
     font-size: 0;
+
     .listContentItem {
-      color: @text-color-secondary;
       display: inline-block;
-      vertical-align: middle;
-      font-size: @font-size-base;
       margin-left: 40px;
+      color: @text-color-secondary;
+      font-size: @font-size-base;
+      vertical-align: middle;
+
       > span {
         line-height: 20px;
       }
+
       > p {
         margin-top: 4px;
         margin-bottom: 0;
@@ -67,9 +79,10 @@
       }
     }
   }
+
   .extraContentSearch {
-    margin-left: 16px;
     width: 272px;
+    margin-left: 16px;
   }
 }
 
@@ -81,16 +94,20 @@
         flex: none;
         width: 100%;
       }
+
       .ant-list-item-action {
         margin-left: 0;
       }
     }
+
     .listContent {
       margin-left: 0;
+
       & > div {
         margin-left: 0;
       }
     }
+
     .listCard {
       :global {
         .ant-card-head-title {
@@ -104,11 +121,13 @@
 @media screen and (max-width: @screen-sm) {
   .standardList {
     .extraContentSearch {
-      margin-left: 0;
       width: 100%;
+      margin-left: 0;
     }
+
     .headerInfo {
       margin-bottom: 16px;
+
       & > em {
         display: none;
       }
@@ -122,6 +141,7 @@
       & > div {
         display: block;
       }
+
       & > div:last-child {
         top: 0;
         width: 100%;
@@ -145,6 +165,7 @@
       & > div {
         display: block;
       }
+
       & > div:last-child {
         top: 0;
         width: 100%;
@@ -159,6 +180,7 @@
       & > div {
         margin-left: 24px;
       }
+
       & > div:last-child {
         top: 0;
       }
@@ -170,6 +192,7 @@
   .standardList {
     .listContent {
       text-align: right;
+
       & > div:last-child {
         top: 0;
       }
