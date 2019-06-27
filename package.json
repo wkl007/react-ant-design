@@ -6,6 +6,9 @@
   "scripts": {
     "commit": "git-cz",
     "dll": "webpack --config ./config/webpack.dll.config.js",
+    "lint": "npm run lint:code && npm run lint:style",
+    "lint:code": "eslint --fix **/*.{js,jsx,tsx}",
+    "lint:style": "stylelint --fix src/**/*.{css,less,scss,sass}",
     "start": "node scripts/start.js",
     "build": "cross-env REACT_ENV=development node scripts/build.js",
     "release": "cross-env REACT_ENV=production node scripts/build.js",
@@ -18,8 +21,12 @@
     }
   },
   "lint-staged": {
-    "*.{js}": [
+    "**/*.{js,jsx,tsx}": [
       "eslint --fix",
+      "git add"
+    ],
+    "src/**/*.{css,less,scss,sass}": [
+      "stylelint --fix src/**/*.{css,less,scss,sass}",
       "git add"
     ]
   },
@@ -126,6 +133,10 @@
     "sass-loader": "7.1.0",
     "semver": "6.0.0",
     "style-loader": "0.23.1",
+    "stylelint": "^10.1.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-order": "^3.0.0",
     "terser-webpack-plugin": "1.2.3",
     "ts-pnp": "1.1.2",
     "url-loader": "1.1.2",
