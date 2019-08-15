@@ -3,7 +3,7 @@ import numeral from 'numeral'
 import { Card, Col, Row, Tooltip } from 'antd'
 import { Charts, NumberInfo } from 'ant-design-pro'
 import CountDown from 'ant-design-pro/lib/CountDown'
-import ActiveChart from '../../components/ActiveChart'
+import ActiveChart from '@/components/ActiveChart'
 
 import styles from './Monitor.less'
 

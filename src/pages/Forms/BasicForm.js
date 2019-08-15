@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Card, DatePicker, Form, Icon, Input, InputNumber, Radio, Select, Tooltip } from 'antd'
-import PageHeaderWrapper from '../../components/PageHeaderWrapper'
+import PageHeaderWrapper from '@/components/PageHeaderWrapper'
 
 import styles from './style.less'
 

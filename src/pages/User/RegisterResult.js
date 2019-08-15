@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from 'antd'
 import { Result } from 'ant-design-pro'
+import qs from 'qs'
 import styles from './RegisterResult.less'
 
-const qs = require('qs')
 const actions = (
   <div className={styles.actions}>
     <span className='link-button'>

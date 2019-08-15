@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Icon, List, Tag } from 'antd'
-import ArticleListContent from '../../../components/ActicleListContent'
+import ArticleListContent from '@/components/ActicleListContent'
 import styles from './Articles.less'
 
 const list = [

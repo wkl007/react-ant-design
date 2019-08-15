@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Button, Card, Col, DatePicker, Form, Icon, Input, Popover, Row, Select } from 'antd'
 import { FooterToolbar } from 'ant-design-pro'
-import PageHeaderWrapper from '../../components/PageHeaderWrapper'
-import TableForm from './TableForm'
 import Debounce from 'lodash-decorators/debounce'
+import PageHeaderWrapper from '@/components/PageHeaderWrapper'
+import TableForm from './TableForm'
 
 import styles from './style.less'
 

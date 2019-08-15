@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { PageHeader, Tabs, Typography } from 'antd'
 import classNames from 'classnames'
+import MenuContext from '@/utils/context'
 import GridContent from './GridContent'
-import MenuContext from '../../utils/context'
 import { conversionBreadcrumbList } from './breadcrumb'
 import styles from './index.less'
 
@@ -29,23 +29,23 @@ const renderFooter = ({ tabList, tabActiveKey, onTabChange, tabBarExtraContent }
 }
 
 export default ({
-                  children,
-                  contentWidth,
-                  fluid,
-                  wrapperClassName,
-                  home,
-                  top,
-                  title,
-                  content,
-                  logo,
-                  extraContent,
-                  hiddenBreadcrumb,
-                  ...restProps
-                }) => (
-                  <div style={{ margin: '-24px -24px 0' }} className={classNames(wrapperClassName, styles.main)}>
-                    {top}
-                    <MenuContext.Consumer>
-                      {
+  children,
+  contentWidth,
+  fluid,
+  wrapperClassName,
+  home,
+  top,
+  title,
+  content,
+  logo,
+  extraContent,
+  hiddenBreadcrumb,
+  ...restProps
+}) => (
+  <div style={{ margin: '-24px -24px 0' }} className={classNames(wrapperClassName, styles.main)}>
+    {top}
+    <MenuContext.Consumer>
+      {
         value => {
           return (
             <div className={styles.wrapper}>
@@ -95,9 +95,9 @@ export default ({
           )
         }
       }
-                    </MenuContext.Consumer>
-                    {children ? <div className={styles['children-content']}>
-                      <GridContent>{children}</GridContent>
-                    </div> : null}
-                  </div>
+    </MenuContext.Consumer>
+    {children ? <div className={styles['children-content']}>
+      <GridContent>{children}</GridContent>
+    </div> : null}
+  </div>
 )

@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Button, Card, Col, Icon, Row, Steps } from 'antd'
 import { Result } from 'ant-design-pro'
-import PageHeaderWrapper from '../../components/PageHeaderWrapper'
+import PageHeaderWrapper from '@/components/PageHeaderWrapper'
 
 const { Step } = Steps
 

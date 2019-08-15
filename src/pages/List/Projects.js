@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import moment from 'moment'
 import { Card, Col, Form, List, Row, Select } from 'antd'
-
 import { AvatarList, Ellipsis, TagSelect } from 'ant-design-pro'
-import StandardFormRow from '../../components/StandardFormRow'
+import StandardFormRow from '@/components/StandardFormRow'
 
 import styles from './Projects.less'
 

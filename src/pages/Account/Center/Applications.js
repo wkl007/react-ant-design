@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Avatar, Card, Dropdown, Icon, List, Menu, Tooltip } from 'antd'
 import numeral from 'numeral'
-import { formatWan } from '../../../utils/utils'
-import stylesApplicatons from '../../List/Applications.less'
+import { formatWan } from '@/utils/utils'
+import stylesApplicatons from '@/pages/List/Applications.less'
 
 const list = [
   {

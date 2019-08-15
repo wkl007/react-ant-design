@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Button, Card, Icon } from 'antd'
 import { Result } from 'ant-design-pro'
-import PageHeaderWrapper from '../../components/PageHeaderWrapper'
+import PageHeaderWrapper from '@/components/PageHeaderWrapper'
 
 const extra = (
   <Fragment>

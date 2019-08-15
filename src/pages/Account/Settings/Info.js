@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
 import { Menu } from 'antd'
-import NotFound from '../../Exception/404'
-import { getRouterData } from '../../../router/router'
-import { getRoutes } from '../../../utils/utils'
+import NotFound from '@/pages/Exception/404'
+import { getRouterData } from '@/router/router'
+import { getRoutes } from '@/utils/utils'
 import styles from './Info.less'
 
 const { Item } = Menu

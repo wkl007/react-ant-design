@@ -1,7 +1,7 @@
 import React from 'react'
 import pathToRegexp from 'path-to-regexp'
 import { Link } from 'react-router-dom'
-import { urlToList } from '../../utils/utils'
+import { urlToList } from '@/utils/utils'
 
 // 渲染Breadcrumb 子节点
 // Render the Breadcrumb child node

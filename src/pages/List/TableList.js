@@ -18,8 +18,8 @@ import {
   Row,
   Select
 } from 'antd'
-import PageHeaderWrapper from '../../components/PageHeaderWrapper'
-import StandardTable from '../../components/StandardTable'
+import PageHeaderWrapper from '@/components/PageHeaderWrapper'
+import StandardTable from '@/components/StandardTable'
 
 import styles from './TableList.less'
 

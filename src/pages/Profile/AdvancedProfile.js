@@ -4,7 +4,7 @@ import Bind from 'lodash-decorators/bind'
 import classNames from 'classnames'
 import { Badge, Button, Card, Col, Divider, Dropdown, Icon, Menu, Popover, Row, Steps, Table, Tooltip } from 'antd'
 import { DescriptionList } from 'ant-design-pro'
-import PageHeaderWrapper from '../../components/PageHeaderWrapper'
+import PageHeaderWrapper from '@/components/PageHeaderWrapper'
 
 import styles from './AdvancedProfile.less'
 

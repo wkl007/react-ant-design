@@ -4,8 +4,8 @@ import moment from 'moment'
 import classNames from 'classnames'
 import { Avatar, Card, Col, List, Row } from 'antd'
 import { Charts } from 'ant-design-pro'
-import EditableLinkGroup from '../../components/EditableLinkGroup'
-import PageHeaderWrapper from '../../components/PageHeaderWrapper'
+import EditableLinkGroup from '@/components/EditableLinkGroup'
+import PageHeaderWrapper from '@/components/PageHeaderWrapper'
 
 import styles from './Workplace.less'
 

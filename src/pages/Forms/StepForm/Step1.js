@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import { Button, Divider, Form, Input, Select } from 'antd'
+import qs from 'qs'
 import styles from './styles.less'
 
-const qs = require('qs')
 const { Option } = Select
 
 const formItemLayout = {

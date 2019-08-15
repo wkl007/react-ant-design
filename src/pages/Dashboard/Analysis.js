@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react'
 import numeral from 'numeral'
 import classNames from 'classnames'
-import { getTimeDistance } from '../../utils/utils'
 import { Card, Col, DatePicker, Dropdown, Icon, Menu, Radio, Row, Table, Tabs, Tooltip } from 'antd'
 import { Charts, NumberInfo, Trend } from 'ant-design-pro'
+import { getTimeDistance } from '@/utils/utils'
 
 import styles from './Analysis.less'
 

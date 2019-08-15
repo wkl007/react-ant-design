@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
 import { Card, Steps } from 'antd'
-import PageHeaderWrapper from '../../../components/PageHeaderWrapper'
-import NotFound from '../../Exception/404'
-import { getRouterData } from '../../../router/router'
-import { getRoutes } from '../../../utils/utils'
+import PageHeaderWrapper from '@/components/PageHeaderWrapper'
+import NotFound from '@/pages/Exception/404'
+import { getRouterData } from '@/router/router'
+import { getRoutes } from '@/utils/utils'
 
-import styles from '../style.less'
+import styles from '@/pages/Forms/style.less'
 
 const { Step } = Steps
 

@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import { Button, Cascader, Form, Input, Select, Upload } from 'antd'
+import generateJson from '@/assets/data/generateData'
 import PhoneView from './PhoneView'
 import styles from './BaseView.less'
-import generateJson from '../../../assets/data/generateData'
 
 const FormItem = Form.Item
 const { Option } = Select

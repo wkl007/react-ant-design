@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Card, Icon, List } from 'antd'
 import { Ellipsis } from 'ant-design-pro'
-import PageHeaderWrapper from '../../components/PageHeaderWrapper'
+import PageHeaderWrapper from '@/components/PageHeaderWrapper'
 
 import styles from './CardList.less'
 

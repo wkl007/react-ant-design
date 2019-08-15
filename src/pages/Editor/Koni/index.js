@@ -1,15 +1,15 @@
 import React from 'react'
 import { Col, Row } from 'antd'
 import GGEditor, { Koni } from 'gg-editor'
-import EditorMinimap from '../components/EditorMinimap'
-import { KoniContextMenu } from '../components/EditorContextMenu'
-import { KoniToolbar } from '../components/EditorToolbar'
-import { KoniItemPanel } from '../components/EditorItemPanel'
-import { KoniDetailPanel } from '../components/EditorDetailPanel'
+import EditorMinimap from '@/pages/Editor/components/EditorMinimap'
+import { KoniContextMenu } from '@/pages/Editor/components/EditorContextMenu'
+import { KoniToolbar } from '@/pages/Editor/components/EditorToolbar'
+import { KoniItemPanel } from '@/pages/Editor/components/EditorItemPanel'
+import { KoniDetailPanel } from '@/pages/Editor/components/EditorDetailPanel'
+import PageHeaderWrapper from '@/components/PageHeaderWrapper'
 import KoniCustomNode from './shape/nodes/KoniCustomNode'
-import PageHeaderWrapper from '../../../components/PageHeaderWrapper'
 
-import styles from '../Flow/index.less'
+import styles from '@/pages/Editor/Flow/index.less'
 
 GGEditor.setTrackable(false)
 

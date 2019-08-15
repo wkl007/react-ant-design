@@ -1,11 +1,11 @@
 import React from 'react'
 import { Col, Row } from 'antd'
 import GGEditor, { Flow } from 'gg-editor'
-import PageHeaderWrapper from '../../../components/PageHeaderWrapper'
-import EditorMinimap from '../components/EditorMinimap'
-import { FlowToolbar } from '../components/EditorToolbar'
-import { FlowItemPanel } from '../components/EditorItemPanel'
-import { FlowDetailPanel } from '../components/EditorDetailPanel'
+import PageHeaderWrapper from '@/components/PageHeaderWrapper'
+import EditorMinimap from '@/pages/Editor/components/EditorMinimap'
+import { FlowToolbar } from '@/pages/Editor/components/EditorToolbar'
+import { FlowItemPanel } from '@/pages/Editor/components/EditorItemPanel'
+import { FlowDetailPanel } from '@/pages/Editor/components/EditorDetailPanel'
 
 import styles from './index.less'
 

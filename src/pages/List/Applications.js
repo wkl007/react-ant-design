@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import numeral from 'numeral'
 import { Avatar, Card, Col, Dropdown, Form, Icon, List, Menu, Row, Select, Tooltip } from 'antd'
 import { TagSelect } from 'ant-design-pro'
-import StandardFormRow from '../../components/StandardFormRow'
+import StandardFormRow from '@/components/StandardFormRow'
 
 import styles from './Applications.less'
 

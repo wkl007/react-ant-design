@@ -3,7 +3,7 @@ import moment from 'moment'
 import classNames from 'classnames'
 import { Avatar, Button, Card, Col, Form, Icon, List, Row, Select, Tag } from 'antd'
 import { TagSelect } from 'ant-design-pro'
-import StandardFormRow from '../../components/StandardFormRow'
+import StandardFormRow from '@/components/StandardFormRow'
 import styles from './Articles.less'
 
 const { Option } = Select

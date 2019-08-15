@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react'
 import { Link, Redirect, Route, Switch } from 'react-router-dom'
 import DocumentTitle from 'react-document-title'
-import { getRoutes } from '../utils/utils'
 import { Icon } from 'antd'
 import { GlobalFooter } from 'ant-design-pro'
+import { getRoutes } from '@/utils/utils'
+import logo from '@/assets/images/logo.svg'
 
-import logo from '../assets/images/logo.svg'
 import styles from './UserLayout.less'
 
 const links = [

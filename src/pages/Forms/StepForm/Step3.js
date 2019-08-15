@@ -1,9 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import { Button, Col, Row } from 'antd'
 import { Result } from 'ant-design-pro'
+import qs from 'qs'
 import styles from './styles.less'
-
-const qs = require('qs')
 
 class Step3 extends Component {
   render () {

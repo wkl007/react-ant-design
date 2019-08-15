@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { Alert, Checkbox, Icon } from 'antd'
 import { Login } from 'ant-design-pro'
-import actions from '../../redux/actions'
+import actions from '@/redux/actions'
 
 import styles from './Login.less'
 

@@ -1,4 +1,4 @@
-import { isUrl } from '../utils/utils'
+import { isUrl } from '@/utils/utils'
 
 const menuData = [
   {

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { Input } from 'antd'
-import PageHeaderWrapper from '../../components/PageHeaderWrapper'
-import { getRouterData } from '../../router/router'
-import { getRoutes } from '../../utils/utils'
+import PageHeaderWrapper from '@/components/PageHeaderWrapper'
+import { getRouterData } from '@/router/router'
+import { getRoutes } from '@/utils/utils'
 
 class List extends Component {
   // tab切换

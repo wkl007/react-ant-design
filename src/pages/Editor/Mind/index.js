@@ -1,13 +1,13 @@
 import React from 'react'
 import { Col, Row } from 'antd'
 import GGEditor, { Mind } from 'gg-editor'
-import { MindContextMenu } from '../components/EditorContextMenu'
-import EditorMinimap from '../components/EditorMinimap'
-import { MindToolbar } from '../components/EditorToolbar'
-import { MindDetailPanel } from '../components/EditorDetailPanel'
-import PageHeaderWrapper from '../../../components/PageHeaderWrapper'
+import { MindContextMenu } from '@/pages/Editor/components/EditorContextMenu'
+import EditorMinimap from '@/pages/Editor/components/EditorMinimap'
+import { MindToolbar } from '@/pages/Editor/components/EditorToolbar'
+import { MindDetailPanel } from '@/pages/Editor/components/EditorDetailPanel'
+import PageHeaderWrapper from '@/components/PageHeaderWrapper'
 
-import styles from '../Flow/index.less'
+import styles from '@/pages/Editor/Flow/index.less'
 
 GGEditor.setTrackable(false)
 

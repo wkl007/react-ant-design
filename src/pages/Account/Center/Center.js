@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Link, Redirect, Route, Switch } from 'react-router-dom'
 import { Avatar, Card, Col, Divider, Icon, Input, Row, Spin, Tag } from 'antd'
-import NotFound from '../../Exception/404'
-import { getRouterData } from '../../../router/router'
-import { getRoutes } from '../../../utils/utils'
+import NotFound from '@/pages/Exception/404'
+import { getRouterData } from '@/router/router'
+import { getRoutes } from '@/utils/utils'
 import styles from './Center.less'
 
 const currentUser = {

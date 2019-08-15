@@ -1,5 +1,5 @@
-import Types from '../../constants'
-import { loadUserInfo } from '../../../utils/catche'
+import Types from '@/redux/constants'
+import { loadUserInfo } from '@/utils/catche'
 
 const defaultState = loadUserInfo()
 /**

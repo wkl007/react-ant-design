@@ -1,5 +1,5 @@
-import Types from '../../constants'
-import { saveUserInfo } from '../../../utils/catche'
+import Types from '@/redux/constants'
+import { saveUserInfo } from '@/utils/catche'
 
 export function setUserInfo (data) {
   saveUserInfo(data)

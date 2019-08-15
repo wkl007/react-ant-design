@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Badge, Card, Divider, Table } from 'antd'
 import { DescriptionList } from 'ant-design-pro'
-import PageHeaderWrapper from '../../components/PageHeaderWrapper'
+import PageHeaderWrapper from '@/components/PageHeaderWrapper'
 
 import styles from './BasicProfile.less'
 

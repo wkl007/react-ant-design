@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Card, List } from 'antd'
 import { AvatarList } from 'ant-design-pro'
 import moment from 'moment'
-import stylesProjects from '../../List/Projects.less'
+import stylesProjects from '@/pages/List/Projects.less'
 
 const list = [
   {

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { Alert, Button, Divider, Form, Input } from 'antd'
-import { digitUppercase } from '../../../utils/utils'
+import qs from 'qs'
+import { digitUppercase } from '@/utils/utils'
 
 import styles from './styles.less'
 
-const qs = require('qs')
 const formItemLayout = {
   labelCol: {
     span: 5
