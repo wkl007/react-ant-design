@@ -10,8 +10,8 @@
     "lint:code": "eslint --fix **/*.{js,jsx,tsx}",
     "lint:style": "stylelint --fix src/**/*.{css,less,scss,sass}",
     "start": "node scripts/start.js",
-    "build": "cross-env REACT_ENV=development node scripts/build.js",
-    "release": "cross-env REACT_ENV=production node scripts/build.js",
+    "build:dev": "cross-env REACT_ENV=development node scripts/build.js",
+    "build:pro": "cross-env REACT_ENV=production node scripts/build.js",
     "test": "node scripts/test.js"
   },
   "husky": {
