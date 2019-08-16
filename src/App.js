@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 import NProgress from 'nprogress'
-import { getRouterData } from './router/router'
+import { getRouterData } from '@/router/router'
 
 @connect(
   ({ userInfo }) => ({ userInfo })
 )
 class App extends Component {
-  componentWillUpdate () {
+  UNSAFE_componentWillUpdate () {
     NProgress.start()
   }
 

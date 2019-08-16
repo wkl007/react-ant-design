@@ -4,13 +4,13 @@ import { HashRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import 'moment/locale/zh-cn'
 import zhCN from 'antd/lib/locale-provider/zh_CN'
-import { LocaleProvider } from 'antd'
-import configureStore from './redux/store'
-import * as serviceWorker from './serviceWorker'
+import { ConfigProvider } from 'antd'
+import configureStore from '@/redux/store'
+import * as serviceWorker from '@/serviceWorker'
 
-import './index.less'
 import 'nprogress/nprogress.css'
 import 'ant-design-pro/dist/ant-design-pro.css'
+import '@/assets/styles/index.less'
 
 import App from './App'
 
@@ -19,11 +19,11 @@ const store = configureStore()
 
 const app = (
   <Provider store={store}>
-    <LocaleProvider locale={zhCN}>
+    <ConfigProvider locale={zhCN}>
       <HashRouter>
         <App/>
       </HashRouter>
-    </LocaleProvider>
+    </ConfigProvider>
   </Provider>
 )
 
