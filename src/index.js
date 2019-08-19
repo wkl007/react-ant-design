@@ -36,6 +36,4 @@ ReactDOM.render(
 // Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.register()
 
-if (module.hot) {
-  module.hot.accept()
-}
+if (module.hot) module.hot.accept()
