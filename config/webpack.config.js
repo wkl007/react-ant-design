@@ -25,7 +25,6 @@ const getClientEnvironment = require('./env')
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin')
 const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpackPlugin')
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter')
-const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const CompressionPlugin = require('compression-webpack-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
@@ -53,43 +52,6 @@ const antdRegex = /\.(css|less)$/
 
 function pathResolve (dir) {
   return path.resolve(__dirname, '..', dir)
-}
-
-// 检测文件或者文件夹存在
-function fsExistsSync (path) {
-  try {
-    fs.accessSync(path, fs.F_OK)
-  } catch (e) {
-    return false
-  }
-  return true
-}
-
-const makePlugins = (publicPath) => {
-  const plugins = []
-  const hasDll = fsExistsSync('./dll')
-  if (hasDll) {
-    const files = fs.readdirSync(pathResolve('./dll'))
-    files.forEach(file => {
-      if (/.*\.dll.js/.test(file)) {
-        plugins.push(
-          new AddAssetHtmlWebpackPlugin({
-            filepath: pathResolve(`./dll/${file}`),
-            publicPath: `${publicPath}static/js`,
-            outputPath: 'static/js'
-          })
-        )
-      }
-      if (/.*\.manifest.json/.test(file)) {
-        plugins.push(
-          new webpack.DllReferencePlugin({
-            manifest: pathResolve(`./dll/${file}`)
-          })
-        )
-      }
-    })
-  }
-  return plugins
 }
 
 // This is the production and development configuration.
@@ -241,8 +203,6 @@ module.exports = function (webpackEnv) {
             compress: {
               ecma: 5,
               warnings: false,
-              drop_debugger: true,
-              drop_console: true,
               // Disabled because of an issue with Uglify breaking seemingly valid code:
               // https://github.com/facebook/create-react-app/issues/2376
               // Pending further investigation:
@@ -778,7 +738,7 @@ module.exports = function (webpackEnv) {
         format: '  build [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds)',
         clear: false
       })
-    ].filter(Boolean).concat(makePlugins(publicPath)),
+    ].filter(Boolean),
     // Some libraries import Node modules but don't use them in the browser.
     // Tell Webpack to provide empty mocks for them so importing them works.
     node: {
