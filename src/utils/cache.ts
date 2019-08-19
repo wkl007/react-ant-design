@@ -1,5 +1,13 @@
 // @ts-ignore
 import storage from 'good-storage'
+// @ts-ignore
+declare module 'good-storage' {
+  function get (key: string, def: any): any
+
+  function set (key: string, val: any): void
+
+  function remove (key: string): void
+}
 
 const USER_KEY: string = '__userInfo__'
 
