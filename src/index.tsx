@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { ConfigProvider } from 'antd'
 import 'moment/locale/zh-cn'
 import zhCN from 'antd/lib/locale-provider/zh_CN'
-import * as serviceWorker from '@/serviceWorker'
+import * as serviceWorker from './serviceWorker'
 
 import '@/assets/styles/index.less'
 
