@@ -55,7 +55,7 @@ const DefaultProps: defaultPropsInterface = {
  * @param callback
  * @returns {*}
  */
-export function asyncComponent (component: any, callback: Function) {
+export function asyncComponent (component: any, callback?: () => void) {
   return Loadable({
     ...DefaultProps,
     loader: component,

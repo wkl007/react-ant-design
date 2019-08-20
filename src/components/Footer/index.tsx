@@ -1,10 +1,10 @@
-import React, { Fragment, FC } from 'react'
+import React, { Fragment, ReactNode } from 'react'
 import { Icon, Layout } from 'antd'
 import { GlobalFooter } from 'ant-design-pro'
 
 const { Footer } = Layout
 
-const FooterView: FC = () => (
+const FooterView: ReactNode = () => (
   <Footer style={{ padding: 0 }}>
     <GlobalFooter
       links={[

@@ -4,6 +4,11 @@
   }
 }*/
 
+declare module '*.less' {
+  const classes: { [key: string]: string }
+  export default classes
+}
+
 /**
  * good-storage
  */
@@ -23,7 +28,7 @@ declare module 'good-storage' {
 
   function forEach (callback): void
 
-  interface sessionInterface {
+  interface session {
     set (key: string, val: any): any
 
     get (key: string, def: any): any
@@ -39,19 +44,25 @@ declare module 'good-storage' {
     forEach (callback): void
   }
 
-  declare let session: sessionInterface
+  declare let session: session
 }
 
 /**
  * nzh/cn
  */
 declare module 'nzh/cn' {
-  interface optionsInterface {
+  interface options {
     tenMin: boolean,
     ww: boolean,
     complete: boolean,
     outSymbol: boolean
   }
 
-  function toMoney (number: string, options?: optionsInterface): string
+  function toMoney (number: string, options?: options): string
+}
+
+declare module 'enquire-js' {
+  function enquireScreen (cb: () => void, query?: string): any
+
+  function unenquireScreen (handler, query?: string): void;
 }
