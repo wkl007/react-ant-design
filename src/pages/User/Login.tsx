@@ -6,7 +6,11 @@ import actions from '@/redux/actions'
 
 import styles from './Login.less'
 
-const { Tab, UserName, Password, Mobile } = Login
+const { Mobile, Captcha, Submit } = Login
+const Tab: any = Login.Tab
+const UserName: any = Login.UserName
+const Password: any = Login.Password
+
 const rulesOption = {
   username: [
     {

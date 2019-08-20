@@ -4,7 +4,7 @@ import { Button, Spin } from 'antd'
 import { Exception } from 'ant-design-pro'
 
 interface propsInterface {
-  error: string,
+  error: any,
   timedOut: boolean,
   retry: () => void,
 }
