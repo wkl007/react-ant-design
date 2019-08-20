@@ -1,18 +1,65 @@
 import storage from 'good-storage'
 
-const USER_KEY: string = '__userInfo__'
+export const USER_INFO: string = 'User_Info'
 
-/* 用户信息相关 */
-export function loadUserInfo (): string {
-  return storage.session.get(USER_KEY, '')
+/**
+ * 设置本地存储
+ * @param key
+ * @param value
+ * @returns {*}
+ */
+export function saveStorage (key: string, value: any): any {
+  storage.set(key, value)
+  return value
 }
 
-export function saveUserInfo (query: void): void {
-  storage.session.set(USER_KEY, query)
-  return query
+/**
+ * 获取本地存储
+ * @param key
+ * @param defaultValue
+ * @returns {*}
+ */
+export function loadStorage (key: string, defaultValue: any): any {
+  return storage.get(key, defaultValue)
 }
 
-export function deleteUserInfo (): string {
-  storage.session.remove(USER_KEY)
+/**
+ * 删除本地存储
+ * @param key
+ * @returns {string}
+ */
+export function removeStorage (key: string): string {
+  storage.remove(key)
+  return ''
+}
+
+/**
+ * 保存会话存储
+ * @param key
+ * @param value
+ * @returns {*}
+ */
+export function saveSessionStorage (key: string, value: any): any {
+  storage.session.set(key, value)
+  return value
+}
+
+/**
+ * 获取会话存储
+ * @param key
+ * @param defaultValue
+ * @returns {*}
+ */
+export function loadSessionStorage (key: string, defaultValue: any): any {
+  return storage.session.get(key, defaultValue)
+}
+
+/**
+ * 删除会话存储
+ * @param key
+ * @returns {string}
+ */
+export function removeSessionStorage (key: string): string {
+  storage.session.remove(key)
   return ''
 }

@@ -1,6 +1,5 @@
 import moment from 'moment'
 import { parse, stringify } from 'qs'
-// @ts-ignore
 import nzh from 'nzh/cn'
 
 enum dateType {'today', 'week', 'month', 'year'}
@@ -142,7 +141,6 @@ export function getRoutes (path: string, routerData: any): Array<any> {
   return renderArr.map(item => {
     const exact = !routes.some(
       route => route !== item && getRelation(route, item) === 1)
-    // @ts-ignore
     return {
       exact,
       ...routerData[`${path}${item}`],

@@ -1,20 +1,57 @@
+/*declare global {
+  interface Window {
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: typeof compose
+  }
+}*/
+
+/**
+ * good-storage
+ */
 declare module 'good-storage' {
+
+  function set (key: string, val: any): any
 
   function get (key: string, def: any): any
 
-  function set (key: string, val: any): void
+  function has (key: string): boolean
 
   function remove (key: string): void
 
+  function clear (): void
+
+  function getAll (): object
+
+  function forEach (callback): void
+
   interface sessionInterface {
-    storage: WindowSessionStorage
+    set (key: string, val: any): any
 
-    get (USER_KEY: string, s: string): any
+    get (key: string, def: any): any
 
-    set (USER_KEY: string, query: void): void
+    has (key: string): boolean
 
-    remove (USER_KEY: string): void
+    remove (key: string): void
+
+    clear (): void
+
+    getAll (): object
+
+    forEach (callback): void
   }
 
   declare let session: sessionInterface
+}
+
+/**
+ * nzh/cn
+ */
+declare module 'nzh/cn' {
+  interface optionsInterface {
+    tenMin: boolean,
+    ww: boolean,
+    complete: boolean,
+    outSymbol: boolean
+  }
+
+  function toMoney (number: string, options?: optionsInterface): string
 }
