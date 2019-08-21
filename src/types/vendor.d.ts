@@ -62,7 +62,7 @@ declare module 'nzh/cn' {
 }
 
 declare module 'enquire-js' {
-  function enquireScreen (cb: () => void, query?: string): any
+  function enquireScreen (cb: (b: boolean) => void, query?: string): any
 
   function unenquireScreen (handler, query?: string): void;
 }
