@@ -1,15 +1,18 @@
-import React, { FC, Component, ReactNode } from 'react'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { Alert, Checkbox, Icon } from 'antd'
 import { Login } from 'ant-design-pro'
 import actions from '@/redux/actions'
 
-import styles from './Login.less'
+import styles from './index.less'
 
-const { Mobile, Captcha, Submit } = Login
+const { Submit } = Login
 const Tab: any = Login.Tab
 const UserName: any = Login.UserName
 const Password: any = Login.Password
+const Mobile: any = Login.Mobile
+const Captcha: any = Login.Captcha
 
 const rulesOption = {
   username: [
@@ -151,6 +154,37 @@ class LoginPage extends Component<LoginProps, LoginState> {
             }
           />
         </Tab>
+        <Tab key='mobile' tab='手机号登录'>
+          <Mobile
+            name='mobile'
+            autoComplete='off'
+            placeholder='手机号'
+            maxLength={11}
+            rules={rulesOption.mobile}/>
+          <Captcha
+            name='captcha'
+            autoComplete='off'
+            placeholder='验证码'
+            maxLength={6}
+            getCaptchaButtonText='验证码'
+            onGetCaptcha={this.onGetCaptcha}/>
+        </Tab>
+        <div>
+          <Checkbox
+            checked={autoLogin}
+            onChange={this.changeAutoLogin}>自动登录</Checkbox>
+          <span className='link-button' style={{ float: 'right' }}>忘记密码</span>
+        </div>
+        <Submit loading={submitting}>登录</Submit>
+        <div className={styles.other}>
+          其他登录方式
+          <Icon className={styles.icon} type='alipay-circle'/>
+          <Icon className={styles.icon} type='taobao-circle'/>
+          <Icon className={styles.icon} type='weibo-circle'/>
+          <Link className={styles.register} to='/user/register'>
+            注册账户
+          </Link>
+        </div>
       </Login>
     </div>
   }

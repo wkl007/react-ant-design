@@ -1,10 +1,12 @@
 import { asyncComponent } from '@/components/AsyncComponent'
 
-const UserLayout = asyncComponent(() => import(/* webpackChunkName:'userLayout' */'@/layouts/UserLayout'))
-const BasicLayout = asyncComponent(() => import(/* webpackChunkName:'basicLayout' */'@/layouts/BasicLayout'))
+const UserLayout = asyncComponent(() => import(/* webpackChunkName:'UserLayout' */'@/layouts/UserLayout'))
+const BasicLayout = asyncComponent(() => import(/* webpackChunkName:'BasicLayout' */'@/layouts/BasicLayout'))
 
-const Login = asyncComponent(() => import(/* webpackChunkName:'login' */'@/pages/User/Login'))
-const Analysis = asyncComponent(() => import(/* webpackChunkName:'analysis' */'@/pages/Dashboard/Analysis'))
+const Login = asyncComponent(() => import(/* webpackChunkName:'Login' */'@/pages/User/Login'))
+const Register = asyncComponent(() => import(/* webpackChunkName:'Register' */'@/pages/User/Register'))
+const RegisterResult = asyncComponent(() => import(/* webpackChunkName:'RegisterResult' */'@/pages/User/RegisterResult'))
+const Analysis = asyncComponent(() => import(/* webpackChunkName:'Analysis' */'@/pages/Dashboard/Analysis'))
 
 export const getRouterList = () => {
   return {
@@ -24,5 +26,13 @@ export const getRouterList = () => {
       name: '登录',
       component: Login
     },
+    '/user/register': {
+      name: '注册',
+      component: Register
+    },
+    '/user/register-result': {
+      name: '注册结果',
+      component: RegisterResult
+    }
   }
 }

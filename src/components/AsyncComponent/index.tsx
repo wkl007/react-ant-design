@@ -1,7 +1,6 @@
 import React, { FC, ReactElement } from 'react'
 import Loadable from 'react-loadable'
-import { Button, Spin } from 'antd'
-import { Exception } from 'ant-design-pro'
+import { Button, Result, Spin } from 'antd'
 
 interface propsInterface {
   error: any,
@@ -15,17 +14,16 @@ interface defaultPropsInterface {
   delay?: number | false | null;
 }
 
-const actions: FC<propsInterface> = props => (
+const extra: FC<propsInterface> = props => (
   <Button type='primary' onClick={props.retry}>重新加载</Button>
 )
 
 const ErrorComponent: FC<propsInterface> = props => (
-  <Exception
+  <Result
+    status='500'
     title='504'
-    desc='似乎出了点问题'
-    backText='重新加载'
-    actions={actions(props)}
-    style={{ minHeight: 500, height: '80%' }}
+    subTitle='似乎出了点问题'
+    extra={extra(props)}
   />
 )
 

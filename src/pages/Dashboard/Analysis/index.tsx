@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 
-const Analysis: FC = () => (
+const Index: FC = () => (
   <div>1111</div>
 )
 
-export default Analysis
+export default Index
