@@ -17,6 +17,7 @@ import MenuContext from '@/utils/context'
 import { getRouterList } from '@/router'
 import { getMenuData } from '@/router/menu'
 import { getRoutes } from '@/utils/utils'
+import NotFound from '@/pages/Exception/404'
 import logo from '@/assets/images/logo.svg'
 
 const confirm = Modal.confirm
@@ -52,7 +53,7 @@ enquireScreen((b: boolean) => {
 })
 
 // 根据菜单获取重定向地址
-const redirectData = []
+const redirectData: any = []
 const getRedirect = (item: any) => {
   if (item && item.children) {
     if (item.children[0] && item.children[0].path) {
@@ -321,7 +322,7 @@ class BasicLayout extends Component<BasicLayoutProps, BasicLayoutState> {
           collapsed={collapsed}
           isMobile={isMobile}
           onCollapse={this.handleMenuCollapse}
-         />
+        />
         <Layout>
           <Header style={{ padding: 0 }}>
             <GlobalHeader
@@ -338,7 +339,30 @@ class BasicLayout extends Component<BasicLayoutProps, BasicLayoutState> {
             />
           </Header>
           <Content style={{ margin: '24px 24px 0', height: '100%' }}>
-            3333
+            <Switch>
+              {
+                redirectData.map((item: any) => {
+                  return <Redirect
+                    exact
+                    key={item.from}
+                    from={item.from}
+                    to={item.to}/>
+                })
+
+              }
+              {
+                routes.map(item => {
+                  return <Route
+                    key={item.key}
+                    path={item.path}
+                    component={item.component}
+                    exact={item.exact}
+                  />
+                })
+              }
+              <Redirect exact from='/' to={bashRedirect}/>
+              <Route render={NotFound}/>
+            </Switch>
           </Content>
           <Footer/>
         </Layout>
