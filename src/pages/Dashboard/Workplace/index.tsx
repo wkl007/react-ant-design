@@ -317,7 +317,6 @@ class Workplace extends Component<WorkplaceProps, WorkplaceState> {
     )
     return (
       <PageHeaderWrapper
-        loading={currentUserLoading}
         content={pageHeaderContent}
         extraContent={extraContent}>
         <Row gutter={24}>

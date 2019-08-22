@@ -1,5 +1,9 @@
 import { asyncComponent } from '@/components/AsyncComponent'
 
+import Step1 from '@/pages/Forms/StepForm/Step1'
+import Step2 from '@/pages/Forms/StepForm/Step2'
+import Step3 from '@/pages/Forms/StepForm/Step3'
+
 const UserLayout = asyncComponent(() => import(/* webpackChunkName:'UserLayout' */'@/layouts/UserLayout'))
 const BasicLayout = asyncComponent(() => import(/* webpackChunkName:'BasicLayout' */'@/layouts/BasicLayout'))
 
@@ -67,6 +71,18 @@ export const getRouterList = () => {
     '/form/step-form': {
       name: '分步表单',
       component: StepForm
+    },
+    '/form/step-form/info': {
+      name: '分步表单（填写转账信息）',
+      component: Step1
+    },
+    '/form/step-form/confirm': {
+      name: '分步表单（确认转账信息）',
+      component: Step2
+    },
+    '/form/step-form/result': {
+      name: '分步表单（完成）',
+      component: Step3
     },
     '/list/table-list': {
       name: '查询表格',

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, FormEvent } from 'react'
 import { History } from 'history'
 import { Link } from 'react-router-dom'
 import { Button, Col, Form, Input, Popover, Progress, Row, Select } from 'antd'
@@ -128,7 +128,7 @@ class Register extends Component<RegisterProps, RegisterState> {
   }
 
   // 提交
-  handleSubmit = (e: { preventDefault: () => void; }) => {
+  handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const { history } = this.props
     this.props.form.validateFields({ force: true },
@@ -206,7 +206,10 @@ class Register extends Component<RegisterProps, RegisterState> {
                     validator: this.checkPassword
                   }
                 ]
-              })(<Input size='large' autoComplete='off' type='password'
+              })(<Input
+                size='large'
+                autoComplete='off'
+                type='password'
                 placeholder='至少6位密码，区分大小写'/>)
             }
           </Popover>
@@ -223,7 +226,10 @@ class Register extends Component<RegisterProps, RegisterState> {
                   validator: this.checkConfirm
                 }
               ]
-            })(<Input size='large' type='password' autoComplete='off'
+            })(<Input
+              size='large'
+              type='password'
+              autoComplete='off'
               placeholder='确认密码'/>)
           }
         </FormItem>

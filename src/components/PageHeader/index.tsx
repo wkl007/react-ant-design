@@ -27,8 +27,6 @@ interface PageHeaderProps {
   tabActiveKey?: string,
   onTabChange?: (key: string) => void,
   tabBarExtraContent?: ReactNode,
-
-  [key: string]: any,
 }
 
 const RenderFooter: FC<any> = ({ tabList, tabActiveKey, onTabChange, tabBarExtraContent }) => {
@@ -89,7 +87,6 @@ const PageHeaderWrapper: FC<PageHeaderProps> = ({ children, contentWidth, fluid,
                   }
                   {...value}
                   className={styles.pageHeader}
-
                   linkElement={Link}
                   footer={RenderFooter(restProps)}
                 >
