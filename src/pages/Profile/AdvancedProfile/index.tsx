@@ -1,7 +1,428 @@
-import React, { FC } from 'react'
+import React, { Component, Fragment, ReactNode } from 'react'
+import { Bind, Debounce } from 'lodash-decorators'
+import classNames from 'classnames'
+import {
+  Badge,
+  Button,
+  Card,
+  Col,
+  Divider,
+  Dropdown,
+  Icon,
+  Menu,
+  Popover,
+  Row,
+  Steps,
+  Table,
+  Tooltip,
+  Descriptions
+} from 'antd'
+import PageHeaderWrapper from '@/components/PageHeader'
+import styles from './index.less'
 
-const Index: FC = () => (
-  <div>1111</div>
+const Item = Descriptions.Item
+const { Step } = Steps
+const ButtonGroup = Button.Group
+const getWindowWidth = () => window.innerWidth ||
+  document.documentElement.clientWidth
+
+const menu = (
+  <Menu>
+    <Menu.Item key='1'>选项一</Menu.Item>
+    <Menu.Item key='2'>选项二</Menu.Item>
+    <Menu.Item key='3'>选项三</Menu.Item>
+  </Menu>
 )
 
-export default Index
+const action = (
+  <Fragment>
+    <ButtonGroup>
+      <Button>操作</Button>
+      <Button>操作</Button>
+      <Dropdown overlay={menu} placement='bottomRight'>
+        <Button>
+          <Icon type='ellipsis'/>
+        </Button>
+      </Dropdown>
+    </ButtonGroup>
+    <Button type='primary'>主操作</Button>
+  </Fragment>
+)
+
+const extra = (
+  <Row>
+    <Col xs={24} sm={12}>
+      <div className={styles.textSecondary}>状态</div>
+      <div className={styles.heading}>待审批</div>
+    </Col>
+    <Col xs={24} sm={12}>
+      <div className={styles.textSecondary}>订单金额</div>
+      <div className={styles.heading}>¥ 568.08</div>
+    </Col>
+  </Row>
+)
+
+const description = (
+  <Descriptions
+    className={styles.headerList}
+    size='small'
+  >
+    <Item label='创建人'>曲丽丽</Item>
+    <Item label='订购产品'>XX 服务</Item>
+    <Item label='创建时间'>2017-07-07</Item>
+    <Item label='关联单据'>
+      <span className='link-button'>12421</span>
+    </Item>
+    <Item label='生效日期'>2017-07-07 ~ 2017-08-08</Item>
+    <Item label='备注'>请于两个工作日内确认</Item>
+  </Descriptions>
+)
+
+const tabList = [
+  {
+    key: 'detail',
+    tab: '详情'
+  },
+  {
+    key: 'rule',
+    tab: '规则'
+  }
+]
+
+const desc1 = (
+  <div className={classNames(styles.textSecondary, styles.stepDescription)}>
+    <Fragment>
+      曲丽丽
+      <Icon type='dingding-o' style={{ marginLeft: 8 }}/>
+    </Fragment>
+    <div>2016-12-12 12:32</div>
+  </div>
+)
+
+const desc2 = (
+  <div className={styles.stepDescription}>
+    <Fragment>
+      周毛毛
+      <Icon type='dingding-o' style={{ color: '#00A0E9', marginLeft: 8 }}/>
+    </Fragment>
+    <div>
+      <span className='link-button'>催一下</span>
+    </div>
+  </div>
+)
+
+const popoverContent = (
+  <div style={{ width: 160 }}>
+    吴加号
+    <span className={styles.textSecondary} style={{ float: 'right' }}>
+      <Badge
+        status='default'
+        text={<span style={{ color: 'rgba(0, 0, 0, 0.45)' }}>未响应</span>}/>
+    </span>
+    <div className={styles.textSecondary} style={{ marginTop: 4 }}>
+      耗时：2小时25分钟
+    </div>
+  </div>
+)
+
+const customDot = (dot: ReactNode, data: { status: string; }) => {
+  return data.status === 'process'
+    ? <Popover placement='topLeft' arrowPointAtCenter content={popoverContent}>
+      {dot}
+    </Popover>
+    : dot
+}
+
+const operationTabList = [
+  {
+    key: 'tab1',
+    tab: '操作日志一'
+  },
+  {
+    key: 'tab2',
+    tab: '操作日志二'
+  },
+  {
+    key: 'tab3',
+    tab: '操作日志三'
+  }
+]
+
+const columns = [
+  {
+    title: '操作类型',
+    dataIndex: 'type',
+    key: 'type'
+  },
+  {
+    title: '操作人',
+    dataIndex: 'name',
+    key: 'name'
+  },
+  {
+    title: '执行结果',
+    dataIndex: 'status',
+    key: 'status',
+    render: (text: string) =>
+      text === 'agree' ? (
+        <Badge status='success' text='成功'/>
+      ) : (
+        <Badge status='error' text='驳回'/>
+      )
+  },
+  {
+    title: '操作时间',
+    dataIndex: 'updatedAt',
+    key: 'updatedAt'
+  },
+  {
+    title: '备注',
+    dataIndex: 'memo',
+    key: 'memo'
+  }
+]
+
+const profileData = {
+  'basicGoods': [],
+  'advancedOperation1': [
+    {
+      'key': 'op1',
+      'type': '订购关系生效',
+      'name': '曲丽丽',
+      'status': 'agree',
+      'updatedAt': '2017-10-03  19:23:12',
+      'memo': '-'
+    },
+    {
+      'key': 'op2',
+      'type': '财务复审',
+      'name': '付小小',
+      'status': 'reject',
+      'updatedAt': '2017-10-03  19:23:12',
+      'memo': '不通过原因'
+    },
+    {
+      'key': 'op3',
+      'type': '部门初审',
+      'name': '周毛毛',
+      'status': 'agree',
+      'updatedAt': '2017-10-03  19:23:12',
+      'memo': '-'
+    },
+    {
+      'key': 'op4',
+      'type': '提交订单',
+      'name': '林东东',
+      'status': 'agree',
+      'updatedAt': '2017-10-03  19:23:12',
+      'memo': '很棒'
+    },
+    {
+      'key': 'op5',
+      'type': '创建订单',
+      'name': '汗牙牙',
+      'status': 'agree',
+      'updatedAt': '2017-10-03  19:23:12',
+      'memo': '-'
+    }],
+  'advancedOperation2': [
+    {
+      'key': 'op1',
+      'type': '订购关系生效',
+      'name': '曲丽丽',
+      'status': 'agree',
+      'updatedAt': '2017-10-03  19:23:12',
+      'memo': '-'
+    }],
+  'advancedOperation3': [
+    {
+      'key': 'op1',
+      'type': '创建订单',
+      'name': '汗牙牙',
+      'status': 'agree',
+      'updatedAt': '2017-10-03  19:23:12',
+      'memo': '-'
+    }]
+}
+
+interface AdvancedProfileState {
+  loading: boolean,
+  operationKey: string,
+  stepDirection: any;
+}
+
+class AdvancedProfile extends Component<{}, AdvancedProfileState> {
+  state = {
+    loading: false,
+    operationKey: 'tab1',
+    stepDirection: 'horizontal'
+  }
+
+  componentDidMount (): void {
+    this.setStepDirection()
+    window.addEventListener('resize', this.setStepDirection)
+    setTimeout(() => {
+      this.setState({
+        loading: false
+      })
+    }, 500)
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('resize', this.setStepDirection)
+    // @ts-ignore
+    this.setStepDirection.cancel()
+  }
+
+  // bind绑定this debounce延迟调用
+  @Bind()
+  @Debounce(200)
+  setStepDirection () {
+    const { stepDirection } = this.state
+    const w = getWindowWidth()
+    if (stepDirection !== 'vertical' && w <= 576) {
+      this.setState({
+        stepDirection: 'vertical'
+      })
+    } else if (stepDirection !== 'horizontal' && w > 576) {
+      this.setState({
+        stepDirection: 'horizontal'
+      })
+    }
+  }
+
+  onOperationTabChange = (key: string) => {
+    this.setState({ operationKey: key })
+  }
+
+  render () {
+    const { stepDirection, loading } = this.state
+    const { advancedOperation1, advancedOperation2, advancedOperation3 } = profileData
+    const contentList: any = {
+      tab1: (
+        <Table
+          pagination={false}
+          loading={loading}
+          dataSource={advancedOperation1}
+          columns={columns}
+        />
+      ),
+      tab2: (
+        <Table
+          pagination={false}
+          loading={loading}
+          dataSource={advancedOperation2}
+          columns={columns}
+        />
+      ),
+      tab3: (
+        <Table
+          pagination={false}
+          loading={loading}
+          dataSource={advancedOperation3}
+          columns={columns}
+        />
+      )
+    }
+    const direction: any = stepDirection
+    return <PageHeaderWrapper
+      title='单号：234231029431'
+      logo={
+        <img
+          alt=''
+          src='https://gw.alipayobjects.com/zos/rmsportal/nxkuOJlFJuAUhzlMTCEe.png'/>
+      }
+      action={action}
+      content={description}
+      extraContent={extra}
+      tabList={tabList}
+      tabActiveKey='detail'
+    >
+      <Card title='流程进度' style={{ marginBottom: 24 }} bordered={false}>
+        <Steps
+          direction={direction}
+          progressDot={customDot}
+          current={1}>
+          <Step title='创建项目' description={desc1}/>
+          <Step title='部门初审' description={desc2}/>
+          <Step title='财务复核'/>
+          <Step title='完成'/>
+        </Steps>
+      </Card>
+      <Card title='用户信息' style={{ marginBottom: 24 }} bordered={false}>
+        <Descriptions style={{ marginBottom: 24 }}>
+          <Item label='用户姓名'>付小小</Item>
+          <Item label='会员卡号'>32943898021309809423</Item>
+          <Item label='身份证'>3321944288191034921</Item>
+          <Item label='联系方式'>18112345678</Item>
+          <Item label='联系地址'>
+            曲丽丽 18100000000 浙江省杭州市西湖区黄姑山路工专路交叉路口
+          </Item>
+        </Descriptions>
+        <Descriptions style={{ marginBottom: 24 }} title='信息组'>
+          <Item label='某某数据'>725</Item>
+          <Item label='该数据更新时间'>2017-08-08</Item>
+          <Item>&nbsp;</Item>
+          <Item
+            label={
+              <span>
+                  某某数据
+                <Tooltip title='数据说明'>
+                  <Icon
+                    style={{ color: 'rgba(0, 0, 0, 0.43)', marginLeft: 4 }}
+                    type='info-circle-o'
+                  />
+                </Tooltip>
+              </span>
+            }
+          >
+            725
+          </Item>
+          <Item label='该数据更新时间'>2017-08-08</Item>
+        </Descriptions>
+        <h4 style={{ marginBottom: 16 }}>信息组</h4>
+        <Card type='inner' title='多层级信息组'>
+          <Descriptions
+            size='small'
+            style={{ marginBottom: 16 }}
+            title='组名称'>
+            <Item label='负责人'>林东东</Item>
+            <Item label='角色码'>1234567</Item>
+            <Item label='所属部门'>XX公司 - YY部</Item>
+            <Item label='过期时间'>2017-08-08</Item>
+            <Item label='描述'>
+              这段描述很长很长很长很长很长很长很长很长很长很长很长很长很长很长...
+            </Item>
+          </Descriptions>
+          <Divider style={{ margin: '16px 0' }}/>
+          <Descriptions size='small' style={{ marginBottom: 16 }} title='组名称'>
+            <Item label='学名'>
+              Citrullus lanatus (Thunb.) Matsum. et
+              Nakai一年生蔓生藤本；茎、枝粗壮，具明显的棱。卷须较粗..
+            </Item>
+          </Descriptions>
+          <Divider style={{ margin: '16px 0' }}/>
+          <Descriptions size='small' title='组名称'>
+            <Item label='负责人'>付小小</Item>
+            <Item label='角色码'>1234568</Item>
+          </Descriptions>
+        </Card>
+      </Card>
+      <Card title='用户近半年来电记录' style={{ marginBottom: 24 }} bordered={false}>
+        <div className={styles.noData}>
+          <Icon type='frown-o'/>暂无数据
+        </div>
+      </Card>
+      <Card
+        className={styles.tabsCard}
+        bordered={false}
+        tabList={operationTabList}
+        onTabChange={this.onOperationTabChange}
+      >
+        {contentList[this.state.operationKey]}
+      </Card>
+    </PageHeaderWrapper>
+  }
+}
+
+export default AdvancedProfile
