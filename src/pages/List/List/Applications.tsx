@@ -1,10 +1,13 @@
-import React, { FC, Component } from 'react'
-import { Button, Card, Icon, List, Typography } from 'antd'
-import PageHeaderWrapper from '@/components/PageHeader'
-import styles from './index.less'
+import React, { Component, FC } from 'react'
+import { FormComponentProps } from 'antd/lib/form/Form'
+import numeral from 'numeral'
+import { Avatar, Card, Col, Dropdown, Form, Icon, List, Menu, Row, Select, Tooltip } from 'antd'
+import { TagSelect } from 'ant-design-pro'
+import StandardFormRow from '@/components/StandardFormRow'
+import styles from './Applications.less'
 
-const { Paragraph } = Typography
-
+const { Option } = Select
+const FormItem = Form.Item
 const listData = {
   list: [
     {
@@ -14,18 +17,18 @@ const listData = {
       'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/WdGqmHpayyMjiEhcKoVE.png',
       'cover': 'https://gw.alipayobjects.com/zos/rmsportal/uMfMFlvUuceEyPpotzlq.png',
       'status': 'active',
-      'percent': 55,
+      'percent': 75,
       'logo': 'https://gw.alipayobjects.com/zos/rmsportal/WdGqmHpayyMjiEhcKoVE.png',
       'href': 'https://ant.design',
-      'updatedAt': '2018-06-03T07:18:23.867Z',
-      'createdAt': '2018-06-03T07:18:23.867Z',
+      'updatedAt': '2018-06-03T09:03:44.261Z',
+      'createdAt': '2018-06-03T09:03:44.261Z',
       'subDescription': '那是一种内在的东西， 他们到达不了，也无法触及的',
       'description': '在中台产品的研发过程中，会出现不同的设计规范和实现方式，但其中往往存在很多类似的页面和组件，这些类似的组件会被抽离成一套标准规范。',
-      'activeUser': 131531,
-      'newUser': 1714,
-      'star': 143,
-      'like': 166,
-      'message': 14,
+      'activeUser': 143059,
+      'newUser': 1470,
+      'star': 178,
+      'like': 134,
+      'message': 16,
       'content': '段落示意：蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。',
       'members': [
         {
@@ -48,18 +51,18 @@ const listData = {
       'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/zOsKZmFRdUtvpqCImOVY.png',
       'cover': 'https://gw.alipayobjects.com/zos/rmsportal/iZBVOIhGJiAnhplqjvZW.png',
       'status': 'exception',
-      'percent': 100,
+      'percent': 84,
       'logo': 'https://gw.alipayobjects.com/zos/rmsportal/zOsKZmFRdUtvpqCImOVY.png',
       'href': 'https://ant.design',
-      'updatedAt': '2018-06-03T05:18:23.867Z',
-      'createdAt': '2018-06-03T05:18:23.867Z',
+      'updatedAt': '2018-06-03T07:03:44.261Z',
+      'createdAt': '2018-06-03T07:03:44.261Z',
       'subDescription': '希望是一个好东西，也许是最好的，好东西是不会消亡的',
       'description': '在中台产品的研发过程中，会出现不同的设计规范和实现方式，但其中往往存在很多类似的页面和组件，这些类似的组件会被抽离成一套标准规范。',
-      'activeUser': 155753,
-      'newUser': 1474,
-      'star': 140,
-      'like': 189,
-      'message': 17,
+      'activeUser': 117350,
+      'newUser': 1059,
+      'star': 102,
+      'like': 112,
+      'message': 15,
       'content': '段落示意：蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。',
       'members': [
         {
@@ -82,18 +85,18 @@ const listData = {
       'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/dURIMkkrRFpPgTuzkwnB.png',
       'cover': 'https://gw.alipayobjects.com/zos/rmsportal/uVZonEtjWwmUZPBQfycs.png',
       'status': 'normal',
-      'percent': 82,
+      'percent': 85,
       'logo': 'https://gw.alipayobjects.com/zos/rmsportal/dURIMkkrRFpPgTuzkwnB.png',
       'href': 'https://ant.design',
-      'updatedAt': '2018-06-03T03:18:23.867Z',
-      'createdAt': '2018-06-03T03:18:23.867Z',
+      'updatedAt': '2018-06-03T05:03:44.261Z',
+      'createdAt': '2018-06-03T05:03:44.261Z',
       'subDescription': '生命就像一盒巧克力，结果往往出人意料',
       'description': '在中台产品的研发过程中，会出现不同的设计规范和实现方式，但其中往往存在很多类似的页面和组件，这些类似的组件会被抽离成一套标准规范。',
-      'activeUser': 110350,
-      'newUser': 1998,
-      'star': 165,
-      'like': 111,
-      'message': 19,
+      'activeUser': 121423,
+      'newUser': 1296,
+      'star': 147,
+      'like': 193,
+      'message': 18,
       'content': '段落示意：蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。',
       'members': [
         {
@@ -116,18 +119,18 @@ const listData = {
       'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/sfjbOqnsXXJgNCjCzDBL.png',
       'cover': 'https://gw.alipayobjects.com/zos/rmsportal/gLaIAoVWTtLbBWZNYEMg.png',
       'status': 'active',
-      'percent': 90,
+      'percent': 58,
       'logo': 'https://gw.alipayobjects.com/zos/rmsportal/sfjbOqnsXXJgNCjCzDBL.png',
       'href': 'https://ant.design',
-      'updatedAt': '2018-06-03T01:18:23.867Z',
-      'createdAt': '2018-06-03T01:18:23.867Z',
+      'updatedAt': '2018-06-03T03:03:44.261Z',
+      'createdAt': '2018-06-03T03:03:44.261Z',
       'subDescription': '城镇中有那么多的酒馆，她却偏偏走进了我的酒馆',
       'description': '在中台产品的研发过程中，会出现不同的设计规范和实现方式，但其中往往存在很多类似的页面和组件，这些类似的组件会被抽离成一套标准规范。',
-      'activeUser': 164051,
-      'newUser': 1716,
-      'star': 194,
-      'like': 125,
-      'message': 20,
+      'activeUser': 172125,
+      'newUser': 1493,
+      'star': 146,
+      'like': 193,
+      'message': 13,
       'content': '段落示意：蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。',
       'members': [
         {
@@ -150,17 +153,17 @@ const listData = {
       'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/siCrBXXhmvTQGWPNLBow.png',
       'cover': 'https://gw.alipayobjects.com/zos/rmsportal/gLaIAoVWTtLbBWZNYEMg.png',
       'status': 'exception',
-      'percent': 52,
+      'percent': 56,
       'logo': 'https://gw.alipayobjects.com/zos/rmsportal/siCrBXXhmvTQGWPNLBow.png',
       'href': 'https://ant.design',
-      'updatedAt': '2018-06-02T23:18:23.867Z',
-      'createdAt': '2018-06-02T23:18:23.867Z',
+      'updatedAt': '2018-06-03T01:03:44.261Z',
+      'createdAt': '2018-06-03T01:03:44.261Z',
       'subDescription': '那时候我只会想自己想要什么，从不想自己拥有什么',
       'description': '在中台产品的研发过程中，会出现不同的设计规范和实现方式，但其中往往存在很多类似的页面和组件，这些类似的组件会被抽离成一套标准规范。',
-      'activeUser': 159155,
-      'newUser': 1414,
-      'star': 176,
-      'like': 106,
+      'activeUser': 160398,
+      'newUser': 1162,
+      'star': 186,
+      'like': 169,
       'message': 11,
       'content': '段落示意：蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。',
       'members': [
@@ -184,18 +187,18 @@ const listData = {
       'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png',
       'cover': 'https://gw.alipayobjects.com/zos/rmsportal/uVZonEtjWwmUZPBQfycs.png',
       'status': 'normal',
-      'percent': 98,
+      'percent': 88,
       'logo': 'https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png',
       'href': 'https://ant.design',
-      'updatedAt': '2018-06-02T21:18:23.867Z',
-      'createdAt': '2018-06-02T21:18:23.867Z',
+      'updatedAt': '2018-06-02T23:03:44.261Z',
+      'createdAt': '2018-06-02T23:03:44.261Z',
       'subDescription': '那是一种内在的东西， 他们到达不了，也无法触及的',
       'description': '在中台产品的研发过程中，会出现不同的设计规范和实现方式，但其中往往存在很多类似的页面和组件，这些类似的组件会被抽离成一套标准规范。',
-      'activeUser': 126822,
-      'newUser': 1694,
-      'star': 101,
-      'like': 174,
-      'message': 12,
+      'activeUser': 169695,
+      'newUser': 1186,
+      'star': 179,
+      'like': 149,
+      'message': 16,
       'content': '段落示意：蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。',
       'members': [
         {
@@ -218,18 +221,18 @@ const listData = {
       'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/ComBAopevLwENQdKWiIn.png',
       'cover': 'https://gw.alipayobjects.com/zos/rmsportal/iZBVOIhGJiAnhplqjvZW.png',
       'status': 'active',
-      'percent': 52,
+      'percent': 90,
       'logo': 'https://gw.alipayobjects.com/zos/rmsportal/ComBAopevLwENQdKWiIn.png',
       'href': 'https://ant.design',
-      'updatedAt': '2018-06-02T19:18:23.867Z',
-      'createdAt': '2018-06-02T19:18:23.867Z',
+      'updatedAt': '2018-06-02T21:03:44.261Z',
+      'createdAt': '2018-06-02T21:03:44.261Z',
       'subDescription': '希望是一个好东西，也许是最好的，好东西是不会消亡的',
       'description': '在中台产品的研发过程中，会出现不同的设计规范和实现方式，但其中往往存在很多类似的页面和组件，这些类似的组件会被抽离成一套标准规范。',
-      'activeUser': 113795,
-      'newUser': 1015,
-      'star': 196,
-      'like': 165,
-      'message': 14,
+      'activeUser': 100874,
+      'newUser': 1871,
+      'star': 125,
+      'like': 124,
+      'message': 13,
       'content': '段落示意：蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。',
       'members': [
         {
@@ -252,18 +255,18 @@ const listData = {
       'avatar': 'https://gw.alipayobjects.com/zos/rmsportal/nxkuOJlFJuAUhzlMTCEe.png',
       'cover': 'https://gw.alipayobjects.com/zos/rmsportal/uMfMFlvUuceEyPpotzlq.png',
       'status': 'exception',
-      'percent': 82,
+      'percent': 66,
       'logo': 'https://gw.alipayobjects.com/zos/rmsportal/nxkuOJlFJuAUhzlMTCEe.png',
       'href': 'https://ant.design',
-      'updatedAt': '2018-06-02T17:18:23.867Z',
-      'createdAt': '2018-06-02T17:18:23.867Z',
+      'updatedAt': '2018-06-02T19:03:44.261Z',
+      'createdAt': '2018-06-02T19:03:44.261Z',
       'subDescription': '生命就像一盒巧克力，结果往往出人意料',
       'description': '在中台产品的研发过程中，会出现不同的设计规范和实现方式，但其中往往存在很多类似的页面和组件，这些类似的组件会被抽离成一套标准规范。',
-      'activeUser': 109139,
-      'newUser': 1186,
-      'star': 163,
-      'like': 111,
-      'message': 15,
+      'activeUser': 114680,
+      'newUser': 1445,
+      'star': 171,
+      'like': 116,
+      'message': 14,
       'content': '段落示意：蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。',
       'members': [
         {
@@ -280,101 +283,198 @@ const listData = {
         }]
     }]
 }
+const formItemLayout = {
+  wrapperCol: {
+    xs: { span: 24 },
+    sm: { span: 16 }
+  }
+}
 
-interface CardListProps {
+const formatWan = (val: any) => {
+  const v = val * 1
+  if (!v || isNaN(v)) return ''
+
+  let result = val
+  if (val > 10000) {
+    result = Math.floor(val / 10000)
+    result = (
+      <span>
+        {result}
+        <em className={styles.wan}>万</em>
+      </span>
+    )
+  }
+  return result
+}
+
+interface ApplicationsProps extends FormComponentProps {
 
 }
 
-interface CardListState {
+interface ApplicationsState {
   loading: boolean
 }
 
-class CardList extends Component<CardListProps, CardListState> {
+class Applications extends Component<ApplicationsProps, ApplicationsState> {
   state = {
     loading: false
   }
 
+  handleFormSubmit = (values: any) => {
+    console.log(values)
+  }
+
   render () {
     const { list } = listData
+    const { form } = this.props
+    const { getFieldDecorator } = form
     const { loading } = this.state
-    const content = (
-      <div className={styles.pageHeaderContent}>
-        <p>
-          段落示意：蚂蚁金服务设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，
-          提供跨越设计与开发的体验解决方案。
-        </p>
-        <div className={styles.contentLink}>
-          <span className='link-button'>
-            <img
-              alt=''
-              src='https://gw.alipayobjects.com/zos/rmsportal/MjEImQtenlyueSmVEfUD.svg'/>{' '}
-            快速开始
-          </span>
-          <span className='link-button'>
-            <img
-              alt=''
-              src='https://gw.alipayobjects.com/zos/rmsportal/NbuDUAuBlIApFuDvWiND.svg'/>{' '}
-            产品简介
-          </span>
-          <span className='link-button'>
-            <img
-              alt=''
-              src='https://gw.alipayobjects.com/zos/rmsportal/ohOEPSYdDTNnyMbGuyLb.svg'/>{' '}
-            产品文档
-          </span>
+
+    const CardInfo: FC<{ activeUser: string, newUser: string }> = ({ activeUser, newUser }) => (
+      <div className={styles.cardInfo}>
+        <div>
+          <p>活跃用户</p>
+          <p>{activeUser}</p>
+        </div>
+        <div>
+          <p>新增用户</p>
+          <p>{newUser}</p>
         </div>
       </div>
     )
-    const extraContent = (
-      <div className={styles.extraImg}>
-        <img
-          alt='这是一个标题'
-          src='https://gw.alipayobjects.com/zos/rmsportal/RzwpdLnhmvDJToTdfDPe.png'/>
-      </div>
+
+    const itemMenu = (
+      <Menu>
+        <Menu.Item>
+          <a
+            target='_blank' rel='noopener noreferrer'
+            href='http://www.alipay.com/'>
+            1st menu item
+          </a>
+        </Menu.Item>
+        <Menu.Item>
+          <a
+            target='_blank' rel='noopener noreferrer'
+            href='http://www.taobao.com/'>
+            2nd menu item
+          </a>
+        </Menu.Item>
+        <Menu.Item>
+          <a
+            target='_blank' rel='noopener noreferrer'
+            href='http://www.tmall.com/'>
+            3d menu item
+          </a>
+        </Menu.Item>
+      </Menu>
     )
-    return <PageHeaderWrapper
-      title='卡片列表'
-      content={content}
-      extraContent={extraContent}>
+
+    return <div className={styles.filterCardList}>
+      <Card bordered={false}>
+        <Form layout='inline'>
+          <StandardFormRow
+            title='所属类目' block
+            style={{ paddingBottom: 11 }}>
+            <FormItem>
+              {getFieldDecorator('category')(
+                <TagSelect
+                  onChange={this.handleFormSubmit}
+                  expandable
+                  actionsText={{
+                    expandText: '展开',
+                    collapseText: '收起'
+                  }}
+                  Option={{}}
+                  className={''}>
+                  <TagSelect.Option value='cat1'>类目一</TagSelect.Option>
+                  <TagSelect.Option value='cat2'>类目二</TagSelect.Option>
+                  <TagSelect.Option value='cat3'>类目三</TagSelect.Option>
+                  <TagSelect.Option value='cat4'>类目四</TagSelect.Option>
+                  <TagSelect.Option value='cat5'>类目五</TagSelect.Option>
+                  <TagSelect.Option value='cat6'>类目六</TagSelect.Option>
+                  <TagSelect.Option value='cat7'>类目七</TagSelect.Option>
+                  <TagSelect.Option value='cat8'>类目八</TagSelect.Option>
+                  <TagSelect.Option value='cat9'>类目九</TagSelect.Option>
+                  <TagSelect.Option value='cat10'>类目十</TagSelect.Option>
+                  <TagSelect.Option value='cat11'>类目十一</TagSelect.Option>
+                  <TagSelect.Option value='cat12'>类目十二</TagSelect.Option>
+                </TagSelect>
+              )}
+            </FormItem>
+          </StandardFormRow>
+          <StandardFormRow title='其它选项' gird last>
+            <Row gutter={16}>
+              <Col xl={8} lg={10} md={12} sm={24} xs={24}>
+                <FormItem {...formItemLayout} label='活跃用户'>
+                  {getFieldDecorator('user', {})(
+                    <Select
+                      onChange={this.handleFormSubmit}
+                      placeholder='不限'
+                      style={{ maxWidth: 200, width: '100%' }}
+                    >
+                      <Option value='lisa'>李三</Option>
+                    </Select>
+                  )}
+                </FormItem>
+              </Col>
+              <Col xl={8} lg={10} md={12} sm={24} xs={24}>
+                <FormItem {...formItemLayout} label='好评度'>
+                  {getFieldDecorator('rate', {})(
+                    <Select
+                      onChange={this.handleFormSubmit}
+                      placeholder='不限'
+                      style={{ maxWidth: 200, width: '100%' }}
+                    >
+                      <Option value='good'>优秀</Option>
+                    </Select>
+                  )}
+                </FormItem>
+              </Col>
+            </Row>
+          </StandardFormRow>
+        </Form>
+      </Card>
       <List
         rowKey='id'
+        style={{ marginTop: 24 }}
+        grid={{ gutter: 24, xl: 4, lg: 3, md: 3, sm: 2, xs: 1 }}
         loading={loading}
-        grid={{ gutter: 24, lg: 3, md: 2, sm: 1, xs: 1 }}
-        dataSource={['', ...list]}
-        renderItem={(item: any) =>
-          item ? (
-            <List.Item key={item.id}>
-              <Card
-                hoverable
-                className={styles.card}
-                actions={[
-                  <span className='link-button'>操作一</span>,
-                  <span className='link-button'>操作二</span>]}
-              >
-                <Card.Meta
-                  avatar={<img
-                    src={item.avatar} className={styles.cardAvatar}
-                    alt=''/>}
-                  title={<span className='link-button'>{item.title}</span>}
-                  description={
-                    <Paragraph ellipsis={{ rows: 3, expandable: false }} className={styles.item}>
-                      {item.description}
-                    </Paragraph>
-                  }
+        dataSource={list}
+        renderItem={item => (
+          <List.Item key={item.id}>
+            <Card
+              hoverable
+              bodyStyle={{ paddingBottom: 20 }}
+              actions={[
+                <Tooltip title='下载'>
+                  <Icon type='download'/>
+                </Tooltip>,
+                <Tooltip title='编辑'>
+                  <Icon type='edit'/>
+                </Tooltip>,
+                <Tooltip title='分享'>
+                  <Icon type='share-alt'/>
+                </Tooltip>,
+                <Dropdown overlay={itemMenu}>
+                  <Icon type='ellipsis'/>
+                </Dropdown>
+              ]}
+            >
+              <Card.Meta
+                avatar={<Avatar size='small' src={item.avatar}/>}
+                title={item.title}/>
+              <div className={styles.cardItemContent}>
+                <CardInfo
+                  activeUser={formatWan(item.activeUser)}
+                  newUser={numeral(item.newUser).format('0,0')}
                 />
-              </Card>
-            </List.Item>
-          ) : (
-            <List.Item>
-              <Button type='dashed' className={styles.newButton}>
-                <Icon type='plus'/> 新增产品
-              </Button>
-            </List.Item>
-          )
-        }
+              </div>
+            </Card>
+          </List.Item>
+        )}
       />
-    </PageHeaderWrapper>
+    </div>
   }
 }
 
-export default CardList
+export default Form.create()(Applications)

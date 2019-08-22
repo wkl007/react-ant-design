@@ -6,9 +6,11 @@ import styles from './index.less'
 interface StandardFormRowProps {
   title: string,
   children: ReactNode,
-  last: string,
-  block: string,
-  gird: string,
+  last?: boolean,
+  block?: boolean,
+  gird?: boolean,
+
+  [key: string]: any
 }
 
 const StandardFormRow: FC<StandardFormRowProps> = ({ title, children, last, block, gird, ...rest }) => {

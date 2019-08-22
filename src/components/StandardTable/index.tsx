@@ -14,13 +14,12 @@ function initTotalList (columns: any): any {
 }
 
 interface StandardTableProps {
-  data: {
-    list: any,
-  },
+  data: any,
   pagination: any,
   loading: boolean,
   columns: any,
-  rowKey: string,
+  rowKey?: string,
+  selectedRows: any,
   onSelectRow: (selectedRows: any) => void,
   onChange: (pagination: any, filters: any, sorter: any) => void,
 }

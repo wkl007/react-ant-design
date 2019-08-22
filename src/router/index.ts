@@ -4,6 +4,10 @@ import Step1 from '@/pages/Forms/StepForm/Step1'
 import Step2 from '@/pages/Forms/StepForm/Step2'
 import Step3 from '@/pages/Forms/StepForm/Step3'
 
+import Projects from '@/pages/List/List/Projects'
+import Applications from '@/pages/List/List/Applications'
+import Articles from '@/pages/List/List/Articles'
+
 const UserLayout = asyncComponent(() => import(/* webpackChunkName:'UserLayout' */'@/layouts/UserLayout'))
 const BasicLayout = asyncComponent(() => import(/* webpackChunkName:'BasicLayout' */'@/layouts/BasicLayout'))
 
@@ -99,6 +103,18 @@ export const getRouterList = () => {
     '/list/search': {
       name: '搜索列表',
       component: List
+    },
+    '/list/search/projects': {
+      name: '项目列表',
+      component: Projects
+    },
+    '/list/search/applications': {
+      name: '应用列表',
+      component: Applications
+    },
+    '/list/search/articles': {
+      name: '文章列表',
+      component: Articles
     },
     '/profile/basic': {
       name: '基础详情',
