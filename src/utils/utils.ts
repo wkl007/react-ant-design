@@ -2,7 +2,7 @@ import moment from 'moment'
 import { parse, stringify } from 'qs'
 import nzh from 'nzh/cn'
 
-enum dateType {'today', 'week', 'month', 'year'}
+export enum dateType {'today', 'week', 'month', 'year'}
 
 /**
  *
@@ -16,7 +16,7 @@ export function fixedZero (val: number): string {
  *
  * @param type
  */
-export function getTimeDistance (type: dateType): Array<moment.Moment> {
+export function getTimeDistance (type: dateType): undefined[] | [moment.Moment] | [undefined, moment.Moment] | [moment.Moment, moment.Moment] {
 
   const now: Date = new Date()
   const oneDay: number = 1000 * 60 * 60 * 24

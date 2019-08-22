@@ -71,6 +71,7 @@
     "@types/jest": "24.0.17",
     "@types/lodash": "^4.14.137",
     "@types/node": "12.7.2",
+    "@types/numeral": "^0.0.26",
     "@types/qs": "^6.5.3",
     "@types/react": "16.9.2",
     "@types/react-document-title": "^2.0.3",
