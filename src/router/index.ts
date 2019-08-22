@@ -8,6 +8,14 @@ import Projects from '@/pages/List/List/Projects'
 import Applications from '@/pages/List/List/Applications'
 import Articles from '@/pages/List/List/Articles'
 
+import CenterArticles from '@/pages/Account/Center/Articles'
+import CenterApplications from '@/pages/Account/Center/Applications'
+import CenterProjects from '@/pages/Account/Center/Projects'
+import Base from '@/pages/Account/Settings/Base'
+import Security from '@/pages/Account/Settings/Security'
+import Binding from '@/pages/Account/Settings/Binding'
+import Notification from '@/pages/Account/Settings/Notification'
+
 const UserLayout = asyncComponent(() => import(/* webpackChunkName:'UserLayout' */'@/layouts/UserLayout'))
 const BasicLayout = asyncComponent(() => import(/* webpackChunkName:'BasicLayout' */'@/layouts/BasicLayout'))
 
@@ -40,7 +48,7 @@ const Five = asyncComponent(() => import(/* webpackChunkName:'five' */'@/pages/E
 const TriggerException = asyncComponent(() => import(/* webpackChunkName:'TriggerException' */'@/pages/Exception/TriggerException'))
 
 const Center = asyncComponent(() => import(/* webpackChunkName:'Center' */'@/pages/Account/Center'))
-const Info = asyncComponent(() => import(/* webpackChunkName:'Settings' */'@/pages/Account/Settings'))
+const Settings = asyncComponent(() => import(/* webpackChunkName:'Settings' */'@/pages/Account/Settings'))
 
 const Flow = asyncComponent(() => import(/* webpackChunkName:'Flow' */'@/pages/Editor/Flow'))
 const Koni = asyncComponent(() => import(/* webpackChunkName:'Koni' */'@/pages/Editor/Koni'))
@@ -152,9 +160,37 @@ export const getRouterList = () => {
       name: '个人中心',
       component: Center
     },
+    '/account/center/articles': {
+      name: '个人中心',
+      component: CenterArticles
+    },
+    '/account/center/applications': {
+      name: '个人中心',
+      component: CenterApplications
+    },
+    '/account/center/projects': {
+      name: '个人中心',
+      component: CenterProjects
+    },
     '/account/settings': {
       name: '个人设置',
-      component: Info
+      component: Settings
+    },
+    '/account/settings/base': {
+      name: '个人设置',
+      component: Base
+    },
+    '/account/settings/security': {
+      name: '个人设置',
+      component: Security
+    },
+    '/account/settings/binding': {
+      name: '个人设置',
+      component: Binding
+    },
+    '/account/settings/notification': {
+      name: '个人设置',
+      component: Notification
     },
     '/editor/flow': {
       name: '流程编辑器',
