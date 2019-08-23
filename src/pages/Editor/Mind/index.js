@@ -139,14 +139,15 @@ const data = {
     }
   ]
 }
-const MindPage: ReactNode = () => <PageHeaderWrapper
+
+const MindPage = () => <PageHeaderWrapper
   title='脑图编辑器'
   content='脑图是表达发散性思维的有效图形思维工具 ，它简单却又很有效，是一种实用性的思维工具。'
 >
   <GGEditor className={styles.editor}>
     <Row type='flex' className={styles.editorHd}>
       <Col span={24}>
-        {/* <MindToolbar/> */}
+        <MindToolbar/>
       </Col>
     </Row>
     <Row type='flex' className={styles.editorBd}>
@@ -154,11 +155,11 @@ const MindPage: ReactNode = () => <PageHeaderWrapper
         <Mind data={data} className={styles.mind}/>
       </Col>
       <Col span={4} className={styles.editorSidebar}>
-        {/* <MindDetailPanel/>
-        <EditorMinimap/> */}
+        <MindDetailPanel/>
+        <EditorMinimap/>
       </Col>
     </Row>
-    {/* <MindContextMenu/> */}
+    <MindContextMenu/>
   </GGEditor>
 </PageHeaderWrapper>
 

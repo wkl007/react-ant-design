@@ -12,7 +12,7 @@ import styles from '../Flow/index.less'
 
 GGEditor.setTrackable(false)
 
-const KoniPage: ReactNode = () => (
+const KoniPage = () => (
   <PageHeaderWrapper
     title='拓扑编辑器'
     content='拓扑结构图是指由网络节点设备和通信介质构成的网络结构图'
@@ -20,23 +20,23 @@ const KoniPage: ReactNode = () => (
     <GGEditor className={styles.editor}>
       <Row type='flex' className={styles.editorHd}>
         <Col span={24}>
-          {/* <KoniToolbar/> */}
+          <KoniToolbar/>
         </Col>
       </Row>
       <Row type='flex' className={styles.editorBd}>
         <Col span={4} className={styles.editorSidebar}>
-          {/* <KoniItemPanel/> */}
+          <KoniItemPanel/>
         </Col>
         <Col span={16} className={styles.editorContent}>
           <Koni className={styles.koni}/>
         </Col>
         <Col span={4} className={styles.editorSidebar}>
-          {/* <KoniDetailPanel/> */}
-          {/* <EditorMinimap/> */}
+          <KoniDetailPanel/>
+          <EditorMinimap/>
         </Col>
       </Row>
       <KoniCustomNode/>
-      {/* <KoniContextMenu/> */}
+      <KoniContextMenu/>
     </GGEditor>
   </PageHeaderWrapper>
 )

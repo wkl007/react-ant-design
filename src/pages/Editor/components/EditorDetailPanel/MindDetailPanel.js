@@ -4,7 +4,7 @@ import { CanvasPanel, DetailPanel, NodePanel } from 'gg-editor'
 import DetailForm from './DetailForm'
 import styles from './index.less'
 
-const MindDetailPanel = <DetailPanel className={styles.detailPanel}>
+const MindDetailPanel = () => <DetailPanel className={styles.detailPanel}>
   <NodePanel>
     <DetailForm type='node'/>
   </NodePanel>

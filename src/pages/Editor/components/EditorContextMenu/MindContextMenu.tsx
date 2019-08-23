@@ -3,7 +3,7 @@ import { CanvasMenu, ContextMenu, NodeMenu } from 'gg-editor'
 import MenuItem from './MenuItem'
 import styles from './index.less'
 
-const MindContextMenu: ReactNode = <ContextMenu className={styles.contextMenu}>
+const MindContextMenu: ReactNode = () => <ContextMenu className={styles.contextMenu}>
   <NodeMenu>
     <MenuItem command='append' text='Topic'/>
     <MenuItem command='appendChild' icon='append-child' text='Subtopic'/>

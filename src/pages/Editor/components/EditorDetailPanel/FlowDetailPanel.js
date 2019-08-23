@@ -4,7 +4,7 @@ import { CanvasPanel, DetailPanel, EdgePanel, GroupPanel, MultiPanel, NodePanel 
 import DetailForm from './DetailForm'
 import styles from './index.less'
 
-const FlowDetailPanel = (
+const FlowDetailPanel = () => (
   <DetailPanel className={styles.detailPanel}>
     <NodePanel>
       <DetailForm type='type'/>

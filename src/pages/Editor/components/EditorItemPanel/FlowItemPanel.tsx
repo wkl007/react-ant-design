@@ -3,7 +3,7 @@ import { Card } from 'antd'
 import { Item, ItemPanel } from 'gg-editor'
 import styles from './index.less'
 
-const FlowItemPanel = (
+const FlowItemPanel = () => (
   <ItemPanel className={styles.itemPanel}>
     <Card bordered={false}>
       <Item

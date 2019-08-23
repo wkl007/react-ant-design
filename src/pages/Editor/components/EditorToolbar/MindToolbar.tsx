@@ -4,7 +4,7 @@ import { Toolbar } from 'gg-editor'
 import ToolbarButton from './ToolbarButton'
 import styles from './index.less'
 
-const MindToolbar: ReactNode = (<Toolbar className={styles.toolbar}>
+const MindToolbar: ReactNode = () => (<Toolbar className={styles.toolbar}>
   <ToolbarButton command='undo'/>
   <ToolbarButton command='redo'/>
   <Divider type='vertical'/>

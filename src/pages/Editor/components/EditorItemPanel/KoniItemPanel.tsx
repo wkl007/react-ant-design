@@ -3,7 +3,7 @@ import { Card } from 'antd'
 import { Item, ItemPanel } from 'gg-editor'
 import styles from './index.less'
 
-const KoniItemPanel: ReactNode = (
+const KoniItemPanel: ReactNode = () => (
   <ItemPanel className={styles.itemPanel}>
     <Card bordered={false}>
       <Item
