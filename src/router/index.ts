@@ -42,9 +42,9 @@ const AdvancedProfile = asyncComponent(() => import(/* webpackChunkName:'Advance
 const Success = asyncComponent(() => import(/* webpackChunkName:'Success' */'@/pages/Result/Success'))
 const Error = asyncComponent(() => import(/* webpackChunkName:'Error' */'@/pages/Result/Error'))
 
-const Three = asyncComponent(() => import(/* webpackChunkName:'three' */'@/pages/Exception/403'))
-const Four = asyncComponent(() => import(/* webpackChunkName:'four' */'@/pages/Exception/404'))
-const Five = asyncComponent(() => import(/* webpackChunkName:'five' */'@/pages/Exception/500'))
+const Three = asyncComponent(() => import(/* webpackChunkName:'Three' */'@/pages/Exception/403'))
+const Four = asyncComponent(() => import(/* webpackChunkName:'Four' */'@/pages/Exception/404'))
+const Five = asyncComponent(() => import(/* webpackChunkName:'Five' */'@/pages/Exception/500'))
 const TriggerException = asyncComponent(() => import(/* webpackChunkName:'TriggerException' */'@/pages/Exception/TriggerException'))
 
 const Center = asyncComponent(() => import(/* webpackChunkName:'Center' */'@/pages/Account/Center'))
