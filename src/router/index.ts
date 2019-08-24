@@ -16,43 +16,43 @@ import Security from '@/pages/Account/Settings/Security'
 import Binding from '@/pages/Account/Settings/Binding'
 import Notification from '@/pages/Account/Settings/Notification'
 
-const UserLayout = asyncComponent(() => import(/* webpackChunkName:'UserLayout' */'@/layouts/UserLayout'))
-const BasicLayout = asyncComponent(() => import(/* webpackChunkName:'BasicLayout' */'@/layouts/BasicLayout'))
+const UserLayout = asyncComponent(() => import(/* webpackChunkName:'userLayout' */'@/layouts/UserLayout'))
+const BasicLayout = asyncComponent(() => import(/* webpackChunkName:'basicLayout' */'@/layouts/BasicLayout'))
 
-const Login = asyncComponent(() => import(/* webpackChunkName:'Login' */'@/pages/User/Login'))
-const Register = asyncComponent(() => import(/* webpackChunkName:'Register' */'@/pages/User/Register'))
-const RegisterResult = asyncComponent(() => import(/* webpackChunkName:'RegisterResult' */'@/pages/User/RegisterResult'))
+const Login = asyncComponent(() => import(/* webpackChunkName:'login' */'@/pages/User/Login'))
+const Register = asyncComponent(() => import(/* webpackChunkName:'register' */'@/pages/User/Register'))
+const RegisterResult = asyncComponent(() => import(/* webpackChunkName:'registerResult' */'@/pages/User/RegisterResult'))
 
-const Analysis = asyncComponent(() => import(/* webpackChunkName:'Analysis' */'@/pages/Dashboard/Analysis'))
-const Monitor = asyncComponent(() => import(/* webpackChunkName:'Monitor' */'@/pages/Dashboard/Monitor'))
-const Workplace = asyncComponent(() => import(/* webpackChunkName:'Workplace' */'@/pages/Dashboard/Workplace'))
+const Analysis = asyncComponent(() => import(/* webpackChunkName:'analysis' */'@/pages/Dashboard/Analysis'))
+const Monitor = asyncComponent(() => import(/* webpackChunkName:'monitor' */'@/pages/Dashboard/Monitor'))
+const Workplace = asyncComponent(() => import(/* webpackChunkName:'workplace' */'@/pages/Dashboard/Workplace'))
 
-const BasicForm = asyncComponent(() => import(/* webpackChunkName:'BasicForm' */'@/pages/Forms/BasicForm'))
-const AdvancedForm = asyncComponent(() => import(/* webpackChunkName:'AdvancedForm' */'@/pages/Forms/AdvancedForm'))
-const StepForm = asyncComponent(() => import(/* webpackChunkName:'StepForm' */'@/pages/Forms/StepForm'))
+const BasicForm = asyncComponent(() => import(/* webpackChunkName:'basicForm' */'@/pages/Forms/BasicForm'))
+const AdvancedForm = asyncComponent(() => import(/* webpackChunkName:'advancedForm' */'@/pages/Forms/AdvancedForm'))
+const StepForm = asyncComponent(() => import(/* webpackChunkName:'stepForm' */'@/pages/Forms/StepForm'))
 
-const TableList = asyncComponent(() => import(/* webpackChunkName:'TableList' */'@/pages/List/TableList'))
-const BasicList = asyncComponent(() => import(/* webpackChunkName:'BasicList' */'@/pages/List/BasicList'))
-const CardList = asyncComponent(() => import(/* webpackChunkName:'CardList' */'@/pages/List/CardList'))
-const List = asyncComponent(() => import(/* webpackChunkName:'List' */'@/pages/List/List'))
+const TableList = asyncComponent(() => import(/* webpackChunkName:'tableList' */'@/pages/List/TableList'))
+const BasicList = asyncComponent(() => import(/* webpackChunkName:'basicList' */'@/pages/List/BasicList'))
+const CardList = asyncComponent(() => import(/* webpackChunkName:'cardList' */'@/pages/List/CardList'))
+const List = asyncComponent(() => import(/* webpackChunkName:'list' */'@/pages/List/List'))
 
-const BasicProfile = asyncComponent(() => import(/* webpackChunkName:'BasicProfile' */'@/pages/Profile/BasicProfile'))
-const AdvancedProfile = asyncComponent(() => import(/* webpackChunkName:'AdvancedProfile' */'@/pages/Profile/AdvancedProfile'))
+const BasicProfile = asyncComponent(() => import(/* webpackChunkName:'basicProfile' */'@/pages/Profile/BasicProfile'))
+const AdvancedProfile = asyncComponent(() => import(/* webpackChunkName:'advancedProfile' */'@/pages/Profile/AdvancedProfile'))
 
-const Success = asyncComponent(() => import(/* webpackChunkName:'Success' */'@/pages/Result/Success'))
-const Error = asyncComponent(() => import(/* webpackChunkName:'Error' */'@/pages/Result/Error'))
+const Success = asyncComponent(() => import(/* webpackChunkName:'success' */'@/pages/Result/Success'))
+const Error = asyncComponent(() => import(/* webpackChunkName:'error' */'@/pages/Result/Error'))
 
-const Three = asyncComponent(() => import(/* webpackChunkName:'Three' */'@/pages/Exception/403'))
-const Four = asyncComponent(() => import(/* webpackChunkName:'Four' */'@/pages/Exception/404'))
-const Five = asyncComponent(() => import(/* webpackChunkName:'Five' */'@/pages/Exception/500'))
-const TriggerException = asyncComponent(() => import(/* webpackChunkName:'TriggerException' */'@/pages/Exception/TriggerException'))
+const Three = asyncComponent(() => import(/* webpackChunkName:'three' */'@/pages/Exception/403'))
+const Four = asyncComponent(() => import(/* webpackChunkName:'four' */'@/pages/Exception/404'))
+const Five = asyncComponent(() => import(/* webpackChunkName:'five' */'@/pages/Exception/500'))
+const TriggerException = asyncComponent(() => import(/* webpackChunkName:'triggerException' */'@/pages/Exception/TriggerException'))
 
-const Center = asyncComponent(() => import(/* webpackChunkName:'Center' */'@/pages/Account/Center'))
-const Settings = asyncComponent(() => import(/* webpackChunkName:'Settings' */'@/pages/Account/Settings'))
+const Center = asyncComponent(() => import(/* webpackChunkName:'center' */'@/pages/Account/Center'))
+const Settings = asyncComponent(() => import(/* webpackChunkName:'settings' */'@/pages/Account/Settings'))
 
-const Flow = asyncComponent(() => import(/* webpackChunkName:'Flow' */'@/pages/Editor/Flow'))
-const Koni = asyncComponent(() => import(/* webpackChunkName:'Koni' */'@/pages/Editor/Koni'))
-const Mind = asyncComponent(() => import(/* webpackChunkName:'Mind' */'@/pages/Editor/Mind'))
+const Flow = asyncComponent(() => import(/* webpackChunkName:'flow' */'@/pages/Editor/Flow'))
+const Koni = asyncComponent(() => import(/* webpackChunkName:'koni' */'@/pages/Editor/Koni'))
+const Mind = asyncComponent(() => import(/* webpackChunkName:'mind' */'@/pages/Editor/Mind'))
 
 export const getRouterList = () => {
   return {
