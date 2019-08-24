@@ -9,7 +9,7 @@
 yarn
 
 #package dependencies
-yarn dll
+yarn vendor
 
 # serve with hot reload at localhost:3000
 yarn start
