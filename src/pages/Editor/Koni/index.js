@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react'
+import React from 'react'
 import { Col, Row } from 'antd'
 import GGEditor, { Koni } from 'gg-editor'
 import EditorMinimap from '@/pages/Editor/components/EditorMinimap'

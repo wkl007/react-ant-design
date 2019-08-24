@@ -124,7 +124,7 @@ class Center extends Component<CenterProps, CenterState> {
     inputValue: ''
   }
 
-  componentDidMount () {
+  componentDidMount (): void {
     setTimeout(() => {
       this.setState({
         currentUserLoading: false

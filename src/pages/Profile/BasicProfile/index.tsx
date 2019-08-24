@@ -83,7 +83,7 @@ const profileData: any = {
       'cost': '5mins'
     }]
 }
-const progressColumns = [
+const progressColumns: Array<any> = [
   {
     title: '时间',
     dataIndex: 'time',

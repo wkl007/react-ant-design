@@ -1,6 +1,5 @@
-import React, { Component, FC, ReactNode } from 'react'
+import React, { FC, ReactNode } from 'react'
 import classNames from 'classnames'
-
 import styles from './index.less'
 
 interface StandardFormRowProps {

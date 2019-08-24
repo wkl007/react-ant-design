@@ -3,7 +3,6 @@ import { Link, withRouter } from 'react-router-dom'
 import pathToRegexp from 'path-to-regexp'
 import { Icon, Layout, Menu } from 'antd'
 import { urlToList } from '@/utils/utils'
-
 import styles from './index.less'
 
 const { Sider } = Layout
@@ -216,9 +215,7 @@ class SiderMenu extends Component<SiderMenuProps, SiderMenuState> {
     // 不要显示弹出式菜单
     const menuProps = collapsed
       ? {}
-      : {
-        openKeys
-      }
+      : { openKeys }
     let selectedKeys = this.getSelectedMenuKeys()
     if (!selectedKeys.length) selectedKeys = [openKeys[openKeys.length - 1]]
     return (

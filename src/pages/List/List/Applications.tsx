@@ -317,7 +317,15 @@ interface ApplicationsState {
 
 class Applications extends Component<ApplicationsProps, ApplicationsState> {
   state = {
-    loading: false
+    loading: true
+  }
+
+  componentDidMount (): void {
+    setTimeout(() => {
+      this.setState({
+        loading: false
+      })
+    }, 500)
   }
 
   handleFormSubmit = (values: any) => {

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { Col, Row } from 'antd'
 import GGEditor, { Flow } from 'gg-editor'
 import PageHeaderWrapper from '@/components/PageHeader'

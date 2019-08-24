@@ -1,4 +1,4 @@
-import React, { FC, Component } from 'react'
+import React, { Component } from 'react'
 import { Button, Card, Icon, List, Typography } from 'antd'
 import PageHeaderWrapper from '@/components/PageHeader'
 import styles from './index.less'
@@ -281,17 +281,21 @@ const listData = {
     }]
 }
 
-interface CardListProps {
-
-}
-
 interface CardListState {
   loading: boolean
 }
 
-class CardList extends Component<CardListProps, CardListState> {
+class CardList extends Component<{}, CardListState> {
   state = {
-    loading: false
+    loading: true
+  }
+
+  componentDidMount (): void {
+    setTimeout(() => {
+      this.setState({
+        loading: false
+      })
+    }, 500)
   }
 
   render () {

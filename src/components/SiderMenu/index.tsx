@@ -1,10 +1,7 @@
 import React, { FC } from 'react'
 import DrawerMenu from 'rc-drawer'
 import SiderMenu from './SiderMenu'
-
 import 'rc-drawer/assets/index.css'
-
-const DrawerMenuCopy: any = DrawerMenu
 
 interface SiderMenuWrapperProps {
   logo: string,
@@ -20,7 +17,7 @@ const SiderMenuWrapper: FC<SiderMenuWrapperProps> = props => {
   const { isMobile, collapsed, onCollapse } = props
   return (
     isMobile ? (
-      <DrawerMenuCopy
+      <DrawerMenu
         getContainer={null}
         level={null}
         open={!collapsed}
@@ -30,7 +27,7 @@ const SiderMenuWrapper: FC<SiderMenuWrapperProps> = props => {
         }}
       >
         <SiderMenu {...props} collapsed={isMobile ? false : collapsed}/>
-      </DrawerMenuCopy>
+      </DrawerMenu>
     ) : <SiderMenu {...props}/>
   )
 }

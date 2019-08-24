@@ -1,14 +1,3 @@
-/*declare global {
-  interface Window {
-    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: typeof compose
-  }
-}*/
-
-declare module '*.less' {
-  const classes: { [key: string]: string }
-  export default classes
-}
-
 /**
  * good-storage
  */

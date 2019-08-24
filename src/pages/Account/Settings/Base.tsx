@@ -1,4 +1,4 @@
-import React, { FC, Fragment, Component, FormEvent } from 'react'
+import React, { Component, FC, FormEvent, Fragment } from 'react'
 import { Button, Cascader, Form, Input, Select, Upload } from 'antd'
 import generateJson from '@/assets/data/generateData.json'
 import { FormComponentProps } from 'antd/lib/form/Form'
@@ -63,9 +63,7 @@ const validatorPhone = (rule: any, value: any, callback: Function) => {
   callback()
 }
 
-interface BaseProps extends FormComponentProps {
-
-}
+interface BaseProps extends FormComponentProps {}
 
 interface BaseState {
   currentUser: any,
@@ -82,7 +80,7 @@ class Base extends Component <BaseProps, BaseState> {
     value: []
   }
 
-  componentDidMount () {
+  componentDidMount (): void {
     this.setBaseInfo()
   }
 

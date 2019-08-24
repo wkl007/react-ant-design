@@ -1,9 +1,26 @@
 import React, { Component, Fragment } from 'react'
 import { List, message, Switch } from 'antd'
 
+const getData = () => {
+  return [
+    {
+      title: '其他用户消息',
+      description: '其他用户的消息将以站内信的形式通知'
+    },
+    {
+      title: '系统消息',
+      description: '系统消息将以站内信的形式通知'
+    },
+    {
+      title: '账户密码',
+      description: '账户密码'
+    }
+  ]
+}
+
 class Notification extends Component {
-  onChange = (title: any, e: any) => {
-    switch (e) {
+  onChange = (title: string, checked: boolean, e: MouseEvent) => {
+    switch (checked) {
       case true:
         message.success(`${title}开`)
         break
@@ -15,37 +32,20 @@ class Notification extends Component {
     }
   }
 
-  action = (title: any) => {
+  action = (title: string) => {
     return <Switch
       checkedChildren='开'
       unCheckedChildren='关'
       defaultChecked
-      onChange={e => this.onChange(title, e)}
+      onChange={(checked, e) => this.onChange(title, checked, e)}
     />
-  }
-
-  getData = () => {
-    return [
-      {
-        title: '其他用户消息',
-        description: '其他用户的消息将以站内信的形式通知'
-      },
-      {
-        title: '系统消息',
-        description: '系统消息将以站内信的形式通知'
-      },
-      {
-        title: '账户密码',
-        description: '账户密码'
-      }
-    ]
   }
 
   render () {
     return <Fragment>
       <List
         itemLayout='horizontal'
-        dataSource={this.getData()}
+        dataSource={getData()}
         renderItem={item => (
           <List.Item actions={[this.action(item.title)]}>
             <List.Item.Meta

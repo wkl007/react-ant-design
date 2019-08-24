@@ -529,13 +529,21 @@ interface TableListState {
 
 class TableList extends Component<TableListProps, TableListState> {
   state = {
-    loading: false,
+    loading: true,
     modalVisible: false,
     expandForm: false,
     selectedRows: [],
     formValues: {},
     data: data,
     pagination: data.pagination
+  }
+
+  componentDidMount (): void {
+    setTimeout(() => {
+      this.setState({
+        loading: false
+      })
+    }, 500)
   }
 
   // 搜索
@@ -771,7 +779,7 @@ class TableList extends Component<TableListProps, TableListState> {
   }
 
   render () {
-    const { loading, selectedRows, modalVisible, data, pagination } = this.state
+    const { loading, selectedRows, data, pagination } = this.state
     const columns = [
       {
         title: '规则编号',

@@ -182,19 +182,23 @@ const listData = {
     }]
 }
 
-interface BasicListProps {
-
-}
-
 interface BasicListState {
   loading: boolean,
   pageSize: number
 }
 
-class BasicList extends Component<BasicListProps, BasicListState> {
+class BasicList extends Component<{}, BasicListState> {
   state = {
-    loading: false,
+    loading: true,
     pageSize: 10
+  }
+
+  componentDidMount (): void {
+    setTimeout(() => {
+      this.setState({
+        loading: false
+      })
+    }, 500)
   }
 
   render () {

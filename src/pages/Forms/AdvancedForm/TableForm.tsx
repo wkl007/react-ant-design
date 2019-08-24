@@ -239,24 +239,26 @@ class TableForm extends PureComponent <TableFormProps, TableFormState> {
         }
       }
     ]
-    return <Fragment>
-      <Table
-        loading={this.state.loading}
-        columns={columns}
-        dataSource={this.state.data}
-        pagination={false}
-        rowClassName={record => {
-          return record.editable ? styles.editable : ''
-        }}
-      />
-      <Button
-        style={{ width: '100%', marginTop: 16, marginBottom: 8 }}
-        type='dashed'
-        onClick={this.newMember}
-        icon='plus'
-      >新增成员
-      </Button>
-    </Fragment>
+    return (
+      <Fragment>
+        <Table
+          loading={this.state.loading}
+          columns={columns}
+          dataSource={this.state.data}
+          pagination={false}
+          rowClassName={record => {
+            return record.editable ? styles.editable : ''
+          }}
+        />
+        <Button
+          style={{ width: '100%', marginTop: 16, marginBottom: 8 }}
+          type='dashed'
+          onClick={this.newMember}
+          icon='plus'
+        >新增成员
+        </Button>
+      </Fragment>
+    )
   }
 }
 

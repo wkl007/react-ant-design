@@ -30,7 +30,7 @@ interface ListProps {
 
 class List extends Component<ListProps> {
   // tab切换
-  handleTabChange = (key: any) => {
+  handleTabChange = (key: string) => {
     const { match, history } = this.props
     switch (key) {
       case 'articles':

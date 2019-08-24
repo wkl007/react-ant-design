@@ -301,7 +301,15 @@ interface ProjectState {
 
 class Project extends Component<ProjectProps, ProjectState> {
   state = {
-    loading: false
+    loading: true
+  }
+
+  componentDidMount (): void {
+    setTimeout(() => {
+      this.setState({
+        loading: false
+      })
+    }, 500)
   }
 
   handleFormSubmit = (values: any) => {

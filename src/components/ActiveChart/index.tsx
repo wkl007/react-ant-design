@@ -9,25 +9,22 @@ function fixedZero (val: number): string {
 }
 
 function getActiveData (): Array<{ x: string, y: number }> {
-  let activeData = []
+  let activeData: Array<{ x: string, y: number }> = []
   for (let i = 0; i < 24; i += 1) {
-    activeData.push({
+    let item = {
       x: `${fixedZero(i)}:00`,
       y: Math.floor(Math.random() * 200) + i * 50
-    })
+    }
+    activeData.push(item)
   }
   return activeData
-}
-
-interface ActiveChartProps {
-
 }
 
 interface ActiveChartState {
   activeData: Array<{ x: string, y: number }>
 }
 
-class ActiveChart extends Component<ActiveChartProps, ActiveChartState> {
+class ActiveChart extends Component<{}, ActiveChartState> {
   timer: any
 
   state = {
@@ -74,8 +71,7 @@ class ActiveChart extends Component<ActiveChartProps, ActiveChartState> {
             <div className={styles.activeChartGrid}>
               <p>{[...activeData].sort()[activeData.length - 1].y + 200} 亿元</p>
               {/* eslint-disable-next-line standard/computed-property-even-spacing */}
-              <p>{[...activeData].sort()[Math.floor(
-                activeData.length / 2)].y} 亿元</p>
+              <p>{[...activeData].sort()[Math.floor(activeData.length / 2)].y} 亿元</p>
             </div>
           )
         }

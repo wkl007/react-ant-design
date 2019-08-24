@@ -1,4 +1,4 @@
-import React, { Fragment, FC } from 'react'
+import React, { FC, Fragment } from 'react'
 import { Icon, Layout } from 'antd'
 import { GlobalFooter } from 'ant-design-pro'
 

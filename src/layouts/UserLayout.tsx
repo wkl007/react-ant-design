@@ -1,4 +1,4 @@
-import React, { Fragment, Component, ReactNode } from 'react'
+import React, { Component, Fragment, ReactNode } from 'react'
 import { match } from 'react-router'
 import { Link, Redirect, Route, Switch } from 'react-router-dom'
 import DocumentTitle from 'react-document-title'

@@ -4,7 +4,7 @@ import styles from './Phone.less'
 
 interface PhoneProps {
   value?: any,
-  onChange?: (s: string) => void
+  onChange?: (value: string) => void
 }
 
 class Phone extends Component<PhoneProps, {}> {

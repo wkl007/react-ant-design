@@ -1,5 +1,5 @@
-import React, { FC, ReactNode, Fragment } from 'react'
-import { Button, Card, Col, Icon, Row, Steps, Result } from 'antd'
+import React, { FC, Fragment, ReactNode } from 'react'
+import { Button, Card, Col, Icon, Result, Row, Steps } from 'antd'
 import PageHeaderWrapper from '@/components/PageHeader'
 
 const { Step } = Steps
@@ -19,6 +19,7 @@ const desc1: ReactNode = (
     <div>2016-12-12 12:32</div>
   </div>
 )
+
 const desc2: ReactNode = (
   <div style={{ fontSize: 12, position: 'relative', left: 42 }}>
     <div style={{ margin: '8px 0 4px' }}>
@@ -29,6 +30,7 @@ const desc2: ReactNode = (
     </div>
   </div>
 )
+
 const information: ReactNode = (
   <Fragment>
     <div
@@ -66,6 +68,7 @@ const information: ReactNode = (
     </Steps>
   </Fragment>
 )
+
 const extra: ReactNode = (
   <Fragment>
     <Button type='primary'>返回列表</Button>
@@ -73,6 +76,7 @@ const extra: ReactNode = (
     <Button>打 印</Button>
   </Fragment>
 )
+
 const Success: FC = () => (
   <PageHeaderWrapper title='失败页面'>
     <Card bordered={false}>

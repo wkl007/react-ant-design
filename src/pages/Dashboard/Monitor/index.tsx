@@ -1,6 +1,6 @@
-import React, { FC, Component, Fragment } from 'react'
+import React, { Component, Fragment } from 'react'
 import numeral from 'numeral'
-import { Card, Col, Row, Tooltip, Statistic } from 'antd'
+import { Card, Col, Row, Statistic, Tooltip } from 'antd'
 import { Charts, NumberInfo } from 'ant-design-pro'
 import ActiveChart from '@/components/ActiveChart'
 import styles from './index.less'
@@ -117,16 +117,12 @@ const monitor: any = {
 
 const targetTime: number = new Date().getTime() + 3900000
 
-interface MonitorProps {
-
-}
-
 interface MonitorState {
   monitor: any,
   loading: boolean
 }
 
-class Monitor extends Component<MonitorProps, MonitorState> {
+class Monitor extends Component<{}, MonitorState> {
   state = {
     monitor: monitor,
     loading: true

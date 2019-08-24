@@ -1,7 +1,6 @@
 import React from 'react'
 import pathToRegexp from 'path-to-regexp'
 import { Link } from 'react-router-dom'
-import { BreadcrumbProps } from 'antd/lib/breadcrumb/Breadcrumb'
 import { urlToList } from '@/utils/utils'
 
 // 渲染Breadcrumb 子节点

@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, Fragment } from 'react'
+import React, { FC, Fragment, ReactNode } from 'react'
 import { Button, Card, Icon, Result } from 'antd'
 import PageHeaderWrapper from '@/components/PageHeader'
 
@@ -28,6 +28,7 @@ const information: ReactNode = (
     </div>
   </Fragment>
 )
+
 const extra: ReactNode = <Button type='primary'>返回修改</Button>
 
 const Error: FC = () => (

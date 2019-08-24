@@ -14,8 +14,8 @@ interface defaultPropsInterface {
   delay?: number | false | null;
 }
 
-const extra: FC<propsInterface> = props => (
-  <Button type='primary' onClick={props.retry}>重新加载</Button>
+const extra: FC<propsInterface> = ({ retry }) => (
+  <Button type='primary' onClick={retry}>重新加载</Button>
 )
 
 const ErrorComponent: FC<propsInterface> = props => (

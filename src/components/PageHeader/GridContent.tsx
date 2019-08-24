@@ -6,8 +6,7 @@ interface GridContentProps {
   contentWidth?: string,
 }
 
-const GridContent: FC<GridContentProps> = (props) => {
-  const { contentWidth, children } = props
+const GridContent: FC<GridContentProps> = ({ contentWidth, children }) => {
   let className = `${styles.main}`
   if (contentWidth === 'Fixed') {
     className = `${styles.main} ${styles.wide}`

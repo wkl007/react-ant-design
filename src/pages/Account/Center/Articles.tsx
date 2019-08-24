@@ -1,4 +1,4 @@
-import React, { FC, Component } from 'react'
+import React, { FC } from 'react'
 import { Icon, List, Tag } from 'antd'
 import ArticleListContent from '@/components/ActicleListContent'
 import styles from './Articles.less'
@@ -301,57 +301,46 @@ const list = [
       }]
   }]
 
-interface ArticlesState {
-  list: Array<any>
-}
-
-class Articles extends Component<{}, ArticlesState> {
-  state = {
-    list: list
-  }
-
-  render () {
-    const { list } = this.state
-    const IconText: FC<{ type: string, text: string }> = ({ type, text }) => (
-      <span>
-        <Icon type={type} style={{ marginRight: 8 }}/>
-        {text}
-      </span>
-    )
-    return <List
-      size='large'
-      className={styles.articleList}
-      rowKey='id'
-      itemLayout='vertical'
-      dataSource={list}
-      renderItem={(item: any) => (
-        <List.Item
-          key={item.id}
-          actions={[
-            <IconText type='star-o' text={item.star}/>,
-            <IconText type='like-o' text={item.like}/>,
-            <IconText type='message' text={item.message}/>
-          ]}
-        >
-          <List.Item.Meta
-            title={
-              <a
-                className={styles.listItemMetaTitle}
-                href={item.href}>{item.title}</a>
-            }
-            description={
-              <span>
-                <Tag>Ant Design</Tag>
-                <Tag>设计语言</Tag>
-                <Tag>蚂蚁金服</Tag>
-              </span>
-            }
-          />
-          <ArticleListContent data={item}/>
-        </List.Item>
-      )}
-    />
-  }
+const Articles: FC = () => {
+  const IconText: FC<{ type: string, text: string }> = ({ type, text }) => (
+    <span>
+      <Icon type={type} style={{ marginRight: 8 }}/>
+      {text}
+    </span>
+  )
+  return <List
+    size='large'
+    className={styles.articleList}
+    rowKey='id'
+    itemLayout='vertical'
+    dataSource={list}
+    renderItem={(item: any) => (
+      <List.Item
+        key={item.id}
+        actions={[
+          <IconText type='star-o' text={item.star}/>,
+          <IconText type='like-o' text={item.like}/>,
+          <IconText type='message' text={item.message}/>
+        ]}
+      >
+        <List.Item.Meta
+          title={
+            <a
+              className={styles.listItemMetaTitle}
+              href={item.href}>{item.title}</a>
+          }
+          description={
+            <span>
+              <Tag>Ant Design</Tag>
+              <Tag>设计语言</Tag>
+              <Tag>蚂蚁金服</Tag>
+            </span>
+          }
+        />
+        <ArticleListContent data={item}/>
+      </List.Item>
+    )}
+  />
 }
 
 export default Articles

@@ -1,4 +1,4 @@
-import React, { ReactNode, FC } from 'react'
+import React from 'react'
 import { Col, Row } from 'antd'
 import GGEditor, { Mind } from 'gg-editor'
 import { MindContextMenu } from '@/pages/Editor/components/EditorContextMenu'

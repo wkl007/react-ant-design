@@ -665,7 +665,15 @@ interface ArticlesState {
 
 class Articles extends Component<ArticlesProps, ArticlesState> {
   state = {
-    loading: false
+    loading: true
+  }
+
+  componentDidMount (): void {
+    setTimeout(() => {
+      this.setState({
+        loading: false
+      })
+    }, 500)
   }
 
   handleMore = () => {
@@ -834,7 +842,7 @@ class Articles extends Component<ArticlesProps, ArticlesState> {
       >
         <List
           size='large'
-          loading={list.length === 0 ? loading : false}
+          loading={loading}
           itemLayout='vertical'
           loadMore={loadMore}
           dataSource={list}

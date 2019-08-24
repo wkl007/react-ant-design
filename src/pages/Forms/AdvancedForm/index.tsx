@@ -63,7 +63,7 @@ class AdvanceForm extends Component<AdvanceFormProps, AdvanceFormState> {
     this.resizeFooterToolBar = this.resizeFooterToolBar.bind(this)
   }
 
-  componentDidMount () {
+  componentDidMount (): void {
     window.addEventListener('resize', this.resizeFooterToolBar)
   }
 
@@ -247,7 +247,10 @@ class AdvanceForm extends Component<AdvanceFormProps, AdvanceFormState> {
         <Card title='任务管理' className={styles.card} bordered={false}>
           <Form layout='vertical' hideRequiredMark>
             <Row gutter={16}>
-              <Col lg={6} md={12} sm={24}>
+              <Col
+                lg={6}
+                md={12}
+                sm={24}>
                 <Form.Item label={fieldLabels.name2}>
                   {
                     getFieldDecorator('name2', {
@@ -256,7 +259,10 @@ class AdvanceForm extends Component<AdvanceFormProps, AdvanceFormState> {
                   }
                 </Form.Item>
               </Col>
-              <Col lg={{ span: 8 }} md={{ span: 12 }} sm={24}
+              <Col
+                lg={{ span: 8 }}
+                md={{ span: 12 }}
+                sm={24}
                 xl={{ span: 6, offset: 2 }}>
                 <Form.Item label={fieldLabels.url2}>
                   {
@@ -271,7 +277,10 @@ class AdvanceForm extends Component<AdvanceFormProps, AdvanceFormState> {
                   }
                 </Form.Item>
               </Col>
-              <Col lg={{ span: 10 }} md={{ span: 24 }} sm={24}
+              <Col
+                lg={{ span: 10 }}
+                md={{ span: 24 }}
+                sm={24}
                 xl={{ span: 8, offset: 2 }}>
                 <Form.Item label={fieldLabels.owner2}>
                   {
@@ -288,7 +297,10 @@ class AdvanceForm extends Component<AdvanceFormProps, AdvanceFormState> {
               </Col>
             </Row>
             <Row gutter={16}>
-              <Col lg={6} md={12} sm={24}>
+              <Col
+                lg={6}
+                md={12}
+                sm={24}>
                 <Form.Item label={fieldLabels.approver2}>
                   {
                     getFieldDecorator('approver2', {
@@ -302,7 +314,10 @@ class AdvanceForm extends Component<AdvanceFormProps, AdvanceFormState> {
                   }
                 </Form.Item>
               </Col>
-              <Col lg={{ span: 8 }} md={{ span: 12 }} sm={24}
+              <Col
+                lg={{ span: 8 }}
+                md={{ span: 12 }}
+                sm={24}
                 xl={{ span: 6, offset: 2 }}>
                 <Form.Item label={fieldLabels.dateRange2}>
                   {
@@ -316,7 +331,10 @@ class AdvanceForm extends Component<AdvanceFormProps, AdvanceFormState> {
                   }
                 </Form.Item>
               </Col>
-              <Col lg={{ span: 10 }} md={{ span: 24 }} sm={24}
+              <Col
+                lg={{ span: 10 }}
+                md={{ span: 24 }}
+                sm={24}
                 xl={{ span: 8, offset: 2 }}>
                 <Form.Item label={fieldLabels.type2}>
                   {

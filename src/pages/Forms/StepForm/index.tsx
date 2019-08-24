@@ -15,11 +15,7 @@ interface StepFormProps {
   match: match
 }
 
-interface StepFormState {
-
-}
-
-class StepForm extends Component<StepFormProps, StepFormState> {
+class StepForm extends Component<StepFormProps, {}> {
   getCurrentStep = () => {
     const { location } = this.props
     const { pathname } = location

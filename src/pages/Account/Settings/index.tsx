@@ -75,12 +75,12 @@ class Setting extends Component<SettingProps, SettingState> {
     }
   }
 
-  componentDidMount () {
+  componentDidMount (): void {
     window.addEventListener('resize', this.resize)
     this.resize()
   }
 
-  componentWillUnmount () {
+  componentWillUnmount (): void {
     window.removeEventListener('resize', this.resize)
   }
 

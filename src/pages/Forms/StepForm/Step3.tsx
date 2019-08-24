@@ -5,15 +5,6 @@ import { History } from 'history'
 import { parse } from 'qs'
 import styles from './index.less'
 
-const formItemLayout = {
-  labelCol: {
-    span: 5
-  },
-  wrapperCol: {
-    span: 19
-  }
-}
-
 interface Step1Props extends FormComponentProps {
   history: History,
   location: Location
@@ -67,15 +58,17 @@ const Step3: FC<Step1Props> = props => {
       <Button>查看账单</Button>
     </Fragment>
   )
-  return <Result
-    status='success'
-    title='操作成功'
-    subTitle='预计两小时内到账'
-    extra={extra}
-    className={styles.result}
-  >
-    {information}
-  </Result>
+  return (
+    <Result
+      status='success'
+      title='操作成功'
+      subTitle='预计两小时内到账'
+      extra={extra}
+      className={styles.result}
+    >
+      {information}
+    </Result>
+  )
 }
 
 export default Step3

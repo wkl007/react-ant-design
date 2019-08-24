@@ -1,6 +1,6 @@
 import { isUrl } from '@/utils/utils'
 
-const menuList = [
+const menuList: Array<any> = [
   {
     name: 'Dashboard',
     icon: 'dashboard',

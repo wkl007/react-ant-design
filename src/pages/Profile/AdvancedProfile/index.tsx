@@ -1,4 +1,4 @@
-import React, { Component, Fragment, ReactNode } from 'react'
+import React, { Component, Fragment, ReactNode, FC } from 'react'
 import { Bind, Debounce } from 'lodash-decorators'
 import classNames from 'classnames'
 import {
@@ -6,6 +6,7 @@ import {
   Button,
   Card,
   Col,
+  Descriptions,
   Divider,
   Dropdown,
   Icon,
@@ -14,8 +15,7 @@ import {
   Row,
   Steps,
   Table,
-  Tooltip,
-  Descriptions
+  Tooltip
 } from 'antd'
 import PageHeaderWrapper from '@/components/PageHeader'
 import styles from './index.less'
@@ -26,7 +26,7 @@ const ButtonGroup = Button.Group
 const getWindowWidth = () => window.innerWidth ||
   document.documentElement.clientWidth
 
-const menu = (
+const menu: ReactNode = (
   <Menu>
     <Menu.Item key='1'>选项一</Menu.Item>
     <Menu.Item key='2'>选项二</Menu.Item>
@@ -34,7 +34,7 @@ const menu = (
   </Menu>
 )
 
-const action = (
+const action: ReactNode = (
   <Fragment>
     <ButtonGroup>
       <Button>操作</Button>
@@ -49,7 +49,7 @@ const action = (
   </Fragment>
 )
 
-const extra = (
+const extra: ReactNode = (
   <Row>
     <Col xs={24} sm={12}>
       <div className={styles.textSecondary}>状态</div>
@@ -62,7 +62,7 @@ const extra = (
   </Row>
 )
 
-const description = (
+const description: ReactNode = (
   <Descriptions
     className={styles.headerList}
     size='small'
@@ -78,18 +78,7 @@ const description = (
   </Descriptions>
 )
 
-const tabList = [
-  {
-    key: 'detail',
-    tab: '详情'
-  },
-  {
-    key: 'rule',
-    tab: '规则'
-  }
-]
-
-const desc1 = (
+const desc1: ReactNode = (
   <div className={classNames(styles.textSecondary, styles.stepDescription)}>
     <Fragment>
       曲丽丽
@@ -99,7 +88,7 @@ const desc1 = (
   </div>
 )
 
-const desc2 = (
+const desc2: ReactNode = (
   <div className={styles.stepDescription}>
     <Fragment>
       周毛毛
@@ -111,7 +100,7 @@ const desc2 = (
   </div>
 )
 
-const popoverContent = (
+const popoverContent: ReactNode = (
   <div style={{ width: 160 }}>
     吴加号
     <span className={styles.textSecondary} style={{ float: 'right' }}>
@@ -133,7 +122,18 @@ const customDot = (dot: ReactNode, data: { status: string; }) => {
     : dot
 }
 
-const operationTabList = [
+const tabList: Array<{ key: string, tab: string }> = [
+  {
+    key: 'detail',
+    tab: '详情'
+  },
+  {
+    key: 'rule',
+    tab: '规则'
+  }
+]
+
+const operationTabList: Array<{ key: string, tab: string }> = [
   {
     key: 'tab1',
     tab: '操作日志一'
@@ -148,7 +148,7 @@ const operationTabList = [
   }
 ]
 
-const columns = [
+const columns: Array<any> = [
   {
     title: '操作类型',
     dataIndex: 'type',
