@@ -1,6 +1,6 @@
 # react-ant-design
 
-> react ant 练手
+> react antd 中后台项目。该项目有TypeScript与JavaScript两个版本，切换分支可查看不同版本。
 
 ## 安装运行
 
