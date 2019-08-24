@@ -241,6 +241,8 @@ module.exports = function (webpackEnv) {
             compress: {
               ecma: 5,
               warnings: false,
+              drop_debugger: true,
+              drop_console: true,
               // Disabled because of an issue with Uglify breaking seemingly valid code:
               // https://github.com/facebook/create-react-app/issues/2376
               // Pending further investigation:
