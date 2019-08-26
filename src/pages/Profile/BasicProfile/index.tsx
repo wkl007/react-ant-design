@@ -116,7 +116,7 @@ const progressColumns: Array<any> = [
 ]
 
 interface BasicProfileState {
-  loading: boolean
+  loading: boolean;
 }
 
 class BasicProfile extends Component<{}, BasicProfileState> {

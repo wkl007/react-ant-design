@@ -5,9 +5,9 @@ import IconFont from '@/pages/Editor/components/IconFont'
 import styles from './index.less'
 
 interface MenuItemProps {
-  command: string,
-  icon?: string,
-  text?: string
+  command: string;
+  icon?: string;
+  text?: string;
 }
 
 const Index: FC<MenuItemProps> = ({ command, icon, text }) => <Command name={command}>

@@ -3,13 +3,13 @@ import { Button, Divider, Input, message, Popconfirm, Table } from 'antd'
 import styles from '../index.less'
 
 interface TableFormProps {
-  value?: any,
-  onChange: (data: any) => void
+  value?: any;
+  onChange: (data: any) => void;
 }
 
 interface TableFormState {
-  loading: boolean,
-  data: any
+  loading: boolean;
+  data: any;
 }
 
 class TableForm extends PureComponent <TableFormProps, TableFormState> {

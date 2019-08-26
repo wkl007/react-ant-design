@@ -291,12 +291,10 @@ const formItemLayout = {
   }
 }
 
-interface ProjectProps extends FormComponentProps {
-
-}
+interface ProjectProps extends FormComponentProps {}
 
 interface ProjectState {
-  loading: boolean
+  loading: boolean;
 }
 
 class Project extends Component<ProjectProps, ProjectState> {

@@ -2,8 +2,8 @@ import React, { FC, ReactNode } from 'react'
 import styles from './GridContent.less'
 
 interface GridContentProps {
-  children: ReactNode,
-  contentWidth?: string,
+  children: ReactNode;
+  contentWidth?: string;
 }
 
 const GridContent: FC<GridContentProps> = ({ contentWidth, children }) => {

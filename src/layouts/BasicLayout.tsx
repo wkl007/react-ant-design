@@ -172,20 +172,20 @@ const notices = [
   }]
 
 interface BasicLayoutProps {
-  history: History,
-  match: match,
-  userInfo: string,
-  routerList: any,
-  location: Location,
-  setUserInfo: (s: string) => void
+  history: History;
+  match: match;
+  userInfo: string;
+  routerList: any;
+  location: Location;
+  setUserInfo: (s: string) => void;
 }
 
 interface BasicLayoutState {
-  currentUser: object,
-  isMobile: boolean,
-  fetchingNotices: boolean,
-  collapsed: boolean,
-  notices: Array<any>
+  currentUser: object;
+  isMobile: boolean;
+  fetchingNotices: boolean;
+  collapsed: boolean;
+  notices: Array<any>;
 }
 
 class BasicLayout extends Component<BasicLayoutProps, BasicLayoutState> {

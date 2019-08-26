@@ -655,12 +655,10 @@ const formItemLayout = {
   }
 }
 
-interface ArticlesProps extends FormComponentProps {
-
-}
+interface ArticlesProps extends FormComponentProps {}
 
 interface ArticlesState {
-  loading: boolean
+  loading: boolean;
 }
 
 class Articles extends Component<ArticlesProps, ArticlesState> {

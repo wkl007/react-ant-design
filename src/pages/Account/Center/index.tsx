@@ -98,18 +98,18 @@ const project = {
 }
 
 interface CenterProps {
-  location: Location,
-  match: match,
-  history: History
+  location: Location;
+  match: match;
+  history: History;
 }
 
 interface CenterState {
-  currentUser: any,
-  currentUserLoading: boolean,
-  project: any,
-  newTags: Array<any>,
-  inputVisible: boolean,
-  inputValue: string
+  currentUser: any;
+  currentUserLoading: boolean;
+  project: any;
+  newTags: Array<any>;
+  inputVisible: boolean;
+  inputValue: string;
 }
 
 class Center extends Component<CenterProps, CenterState> {

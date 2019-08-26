@@ -11,8 +11,8 @@ import styles from '../index.less'
 const { Step } = Steps
 
 interface StepFormProps {
-  location: Location,
-  match: match
+  location: Location;
+  match: match;
 }
 
 class StepForm extends Component<StepFormProps, {}> {

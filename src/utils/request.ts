@@ -2,7 +2,7 @@ import 'whatwg-fetch'
 import { notification } from 'antd'
 
 interface codeMessageType {
-  [key: number]: string
+  [key: number]: string;
 }
 
 const codeMessage: codeMessageType = {

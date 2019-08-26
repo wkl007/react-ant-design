@@ -3,9 +3,9 @@ import { Button } from 'antd'
 import styles from './index.less'
 
 interface EditableLinkGroupProps {
-  links: Array<any>,
-  onAdd?: () => void,
-  linkElement?: any,
+  links: Array<any>;
+  onAdd?: () => void;
+  linkElement?: any;
 }
 
 const EditableLinkGroup: FC<EditableLinkGroupProps> = ({ links = [], onAdd = () => {}, linkElement = 'a' }) => {

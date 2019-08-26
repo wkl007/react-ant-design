@@ -24,18 +24,18 @@ const passwordProgressMap: any = {
 }
 
 interface RegisterProps extends FormComponentProps {
-  history: History,
-  userInfo: string,
-  setUserInfo: Function
+  history: History;
+  userInfo: string;
+  setUserInfo: Function;
 }
 
 interface RegisterState {
-  count: number,
-  confirmDirty: boolean,
-  visible: boolean,
-  help: string,
-  prefix: string,
-  submitting: boolean
+  count: number;
+  confirmDirty: boolean;
+  visible: boolean;
+  help: string;
+  prefix: string;
+  submitting: boolean;
 }
 
 class Register extends Component<RegisterProps, RegisterState> {

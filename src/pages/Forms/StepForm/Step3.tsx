@@ -6,8 +6,8 @@ import { parse } from 'qs'
 import styles from './index.less'
 
 interface Step1Props extends FormComponentProps {
-  history: History,
-  location: Location
+  history: History;
+  location: Location;
 }
 
 const Step3: FC<Step1Props> = props => {

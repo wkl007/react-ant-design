@@ -118,8 +118,8 @@ const monitor: any = {
 const targetTime: number = new Date().getTime() + 3900000
 
 interface MonitorState {
-  monitor: any,
-  loading: boolean
+  monitor: any;
+  loading: boolean;
 }
 
 class Monitor extends Component<{}, MonitorState> {

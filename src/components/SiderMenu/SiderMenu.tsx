@@ -56,17 +56,17 @@ export const getMenuMatchKeys = (flatMenuKeys: any, paths: any) =>
   ), [])
 
 interface SiderMenuProps {
-  logo: string,
-  collapsed: boolean,
-  menuData: any,
-  isMobile: boolean,
-  onCollapse: (collapsed: boolean) => void,
-  Authorized?: any,
-  location?: any,
+  logo: string;
+  collapsed: boolean;
+  menuData: any;
+  isMobile: boolean;
+  onCollapse: (collapsed: boolean) => void;
+  Authorized?: any;
+  location?: any;
 }
 
 interface SiderMenuState {
-  openKeys: any
+  openKeys: any;
 }
 
 class SiderMenu extends Component<SiderMenuProps, SiderMenuState> {

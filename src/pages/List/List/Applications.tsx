@@ -307,12 +307,10 @@ const formatWan = (val: any) => {
   return result
 }
 
-interface ApplicationsProps extends FormComponentProps {
-
-}
+interface ApplicationsProps extends FormComponentProps {}
 
 interface ApplicationsState {
-  loading: boolean
+  loading: boolean;
 }
 
 class Applications extends Component<ApplicationsProps, ApplicationsState> {

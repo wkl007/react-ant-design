@@ -66,10 +66,10 @@ const validatorPhone = (rule: any, value: any, callback: Function) => {
 interface BaseProps extends FormComponentProps {}
 
 interface BaseState {
-  currentUser: any,
-  geographic: string,
-  defaultValue: Array<string>,
-  value: Array<any>
+  currentUser: any;
+  geographic: string;
+  defaultValue: Array<string>;
+  value: Array<any>;
 }
 
 class Base extends Component <BaseProps, BaseState> {

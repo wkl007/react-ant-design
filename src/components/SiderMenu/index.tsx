@@ -4,13 +4,13 @@ import SiderMenu from './SiderMenu'
 import 'rc-drawer/assets/index.css'
 
 interface SiderMenuWrapperProps {
-  logo: string,
-  collapsed: boolean,
-  menuData: any,
-  isMobile: boolean,
-  onCollapse: (collapsed: boolean) => void,
-  Authorized?: any,
-  location?: Location,
+  logo: string;
+  collapsed: boolean;
+  menuData: any;
+  isMobile: boolean;
+  onCollapse: (collapsed: boolean) => void;
+  Authorized?: any;
+  location?: Location;
 }
 
 const SiderMenuWrapper: FC<SiderMenuWrapperProps> = props => {

@@ -16,12 +16,12 @@ const formItemLayout = {
 }
 
 interface Step2Props extends FormComponentProps {
-  history: History,
-  location: Location
+  history: History;
+  location: Location;
 }
 
 interface Step2State {
-  submitting: boolean
+  submitting: boolean;
 }
 
 class Step2 extends Component <Step2Props, Step2State> {

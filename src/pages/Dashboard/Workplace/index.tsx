@@ -216,15 +216,13 @@ const radarData = [
   { 'name': '部门', 'label': '贡献', 'value': 5 },
   { 'name': '部门', 'label': '热度', 'value': 7 }]
 
-interface WorkplaceProps {
-
-}
+interface WorkplaceProps {}
 
 interface WorkplaceState {
-  projectLoading: boolean,
-  activitiesLoading: boolean,
-  radarDataLoading: boolean,
-  currentUserLoading: boolean
+  projectLoading: boolean;
+  activitiesLoading: boolean;
+  radarDataLoading: boolean;
+  currentUserLoading: boolean;
 }
 
 class Workplace extends Component<WorkplaceProps, WorkplaceState> {

@@ -21,7 +21,7 @@ function getActiveData (): Array<{ x: string, y: number }> {
 }
 
 interface ActiveChartState {
-  activeData: Array<{ x: string, y: number }>
+  activeData: Array<{ x: string, y: number }>;
 }
 
 class ActiveChart extends Component<{}, ActiveChartState> {

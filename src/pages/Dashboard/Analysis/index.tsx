@@ -416,15 +416,15 @@ const Yuan = (props: { children: string | number; }) => (
 )
 
 interface AnalysisProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 interface AnalysisState {
-  salesType: string,
-  currentTabKey: string,
-  rangePickerValue: undefined[] | [moment.Moment] | [undefined, moment.Moment] | [moment.Moment, moment.Moment],
-  chart: any,
-  loading: boolean
+  salesType: string;
+  currentTabKey: string;
+  rangePickerValue: undefined[] | [moment.Moment] | [undefined, moment.Moment] | [moment.Moment, moment.Moment];
+  chart: any;
+  loading: boolean;
 }
 
 class Analysis extends Component<AnalysisProps, AnalysisState> {

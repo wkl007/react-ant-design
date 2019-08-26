@@ -23,9 +23,9 @@ const tabList = [
 ]
 
 interface ListProps {
-  history: History,
-  location: Location,
-  match: match
+  history: History;
+  location: Location;
+  match: match;
 }
 
 class List extends Component<ListProps> {

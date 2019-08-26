@@ -282,7 +282,7 @@ const listData = {
 }
 
 interface CardListState {
-  loading: boolean
+  loading: boolean;
 }
 
 class CardList extends Component<{}, CardListState> {

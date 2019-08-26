@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { getRouterList } from '@/router'
 
 interface AppProps {
-  userInfo: string
+  userInfo: string;
 }
 
 const App: FC<AppProps> = (props) => {

@@ -13,19 +13,19 @@ function initTotalList (columns: any): any {
 }
 
 interface StandardTableProps {
-  data: any,
-  pagination: any,
-  loading: boolean,
-  columns: any,
-  rowKey?: string,
-  selectedRows: any,
-  onSelectRow: (selectedRows: any) => void,
-  onChange: (pagination: any, filters: any, sorter: any) => void,
+  data: any;
+  pagination: any;
+  loading: boolean;
+  columns: any;
+  rowKey?: string;
+  selectedRows: any;
+  onSelectRow: (selectedRows: any) => void;
+  onChange: (pagination: any, filters: any, sorter: any) => void;
 }
 
 interface StandardTableState {
-  selectedRowKeys: any,
-  needTotalList: any
+  selectedRowKeys: any;
+  needTotalList: any;
 }
 
 class StandardTable extends Component<StandardTableProps, StandardTableState> {

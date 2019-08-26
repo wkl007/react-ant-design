@@ -3,8 +3,8 @@ import { Input } from 'antd'
 import styles from './Phone.less'
 
 interface PhoneProps {
-  value?: any,
-  onChange?: (value: string) => void
+  value?: any;
+  onChange?: (value: string) => void;
 }
 
 class Phone extends Component<PhoneProps, {}> {

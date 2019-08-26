@@ -27,12 +27,10 @@ const submitFormLayout = {
   }
 }
 
-interface BasicFormProps extends FormComponentProps {
-
-}
+interface BasicFormProps extends FormComponentProps {}
 
 interface BasicFormState {
-  submitting: boolean
+  submitting: boolean;
 }
 
 class BasicForm extends Component<BasicFormProps, BasicFormState> {

@@ -3,13 +3,13 @@ import classNames from 'classnames'
 import styles from './index.less'
 
 interface StandardFormRowProps {
-  title: string,
-  children: ReactNode,
-  last?: boolean,
-  block?: boolean,
-  gird?: boolean,
+  title: string;
+  children: ReactNode;
+  last?: boolean;
+  block?: boolean;
+  gird?: boolean;
 
-  [key: string]: any
+  [key: string]: any;
 }
 
 const StandardFormRow: FC<StandardFormRowProps> = ({ title, children, last, block, gird, ...rest }) => {

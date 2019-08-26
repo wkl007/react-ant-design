@@ -22,7 +22,7 @@ const data = {
 }
 
 interface Step1Props extends FormComponentProps {
-  history: History
+  history: History;
 }
 
 const Step1: FC<Step1Props> = props => {

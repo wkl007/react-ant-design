@@ -4,11 +4,11 @@ import { Button, Card, Spin } from 'antd'
 import styles from './index.less'
 
 interface TriggerExceptionProps {
-  history: History
+  history: History;
 }
 
 interface TriggerExceptionState {
-  isLoading: boolean
+  isLoading: boolean;
 }
 
 class TriggerException extends Component<TriggerExceptionProps, TriggerExceptionState> {

@@ -36,15 +36,15 @@ const rulesOption = {
 }
 
 interface LoginProps {
-  userInfo: string,
-  setUserInfo: Function
+  userInfo: string;
+  setUserInfo: Function;
 }
 
 interface LoginState {
-  type: string,
-  autoLogin: boolean,
-  notice: string,
-  submitting: boolean
+  type: string;
+  autoLogin: boolean;
+  notice: string;
+  submitting: boolean;
 }
 
 class LoginPage extends Component<LoginProps, LoginState> {

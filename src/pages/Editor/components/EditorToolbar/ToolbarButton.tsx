@@ -6,9 +6,9 @@ import IconFont from '@/pages/Editor/components/IconFont'
 import styles from './index.less'
 
 interface ToolbarButtonProps {
-  command: string,
-  icon?: string,
-  text?: string
+  command: string;
+  icon?: string;
+  text?: string;
 }
 
 const ToolbarButton: FC<ToolbarButtonProps> = ({ command, icon, text }) => (

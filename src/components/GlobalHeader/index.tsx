@@ -11,16 +11,16 @@ const NoticeIconCopy: any = NoticeIcon
 const NoticeIconTab: any = NoticeIcon.Tab
 
 interface GlobalHeaderProps {
-  logo: string,
-  currentUser: any,
-  isMobile: boolean,
-  fetchingNotices: boolean,
-  notices: Array<any>,
-  collapsed: boolean,
-  onNoticeClear: (tabTitle: string) => void,
-  onCollapse: (collapsed: boolean) => void,
-  onMenuClick: (e: any) => void,
-  onNoticeVisibleChange: (visible: any) => void,
+  logo: string;
+  currentUser: any;
+  isMobile: boolean;
+  fetchingNotices: boolean;
+  notices: Array<any>;
+  collapsed: boolean;
+  onNoticeClear: (tabTitle: string) => void;
+  onCollapse: (collapsed: boolean) => void;
+  onMenuClick: (e: any) => void;
+  onNoticeVisibleChange: (visible: any) => void;
 }
 
 class GlobalHeader extends Component<GlobalHeaderProps> {

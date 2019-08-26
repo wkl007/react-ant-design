@@ -3,13 +3,13 @@ import Loadable from 'react-loadable'
 import { Button, Result, Spin } from 'antd'
 
 interface propsInterface {
-  error: any,
-  timedOut: boolean,
-  retry: () => void,
+  error: any;
+  timedOut: boolean;
+  retry: () => void;
 }
 
 interface defaultPropsInterface {
-  loading: any,
+  loading: any;
   timeout?: number | false | null;
   delay?: number | false | null;
 }

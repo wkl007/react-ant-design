@@ -183,8 +183,8 @@ const listData = {
 }
 
 interface BasicListState {
-  loading: boolean,
-  pageSize: number
+  loading: boolean;
+  pageSize: number;
 }
 
 class BasicList extends Component<{}, BasicListState> {

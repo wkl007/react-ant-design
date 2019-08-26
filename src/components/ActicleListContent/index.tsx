@@ -5,11 +5,11 @@ import styles from './index.less'
 
 interface ArticleListContentProps {
   data: {
-    content: any,
-    updatedAt: any,
-    avatar: string,
-    owner: string,
-    href: string
+    content: any;
+    updatedAt: any;
+    avatar: string;
+    owner: string;
+    href: string;
   }
 }
 

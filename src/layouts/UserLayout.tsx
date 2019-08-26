@@ -39,9 +39,9 @@ const copyright: ReactNode = (
 )
 
 interface UserLayoutProps {
-  routerList: any,
-  location: Location,
-  match: match
+  routerList: any;
+  location: Location;
+  match: match;
 }
 
 class UserLayout extends Component<UserLayoutProps, {}> {

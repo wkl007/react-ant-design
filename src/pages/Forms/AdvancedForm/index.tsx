@@ -44,13 +44,11 @@ const tableData = [
   }
 ]
 
-interface AdvanceFormProps extends FormComponentProps {
-
-}
+interface AdvanceFormProps extends FormComponentProps {}
 
 interface AdvanceFormState {
-  width: string,
-  submitting: boolean
+  width: string;
+  submitting: boolean;
 }
 
 class AdvanceForm extends Component<AdvanceFormProps, AdvanceFormState> {

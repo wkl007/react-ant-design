@@ -11,24 +11,24 @@ const PageHeaderCopy: any = PageHeader
 const { Title } = Typography
 
 interface PageHeaderProps {
-  children?: ReactNode,
-  contentWidth?: string,
-  fluid?: any,
-  wrapperClassName?: string,
-  home?: string,
-  top?: ReactNode,
-  title?: ReactNode,
-  content?: ReactNode,
-  logo?: ReactNode,
-  extraContent?: ReactNode,
-  hiddenBreadcrumb?: boolean,
+  children?: ReactNode;
+  contentWidth?: string;
+  fluid?: any;
+  wrapperClassName?: string;
+  home?: string;
+  top?: ReactNode;
+  title?: ReactNode;
+  content?: ReactNode;
+  logo?: ReactNode;
+  extraContent?: ReactNode;
+  hiddenBreadcrumb?: boolean;
 
-  tabList?: Array<any>,
-  tabActiveKey?: string,
-  onTabChange?: (key: string) => void,
-  tabBarExtraContent?: ReactNode,
+  tabList?: Array<any>;
+  tabActiveKey?: string;
+  onTabChange?: (key: string) => void;
+  tabBarExtraContent?: ReactNode;
 
-  [key: string]: any,
+  [key: string]: any;
 }
 
 const RenderFooter: FC<any> = ({ tabList, tabActiveKey, onTabChange, tabBarExtraContent }) => {

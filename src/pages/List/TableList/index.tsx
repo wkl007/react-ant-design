@@ -513,18 +513,16 @@ const data = {
   'pagination': { 'total': 32, 'pageSize': 10, 'current': 1 }
 }
 
-interface TableListProps extends FormComponentProps {
-
-}
+interface TableListProps extends FormComponentProps {}
 
 interface TableListState {
-  loading: boolean,
-  modalVisible: boolean,
-  expandForm: boolean,
-  selectedRows: any,
-  formValues: any,
-  data: any,
-  pagination: any
+  loading: boolean;
+  modalVisible: boolean;
+  expandForm: boolean;
+  selectedRows: any;
+  formValues: any;
+  data: any;
+  pagination: any;
 }
 
 class TableList extends Component<TableListProps, TableListState> {

@@ -18,19 +18,19 @@ declare module 'good-storage' {
   function forEach (callback): void
 
   interface session {
-    set (key: string, val: any): any
+    set (key: string, val: any): any;
 
-    get (key: string, def: any): any
+    get (key: string, def: any): any;
 
-    has (key: string): boolean
+    has (key: string): boolean;
 
-    remove (key: string): void
+    remove (key: string): void;
 
-    clear (): void
+    clear (): void;
 
-    getAll (): object
+    getAll (): object;
 
-    forEach (callback): void
+    forEach (callback): void;
   }
 
   declare let session: session
@@ -41,10 +41,10 @@ declare module 'good-storage' {
  */
 declare module 'nzh/cn' {
   interface options {
-    tenMin: boolean,
-    ww: boolean,
-    complete: boolean,
-    outSymbol: boolean
+    tenMin: boolean;
+    ww: boolean;
+    complete: boolean;
+    outSymbol: boolean;
   }
 
   function toMoney (number: string, options?: options): string

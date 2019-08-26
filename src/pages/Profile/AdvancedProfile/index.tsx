@@ -246,8 +246,8 @@ const profileData = {
 }
 
 interface AdvancedProfileState {
-  loading: boolean,
-  operationKey: string,
+  loading: boolean;
+  operationKey: string;
   stepDirection: any;
 }
 

@@ -18,7 +18,7 @@ const extra: ReactNode = (
 )
 
 interface RegisterResultProps {
-  location: Location
+  location: Location;
 }
 
 const RegisterResult: FC<RegisterResultProps> = (props) => {

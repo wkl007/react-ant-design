@@ -48,16 +48,16 @@ const menuMap: any = {
 }
 
 interface SettingProps {
-  location: Location,
-  match: match,
-  history: History
+  location: Location;
+  match: match;
+  history: History;
 }
 
 interface SettingState {
-  currentUser: any,
-  mode: string,
-  menuMap: any,
-  selectKey: string | number
+  currentUser: any;
+  mode: string;
+  menuMap: any;
+  selectKey: string | number;
 }
 
 class Setting extends Component<SettingProps, SettingState> {
