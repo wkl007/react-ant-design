@@ -75,9 +75,9 @@ getMenuData().forEach(getRedirect)
  * @param routerData 路由配置
  */
 const getBreadcrumbNameMap = (menuData: any, routerData: any) => {
-  let result: any = {}
-  let childResult = {}
-  for (let i of menuData) {
+  const result: any = {}
+  const childResult = {}
+  for (const i of menuData) {
     if (!routerData[i.path]) {
       result[i.path] = i
     }
@@ -221,7 +221,7 @@ class BasicLayout extends Component<BasicLayoutProps, BasicLayoutState> {
   }
 
   getContext () {
-    let { routerList, location } = this.props
+    const { routerList, location } = this.props
     return {
       location,
       breadcrumbNameMap: getBreadcrumbNameMap(getMenuData(), routerList)
@@ -230,8 +230,8 @@ class BasicLayout extends Component<BasicLayoutProps, BasicLayoutState> {
 
   // 获取页面标题
   getPageTitle = () => {
-    let { routerList, location } = this.props
-    let { pathname } = location
+    const { routerList, location } = this.props
+    const { pathname } = location
     let title = '小王管理系统'
     let currentRouterData: any = {}
     Object.keys(routerList).forEach(key => {
@@ -247,15 +247,15 @@ class BasicLayout extends Component<BasicLayoutProps, BasicLayoutState> {
 
   // 消息清除
   handleNoticeClear = (tabTitle: string) => {
-    let { notices, currentUser } = this.state
-    let newNotice: any = []
+    const { notices, currentUser } = this.state
+    const newNotice: any = []
     notices.map(notice => {
       if (notice.type !== tabTitle) {
         newNotice.push(notice)
       }
       return null
     })
-    let data = Object.assign({}, currentUser, { notifyCount: newNotice.length })
+    const data = Object.assign({}, currentUser, { notifyCount: newNotice.length })
     this.setState({
       notices: newNotice,
       currentUser: data
@@ -272,7 +272,7 @@ class BasicLayout extends Component<BasicLayoutProps, BasicLayoutState> {
 
   // Dropdown menu菜单点击事件
   handleMenuClick = (e: any) => {
-    let { history, setUserInfo } = this.props
+    const { history, setUserInfo } = this.props
     if (e.key === 'userCenter') {
       history.push('/account/center')
     } else if (e.key === 'userSettings') {

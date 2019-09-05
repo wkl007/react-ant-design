@@ -60,7 +60,7 @@ export function asyncComponent (component: any, callback?: () => void) {
 
     render (loaded: any, props) {
       callback && callback()
-      let Component = loaded.default
+      const Component = loaded.default
       return <Component {...props}/>
     }
   })
@@ -73,7 +73,7 @@ export function asyncComponent (component: any, callback?: () => void) {
  * @returns {*}
  */
 export function asyncComponentWithModels (component: any, models: any) {
-  let name = 'componentName'
+  const name = 'componentName'
   return Loadable.Map({
     ...DefaultProps,
     loader: {
@@ -81,7 +81,7 @@ export function asyncComponentWithModels (component: any, models: any) {
       ...models
     },
     render (loaded, props) {
-      let Component = loaded[name].default
+      const Component = loaded[name].default
       return <Component {...props}/>
     }
   })

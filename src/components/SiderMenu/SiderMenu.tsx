@@ -135,7 +135,7 @@ class SiderMenu extends Component<SiderMenuProps, SiderMenuState> {
   // 获取子菜单
   getSubMenuOrItem = (item: { target?: any; name?: string; path?: string; icon?: any; children?: any; authority?: any }) => {
     if (item.children && item.children.some((child: { name: string; }) => child.name)) {
-      let childrenItems = this.getNavMenuItems(item.children)
+      const childrenItems = this.getNavMenuItems(item.children)
       // 当无子菜单时就不展示菜单
       if (childrenItems && childrenItems.length > 0) {
         return (
@@ -164,7 +164,7 @@ class SiderMenu extends Component<SiderMenuProps, SiderMenuState> {
   getNavMenuItems = (menusData: any) => {
     if (!menusData) return []
     return menusData.filter((item: { name: string; hideInMenu: boolean; }) => item.name && !item.hideInMenu).map((item: { target?: any; name?: string; path?: string; icon?: any; children?: any; authority?: any; }) => {
-      let ItemDom = this.getSubMenuOrItem(item)
+      const ItemDom = this.getSubMenuOrItem(item)
       return this.checkPermissionItem(item.authority, ItemDom)
     }).filter((item: any) => item)
   }
@@ -192,8 +192,8 @@ class SiderMenu extends Component<SiderMenuProps, SiderMenuState> {
 
   // SubMenu 展开/关闭
   handleOpenChange = (openKeys: any[]) => {
-    let lastOpenKey = openKeys[openKeys.length - 1]
-    let moreThanOne = openKeys.filter(
+    const lastOpenKey = openKeys[openKeys.length - 1]
+    const moreThanOne = openKeys.filter(
       openKey => this.isMainMenu(openKey)).length > 1
     this.setState({
       openKeys: moreThanOne ? [lastOpenKey] : [...openKeys]

@@ -47,7 +47,7 @@ interface UserLayoutProps {
 class UserLayout extends Component<UserLayoutProps, {}> {
   // 获取页面标题
   getPageTitle = () => {
-    let { routerList, location: { pathname } } = this.props
+    const { routerList, location: { pathname } } = this.props
     let title = '小王管理系统'
     if (routerList[pathname] && routerList[pathname].name) {
       title = `${routerList[pathname].name} - ${title}`
@@ -56,8 +56,8 @@ class UserLayout extends Component<UserLayoutProps, {}> {
   }
 
   render () {
-    let { match, routerList } = this.props
-    let routes = getRoutes(match.path, routerList)
+    const { match, routerList } = this.props
+    const routes = getRoutes(match.path, routerList)
     return (
       <DocumentTitle title={this.getPageTitle()}>
         <div className={styles.container}>

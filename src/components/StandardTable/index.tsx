@@ -3,7 +3,7 @@ import { Alert, Table } from 'antd'
 import styles from './index.less'
 
 function initTotalList (columns: any): any {
-  let totalList: any = []
+  const totalList: any = []
   columns.forEach((column: any) => {
     if (column.needTotal) {
       totalList.push({ ...column, total: 0 })
@@ -41,7 +41,7 @@ class StandardTable extends Component<StandardTableProps, StandardTableState> {
 
   componentWillReceiveProps (nextProps: any) {
     if (nextProps.selectedRows.length === 0) {
-      let needTotalList = initTotalList(nextProps.columns)
+      const needTotalList = initTotalList(nextProps.columns)
       this.setState({
         selectedRowKeys: [],
         needTotalList
