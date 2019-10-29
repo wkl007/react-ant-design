@@ -4,7 +4,7 @@ import { Link, Redirect, Route, Switch } from 'react-router-dom'
 import DocumentTitle from 'react-document-title'
 import { Icon } from 'antd'
 import { GlobalFooter } from 'ant-design-pro'
-import { getRoutes } from '@/utils/utils'
+import { getRoutes } from '@/utils'
 import logo from '@/assets/images/logo.svg'
 
 import styles from './UserLayout.less'

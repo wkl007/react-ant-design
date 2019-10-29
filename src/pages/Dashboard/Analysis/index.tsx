@@ -4,7 +4,7 @@ import numeral from 'numeral'
 import classNames from 'classnames'
 import { Card, Col, DatePicker, Dropdown, Icon, Menu, Radio, Row, Table, Tabs, Tooltip } from 'antd'
 import { Charts, NumberInfo, Trend } from 'ant-design-pro'
-import { dateType, getTimeDistance } from '@/utils/utils'
+import { dateType, getTimeDistance } from '@/utils'
 import styles from './index.less'
 
 const { yuan } = Charts

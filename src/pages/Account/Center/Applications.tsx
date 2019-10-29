@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from 'react'
 import numeral from 'numeral'
 import { Avatar, Card, Dropdown, Icon, List, Menu, Tooltip } from 'antd'
-import { formatWan } from '@/utils/utils.tsx'
+import { formatWan } from '@/utils/index.tsx'
 import styles from '@/pages/List/List/Applications.less'
 
 const list = [

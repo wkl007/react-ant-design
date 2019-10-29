@@ -5,7 +5,7 @@ import { match } from 'react-router'
 import { History } from 'history'
 import NotFound from '@/pages/Exception/404'
 import { getRouterList } from '@/router'
-import { getRoutes } from '@/utils/utils'
+import { getRoutes } from '@/utils'
 import styles from './index.less'
 
 const currentUser = {

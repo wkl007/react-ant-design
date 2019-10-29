@@ -2,7 +2,7 @@ import React, { Component, ReactElement } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import pathToRegexp from 'path-to-regexp'
 import { Icon, Layout, Menu } from 'antd'
-import { urlToList } from '@/utils/utils'
+import { urlToList } from '@/utils'
 import styles from './index.less'
 
 const { Sider } = Layout

@@ -15,7 +15,7 @@ import Footer from '@/components/Footer'
 import actions from '@/redux/actions'
 import MenuContext from '@/utils/context'
 import { getMenuData } from '@/router/menu'
-import { getRoutes } from '@/utils/utils'
+import { getRoutes } from '@/utils'
 import NotFound from '@/pages/Exception/404'
 import logo from '@/assets/images/logo.svg'
 
