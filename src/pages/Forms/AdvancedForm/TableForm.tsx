@@ -42,7 +42,7 @@ class TableForm extends PureComponent <TableFormProps, TableFormState> {
   toggleEditable = (e: FormEvent, key: string) => {
     e.preventDefault()
     const newData = this.state.data.map((item: any) => ({ ...item }))
-    let target = this.getRowByKey(key, newData)
+    const target = this.getRowByKey(key, newData)
     if (target) {
       // 进入编辑状态保存原始数据
       if (!target.editable) {

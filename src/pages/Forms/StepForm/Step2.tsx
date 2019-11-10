@@ -3,7 +3,7 @@ import { Alert, Button, Divider, Form, Input } from 'antd'
 import { FormComponentProps } from 'antd/lib/form/Form'
 import { History } from 'history'
 import { parse, stringify } from 'qs'
-import { digitUppercase } from '@/utils/utils'
+import { digitUppercase } from '@/utils'
 import styles from './index.less'
 
 const formItemLayout = {

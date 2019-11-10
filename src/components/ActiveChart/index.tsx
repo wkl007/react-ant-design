@@ -9,9 +9,9 @@ function fixedZero (val: number): string {
 }
 
 function getActiveData (): Array<{ x: string, y: number }> {
-  let activeData: Array<{ x: string, y: number }> = []
+  const activeData: Array<{ x: string, y: number }> = []
   for (let i = 0; i < 24; i += 1) {
-    let item = {
+    const item = {
       x: `${fixedZero(i)}:00`,
       y: Math.floor(Math.random() * 200) + i * 50
     }

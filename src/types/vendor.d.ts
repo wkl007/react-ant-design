@@ -1,42 +1,4 @@
 /**
- * good-storage
- */
-declare module 'good-storage' {
-
-  function set (key: string, val: any): any
-
-  function get (key: string, def: any): any
-
-  function has (key: string): boolean
-
-  function remove (key: string): void
-
-  function clear (): void
-
-  function getAll (): object
-
-  function forEach (callback): void
-
-  interface session {
-    set (key: string, val: any): any;
-
-    get (key: string, def: any): any;
-
-    has (key: string): boolean;
-
-    remove (key: string): void;
-
-    clear (): void;
-
-    getAll (): object;
-
-    forEach (callback): void;
-  }
-
-  declare let session: session
-}
-
-/**
  * nzh/cn
  */
 declare module 'nzh/cn' {

@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom'
 import { Input } from 'antd'
 import PageHeaderWrapper from '@/components/PageHeader'
 import { getRouterList } from '@/router'
-import { getRoutes } from '@/utils/utils'
+import { getRoutes } from '@/utils'
 
 const tabList = [
   {
