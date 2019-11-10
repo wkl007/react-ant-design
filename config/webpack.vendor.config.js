@@ -10,14 +10,18 @@ module.exports = {
   mode: 'production',
   entry: {
     vendor: [
+      '@antv/data-set',
       'antd',
       'axios',
+      'bizcharts',
       'classnames',
       'enquire-js',
       'gg-editor',
       'good-storage',
       'lodash-decorators',
+      'moment',
       'numeral',
+      'nzh',
       'path-to-regexp',
       'rc-drawer',
       'react',

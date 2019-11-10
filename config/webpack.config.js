@@ -49,6 +49,7 @@ const cssModuleRegex = /\.module\.css$/
 const sassRegex = /\.(scss|sass)$/
 const sassModuleRegex = /\.module\.(scss|sass)$/
 const lessRegex = /\.less$/
+const lessModuleRegex = /\.module\.less$/
 const antdRegex = /\.(css|less)$/
 
 function pathResolve (dir) {
@@ -118,7 +119,7 @@ module.exports = function (webpackEnv) {
   const env = getClientEnvironment(publicUrl)
 
   // common function to get style loaders
-  const getStyleLoaders = (cssOptions, preProcessor) => {
+  const getStyleLoaders = (cssOptions, preProcessor, otherConfig) => {
     const loaders = [
       isEnvDevelopment && require.resolve('style-loader'),
       isEnvProduction && {
@@ -159,7 +160,8 @@ module.exports = function (webpackEnv) {
       loaders.push({
         loader: require.resolve(preProcessor),
         options: {
-          sourceMap: isEnvProduction && shouldUseSourceMap
+          sourceMap: isEnvProduction && shouldUseSourceMap,
+          ...otherConfig
         }
       })
     }
@@ -504,111 +506,53 @@ module.exports = function (webpackEnv) {
                 'sass-loader'
               )
             },
-            // Adds antd setting
-            {
-              test: antdRegex,
-              exclude: /node_modules|antd\.css/,
-              use: [
-                require.resolve('style-loader'),
-                {
-                  loader: require.resolve('css-loader'),
-                  options: {
-                    importLoaders: 1,
-                    // 改动
-                    modules: true, // 新增对css modules的支持
-                    localIdentName: '[name]__[local]__[hash:base64:5]' //
-                  }
-                },
-                {
-                  loader: require.resolve('postcss-loader'),
-                  options: {
-                    // Necessary for external CSS imports to work
-                    // https://github.com/facebookincubator/create-react-app/issues/2677
-                    ident: 'postcss',
-                    plugins: () => [
-                      require('postcss-flexbugs-fixes'),
-                      require('postcss-preset-env')({
-                        autoprefixer: {
-                          flexbox: 'no-2009'
-                        },
-                        stage: 3
-                      })
-                    ]
-                  }
-                },
-                {
-                  loader: require.resolve('less-loader'), // compiles Less to CSS
-                  options: {
-                    javascriptEnabled: true
-                  }
-                }
-              ]
-            },
+            // Add antd setting
             {
               test: lessRegex,
-              include: /node_modules|antd\.css/,
-              use: [
-                require.resolve('style-loader'),
+              exclude: /node_modules|antd\.css/,
+              use: getStyleLoaders(
                 {
-                  loader: require.resolve('css-loader'),
-                  options: {
-                    importLoaders: 1
-                  }
+                  importLoaders: 2,
+                  sourceMap: isEnvProduction && shouldUseSourceMap,
+                  localIdentName: '[name]__[local]__[contenthash:base64:5]',
+                  modules: true
                 },
+                'less-loader',
                 {
-                  loader: require.resolve('postcss-loader'),
-                  options: {
-                    // Necessary for external CSS imports to work
-                    // https://github.com/facebookincubator/create-react-app/issues/2677
-                    ident: 'postcss',
-                    plugins: () => [
-                      require('postcss-flexbugs-fixes'),
-                      require('postcss-preset-env')({
-                        autoprefixer: {
-                          flexbox: 'no-2009'
-                        },
-                        stage: 3
-                      })
-                    ]
-                  }
-                },
-                {
-                  loader: require.resolve('less-loader'), // compiles Less to CSS
-                  options: {
-                    javascriptEnabled: true
-                  }
+                  javascriptEnabled: true
                 }
-              ]
+              ),
+              sideEffects: true
             },
             {
-              test: cssRegex,
-              include: /node_modules|antd\.css/,
-              use: [
-                require.resolve('style-loader'),
+              test: lessModuleRegex,
+              use: getStyleLoaders(
                 {
-                  loader: require.resolve('css-loader'),
-                  options: {
-                    importLoaders: 1
-                  }
+                  importLoaders: 2,
+                  sourceMap: isEnvProduction && shouldUseSourceMap,
+                  modules: true,
+                  getLocalIdent: getCSSModuleLocalIdent
                 },
+                'less-loader',
                 {
-                  loader: require.resolve('postcss-loader'),
-                  options: {
-                    // Necessary for external CSS imports to work
-                    // https://github.com/facebookincubator/create-react-app/issues/2677
-                    ident: 'postcss',
-                    plugins: () => [
-                      require('postcss-flexbugs-fixes'),
-                      require('postcss-preset-env')({
-                        autoprefixer: {
-                          flexbox: 'no-2009'
-                        },
-                        stage: 3
-                      })
-                    ]
-                  }
+                  javascriptEnabled: true
                 }
-              ]
+              )
+            },
+            {
+              test: antdRegex,
+              include: /node_modules|antd\.css/,
+              use: getStyleLoaders(
+                {
+                  importLoaders: 2,
+                  sourceMap: isEnvProduction && shouldUseSourceMap
+                },
+                'less-loader',
+                {
+                  javascriptEnabled: true
+                }
+              ),
+              sideEffects: true
             },
             // "file" loader makes sure those assets get served by WebpackDevServer.
             // When you `import` an asset, you get its (virtual) filename.
