@@ -1,35 +1,31 @@
-import React, { FC } from 'react'
-import { Redirect, Route, Switch } from 'react-router-dom'
-import { connect } from 'react-redux'
-import { getRouterList } from '@/router'
+import React from 'react'
+import { Button, ConfigProvider, DatePicker } from 'antd'
+import zhCN from 'antd/es/locale/zh_CN'
+import 'dayjs/locale/zh-cn'
+import dayjs from 'dayjs'
+import { HomeOutlined, LoadingOutlined, SettingFilled, SmileOutlined, SyncOutlined } from '@ant-design/icons'
 
-interface AppProps {
-  userInfo: string;
-}
+dayjs.locale('zh-cn')
 
-const App: FC<AppProps> = (props) => {
-  const { userInfo } = props
-  const routerList: any = getRouterList()
-  const UserLayout = routerList['/user'].component
-  const BasicLayout = routerList['/'].component
+const App: React.FC = () => {
+  const handleChange = (date: any) => {
+    console.log(dayjs(date).format('YYYY-MM-DD '))
+  }
+
   return (
-    <div className='App'>
-      <Switch>
-        <Route path='/user' render={(props) => {
-          return !userInfo
-            ? <UserLayout {...props} routerList={routerList}/>
-            : <Redirect to='/'/>
-        }}/>
-        <Route path='/' render={(props) => {
-          return userInfo
-            ? <BasicLayout {...props} routerList={routerList}/>
-            : <Redirect to='/user/login'/>
-        }}/>
-      </Switch>
-    </div>
+    <ConfigProvider locale={zhCN}>
+      <div style={{ margin: '20px auto' }}>
+        <DatePicker onChange={handleChange}/>
+        <Button>按钮</Button>
+        <HomeOutlined/>
+        <SettingFilled/>
+        <SmileOutlined/>
+        <SyncOutlined spin/>
+        <SmileOutlined rotate={180}/>
+        <LoadingOutlined/>
+      </div>
+    </ConfigProvider>
   )
 }
 
-const mapStateToProps = (state: AppProps) => ({ userInfo: state.userInfo })
-
-export default connect(mapStateToProps)(App)
+export default App

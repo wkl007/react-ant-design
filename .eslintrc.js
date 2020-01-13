@@ -25,7 +25,6 @@ module.exports = {
   rules: {
     'camelcase': 0,//强制驼峰法命名
     'handle-callback-err': 0,//nodejs 处理错误
-    "indent": 0,//缩进风格
     'no-console': 0,//禁止使用console
     'no-unused-vars': [0, {
       // 允许声明未使用变量
